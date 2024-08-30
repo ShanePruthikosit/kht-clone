@@ -1,0 +1,323 @@
+id,village_name,adult_males,adult_females,hosted_KHT_projects,distance_to_hospital_km,distance_to_pratom_km,distance_to_mathayom_km
+zcrm_361303000000383834,Ban Mae Kong Pae,130,120,Irrigation;WASH,58,5,4
+zcrm_361303000000461001,Ban Mae Yuam Noi,43,46,WASH,16,1,16
+zcrm_361303000000521001,Ban Mae Ho Klang,68,61,WASH,20,2,2
+zcrm_361303000000522010,Ban Khun Mae La,,,School Buses;Further Education Scholarships,,,
+zcrm_361303000000527031,Ban Huay Peung Kao,,,School Buses,,,
+zcrm_361303000000527032,Ban Rom Yen,43,43,School Buses;Irrigation;Further Education Scholarships;WASH,42,10,42
+zcrm_361303000000527033,Ban Huay Pong Lao,73,78,School Buses;Further Education Scholarships;WASH,40,9,40
+zcrm_361303000000527034,Ban Mae Sapei Nua,101,100,School Buses;WASH,25,,
+zcrm_361303000000527035,Ban Mae Sapei Tai,146,135,School Buses;Further Education Scholarships;WASH,14,,14
+zcrm_361303000000527036,Ban Mae Oompai Tai,,,Irrigation;School Buses;WASH,54,,
+zcrm_361303000000527037,Ban Huay Pong Karn,46,51,School Buses;Further Education Scholarships;WASH,30,11,
+zcrm_361303000000527038,Ban Hua Pon,,,School Buses;Further Education Scholarships,,,
+zcrm_361303000000527039,Ban Kham Suk,23,24,School Buses;Further Education Scholarships;WASH,14,,
+zcrm_361303000000527040,Ban Mai Pattana,,,School Buses;Further Education Scholarships,,,
+zcrm_361303000000527041,Ban Pattana Poo Koo,153,152,School Buses;Irrigation;Further Education Scholarships,7,0,7
+zcrm_361303000000527042,Ban Huay Ku Pa,,,School Buses;Further Education Scholarships;WASH,26,,6
+zcrm_361303000000527044,Ban Huay Rin,153,168,School Buses;Further Education Scholarships;WASH,5,,
+zcrm_361303000000527045,Ban Mae La Luang,,,School Buses;Further Education Scholarships,,,
+zcrm_361303000000527046,Ban Santi Suk,,,School Buses,,,
+zcrm_361303000000527047,Ban Huay Kai Pa,191,188,School Buses;School Meals;Further Education Scholarships;WASH,22,,12
+zcrm_361303000000527048,Ban Huay Pueng Mai,,,School Meals,,,
+zcrm_361303000000527049,Khun Yuam,,,School Meals;Further Education Scholarships,,,
+zcrm_361303000000527050,Ban Huay San,33,32,School Meals;WASH,40,,
+zcrm_361303000000527051,Ban Mae Kheed,217,201,Irrigation;Further Education Scholarships;WASH,50,0,0
+zcrm_361303000000527052,Ban Mae La Pa Wai,61,64,School Meals;WASH,80,,
+zcrm_361303000000527053,Ban Mae Tho,,,Irrigation;School Meals;Further Education Scholarships,,,
+zcrm_361303000000527054,Ban Mae Tho Tai,,,Irrigation;School Buses;School Meals;Further Education Scholarships;WASH,45,,
+zcrm_361303000000527055,Ban Mae La Noi Duransik,,,School Meals,,,
+zcrm_361303000000527056,Ban Pa Pong,131,121,Further Education Scholarships;WASH,35,,
+zcrm_361303000000527057,Ban Kong Pae Nua,,,Further Education Scholarships,,,
+zcrm_361303000000527058,Ban Jaw Si Der,,,Further Education Scholarships,,,
+zcrm_361303000000527060,Ban San Jao,23,24,WASH,11,1,
+zcrm_361303000000527061,Ban Santi Pattana,,,,,,
+zcrm_361303000000527062,Ban Na ngeiw,37,50,Further Education Scholarships;WASH,11,,
+zcrm_361303000000527063,Ban Hak Mai Tai,,,Further Education Scholarships,,,
+zcrm_361303000000527064,Ban Mae Pang,,,Further Education Scholarships,,,
+zcrm_361303000000527065,Ban Mae Poon,110,120,Further Education Scholarships;WASH,47,0,28
+zcrm_361303000000527066,Khun Yuam Wittaya,,,School Meals;Further Education Scholarships,,,
+zcrm_361303000000527067,Mae Tho,,,Further Education Scholarships,,,
+zcrm_361303000000527068,Ban Tee Hue Lue,,,Further Education Scholarships,,,
+zcrm_361303000000527069,Ban Nam Tok,,,Further Education Scholarships,,,
+zcrm_361303000000527070,Ban Khun Mae Yod,,,Further Education Scholarships,,,
+zcrm_361303000000527071,Ban Ma Hing Luang,135,136,Further Education Scholarships;WASH,43,,
+zcrm_361303000000534424,Ban Huay Ma Ba,96,102,Irrigation;Further Education Scholarships;WASH,56,6,65
+zcrm_361303000000543001,Ban Pa Maak,170,180,Irrigation;Further Education Scholarships;WASH,1,0,1
+zcrm_361303000000546098,Ban Mae Khi,166,146,School Meals;Further Education Scholarships;WASH,34,,34
+zcrm_361303000000654001,Ban Pho So,,,School Meals,,,
+zcrm_361303000000667001,Ban Mae Au (Mae Chaem),35,32,WASH,50,6,87
+zcrm_361303000000702001,Ban Mae Yuam Luang,47,40,Irrigation;Further Education Scholarships;WASH,12,1,12
+zcrm_361303000000702035,Ban Huay Ton Noon,275,290,Irrigation;Further Education Scholarships;WASH,25,0,25
+zcrm_361303000000707091,Ban Ler Wa Day,51,54,Irrigation,70,3,10
+zcrm_361303000000707147,Ban Po Saw,254,283,Irrigation;WASH,60,0,0
+zcrm_361303000000707181,Ban Mae Lor,137,162,Irrigation;WASH,73,0,10
+zcrm_361303000000707225,Ban Huay Na,242,244,Irrigation;Further Education Scholarships;WASH,25,0,25
+zcrm_361303000000716013,Ban Huay Pong,58,65,Irrigation;WASH,73,5,13
+zcrm_361303000000716047,Ban Nong Heang,,,Irrigation;Further Education Scholarships;WASH,25,0,0
+zcrm_361303000000716116,Ban Mae Jaa,178,157,Irrigation;Further Education Scholarships;WASH,35,0,35
+zcrm_361303000000716180,Ban Mae Song,90,85,Irrigation;Further Education Scholarships,80,12,12
+zcrm_361303000000716289,Ban Mae Po,151,164,Irrigation;WASH,90,15,15
+zcrm_361303000000716314,Ban Mae Phae,196,184,Irrigation,70,20,20
+zcrm_361303000001197125,Ban Thung Pa Kha,201,219,School Buses;Irrigation;WASH,23,3,23
+zcrm_361303000001443001,Ban Nong Khao Nua,34,39,WASH,45,12,12
+zcrm_361303000001443196,Ban Mae Tia,397,427,Further Education Scholarships;WASH,15,0,15
+zcrm_361303000001611292,Ban Kong Soum,,,Further Education Scholarships,,,
+zcrm_361303000001611368,Ban Huay Po,,,Further Education Scholarships,,,
+zcrm_361303000001611394,Ban Khun Mae Ruam,277,260,Further Education Scholarships;WASH,32,,
+zcrm_361303000001611430,Ban Klo Se Lo,,,Further Education Scholarships,,,
+zcrm_361303000001611496,Ban Pang Tong,419,422,Further Education Scholarships;WASH,13,,
+zcrm_361303000001611560,Ban Huay Hu Pa,,,Further Education Scholarships,,,
+zcrm_361303000001611591,Ban Mae Taw La,,,Further Education Scholarships,,,
+zcrm_361303000001611617,Ban Huay Sua,,,Further Education Scholarships,,,
+zcrm_361303000001611643,Ban Pang Chang,,,Further Education Scholarships,,,
+zcrm_361303000001611690,Ban Mae Sa,,,Further Education Scholarships,,,
+zcrm_361303000001699013,Ban Mae Wa Luang,,,Further Education Scholarships,,,
+zcrm_361303000001699049,Sao Hin,,,Further Education Scholarships,,,
+zcrm_361303000001699075,Pa Mark,,,Further Education Scholarships,,,
+zcrm_361303000001699101,Mae Tor,,,Further Education Scholarships,,,
+zcrm_361303000001699139,Ban Aum Da Nua,,,Further Education Scholarships,,,
+zcrm_361303000001699181,Ban Huay Ma Kok,,,Further Education Scholarships,,,
+zcrm_361303000001881585,Ban Aae Auh,109,108,WASH,36,5,5
+zcrm_361303000001881587,Ban Chan Muang,,,Further Education Scholarships,,,
+zcrm_361303000001881588,Ban Den,,,Further Education Scholarships,,,
+zcrm_361303000001881589,Ban Doi Liam,53,55,Further Education Scholarships;WASH,35,,
+zcrm_361303000001881590,Ban Du La Per,,,Further Education Scholarships,,,
+zcrm_361303000001881591,Ban Eh Loo,81,81,WASH,78,10,15
+zcrm_361303000001881592,"Ban Gano, KY Dist",,,Further Education Scholarships,,,
+zcrm_361303000001881594,Ban Goong Sum Tai,41,39,WASH,81,0,25
+zcrm_361303000001881595,Ban Hak Mai Nua,,,Further Education Scholarships,,,
+zcrm_361303000001881597,Ban Hiau Bong,,,Further Education Scholarships,,,
+zcrm_361303000001881598,Ban Hua Ha,32,31,Further Education Scholarships;WASH,70,,
+zcrm_361303000001881599,Ban Hua Ha (Khun Yuam),35,35,WASH,37,3,
+zcrm_361303000001881600,Ban Hua La,151,147,Further Education Scholarships;WASH,26,,
+zcrm_361303000001881601,Ban Hua Mae Surin,81,82,Further Education Scholarships;WASH,33,,
+zcrm_361303000001881602,Ban Hua Mae Tho,178,171,Irrigation;Further Education Scholarships;WASH,70,0,10
+zcrm_361303000001881604,Ban Hua Ngao,,,Irrigation;Further Education Scholarships,,,
+zcrm_361303000001881606,Ban Hua Taad,73,72,Further Education Scholarships;WASH,23,,
+zcrm_361303000001881607,Ban Huang Puang (Tha Pha Pum),61,62,WASH,22,,
+zcrm_361303000001881608,Ban Huay Ba Ban,,,Further Education Scholarships,,,
+zcrm_361303000001881609,Ban Huay Chai Yong,,,Further Education Scholarships,,,
+zcrm_361303000001881610,Ban Huay Chang Kam,,,Further Education Scholarships,,,
+zcrm_361303000001881611,Ban Huay Dua,,,Irrigation;Further Education Scholarships,,,
+zcrm_361303000001881613,Ban Huay Hak Mai Ta,,,Further Education Scholarships,,,
+zcrm_361303000001881614,Ban Huay Hia,63,68,Irrigation;Further Education Scholarships;WASH,92,0,36
+zcrm_361303000001881615,Ban Huay Hia Noi,27,26,WASH,50,6,25
+zcrm_361303000001881616,Ban Huay Hom,119,117,WASH,6,2,2
+zcrm_361303000001881619,Ban Huay Keaw,55,66,WASH,20,,
+zcrm_361303000001881620,Ban Huay Kong Paw,178,175,School Buses;WASH,34,,
+zcrm_361303000001881624,Ban Huay Ma Nam,111,108,WASH,84,4,4
+zcrm_361303000001881625,Ban Huay Maak Lang,76,73,Further Education Scholarships;WASH,50,3,
+zcrm_361303000001881626,Ban Huay Mai Sand,97,107,WASH,40,,8
+zcrm_361303000001881627,Ban Huay Mai Sang,,,School Buses;Irrigation;Further Education Scholarships;WASH,40,,
+zcrm_361303000001881628,Ban Huay Mak Lang,,,Further Education Scholarships,,,
+zcrm_361303000001881629,Ban Huay Mak Nam,43,56,WASH,50,4,30
+zcrm_361303000001881630,Ban Huay Mak Noon,202,206,,12,,
+zcrm_361303000001881631,Ban Huay Moo,35,32,WASH,53,3,53
+zcrm_361303000001881633,Ban Huay Na (Mae Sariang),40,37,WASH,48,2,26
+zcrm_361303000001881634,Ban Huay Nam Sai,,,Further Education Scholarships,,,
+zcrm_361303000001881635,Ban Huay Ngao,121,115,WASH,32,,32
+zcrm_361303000001881636,Ban Huay Ngoo,74,88,WASH,26,,
+zcrm_361303000001881637,Ban Huay Ngoo Luam,34,29,WASH,10,,
+zcrm_361303000001881638,Ban Huay Noong,41,41,WASH,31,,
+zcrm_361303000001881639,Ban Huay Pak Pai,,,Further Education Scholarships,,,
+zcrm_361303000001881641,Ban Huay Phak Kood,153,151,WASH,50,,50
+zcrm_361303000001881642,Ban Huay Phan,56,55,WASH,35,,
+zcrm_361303000001881643,Ban Huay Pla Kang,186,150,WASH,38,,38
+zcrm_361303000001881644,Ban Huay Ploo,,,WASH,,,
+zcrm_361303000001881647,Ban Huay Pong (Khun Yuam),42,42,WASH,39,4,
+zcrm_361303000001881650,Ban Huay Poo Leoy,132,148,WASH,20,0,20
+zcrm_361303000001881651,Ban Huay Poo Ling,,,Further Education Scholarships,,,
+zcrm_361303000001881654,Ban Huay Sai,,,Further Education Scholarships,,,
+zcrm_361303000001881657,Ban Huay Ta Phaap,45,37,WASH,40,4,
+zcrm_361303000001881659,Ban Huay Tong,,,Further Education Scholarships,,,
+zcrm_361303000001881660,Ban Huay Tong Jing,59,59,Further Education Scholarships;WASH,30,2,30
+zcrm_361303000001881661,Ban Huay Tong Kaw,44,42,WASH,40,15,
+zcrm_361303000001881663,Ban Huay Yao,28,28,WASH,37,4,
+zcrm_361303000001881664,Ban Huayn Maak lang,,,Further Education Scholarships,,,
+zcrm_361303000001881665,Ban Huey Tung,34,31,WASH,32,,
+zcrm_361303000001881666,Ban Huy Kae Pa,,,Further Education Scholarships,,,
+zcrm_361303000001881668,Ban Ka No,,,Further Education Scholarships,,,
+zcrm_361303000001881669,Ban Kaw Ka,,,Further Education Scholarships,,,
+zcrm_361303000001881670,Ban Kew Mae Oo Khor Noi,11,10,WASH,40,3,
+zcrm_361303000001881671,Ban Kew Pak Ped,48,50,WASH,26,5,74
+zcrm_361303000001881672,Ban Kha Noon,43,40,WASH,43,2,30
+zcrm_361303000001881674,Ban Khun Mae Hu,81,74,WASH,30,20,30
+zcrm_361303000001881676,Ban Khun Mae La Noi,,,Irrigation;Further Education Scholarships,,,
+zcrm_361303000001881677,Ban Khun Mae La Noi Tai,,,Further Education Scholarships,,,
+zcrm_361303000001881678,Ban Khun Mae La Tai,,,Irrigation;WASH,72,6,
+zcrm_361303000001881680,Ban Khun Mae Song,104,100,WASH,120,5,30
+zcrm_361303000001881682,Ban Khun Su,,,Further Education Scholarships,,,
+zcrm_361303000001881683,Ban Khun Wong Nua,64,67,WASH,22,,22
+zcrm_361303000001881684,Ban Khun Wong Tai,83,75,WASH,33,,33
+zcrm_361303000001881685,Ban Kiew Kha Min,,,Further Education Scholarships,,,
+zcrm_361303000001881687,Ban Ko Mai Loo,35,44,WASH,52,2,
+zcrm_361303000001881688,Ban Kok Luang,138,148,WASH,90,,
+zcrm_361303000001881690,Ban Kong Pae Tai,,,Further Education Scholarships,,,
+zcrm_361303000001881692,Ban Kor Moo Der,129,156,WASH,60,,
+zcrm_361303000001881693,Ban Kra Baw Noi,76,73,WASH,30,,
+zcrm_361303000001881694,Ban Kre Bor,64,60,WASH,30,,30
+zcrm_361303000001881695,Ban La Oop,265,265,WASH,25,,
+zcrm_361303000001881698,Ban Maak Noon,,,Further Education Scholarships,,,
+zcrm_361303000001881699,Ban Mae Au,82,72,WASH,25,,
+zcrm_361303000001881700,Ban Mae Bang,68,68,WASH,61,,61
+zcrm_361303000001881701,Ban Mae Bor Tha,28,28,WASH,25,,
+zcrm_361303000001881702,Ban Mae Harn,303,297,WASH,13,,
+zcrm_361303000001881703,Ban Mae Hei,35,35,WASH,76,,
+zcrm_361303000001881705,Ban Mae Hor,,,Further Education Scholarships,,,
+zcrm_361303000001881706,Ban Mae Hu,11,140,WASH,35,,35
+zcrm_361303000001881707,Ban Mae Ja Noi,36,33,WASH,18,18,
+zcrm_361303000001881709,Ban Mae Jae,138,139,Irrigation;WASH,40,,40
+zcrm_361303000001881710,Ban Mae Jang Bon,45,33,WASH,36,1,17
+zcrm_361303000001881712,Ban Mae Jaw Klang,,,Irrigation,,,
+zcrm_361303000001881713,Ban Mae Jaw Nua,26,29,WASH,54,6,
+zcrm_361303000001881714,Ban Mae Jaw Tai,,,Irrigation,,,
+zcrm_361303000001881715,Ban Mae Jew Saw,130,131,WASH,52,,
+zcrm_361303000001881716,Ban Mae Kha Nua,146,141,WASH,30,15,
+zcrm_361303000001881717,Ban Mae Khae Noi,33,32,WASH,91,,12
+zcrm_361303000001881719,Ban Mae Kheed Noi,37,38,WASH,40,10,10
+zcrm_361303000001881721,Ban Mae Kho Joo,63,63,WASH,43,,
+zcrm_361303000001881722,Ban Mae khor,24,23,WASH,35,5,35
+zcrm_361303000001881723,Ban Maw Ko Jaw,77,93,WASH,80,4,18
+zcrm_361303000001881724,Ban Mae Ko Pee,120,122,WASH,42,,
+zcrm_361303000001881726,Ban Mae Kor,,,Further Education Scholarships,,,
+zcrm_361303000001881727,Ban Mae Kwang Nua,65,60,WASH,20,,3
+zcrm_361303000001881728,Ban Mae Kwang Tai,35,38,WASH,30,,30
+zcrm_361303000001881729,Ban Mae La,,,Further Education Scholarships,,,
+zcrm_361303000001881730,Ban Mae La Ka,155,146,Further Education Scholarships;WASH,37,0,
+zcrm_361303000001881733,Ban Mae Lamong Nua,67,72,WASH,30,,30
+zcrm_361303000001881734,Ban Mae Lid,,,Further Education Scholarships,,,
+zcrm_361303000001881735,Ban Mae Lid -Pakae,143,120,WASH,40,51,
+zcrm_361303000001881736,Ban Mae Lit Luang,62,63,Further Education Scholarships;WASH,44,,
+zcrm_361303000001881738,Ban Mae Na Jang Tai,,,Irrigation;WASH,75,,
+zcrm_361303000001881739,Ban Mae Najang,,,Irrigation,,,
+zcrm_361303000001881740,Ban Mae Najang Nua,112,113,WASH,75,,
+zcrm_361303000001881741,Ban Mae Nill Nok,185,179,WASH,42,8,42
+zcrm_361303000001881742,Ban Mae Nin Nai,92,97,WASH,52,,52
+zcrm_361303000001881744,Ban Mae Ookhor Noi,11,10,Further Education Scholarships;WASH,40,3,
+zcrm_361303000001881745,Ban Mae Ookhor Nua,14,15,WASH,20,4,
+zcrm_361303000001881746,Ban Mae Oom Pai Nua,54,55,WASH,55,,
+zcrm_361303000001881747,Ban Mae Oomong,42,42,Further Education Scholarships;WASH,18,,
+zcrm_361303000001881748,Ban Mae Oompai,,,Further Education Scholarships,,,
+zcrm_361303000001881749,Ban Mae Oompai Nua,,,Irrigation;Further Education Scholarships,,,
+zcrm_361303000001881751,Ban Mae Pa Luang,61,35,WASH,20,4,20
+zcrm_361303000001881752,Ban Mae Pae,173,161,Irrigation;Further Education Scholarships;WASH,90,7,12
+zcrm_361303000001881754,Ban Mae Pang Nae,70,70,WASH,13,2,13
+zcrm_361303000001881756,Ban Mae Piang Luang,,,Further Education Scholarships,,,
+zcrm_361303000001881757,Ban Mae Ping,,,Further Education Scholarships,,,
+zcrm_361303000001881761,Ban Mae Sa Kua,92,89,WASH,15,,
+zcrm_361303000001881762,Ban Mae Sa Kud,41,44,WASH,31,,5
+zcrm_361303000001881763,Ban Mae Sa Wan Luang,71,71,WASH,32,0,0
+zcrm_361303000001881764,Ban Mae Sam Leab,,,Further Education Scholarships,,,
+zcrm_361303000001881765,Ban Mae Sam Peng Nua,27,27,WASH,30,,30
+zcrm_361303000001881766,Ban Mae Samaeng,44,67,WASH,56,3,
+zcrm_361303000001881769,Ban Mae Sapueng Klang,37,34,WASH,39,3,39
+zcrm_361303000001881770,Ban Mae Sapueng Tai,,,WASH,,,
+zcrm_361303000001881771,Ban Mae Satop Nua,61,65,WASH,34,,
+zcrm_361303000001881772,Ban Mae Saw,54,54,Irrigation;Further Education Scholarships;WASH,20,5,
+zcrm_361303000001881773,Ban Mae Sawan Luang,,,Further Education Scholarships,,,
+zcrm_361303000001881774,Ban Mae Sawan Noi,,,Further Education Scholarships,,,
+zcrm_361303000001881776,Ban Mae Su,,,School Buses,,,
+zcrm_361303000001881777,Ban Mae Surin Noi,23,24,Further Education Scholarships;WASH,45,,
+zcrm_361303000001881778,Ban Mae Surin Nua,,,Further Education Scholarships,,,
+zcrm_361303000001881779,Ban Mae Talu,,,Further Education Scholarships,,,
+zcrm_361303000001881782,Ban Mae Tho Klang,66,69,Irrigation;WASH,60,,
+zcrm_361303000001881783,Ban Mae Tho Noi,,,Irrigation,,,
+zcrm_361303000001881786,Ban Mae Top,82,83,Irrigation;WASH,95,4,20
+zcrm_361303000001881788,Ban Mae Yod,106,94,WASH,40,,
+zcrm_361303000001881792,Ban Mai Huay Wai,,,Further Education Scholarships,,,
+zcrm_361303000001881794,Ban Mai Poo Koo,24,22,WASH,6,,
+zcrm_361303000001881795,Ban Mai Sang Nam,,,Further Education Scholarships,,,
+zcrm_361303000001881796,Ban Manora,58,63,WASH,25,,
+zcrm_361303000001881797,Ban Muang Noi,,,Further Education Scholarships,,,
+zcrm_361303000001881798,Ban Muang Paem,161,157,WASH,13,,
+zcrm_361303000001881799,Ban Muang Pon,,,Further Education Scholarships,,,
+zcrm_361303000001881800,Ban Na Hua Laem,65,64,Further Education Scholarships;WASH,30,,
+zcrm_361303000001881802,Ban Na Pa Pae,83,64,Irrigation;WASH,90,7,90
+zcrm_361303000001881803,Ban Nae Jaa,,,Irrigation,,,
+zcrm_361303000001881804,Ban Nam Som,,,Further Education Scholarships,,,
+zcrm_361303000001881807,Ban Nangew,,,Further Education Scholarships,,,
+zcrm_361303000001881810,Ban Nong Mae La,,,School Meals,,,
+zcrm_361303000001881811,Ban Nong Muan,46,55,Further Education Scholarships;WASH,52,,
+zcrm_361303000001881812,Ban Nong Pak Nam,77,81,Further Education Scholarships;WASH,5,7,
+zcrm_361303000001881813,Ban Omlarn,45,47,WASH,62,,
+zcrm_361303000001881814,Ban Pa Kae Tai,84,86,WASH,94,,30
+zcrm_361303000001881815,Ban Pa Kha,,,Further Education Scholarships,,,
+zcrm_361303000001881816,Ban Pa Kluay,39,35,WASH,27,2,27
+zcrm_361303000001881817,Ban Pa La Pi Nua,25,23,WASH,64,8,64
+zcrm_361303000001881818,Ban Pa La Pi Tai,131,122,WASH,40,0,80
+zcrm_361303000001881820,Ban Pa Pae Klang,,,Irrigation,,,
+zcrm_361303000001881822,Ban Pa Pong Scond,52,52,WASH,60,4,60
+zcrm_361303000001881823,Ban Pae,94,1172,WASH,8,,
+zcrm_361303000001881824,Ban Pae Kha Puang,,,Further Education Scholarships,,,
+zcrm_361303000001881825,Ban Pahuey,33,34,WASH,46,2,
+zcrm_361303000001881826,Ban Pakae Nua,,,Further Education Scholarships,,,
+zcrm_361303000001881827,Ban Pakhae,,,Further Education Scholarships,,,
+zcrm_361303000001881829,Ban Pang Oong,,,Further Education Scholarships,,,
+zcrm_361303000001881831,Ban Pang Tong Tai,20,20,WASH,20,3,
+zcrm_361303000001881833,Ban Paw Naw Khee,,,Further Education Scholarships,,,
+zcrm_361303000001881834,Ban Paw Ta Law Khee,55,53,WASH,45,,
+zcrm_361303000001884037,Ban Mae Jaw,,,School Buses;Irrigation;Further Education Scholarships,,,
+zcrm_361303000001884078,Ban Mae Ookhor Luang,83,82,Further Education Scholarships;WASH,17,,
+zcrm_361303000001884168,Ban Huay Phueng,,,Further Education Scholarships,,,
+zcrm_361303000001899092,Ban Pha Aeh Doo,87,86,WASH,70,,70
+zcrm_361303000001899093,Ban Pha Daeng Luang,,,Irrigation;WASH,60,,
+zcrm_361303000001899094,Ban Pha La Pi,55,54,WASH,42,3,85
+zcrm_361303000001899095,Ban Pha Tho,37,37,WASH,44,8,44
+zcrm_361303000001899096,Ban Pha Wai,,,Irrigation,,,
+zcrm_361303000001899097,Ban Pha Wai Klang,,,Irrigation,,,
+zcrm_361303000001899099,Ban Piang Luang,205,195,Further Education Scholarships;WASH,34,3,
+zcrm_361303000001899100,Ban Po No Khee,,,Further Education Scholarships,,,
+zcrm_361303000001899102,Ban Prabart Huay Phueng,62,58,WASH,40,,
+zcrm_361303000001899103,Ban Rak Mai Nua,118,117,WASH,,,7
+zcrm_361303000001899105,Ban Sa La Jiang Tong,,,Irrigation,,,
+zcrm_361303000001899109,Ban Sao Hin,156,145,Irrigation;WASH,107,,4
+zcrm_361303000001899110,Ban Siwader,125,134,WASH,71,,
+zcrm_361303000001899111,Ban Sob Mae Sa Top,107,103,WASH,50,22,50
+zcrm_361303000001899112,Ban Som Poi,,,Irrigation;Further Education Scholarships,,,
+zcrm_361303000001899113,Ban Sud Huay Na,40,39,WASH,38,,
+zcrm_361303000001899114,Ban Suk Jai,,,School Buses,,,
+zcrm_361303000001899116,Ban Tha Hin Som,,,Further Education Scholarships,,,
+zcrm_361303000001899117,Ban Tha Song Kaew,,,Further Education Scholarships,,,
+zcrm_361303000001899118,Ban Thung Ma Kham Pom,106,101,Further Education Scholarships;WASH,42,4,4
+zcrm_361303000001899120,Ban Thung Pra Pon,35,36,WASH,105,8,40
+zcrm_361303000001899121,Ban Tung Wang Kwang,32,29,WASH,45,11,10
+zcrm_361303000001899122,Ban Wa No,90,95,WASH,28,,28
+zcrm_361303000001899123,Ban Wa Thoo,,,Irrigation,,,
+zcrm_361303000001899124,Ban Yod Phai,90,57,WASH,35,8,8
+zcrm_361303000001899125,Huai Koo Pa,,,Further Education Scholarships,,,
+zcrm_361303000001899126,Huay Ka Pa,,,School Buses,,,
+zcrm_361303000001899127,"Hui Sai Leang, Mae Jam Dist",,,Further Education Scholarships,,,
+zcrm_361303000001899128,Khun Mae La,,,Further Education Scholarships,,,
+zcrm_361303000001899131,Ko Mai Loo,,,Further Education Scholarships,,,
+zcrm_361303000001899132,Mae La Ka,,,Further Education Scholarships,,,
+zcrm_361303000001899133,Mae La Noi Duransik,,,School Meals,,,
+zcrm_361303000001899134,Mae Om Pai,,,Further Education Scholarships,,,
+zcrm_361303000001899136,Mae Tho Thai,,,Further Education Scholarships,,,
+zcrm_361303000001899138,Missing Village Details,,,Further Education Scholarships;WASH,,,
+zcrm_361303000001899140,Paw Naw Khi,115,111,Further Education Scholarships;WASH,45,,
+zcrm_361303000001905020,Mon Ta Lang,,,Further Education Scholarships,,,
+zcrm_361303000001905042,Mae Salit Luang,,,Further Education Scholarships,,,
+zcrm_361303000002044003,Ban Huay Bong Tha,,,,,,
+zcrm_361303000002044029,Ban Thung Ruang Thong,,,,,,
+zcrm_361303000002044055,Ban Huay Pom Fard,,,,,,
+zcrm_361303000002044081,Ban Sob Mae Ruam,,,,,,
+zcrm_361303000002044107,Ban Ruam Mo,,,,,,
+zcrm_361303000002044150,Ban Eeh Vee Jo,,,,,,
+zcrm_361303000002044176,Ban Mae Phae Noi,,,,,,
+zcrm_361303000002044202,Ban Mae Lui Bon,,,,,,
+zcrm_361303000002044244,Ban Hua Mae La Ka,56,51,WASH,33,,8
+zcrm_361303000002044270,Ban Huay Khi Pher,,,,,,
+zcrm_361303000002194023,Wangkhan,,,Further Education Scholarships,,,
+zcrm_361303000002242022,Ban Kong Sum Nua,,,WASH,,,
+zcrm_361303000002242074,Ban Kong Sum Tai,,,,,,
+zcrm_361303000002250064,Ban Mae Nil Nok,,,,,,
+zcrm_361303000002250074,Ban Mae Nil Nok,,,,,,
+zcrm_361303000002296049,Ban Mae Ja,128,135,Irrigation,,0,25
+zcrm_361303000002304022,Ban Mae Laep,435,365,Irrigation,,,
+zcrm_361303000002447085,Ban Mae La Ngew,95,85,Irrigation;WASH,20,0,20
+zcrm_361303000002660046,Ban Huay Mai Dam,86,72,Irrigation;WASH,41,7,7
+zcrm_361303000002764085,Ban Thuan,148,134,WASH,14,13,14
+zcrm_361303000002929061,Ban Eh Vee Jo,141,126,,66,0,5
+zcrm_361303000003002061,Ban Pha Khae,46,39,,40,5,40
+,,16739,17751,,7633,514,2587
