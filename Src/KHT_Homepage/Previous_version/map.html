@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet</title>
+
+    <!-- leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 75%;
+            height: 100vh;
+        }
+
+        #widget {
+            width: 25%;
+            height: 100vh;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-left: 20 px;
+            background: #f9f9f9;
+            overflow: auto;
+            transition: all 0.5s ease;
+        }
+
+        #widget.collapsed {
+            width: 0;
+        }
+
+        .coordinate {
+            position: absolute;
+            bottom: 10px;
+            right: 50%;
+        }
+
+        #toggle-button {
+            position: fixed;
+            right: 30%;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map">
+        <div class="leaflet-control coordinate"></div>
+    </div>
+    <div id="widget">
+        <!-- Content of the widget goes here -->
+        <div style="padding-left: 5%;">
+            <h1>The village name</h1>
+            <h2>village detail</h2>
+            <h3>detail</h3>
+        </div>
+    </div>
+    <button id="toggle-button">Toggle Widget</button>
+    
+
+    <script>
+        document.getElementById('toggle-button').addEventListener('click', function() {
+        var widget = document.getElementById('widget');
+        if (widget.style.display !== 'none') {
+            widget.style.display = 'none';
+        } else {
+            widget.style.display = 'block';
+        }
+    });
+    </script>
+</body>
+
+</html>
+
+<!-- leaflet js -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src = "./data/point.js"></script>
+<script src = "./data/line.js"></script>
+<script src = "./data/polygon.js"></script>
+<script src = "./data/hotdogcat.js"></script>
+<script src = "./data/waterline.js"></script>
+<script src = "./data/"></script>
+<script src = "./data/District_MAE_HONG_SON.js"></script>
+
+
+<script>
+    // Map initialization
+    var map = L.map('map').setView([18.7370, 97.8722], 9);
+    
+    
+
+    /* ==========================================
+                TILE  LAYER and WMS
+    =============================================*/
+    // osm layer
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    osm.addTo(map);
+
+    // water color
+    var watercolor = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.{ext}', {
+	attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+    minZoom: 1,
+	maxZoom: 16,
+    ext: 'jpg'
+    });
+    // watercolor.addTo(map)
+
+    // dark map
+    var dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 20
+    });
+    // dark.addTo(map)
+
+    // google street
+    googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+    });
+    // googleStreets.addTo(map)
+ 
+    // google hybrid
+    googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+    });
+    // googleHybrid.addTo(map)
+
+    var nexrad = L.tileLayer.wms("http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+    layers: 'nexrad-n0r-900913',
+    format: 'image/png',
+    transparent: true,
+    attribution: "Weather data © 2012 IEM Nexrad"
+    });
+
+    
+    /* ==========================================
+                        MARKER
+    =============================================*/
+    var myIcon = L.icon({
+    iconUrl: 'img/red_marker.png',
+    iconSize: [50, 50],
+    });
+
+    var singleMarker = L.marker([18.7370, 97.8722], { icon: myIcon, draggable: false});
+    var popup1 = singleMarker.bindPopup('This is Maehongson ' + singleMarker.getLatLng().toString()).openPopup()
+    popup1.addTo(map)
+
+    var Ban_Mae_Kong_Pae_Marker = L.marker([18.565066, 98.116619], { icon: myIcon, draggable: false});
+    var popup2 = Ban_Mae_Kong_Pae_Marker.bindPopup('This is Ban Mae Kong Pae ' + Ban_Mae_Kong_Pae_Marker.getLatLng().toString()).openPopup()
+    popup2.addTo(map)
+
+
+    console.log(singleMarker.toGeoJSON())
+
+
+    /* ==========================================
+                        GEOJSON
+    =============================================*/
+    // var poinData = L.geoJSON(pointJson).addTo(map)
+    // var lineData = L.geoJSON(lineJson).addTo(map)
+    var district = L.geoJSON(district).addTo(map)
+    var hotdogcat = L.geoJSON(hotdogcatdata).addTo(map)
+    var waterline = L.geoJSON(waterlinedata).addTo(map)
+    var water = L.geoJSON(waterdata, {
+        onEachFeature: function(feature, layer) {
+            layer.bindPopup(`<b>Name: </b>` + feature.properties.Name)
+        },
+        style: {
+            fillColor: 'blue',
+            fillOpacity: 1,
+            color: '#c0c0c0',
+        }
+    }).addTo(map)
+    var road = L.geoJSON(roaddata, {
+        onEachFeature: function(feature, layer) {
+        //     layer.bindPopup(`<b>Name: </b>` + feature.properties.Name)
+        },
+        style: {
+            color: 'orange',
+            opacity: 2,
+        }
+    }).addTo(map)
+
+    // var polygonData = L.geoJSON(polygonJson, {
+    //     onEachFeature: function(feature, layer) {
+    //         layer.bindPopup(`<b>Name: </b>` + feature.properties.Name)
+    //     },
+    //     /*style: {
+    //         fillColor: 'red',
+    //         fillOpacity: 1,
+    //         color: '#c0c0c0',
+    //     }*/
+    // }).addTo(map)
+
+
+    // Create a layer group for markers
+    var markersLayerGroup = L.layerGroup([singleMarker, Ban_Mae_Kong_Pae_Marker]);
+
+    // Create a layer group for GeoJSON data
+    var geoJSONLayerGroup = L.layerGroup([hotdogcat, waterline, road]);
+
+
+
+    
+    /* ==========================================
+                    LAYER CONTROL
+    =============================================*/
+    var baseMaps = {
+    "OSM": osm,
+    "Water color map": watercolor,
+    'Dark': dark,
+    'Google Street': googleStreets,
+    "Google Satellite": googleHybrid,
+    };
+
+    var overlayMaps = {
+        "Markers": markersLayerGroup,
+        'GeoJSON Data': geoJSONLayerGroup,
+
+        // 'nexrad': nexrad
+    };
+    // map.removeLayer(singleMarker)
+    
+    L.control.layers(baseMaps, overlayMaps, {collapsed: false}).addTo(map);
+
+    /* ==========================================
+                    LEAFLET EVENT
+    =============================================*/
+    map.on('mouseover', function() {
+        console.log('your mouse is over the map')
+    })
+
+    map.on('mousemove', function(e) {
+        document.getElementsByClassName('coordinate')[0].innerHTML = 'Lat: ' + e.latlng.lat + ' Lng: ' + e.latlng.lng
+        console.log('Lat: ' + e.latlng.lat, 'Lng' + e.latlng.lng)
+    })
+
+</script>

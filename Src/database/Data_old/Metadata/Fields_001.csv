@@ -1,0 +1,1294 @@
+Field Id,Module Id,Label,Api Name,Field Data Type,Is Custom,Maximum Length,Decimal Places,Rounding Precision,Is Unique,Is Encrypt,Formula Return Type,Formula Decimal Places,Preifx,Suffix,Starting Number,Parent Module Id,Header Label
+zcrm_361303000000000127,zcrm_361303000000000061,First Name,first_name,1,false,50,2,2,,,,,,,,,First Name
+zcrm_361303000000000129,zcrm_361303000000000061,Last Name,last_name,127,false,50,2,2,,,,,,,,,Last Name
+zcrm_361303000000000131,zcrm_361303000000000061,Email,email,25,false,100,2,2,,,,,,,,,Email
+zcrm_361303000000000133,zcrm_361303000000000061,Alias,alias,1,false,50,2,2,,,,,,,,,Alias
+zcrm_361303000000000137,zcrm_361303000000000061,Phone,phone,33,false,30,2,2,,,,,,,,,Phone
+zcrm_361303000000000139,zcrm_361303000000000061,Mobile,mobile,33,false,30,2,2,,,,,,,,,Mobile
+zcrm_361303000000000141,zcrm_361303000000000061,Website,website,21,false,250,2,2,,,,,,,,,Website
+zcrm_361303000000000143,zcrm_361303000000000061,Fax,fax,35,false,30,2,2,,,,,,,,,Fax
+zcrm_361303000000000145,zcrm_361303000000000061,Street,street,1,false,250,2,2,,,,,,,,,Street
+zcrm_361303000000000147,zcrm_361303000000000061,City,city,1,false,100,2,2,,,,,,,,,City
+zcrm_361303000000000149,zcrm_361303000000000061,State,state,1,false,100,2,2,,,,,,,,,Province
+zcrm_361303000000000151,zcrm_361303000000000061,Country,country,1,false,100,2,2,,,,,,,,,Country
+zcrm_361303000000000153,zcrm_361303000000000061,Zip Code,zip,1,false,30,2,2,,,,,,,,,Postal Code
+zcrm_361303000000000155,zcrm_361303000000000061,Language,locale,2,false,120,2,2,,,,,,,,,Language
+zcrm_361303000000000157,zcrm_361303000000000061,Country Locale,country_locale,2,false,120,2,2,,,,,,,,,Country Locale
+zcrm_361303000000000159,zcrm_361303000000000061,Time Zone,time_zone,2,false,120,2,2,,,,,,,,,Time Zone
+zcrm_361303000000000271,zcrm_361303000000000069,Note Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Note Owner.id
+zcrm_361303000000000273,zcrm_361303000000000069,Note Title,Note_Title,1,false,120,2,2,,,,,,,,,Note Title
+zcrm_361303000000000275,zcrm_361303000000000069,Note Content,Note_Content,1,false,65535,2,2,,,,,,,,,Note Content
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000095,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000043,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000045,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000047,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000049,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000073,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000067,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000103,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000099,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000063,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000109,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000101,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000111,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000105,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000051,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000107,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000097,Parent.id
+zcrm_361303000000000277,zcrm_361303000000000069,Parent Id,Parent_Id,4,false,120,2,2,,,,,,,,zcrm_361303000000000065,Parent.id
+zcrm_361303000000000279,zcrm_361303000000000069,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000281,zcrm_361303000000000069,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000283,zcrm_361303000000000069,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000285,zcrm_361303000000000069,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000287,zcrm_361303000000000071,Competitor Name,Competitor_Name,1,false,120,2,2,,,,,,,,,Competitor Name
+zcrm_361303000000000289,zcrm_361303000000000071,Potential Id,Deal_Id,8,false,120,2,2,,,,,,,,zcrm_361303000000000049,Deal.id
+zcrm_361303000000000291,zcrm_361303000000000071,Website,Website,21,false,255,2,2,,,,,,,,,Website
+zcrm_361303000000000293,zcrm_361303000000000071,Strength,Strength,1,false,120,2,2,,,,,,,,,Strengths
+zcrm_361303000000000295,zcrm_361303000000000071,Weakness,Weakness,1,false,25,2,2,,,,,,,,,Weaknesses
+zcrm_361303000000000297,zcrm_361303000000000073,Year,Year,32,false,10,2,2,,,,,,,,,Year
+zcrm_361303000000000299,zcrm_361303000000000073,Quarter,Quarter,32,false,10,2,2,,,,,,,,,Quarter
+zcrm_361303000000000301,zcrm_361303000000000073,Forecast Name,Forecast_Name,1,false,50,2,2,,,,,,,,,Forecast Name
+zcrm_361303000000000303,zcrm_361303000000000073,Forecast Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Forecast Owner.id
+zcrm_361303000000000305,zcrm_361303000000000073,Commit Amount,Commit_Amount,36,false,25,2,2,,,,,,,,,Commit Amount
+zcrm_361303000000000307,zcrm_361303000000000073,Bestcase Amount,Bestcase_Amount,36,false,25,2,2,,,,,,,,,Bestcase Amount
+zcrm_361303000000000309,zcrm_361303000000000073,Start Date,Start_Date,24,false,30,2,2,,,,,,,,,Start Date
+zcrm_361303000000000311,zcrm_361303000000000073,End Date,End_Date,24,false,30,2,2,,,,,,,,,End Date
+zcrm_361303000000000313,zcrm_361303000000000073,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000315,zcrm_361303000000000073,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000317,zcrm_361303000000000073,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000319,zcrm_361303000000000073,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000321,zcrm_361303000000000073,Target,Quarterly_Quota,36,false,25,2,2,,,,,,,,,Target
+zcrm_361303000000000323,zcrm_361303000000000073,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000325,zcrm_361303000000000073,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000381,zcrm_361303000000000045,Account Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Village Owner.id
+zcrm_361303000000000383,zcrm_361303000000000045,Rating,Rating,2,false,120,2,2,,false,,,,,,,Rating
+zcrm_361303000000000385,zcrm_361303000000000045,Account Name,Account_Name,1,false,200,2,2,,,,,,,,,Village Name
+zcrm_361303000000000387,zcrm_361303000000000045,Phone,Phone,33,false,30,2,2,,,,,,,,,Phone
+zcrm_361303000000000389,zcrm_361303000000000045,Fax,Fax,35,false,30,2,2,,,,,,,,,Fax
+zcrm_361303000000000391,zcrm_361303000000000045,Parent Account,Parent_Account,133,false,100,2,2,,,,,,,,zcrm_361303000000000045,Parent Village.id
+zcrm_361303000000000393,zcrm_361303000000000045,Website,Website,21,false,255,2,2,,,,,,,,,Website
+zcrm_361303000000000395,zcrm_361303000000000045,Ticker Symbol,Ticker_Symbol,1,false,30,2,2,,,,,,,,,Ticker Symbol
+zcrm_361303000000000397,zcrm_361303000000000045,Account Type,Account_Type,2,false,120,2,2,,false,,,,,,,Village Type
+zcrm_361303000000000399,zcrm_361303000000000045,Ownership,Ownership,2,false,120,2,2,,,,,,,,,Ownership
+zcrm_361303000000000401,zcrm_361303000000000045,Industry,Industry,2,false,120,2,2,,,,,,,,,Industry
+zcrm_361303000000000403,zcrm_361303000000000045,Employees,Employees,32,false,9,2,2,,,,,,,,,Employees
+zcrm_361303000000000405,zcrm_361303000000000045,Annual Revenue,Annual_Revenue,36,false,16,2,2,,,,,,,,,Annual Revenue
+zcrm_361303000000000407,zcrm_361303000000000045,SIC Code,SIC_Code,32,false,9,2,2,,,,,,,,,SIC Code
+zcrm_361303000000000409,zcrm_361303000000000045,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000411,zcrm_361303000000000045,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000413,zcrm_361303000000000045,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000415,zcrm_361303000000000045,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000417,zcrm_361303000000000045,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000419,zcrm_361303000000000045,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000421,zcrm_361303000000000045,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000423,zcrm_361303000000000045,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000000425,zcrm_361303000000000045,Billing Street,Billing_Street,1,false,250,2,2,,,,,,,,,Billing Street
+zcrm_361303000000000427,zcrm_361303000000000045,Shipping Street,Shipping_Street,1,false,250,2,2,,,,,,,,,Shipping Street
+zcrm_361303000000000429,zcrm_361303000000000045,Billing City,Billing_City,1,false,100,2,2,,,,,,,,,Billing City
+zcrm_361303000000000431,zcrm_361303000000000045,Shipping City,Shipping_City,1,false,100,2,2,,,,,,,,,Shipping City
+zcrm_361303000000000433,zcrm_361303000000000045,Billing State,Billing_State,1,false,100,2,2,,,,,,,,,Billing Province
+zcrm_361303000000000435,zcrm_361303000000000045,Shipping State,Shipping_State,1,false,100,2,2,,,,,,,,,Shipping Province
+zcrm_361303000000000437,zcrm_361303000000000045,Billing Code,Billing_Code,1,false,30,2,2,,,,,,,,,Billing Code
+zcrm_361303000000000439,zcrm_361303000000000045,Shipping Code,Shipping_Code,1,false,30,2,2,,,,,,,,,Shipping Code
+zcrm_361303000000000441,zcrm_361303000000000045,Billing Country,Billing_Country,1,false,100,2,2,,,,,,,,,Billing Country
+zcrm_361303000000000443,zcrm_361303000000000045,Shipping Country,Shipping_Country,1,false,100,2,2,,,,,,,,,Shipping Country
+zcrm_361303000000000445,zcrm_361303000000000045,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000447,zcrm_361303000000000047,Contact Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Donor Owner.id
+zcrm_361303000000000449,zcrm_361303000000000047,Lead Source,Lead_Source,2,false,120,2,2,,,,,,,,,Staff Member Source
+zcrm_361303000000000451,zcrm_361303000000000047,First Name,First_Name,27,false,40,2,2,,,,,,,,,First Name
+zcrm_361303000000000453,zcrm_361303000000000047,Last Name,Last_Name,127,false,80,2,2,,,,,,,,,Last Name
+zcrm_361303000000000455,zcrm_361303000000000047,Full Name,Full_Name,1,false,120,2,2,,,,,,,,,Full Name
+zcrm_361303000000000457,zcrm_361303000000000047,Account Name,Account_Name,133,false,100,2,2,,,,,,,,zcrm_361303000000000045,Village Name.id
+zcrm_361303000000000459,zcrm_361303000000000047,Vendor Name,Vendor_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000101,Town/District Name.id
+zcrm_361303000000000461,zcrm_361303000000000047,Email,Email,25,false,100,2,2,true,,,,,,,,Email
+zcrm_361303000000000463,zcrm_361303000000000047,Campaign Source,Campaign_Source,5,false,120,2,2,,,,,,,,,Campaign Source.id
+zcrm_361303000000000465,zcrm_361303000000000047,Title,Title,1,false,100,2,2,,,,,,,,,Title
+zcrm_361303000000000467,zcrm_361303000000000047,Department,Department,1,false,50,2,2,,,,,,,,,Department
+zcrm_361303000000000469,zcrm_361303000000000047,Phone,Phone,33,false,50,2,2,,,,,,,,,Phone
+zcrm_361303000000000471,zcrm_361303000000000047,Home Phone,Home_Phone,33,false,30,2,2,,,,,,,,,Home Phone
+zcrm_361303000000000473,zcrm_361303000000000047,Other Phone,Other_Phone,33,false,30,2,2,,,,,,,,,Other Phone
+zcrm_361303000000000475,zcrm_361303000000000047,Fax,Fax,35,false,30,2,2,,,,,,,,,Fax
+zcrm_361303000000000477,zcrm_361303000000000047,Mobile,Mobile,33,false,30,2,2,,,,,,,,,Mobile
+zcrm_361303000000000479,zcrm_361303000000000047,Date of Birth,Date_of_Birth,24,false,20,2,2,,,,,,,,,Date of Birth
+zcrm_361303000000000481,zcrm_361303000000000047,Assistant,Assistant,1,false,50,2,2,,,,,,,,,Assistant
+zcrm_361303000000000483,zcrm_361303000000000047,Asst Phone,Asst_Phone,33,false,30,2,2,,,,,,,,,Asst Phone
+zcrm_361303000000000487,zcrm_361303000000000047,Email Opt Out,Email_Opt_Out,301,false,50,2,2,,,,,,,,,Email Opt Out
+zcrm_361303000000000489,zcrm_361303000000000047,Skype ID,Skype_ID,37,false,50,2,2,,,,,,,,,Skype Id
+zcrm_361303000000000491,zcrm_361303000000000047,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000493,zcrm_361303000000000047,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000495,zcrm_361303000000000047,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000497,zcrm_361303000000000047,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000499,zcrm_361303000000000047,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000501,zcrm_361303000000000047,Salutation,Salutation,2,false,25,2,2,,,,,,,,,Salutation
+zcrm_361303000000000505,zcrm_361303000000000047,Secondary Email,Secondary_Email,25,false,100,2,2,,,,,,,,,Secondary Email
+zcrm_361303000000000507,zcrm_361303000000000047,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000509,zcrm_361303000000000047,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000511,zcrm_361303000000000047,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000000513,zcrm_361303000000000047,Twitter,Twitter,22,false,50,2,2,,,,,,,,,Twitter
+zcrm_361303000000000515,zcrm_361303000000000047,Mailing Street,Mailing_Street,1,false,250,2,2,,,,,,,,,Mailing Street
+zcrm_361303000000000517,zcrm_361303000000000047,Other Street,Other_Street,1,false,250,2,2,,,,,,,,,Other Street
+zcrm_361303000000000519,zcrm_361303000000000047,Mailing City,Mailing_City,1,false,100,2,2,,,,,,,,,Mailing City
+zcrm_361303000000000521,zcrm_361303000000000047,Other City,Other_City,1,false,100,2,2,,,,,,,,,Other City
+zcrm_361303000000000523,zcrm_361303000000000047,Mailing State,Mailing_State,1,false,100,2,2,,,,,,,,,Mailing Province
+zcrm_361303000000000525,zcrm_361303000000000047,Other State,Other_State,1,false,100,2,2,,,,,,,,,Other Province
+zcrm_361303000000000527,zcrm_361303000000000047,Mailing Zip,Mailing_Zip,1,false,30,2,2,,,,,,,,,Mailing Postal Code
+zcrm_361303000000000529,zcrm_361303000000000047,Other Zip,Other_Zip,1,false,30,2,2,,,,,,,,,Other Postal Code
+zcrm_361303000000000531,zcrm_361303000000000047,Mailing Country,Mailing_Country,1,false,100,2,2,,,,,,,,,Mailing Country
+zcrm_361303000000000533,zcrm_361303000000000047,Other Country,Other_Country,1,false,100,2,2,,,,,,,,,Other Country
+zcrm_361303000000000535,zcrm_361303000000000047,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000537,zcrm_361303000000000049,Potential Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Deal Owner.id
+zcrm_361303000000000539,zcrm_361303000000000049,Amount,Amount,36,false,16,2,2,,,,,,,,,Amount
+zcrm_361303000000000541,zcrm_361303000000000049,Potential Name,Deal_Name,1,false,120,2,2,,,,,,,,,Deal Name
+zcrm_361303000000000543,zcrm_361303000000000049,Closing Date,Closing_Date,24,false,20,2,2,,,,,,,,,Closing Date
+zcrm_361303000000000545,zcrm_361303000000000049,Account Name,Account_Name,133,false,100,2,2,,,,,,,,zcrm_361303000000000045,Village Name.id
+zcrm_361303000000000547,zcrm_361303000000000049,Stage,Stage,26,false,100,2,2,,,,,,,,,Stage
+zcrm_361303000000000549,zcrm_361303000000000049,Type,Type,2,false,120,2,2,,,,,,,,,Type
+zcrm_361303000000000551,zcrm_361303000000000049,Probability,Probability,32,false,3,2,2,,,,,,,,,Probability (%)
+zcrm_361303000000000553,zcrm_361303000000000049,Expected Revenue,Expected_Revenue,36,false,16,2,2,,,,,,,,,Expected Revenue
+zcrm_361303000000000555,zcrm_361303000000000049,Next Step,Next_Step,1,false,100,2,2,,,,,,,,,Next Step
+zcrm_361303000000000557,zcrm_361303000000000049,Lead Source,Lead_Source,2,false,120,2,2,,,,,,,,,Staff Member Source
+zcrm_361303000000000559,zcrm_361303000000000049,Campaign Source,Campaign_Source,133,false,50,2,2,,,,,,,,zcrm_361303000000000051,Campaign Source.id
+zcrm_361303000000000561,zcrm_361303000000000049,Contact Name,Contact_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000047,Donor Name.id
+zcrm_361303000000000563,zcrm_361303000000000049,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000565,zcrm_361303000000000049,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000567,zcrm_361303000000000049,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000569,zcrm_361303000000000049,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000571,zcrm_361303000000000049,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000573,zcrm_361303000000000049,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000575,zcrm_361303000000000049,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000577,zcrm_361303000000000049,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000000579,zcrm_361303000000000049,Lead Conversion Time,Lead_Conversion_Time,32,false,9,2,2,,,,,,,,,Staff Member Conversion Time
+zcrm_361303000000000581,zcrm_361303000000000049,Sales Cycle Duration,Sales_Cycle_Duration,32,false,9,2,2,,,,,,,,,Sales Cycle Duration
+zcrm_361303000000000583,zcrm_361303000000000049,Overall Sales Duration,Overall_Sales_Duration,32,false,9,2,2,,,,,,,,,Overall Sales Duration
+zcrm_361303000000000585,zcrm_361303000000000049,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000587,zcrm_361303000000000043,Lead Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Staff Member Owner.id
+zcrm_361303000000000589,zcrm_361303000000000043,Company,Company,1,false,200,2,2,,,,,,,,,Company
+zcrm_361303000000000591,zcrm_361303000000000043,First Name,First_Name,27,false,40,2,2,,,,,,,,,First Name
+zcrm_361303000000000593,zcrm_361303000000000043,Last Name,Last_Name,127,false,80,2,2,,,,,,,,,Last Name
+zcrm_361303000000000595,zcrm_361303000000000043,Full Name,Full_Name,1,false,120,2,2,,,,,,,,,Full Name
+zcrm_361303000000000597,zcrm_361303000000000043,Designation,Designation,1,false,100,2,2,,,,,,,,,Title
+zcrm_361303000000000599,zcrm_361303000000000043,Email,Email,25,false,100,2,2,,,,,,,,,Email
+zcrm_361303000000000601,zcrm_361303000000000043,Phone,Phone,33,false,30,2,2,,,,,,,,,Phone
+zcrm_361303000000000603,zcrm_361303000000000043,Fax,Fax,35,false,30,2,2,,,,,,,,,Fax
+zcrm_361303000000000605,zcrm_361303000000000043,Mobile,Mobile,33,false,30,2,2,,,,,,,,,Mobile
+zcrm_361303000000000607,zcrm_361303000000000043,Website,Website,21,false,255,2,2,,,,,,,,,Website
+zcrm_361303000000000609,zcrm_361303000000000043,Lead Source,Lead_Source,2,false,120,2,2,,,,,,,,,Staff Member Source
+zcrm_361303000000000611,zcrm_361303000000000043,Lead Status,Lead_Status,2,false,120,2,2,,false,,,,,,,Staff Member Status
+zcrm_361303000000000613,zcrm_361303000000000043,Industry,Industry,2,false,120,2,2,,,,,,,,,Industry
+zcrm_361303000000000615,zcrm_361303000000000043,No of Employees,No_of_Employees,32,false,9,2,2,,,,,,,,,No of Employees
+zcrm_361303000000000617,zcrm_361303000000000043,Annual Revenue,Annual_Revenue,36,false,16,2,2,,,,,,,,,Annual Revenue
+zcrm_361303000000000619,zcrm_361303000000000043,Campaign Source,Campaign_Source,5,false,19,2,2,,,,,,,,,Campaign Source.id
+zcrm_361303000000000621,zcrm_361303000000000043,Email Opt Out,Email_Opt_Out,301,false,50,2,2,,,,,,,,,Email Opt Out
+zcrm_361303000000000623,zcrm_361303000000000043,Skype ID,Skype_ID,37,false,50,2,2,,,,,,,,,Skype Id
+zcrm_361303000000000625,zcrm_361303000000000043,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000627,zcrm_361303000000000043,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000629,zcrm_361303000000000043,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000631,zcrm_361303000000000043,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000633,zcrm_361303000000000043,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000635,zcrm_361303000000000043,Salutation,Salutation,2,false,25,2,2,,,,,,,,,Salutation
+zcrm_361303000000000637,zcrm_361303000000000043,Secondary Email,Secondary_Email,25,false,100,2,2,,,,,,,,,Secondary Email
+zcrm_361303000000000639,zcrm_361303000000000043,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000641,zcrm_361303000000000043,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000643,zcrm_361303000000000043,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000000645,zcrm_361303000000000043,Twitter,Twitter,22,false,50,2,2,,,,,,,,,Twitter
+zcrm_361303000000000647,zcrm_361303000000000043,Street,Street,1,false,250,2,2,,,,,,,,,Street
+zcrm_361303000000000649,zcrm_361303000000000043,City,City,1,false,100,2,2,,,,,,,,,City
+zcrm_361303000000000651,zcrm_361303000000000043,State,State,1,false,100,2,2,,,,,,,,,Province
+zcrm_361303000000000653,zcrm_361303000000000043,Zip Code,Zip_Code,1,false,30,2,2,,,,,,,,,Postal Code
+zcrm_361303000000000655,zcrm_361303000000000043,Country,Country,1,false,100,2,2,,,,,,,,,Country
+zcrm_361303000000000657,zcrm_361303000000000043,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000659,zcrm_361303000000000051,Campaign Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Campaign Owner .id
+zcrm_361303000000000661,zcrm_361303000000000051,Type,Type,2,false,120,2,2,,,,,,,,,Type
+zcrm_361303000000000663,zcrm_361303000000000051,Campaign Name,Campaign_Name,1,false,255,2,2,,,,,,,,,Campaign Name
+zcrm_361303000000000665,zcrm_361303000000000051,Status,Status,2,false,120,2,2,,,,,,,,,Status
+zcrm_361303000000000667,zcrm_361303000000000051,Start Date,Start_Date,24,false,25,2,2,,,,,,,,,Start Date
+zcrm_361303000000000669,zcrm_361303000000000051,End Date,End_Date,24,false,50,2,2,,,,,,,,,End Date
+zcrm_361303000000000671,zcrm_361303000000000051,Expected Revenue,Expected_Revenue,36,false,16,2,2,,,,,,,,,Expected Revenue
+zcrm_361303000000000673,zcrm_361303000000000051,Budgeted Cost,Budgeted_Cost,36,false,16,2,2,,,,,,,,,Budgeted Cost
+zcrm_361303000000000675,zcrm_361303000000000051,Actual Cost,Actual_Cost,36,false,16,2,2,,,,,,,,,Actual Cost
+zcrm_361303000000000677,zcrm_361303000000000051,Expected Response,Expected_Response,32,false,9,2,2,,,,,,,,,Expected Response
+zcrm_361303000000000679,zcrm_361303000000000051,Num sent,Num_sent,32,false,9,2,2,,,,,,,,,Num sent
+zcrm_361303000000000681,zcrm_361303000000000051,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000683,zcrm_361303000000000051,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000685,zcrm_361303000000000051,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000687,zcrm_361303000000000051,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000689,zcrm_361303000000000051,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000691,zcrm_361303000000000051,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000693,zcrm_361303000000000051,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000695,zcrm_361303000000000051,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000707,zcrm_361303000000000095,Case Number,Case_Number,52,false,25,2,2,,,,,,,,,Case Number
+zcrm_361303000000000709,zcrm_361303000000000095,Case Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Case Owner.id
+zcrm_361303000000000711,zcrm_361303000000000095,Status,Status,2,false,120,2,2,,,,,,,,,Status
+zcrm_361303000000000713,zcrm_361303000000000095,Product Name,Product_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000000715,zcrm_361303000000000095,Priority,Priority,2,false,120,2,2,,,,,,,,,Priority
+zcrm_361303000000000717,zcrm_361303000000000095,Type,Type,2,false,120,2,2,,,,,,,,,Type
+zcrm_361303000000000719,zcrm_361303000000000095,Case Origin,Case_Origin,2,false,120,2,2,,,,,,,,,Case Origin
+zcrm_361303000000000721,zcrm_361303000000000095,Subject,Subject,1,false,300,2,2,,,,,,,,,Subject
+zcrm_361303000000000723,zcrm_361303000000000095,Related To,Related_To,133,false,300,2,2,,,,,,,,zcrm_361303000000000047,Related To.id
+zcrm_361303000000000725,zcrm_361303000000000095,Account Name,Account_Name,133,false,300,2,2,,,,,,,,zcrm_361303000000000045,Village Name.id
+zcrm_361303000000000727,zcrm_361303000000000095,Potential Name,Deal_Name,133,false,300,2,2,,,,,,,,zcrm_361303000000000049,Deal Name.id
+zcrm_361303000000000729,zcrm_361303000000000095,No of comments,No_of_comments,32,false,9,2,2,,,,,,,,,No of comments
+zcrm_361303000000000731,zcrm_361303000000000095,Reported By,Reported_By,1,false,255,2,2,,,,,,,,,Reported By
+zcrm_361303000000000733,zcrm_361303000000000095,Email,Email,25,false,300,2,2,,,,,,,,,Email
+zcrm_361303000000000735,zcrm_361303000000000095,Phone,Phone,33,false,300,2,2,,,,,,,,,Phone
+zcrm_361303000000000737,zcrm_361303000000000095,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000739,zcrm_361303000000000095,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000741,zcrm_361303000000000095,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000743,zcrm_361303000000000095,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000745,zcrm_361303000000000095,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000747,zcrm_361303000000000095,Case Number Text,Case_Number_Text,20,false,25,2,2,,,,,,,,,Case Number Text
+zcrm_361303000000000749,zcrm_361303000000000095,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000751,zcrm_361303000000000095,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000753,zcrm_361303000000000095,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000755,zcrm_361303000000000095,Internal Comments,Internal_Comments,3,false,32000,2,2,,,,,,,,,Internal Comments
+zcrm_361303000000000757,zcrm_361303000000000095,Solution,Solution,3,false,32000,2,2,,,,,,,,,Solution
+zcrm_361303000000000759,zcrm_361303000000000095,Add Comment,Add_Comment,3,false,32000,2,2,,,,,,,,,Add Comment
+zcrm_361303000000000761,zcrm_361303000000000095,Comments,Comments,99,false,1000,2,2,,,,,,,,,Comments
+zcrm_361303000000000763,zcrm_361303000000000097,Solution Number,Solution_Number,20,false,25,2,2,,,,,,,,,Solution Number
+zcrm_361303000000000765,zcrm_361303000000000097,Solution Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Solution Owner.id
+zcrm_361303000000000767,zcrm_361303000000000097,Solution Title,Solution_Title,1,false,100,2,2,,,,,,,,,Solution Title
+zcrm_361303000000000769,zcrm_361303000000000097,Published,Published,301,false,100,2,2,,,,,,,,,Published
+zcrm_361303000000000771,zcrm_361303000000000097,Status,Status,2,false,120,2,2,,false,,,,,,,Status
+zcrm_361303000000000773,zcrm_361303000000000097,Product Name,Product_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000000775,zcrm_361303000000000097,No of comments,No_of_comments,32,false,9,2,2,,,,,,,,,No of comments
+zcrm_361303000000000777,zcrm_361303000000000097,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000779,zcrm_361303000000000097,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000781,zcrm_361303000000000097,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000783,zcrm_361303000000000097,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000785,zcrm_361303000000000097,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000787,zcrm_361303000000000097,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000789,zcrm_361303000000000097,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000791,zcrm_361303000000000097,Question,Question,3,false,32000,2,2,,,,,,,,,Question
+zcrm_361303000000000793,zcrm_361303000000000097,Answer,Answer,3,false,32000,2,2,,,,,,,,,Answer
+zcrm_361303000000000795,zcrm_361303000000000097,Add Comment,Add_Comment,3,false,32000,2,2,,,,,,,,,Add Comment
+zcrm_361303000000000797,zcrm_361303000000000097,Comments,Comments,99,false,1000,2,2,,,,,,,,,Comments
+zcrm_361303000000000799,zcrm_361303000000000099,Product Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Product Owner.id
+zcrm_361303000000000801,zcrm_361303000000000099,Product Name,Product_Name,1,false,255,2,2,,,,,,,,,Product Name
+zcrm_361303000000000803,zcrm_361303000000000099,Product Code,Product_Code,1,false,255,2,2,,,,,,,,,Product Code
+zcrm_361303000000000805,zcrm_361303000000000099,Vendor Name,Vendor_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000101,Town/District Name.id
+zcrm_361303000000000807,zcrm_361303000000000099,Product Active,Product_Active,301,false,120,2,2,,,,,,,,,Product Active
+zcrm_361303000000000809,zcrm_361303000000000099,Manufacturer,Manufacturer,2,false,120,2,2,,,,,,,,,Manufacturer
+zcrm_361303000000000811,zcrm_361303000000000099,Product Category,Product_Category,2,false,120,2,2,,false,,,,,,,Product Category
+zcrm_361303000000000813,zcrm_361303000000000099,Sales Start Date,Sales_Start_Date,24,false,120,2,2,,,,,,,,,Sales Start Date
+zcrm_361303000000000815,zcrm_361303000000000099,Sales End Date,Sales_End_Date,24,false,120,2,2,,,,,,,,,Sales End Date
+zcrm_361303000000000817,zcrm_361303000000000099,Support Start Date,Support_Start_Date,24,false,120,2,2,,,,,,,,,Support Start Date
+zcrm_361303000000000819,zcrm_361303000000000099,Support Expiry Date,Support_Expiry_Date,24,false,120,2,2,,,,,,,,,Support Expiry Date
+zcrm_361303000000000821,zcrm_361303000000000099,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000823,zcrm_361303000000000099,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000825,zcrm_361303000000000099,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000827,zcrm_361303000000000099,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000829,zcrm_361303000000000099,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000831,zcrm_361303000000000099,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000833,zcrm_361303000000000099,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000835,zcrm_361303000000000099,Unit Price,Unit_Price,36,false,16,2,2,,,,,,,,,Unit Price
+zcrm_361303000000000837,zcrm_361303000000000099,Commission Rate,Commission_Rate,36,false,16,2,2,,,,,,,,,Commission Rate
+zcrm_361303000000000839,zcrm_361303000000000099,Tax,Tax,96,false,1000,2,2,,,,,,,,,Tax
+zcrm_361303000000000841,zcrm_361303000000000099,Taxable,Taxable,301,false,120,2,2,,,,,,,,,Taxable
+zcrm_361303000000000843,zcrm_361303000000000099,Usage Unit,Usage_Unit,2,false,120,2,2,,,,,,,,,Usage Unit
+zcrm_361303000000000845,zcrm_361303000000000099,Qty Ordered,Qty_Ordered,38,false,9,2,2,,,,,,,,,Qty Ordered
+zcrm_361303000000000847,zcrm_361303000000000099,Qty in Stock,Qty_in_Stock,38,false,9,2,2,,,,,,,,,Qty in Stock
+zcrm_361303000000000849,zcrm_361303000000000099,Reorder Level,Reorder_Level,38,false,9,2,2,,,,,,,,,Reorder Level
+zcrm_361303000000000851,zcrm_361303000000000099,Handler,Handler,55,false,19,2,2,,,,,,,,zcrm_361303000000000061,Handler.id
+zcrm_361303000000000853,zcrm_361303000000000099,Qty in Demand,Qty_in_Demand,38,false,9,2,2,,,,,,,,,Qty in Demand
+zcrm_361303000000000855,zcrm_361303000000000099,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000857,zcrm_361303000000000101,Vendor Name,Vendor_Name,1,false,120,2,2,,,,,,,,,Town/District Name
+zcrm_361303000000000859,zcrm_361303000000000101,Phone,Phone,33,false,120,2,2,,,,,,,,,Phone
+zcrm_361303000000000861,zcrm_361303000000000101,Email,Email,25,false,120,2,2,,,,,,,,,Email
+zcrm_361303000000000863,zcrm_361303000000000101,Website,Website,21,false,255,2,2,,,,,,,,,Website
+zcrm_361303000000000865,zcrm_361303000000000101,GL Account,GL_Account,2,false,120,2,2,,false,,,,,,,GL Account
+zcrm_361303000000000867,zcrm_361303000000000101,Category,Category,1,false,120,2,2,,,,,,,,,Category
+zcrm_361303000000000869,zcrm_361303000000000101,Vendor Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Town/District Owner.id
+zcrm_361303000000000871,zcrm_361303000000000101,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000873,zcrm_361303000000000101,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000875,zcrm_361303000000000101,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000877,zcrm_361303000000000101,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000879,zcrm_361303000000000101,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000881,zcrm_361303000000000101,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000883,zcrm_361303000000000101,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000885,zcrm_361303000000000101,Street,Street,1,false,250,2,2,,,,,,,,,Street
+zcrm_361303000000000887,zcrm_361303000000000101,City,City,1,false,100,2,2,,,,,,,,,City
+zcrm_361303000000000889,zcrm_361303000000000101,State,State,1,false,100,2,2,,,,,,,,,Province
+zcrm_361303000000000891,zcrm_361303000000000101,Zip Code,Zip_Code,1,false,30,2,2,,,,,,,,,Postal Code
+zcrm_361303000000000893,zcrm_361303000000000101,Country,Country,1,false,100,2,2,,,,,,,,,Country
+zcrm_361303000000000895,zcrm_361303000000000101,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000897,zcrm_361303000000000103,Price Book Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Price Book Owner.id
+zcrm_361303000000000899,zcrm_361303000000000103,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000901,zcrm_361303000000000103,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000903,zcrm_361303000000000103,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000905,zcrm_361303000000000103,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000907,zcrm_361303000000000103,Price Book Name,Price_Book_Name,1,false,120,2,2,,,,,,,,,Price Book Name
+zcrm_361303000000000909,zcrm_361303000000000103,Active,Active,301,false,120,2,2,,,,,,,,,Active
+zcrm_361303000000000911,zcrm_361303000000000103,Pricing Model,Pricing_Model,2,false,120,2,2,,,,,,,,,Pricing Model
+zcrm_361303000000000913,zcrm_361303000000000103,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000915,zcrm_361303000000000103,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000917,zcrm_361303000000000103,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000919,zcrm_361303000000000103,Pricing Details,Pricing_Details,51,false,120,2,2,,,,,,,,,Pricing Details
+zcrm_361303000000000921,zcrm_361303000000000103,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000923,zcrm_361303000000000105,Quote Number,Quote_Number,52,false,120,2,2,,,,,,,,,Quote Number
+zcrm_361303000000000925,zcrm_361303000000000105,Subject,Subject,1,false,120,2,2,,,,,,,,,Subject
+zcrm_361303000000000927,zcrm_361303000000000105,Potential Name,Deal_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000049,Deal Name.id
+zcrm_361303000000000929,zcrm_361303000000000105,Quote Stage,Quote_Stage,2,false,120,2,2,,,,,,,,,Quote Stage
+zcrm_361303000000000931,zcrm_361303000000000105,Valid Till,Valid_Till,24,false,120,2,2,,,,,,,,,Valid Till
+zcrm_361303000000000933,zcrm_361303000000000105,Contact Name,Contact_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000047,Donor Name.id
+zcrm_361303000000000935,zcrm_361303000000000105,Carrier,Carrier,2,false,120,2,2,,,,,,,,,Carrier
+zcrm_361303000000000937,zcrm_361303000000000105,Account Name,Account_Name,133,false,100,2,2,,,,,,,,zcrm_361303000000000045,Village Name.id
+zcrm_361303000000000939,zcrm_361303000000000105,Quote Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Quote Owner.id
+zcrm_361303000000000941,zcrm_361303000000000105,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000000943,zcrm_361303000000000105,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000000945,zcrm_361303000000000105,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000000947,zcrm_361303000000000105,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000000949,zcrm_361303000000000105,Sub Total,Sub_Total,117,false,16,9,2,,,currency,9,,,,,Sub Total
+zcrm_361303000000000951,zcrm_361303000000000105,Discount,Discount,36,false,16,9,2,,,,,,,,,Discount
+zcrm_361303000000000953,zcrm_361303000000000105,Tax,Tax,36,false,16,9,2,,,,,,,,,Tax
+zcrm_361303000000000955,zcrm_361303000000000105,Adjustment,Adjustment,36,false,16,9,2,,,,,,,,,Adjustment
+zcrm_361303000000000957,zcrm_361303000000000105,Grand Total,Grand_Total,116,false,16,9,2,,,currency,9,,,,,Grand Total
+zcrm_361303000000000959,zcrm_361303000000000105,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000000961,zcrm_361303000000000105,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000000963,zcrm_361303000000000105,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000000965,zcrm_361303000000000105,Billing Street,Billing_Street,1,false,250,2,2,,,,,,,,,Billing Street
+zcrm_361303000000000967,zcrm_361303000000000105,Shipping Street,Shipping_Street,1,false,250,2,2,,,,,,,,,Shipping Street
+zcrm_361303000000000969,zcrm_361303000000000105,Billing City,Billing_City,1,false,100,2,2,,,,,,,,,Billing City
+zcrm_361303000000000971,zcrm_361303000000000105,Shipping City,Shipping_City,1,false,100,2,2,,,,,,,,,Shipping City
+zcrm_361303000000000973,zcrm_361303000000000105,Billing State,Billing_State,1,false,100,2,2,,,,,,,,,Billing Province
+zcrm_361303000000000975,zcrm_361303000000000105,Shipping State,Shipping_State,1,false,100,2,2,,,,,,,,,Shipping Province
+zcrm_361303000000000977,zcrm_361303000000000105,Billing Code,Billing_Code,1,false,30,2,2,,,,,,,,,Billing Code
+zcrm_361303000000000979,zcrm_361303000000000105,Shipping Code,Shipping_Code,1,false,30,2,2,,,,,,,,,Shipping Code
+zcrm_361303000000000981,zcrm_361303000000000105,Billing Country,Billing_Country,1,false,100,2,2,,,,,,,,,Billing Country
+zcrm_361303000000000983,zcrm_361303000000000105,Shipping Country,Shipping_Country,1,false,100,2,2,,,,,,,,,Shipping Country
+zcrm_361303000000000985,zcrm_361303000000000105,Product Details,Product_Details,50,false,1000,2,2,,,,,,,,,Product Details
+zcrm_361303000000000987,zcrm_361303000000000105,Terms and Conditions,Terms_and_Conditions,3,false,32000,2,2,,,,,,,,,Terms and Conditions
+zcrm_361303000000000989,zcrm_361303000000000105,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000000991,zcrm_361303000000000107,SO Number,SO_Number,52,false,120,2,2,,,,,,,,,SO Number
+zcrm_361303000000000993,zcrm_361303000000000107,Subject,Subject,1,false,120,2,2,,,,,,,,,Subject
+zcrm_361303000000000995,zcrm_361303000000000107,Potential Name,Deal_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000049,Deal Name.id
+zcrm_361303000000000997,zcrm_361303000000000107,Purchase Order,Purchase_Order,1,false,120,2,2,,,,,,,,,Purchase Order
+zcrm_361303000000000999,zcrm_361303000000000107,Quote Name,Quote_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000105,Quote Name.id
+zcrm_361303000000002001,zcrm_361303000000000107,Due Date,Due_Date,24,false,120,2,2,,,,,,,,,Due Date
+zcrm_361303000000002003,zcrm_361303000000000107,Pending,Pending,1,false,120,2,2,,,,,,,,,Pending
+zcrm_361303000000002005,zcrm_361303000000000107,Contact Name,Contact_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000047,Donor Name.id
+zcrm_361303000000002007,zcrm_361303000000000107,Carrier,Carrier,2,false,120,2,2,,,,,,,,,Carrier
+zcrm_361303000000002009,zcrm_361303000000000107,Excise Duty,Excise_Duty,36,false,16,2,2,,,,,,,,,Excise Duty
+zcrm_361303000000002011,zcrm_361303000000000107,Sales Commission,Sales_Commission,36,false,16,2,2,,,,,,,,,Sales Commission
+zcrm_361303000000002013,zcrm_361303000000000107,Status,Status,2,false,120,2,2,,,,,,,,,Status
+zcrm_361303000000002015,zcrm_361303000000000107,Account Name,Account_Name,133,false,100,2,2,,,,,,,,zcrm_361303000000000045,Village Name.id
+zcrm_361303000000002017,zcrm_361303000000000107,Sales Order Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Sales Order Owner.id
+zcrm_361303000000002019,zcrm_361303000000000107,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000002021,zcrm_361303000000000107,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000002023,zcrm_361303000000000107,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000002025,zcrm_361303000000000107,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000002027,zcrm_361303000000000107,Sub Total,Sub_Total,117,false,16,9,2,,,currency,9,,,,,Sub Total
+zcrm_361303000000002029,zcrm_361303000000000107,Discount,Discount,36,false,16,9,2,,,,,,,,,Discount
+zcrm_361303000000002031,zcrm_361303000000000107,Tax,Tax,36,false,16,9,2,,,,,,,,,Tax
+zcrm_361303000000002033,zcrm_361303000000000107,Adjustment,Adjustment,36,false,16,9,2,,,,,,,,,Adjustment
+zcrm_361303000000002035,zcrm_361303000000000107,Grand Total,Grand_Total,116,false,16,9,2,,,currency,9,,,,,Grand Total
+zcrm_361303000000002037,zcrm_361303000000000107,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000002039,zcrm_361303000000000107,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000002041,zcrm_361303000000000107,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000002043,zcrm_361303000000000107,Billing Street,Billing_Street,1,false,250,2,2,,,,,,,,,Billing Street
+zcrm_361303000000002045,zcrm_361303000000000107,Shipping Street,Shipping_Street,1,false,250,2,2,,,,,,,,,Shipping Street
+zcrm_361303000000002047,zcrm_361303000000000107,Billing City,Billing_City,1,false,100,2,2,,,,,,,,,Billing City
+zcrm_361303000000002049,zcrm_361303000000000107,Shipping City,Shipping_City,1,false,100,2,2,,,,,,,,,Shipping City
+zcrm_361303000000002051,zcrm_361303000000000107,Billing State,Billing_State,1,false,100,2,2,,,,,,,,,Billing Province
+zcrm_361303000000002053,zcrm_361303000000000107,Shipping State,Shipping_State,1,false,100,2,2,,,,,,,,,Shipping Province
+zcrm_361303000000002055,zcrm_361303000000000107,Billing Code,Billing_Code,1,false,30,2,2,,,,,,,,,Billing Code
+zcrm_361303000000002057,zcrm_361303000000000107,Shipping Code,Shipping_Code,1,false,30,2,2,,,,,,,,,Shipping Code
+zcrm_361303000000002059,zcrm_361303000000000107,Billing Country,Billing_Country,1,false,100,2,2,,,,,,,,,Billing Country
+zcrm_361303000000002061,zcrm_361303000000000107,Shipping Country,Shipping_Country,1,false,100,2,2,,,,,,,,,Shipping Country
+zcrm_361303000000002063,zcrm_361303000000000107,Product Details,Product_Details,50,false,1000,2,2,,,,,,,,,Product Details
+zcrm_361303000000002065,zcrm_361303000000000107,Terms and Conditions,Terms_and_Conditions,3,false,32000,2,2,,,,,,,,,Terms and Conditions
+zcrm_361303000000002067,zcrm_361303000000000107,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000002069,zcrm_361303000000000109,PO Number,PO_Number,1,false,120,2,2,,,,,,,,,PO Number
+zcrm_361303000000002071,zcrm_361303000000000109,Subject,Subject,1,false,120,2,2,,,,,,,,,Subject
+zcrm_361303000000002073,zcrm_361303000000000109,Vendor Name,Vendor_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000101,Town/District Name.id
+zcrm_361303000000002075,zcrm_361303000000000109,Contact Name,Contact_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000047,Donor Name.id
+zcrm_361303000000002077,zcrm_361303000000000109,PO Date,PO_Date,24,false,120,2,2,,,,,,,,,PO Date
+zcrm_361303000000002079,zcrm_361303000000000109,Due Date,Due_Date,24,false,120,2,2,,,,,,,,,Due Date
+zcrm_361303000000002081,zcrm_361303000000000109,Carrier,Carrier,2,false,120,2,2,,,,,,,,,Carrier
+zcrm_361303000000002083,zcrm_361303000000000109,Excise Duty,Excise_Duty,36,false,16,2,2,,,,,,,,,Excise Duty
+zcrm_361303000000002085,zcrm_361303000000000109,Sales Commission,Sales_Commission,36,false,16,2,2,,,,,,,,,Sales Commission
+zcrm_361303000000002087,zcrm_361303000000000109,Status,Status,2,false,120,2,2,,,,,,,,,Status
+zcrm_361303000000002089,zcrm_361303000000000109,Purchase Order Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Purchase Order Owner.id
+zcrm_361303000000002091,zcrm_361303000000000109,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000002093,zcrm_361303000000000109,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000002095,zcrm_361303000000000109,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000002097,zcrm_361303000000000109,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000002099,zcrm_361303000000000109,Sub Total,Sub_Total,117,false,16,9,2,,,currency,9,,,,,Sub Total
+zcrm_361303000000002101,zcrm_361303000000000109,Discount,Discount,36,false,16,9,2,,,,,,,,,Discount
+zcrm_361303000000002103,zcrm_361303000000000109,Tax,Tax,36,false,16,9,2,,,,,,,,,Tax
+zcrm_361303000000002105,zcrm_361303000000000109,Adjustment,Adjustment,36,false,16,9,2,,,,,,,,,Adjustment
+zcrm_361303000000002107,zcrm_361303000000000109,Grand Total,Grand_Total,116,false,16,9,2,,,currency,9,,,,,Grand Total
+zcrm_361303000000002109,zcrm_361303000000000109,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000002111,zcrm_361303000000000109,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000002113,zcrm_361303000000000109,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000002115,zcrm_361303000000000109,Billing Street,Billing_Street,1,false,250,2,2,,,,,,,,,Billing Street
+zcrm_361303000000002117,zcrm_361303000000000109,Shipping Street,Shipping_Street,1,false,250,2,2,,,,,,,,,Shipping Street
+zcrm_361303000000002119,zcrm_361303000000000109,Billing City,Billing_City,1,false,100,2,2,,,,,,,,,Billing City
+zcrm_361303000000002121,zcrm_361303000000000109,Shipping City,Shipping_City,1,false,100,2,2,,,,,,,,,Shipping City
+zcrm_361303000000002123,zcrm_361303000000000109,Billing State,Billing_State,1,false,100,2,2,,,,,,,,,Billing Province
+zcrm_361303000000002125,zcrm_361303000000000109,Shipping State,Shipping_State,1,false,100,2,2,,,,,,,,,Shipping Province
+zcrm_361303000000002127,zcrm_361303000000000109,Billing Code,Billing_Code,1,false,30,2,2,,,,,,,,,Billing Code
+zcrm_361303000000002129,zcrm_361303000000000109,Shipping Code,Shipping_Code,1,false,30,2,2,,,,,,,,,Shipping Code
+zcrm_361303000000002131,zcrm_361303000000000109,Billing Country,Billing_Country,1,false,100,2,2,,,,,,,,,Billing Country
+zcrm_361303000000002133,zcrm_361303000000000109,Shipping Country,Shipping_Country,1,false,100,2,2,,,,,,,,,Shipping Country
+zcrm_361303000000002135,zcrm_361303000000000109,Product Details,Product_Details,50,false,1000,2,2,,,,,,,,,Product Details
+zcrm_361303000000002137,zcrm_361303000000000109,Terms and Conditions,Terms_and_Conditions,3,false,32000,2,2,,,,,,,,,Terms and Conditions
+zcrm_361303000000002139,zcrm_361303000000000109,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000002141,zcrm_361303000000000111,Invoice Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Invoice Owner.id
+zcrm_361303000000002143,zcrm_361303000000000111,Invoice Number,Invoice_Number,52,false,120,2,2,,,,,,,,,Invoice Number
+zcrm_361303000000002145,zcrm_361303000000000111,Subject,Subject,1,false,120,2,2,,,,,,,,,Subject
+zcrm_361303000000002147,zcrm_361303000000000111,Sales Order,Sales_Order,133,false,120,2,2,,,,,,,,zcrm_361303000000000107,Sales Order.id
+zcrm_361303000000002149,zcrm_361303000000000111,Invoice Date,Invoice_Date,24,false,120,2,2,,,,,,,,,Invoice Date
+zcrm_361303000000002151,zcrm_361303000000000111,Purchase Order,Purchase_Order,1,false,120,2,2,,,,,,,,,Purchase Order
+zcrm_361303000000002153,zcrm_361303000000000111,Due Date,Due_Date,24,false,120,2,2,,,,,,,,,Due Date
+zcrm_361303000000002155,zcrm_361303000000000111,Excise Duty,Excise_Duty,36,false,16,2,2,,,,,,,,,Excise Duty
+zcrm_361303000000002157,zcrm_361303000000000111,Sales Commission,Sales_Commission,36,false,16,2,2,,,,,,,,,Sales Commission
+zcrm_361303000000002159,zcrm_361303000000000111,Status,Status,2,false,120,2,2,,,,,,,,,Status
+zcrm_361303000000002161,zcrm_361303000000000111,Account Name,Account_Name,133,false,100,2,2,,,,,,,,zcrm_361303000000000045,Village Name.id
+zcrm_361303000000002163,zcrm_361303000000000111,Contact Name,Contact_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000047,Donor Name.id
+zcrm_361303000000002165,zcrm_361303000000000111,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000002167,zcrm_361303000000000111,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000002169,zcrm_361303000000000111,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000002171,zcrm_361303000000000111,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000002173,zcrm_361303000000000111,Sub Total,Sub_Total,117,false,16,9,2,,,currency,9,,,,,Sub Total
+zcrm_361303000000002175,zcrm_361303000000000111,Discount,Discount,36,false,16,9,2,,,,,,,,,Discount
+zcrm_361303000000002177,zcrm_361303000000000111,Tax,Tax,36,false,16,9,2,,,,,,,,,Tax
+zcrm_361303000000002179,zcrm_361303000000000111,Adjustment,Adjustment,36,false,16,9,2,,,,,,,,,Adjustment
+zcrm_361303000000002181,zcrm_361303000000000111,Grand Total,Grand_Total,116,false,16,9,2,,,currency,9,,,,,Grand Total
+zcrm_361303000000002183,zcrm_361303000000000111,Common Status,Common_Status,1,false,25,2,2,,,,,,,,,Common Status
+zcrm_361303000000002185,zcrm_361303000000000111,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000002187,zcrm_361303000000000111,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000002189,zcrm_361303000000000111,Billing Street,Billing_Street,1,false,250,2,2,,,,,,,,,Billing Street
+zcrm_361303000000002191,zcrm_361303000000000111,Shipping Street,Shipping_Street,1,false,250,2,2,,,,,,,,,Shipping Street
+zcrm_361303000000002193,zcrm_361303000000000111,Billing City,Billing_City,1,false,100,2,2,,,,,,,,,Billing City
+zcrm_361303000000002195,zcrm_361303000000000111,Shipping City,Shipping_City,1,false,100,2,2,,,,,,,,,Shipping City
+zcrm_361303000000002197,zcrm_361303000000000111,Billing State,Billing_State,1,false,100,2,2,,,,,,,,,Billing Province
+zcrm_361303000000002199,zcrm_361303000000000111,Shipping State,Shipping_State,1,false,100,2,2,,,,,,,,,Shipping Province
+zcrm_361303000000002201,zcrm_361303000000000111,Billing Code,Billing_Code,1,false,30,2,2,,,,,,,,,Billing Code
+zcrm_361303000000002203,zcrm_361303000000000111,Shipping Code,Shipping_Code,1,false,30,2,2,,,,,,,,,Shipping Code
+zcrm_361303000000002205,zcrm_361303000000000111,Billing Country,Billing_Country,1,false,100,2,2,,,,,,,,,Billing Country
+zcrm_361303000000002207,zcrm_361303000000000111,Shipping Country,Shipping_Country,1,false,100,2,2,,,,,,,,,Shipping Country
+zcrm_361303000000002209,zcrm_361303000000000111,Product Details,Product_Details,50,false,1000,2,2,,,,,,,,,Product Details
+zcrm_361303000000002211,zcrm_361303000000000111,Terms and Conditions,Terms_and_Conditions,3,false,32000,2,2,,,,,,,,,Terms and Conditions
+zcrm_361303000000002213,zcrm_361303000000000111,Description,Description,3,false,32000,2,2,,,,,,,,,Description
+zcrm_361303000000002215,zcrm_361303000000000113,Attachment Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,Attachment Owner.id
+zcrm_361303000000002217,zcrm_361303000000000113,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000002219,zcrm_361303000000000113,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000002221,zcrm_361303000000000113,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000002223,zcrm_361303000000000113,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000002225,zcrm_361303000000000113,File Name,File_Name,1,false,100,2,2,,,,,,,,,File Name
+zcrm_361303000000002227,zcrm_361303000000000113,Size,Size,52,false,100,2,2,,,,,,,,,Size
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000063,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000065,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000095,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000097,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000043,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000045,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000047,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000049,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000051,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000099,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000101,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000103,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000105,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000107,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000109,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000111,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000115,Parent.id
+zcrm_361303000000002229,zcrm_361303000000000113,Parent Id,Parent_Id,1,false,100,2,2,,,,,,,,zcrm_361303000000000069,Parent.id
+zcrm_361303000000002231,zcrm_361303000000000115,Sent By,Owner,20,false,19,2,2,,,,,,,,zcrm_361303000000000061,Sent By.id
+zcrm_361303000000002233,zcrm_361303000000000115,Subject,Subject,1,false,250,2,2,,,,,,,,,Subject
+zcrm_361303000000002235,zcrm_361303000000000115,Record Name,Entity_Id,132,false,100,2,2,,,,,,,,zcrm_361303000000000109,Record Name.id
+zcrm_361303000000002235,zcrm_361303000000000115,Record Name,Entity_Id,132,false,100,2,2,,,,,,,,zcrm_361303000000000043,Record Name.id
+zcrm_361303000000002235,zcrm_361303000000000115,Record Name,Entity_Id,132,false,100,2,2,,,,,,,,zcrm_361303000000000105,Record Name.id
+zcrm_361303000000002235,zcrm_361303000000000115,Record Name,Entity_Id,132,false,100,2,2,,,,,,,,zcrm_361303000000000111,Record Name.id
+zcrm_361303000000002235,zcrm_361303000000000115,Record Name,Entity_Id,132,false,100,2,2,,,,,,,,zcrm_361303000000000107,Record Name.id
+zcrm_361303000000002235,zcrm_361303000000000115,Record Name,Entity_Id,132,false,100,2,2,,,,,,,,zcrm_361303000000000049,Record Name.id
+zcrm_361303000000002235,zcrm_361303000000000115,Record Name,Entity_Id,132,false,100,2,2,,,,,,,,zcrm_361303000000000047,Record Name.id
+zcrm_361303000000002239,zcrm_361303000000000115,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000002241,zcrm_361303000000000115,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000002243,zcrm_361303000000000115,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000036001,zcrm_361303000000000099,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036003,zcrm_361303000000000097,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036005,zcrm_361303000000000111,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036007,zcrm_361303000000000095,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036009,zcrm_361303000000000051,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036011,zcrm_361303000000000043,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036013,zcrm_361303000000000045,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036017,zcrm_361303000000000047,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036021,zcrm_361303000000000049,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036023,zcrm_361303000000000109,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036025,zcrm_361303000000000107,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036027,zcrm_361303000000000105,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036031,zcrm_361303000000000103,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000036033,zcrm_361303000000000101,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000040001,zcrm_361303000000000115,Sent To,Sent_To,25,false,100,2,2,,,,,,,,,Sent To
+zcrm_361303000000040002,zcrm_361303000000000115,Module,Module,1,false,50,2,2,,,,,,,,,Module
+zcrm_361303000000040003,zcrm_361303000000000115,Last Opened,Last_Opened,333,false,100,2,2,,,,,,,,,Last Opened
+zcrm_361303000000040004,zcrm_361303000000000115,Last Clicked,Last_Clicked,333,false,100,2,2,,,,,,,,,Last Clicked
+zcrm_361303000000040005,zcrm_361303000000000115,Bounced Time,Bounced_Time,333,false,100,2,2,,,,,,,,,Bounced Time
+zcrm_361303000000040006,zcrm_361303000000000115,First Opened,First_Opened,333,false,100,2,2,,,,,,,,,First Opened
+zcrm_361303000000040007,zcrm_361303000000000115,First Clicked,First_Clicked,333,false,100,2,2,,,,,,,,,First Clicked
+zcrm_361303000000040008,zcrm_361303000000000115,No. of Opens,No_of_Opens,32,false,50,2,2,,,,,,,,,No. of Opens
+zcrm_361303000000040009,zcrm_361303000000000115,No. of Clicks,No_of_Clicks,32,false,50,2,2,,,,,,,,,No. of Clicks
+zcrm_361303000000040010,zcrm_361303000000000115,Template Name,Template_Name,133,false,200,2,2,,,,,,,,,Template Name.id
+zcrm_361303000000054001,zcrm_361303000000000043,Rating,Rating,2,false,120,2,2,,,,,,,,,Rating
+zcrm_361303000000054003,zcrm_361303000000000045,Account Number,Account_Number,52,false,18,2,2,,,,,,,,,Village Number
+zcrm_361303000000054005,zcrm_361303000000000045,Account Site,Account_Site,1,false,100,2,2,,,,,,,,,Village Site
+zcrm_361303000000057001,zcrm_361303000000000043,Score,Score,32,false,9,0,0,,,,,,,,,Score
+zcrm_361303000000057003,zcrm_361303000000000043,Positive Score,Positive_Score,32,false,9,0,0,,,,,,,,,Positive Score
+zcrm_361303000000057005,zcrm_361303000000000043,Negative Score,Negative_Score,32,false,9,0,0,,,,,,,,,Negative Score
+zcrm_361303000000057007,zcrm_361303000000000045,Score,Score,32,false,9,0,0,,,,,,,,,Score
+zcrm_361303000000057009,zcrm_361303000000000045,Positive Score,Positive_Score,32,false,9,0,0,,,,,,,,,Positive Score
+zcrm_361303000000057011,zcrm_361303000000000045,Negative Score,Negative_Score,32,false,9,0,0,,,,,,,,,Negative Score
+zcrm_361303000000057013,zcrm_361303000000000047,Score,Score,32,false,9,0,0,,,,,,,,,Score
+zcrm_361303000000057015,zcrm_361303000000000047,Positive Score,Positive_Score,32,false,9,0,0,,,,,,,,,Positive Score
+zcrm_361303000000057017,zcrm_361303000000000047,Negative Score,Negative_Score,32,false,9,0,0,,,,,,,,,Negative Score
+zcrm_361303000000057019,zcrm_361303000000000049,Score,Score,32,false,9,0,0,,,,,,,,,Score
+zcrm_361303000000057021,zcrm_361303000000000049,Positive Score,Positive_Score,32,false,9,0,0,,,,,,,,,Positive Score
+zcrm_361303000000057023,zcrm_361303000000000049,Negative Score,Negative_Score,32,false,9,0,0,,,,,,,,,Negative Score
+zcrm_361303000000058001,zcrm_361303000000000043,Positive Touch Point Score,Positive_Touch_Point_Score,32,false,9,0,0,,,,,,,,,Positive Touch Point Score
+zcrm_361303000000058003,zcrm_361303000000000043,Touch Point Score,Touch_Point_Score,32,false,9,0,0,,,,,,,,,Touch Point Score
+zcrm_361303000000058005,zcrm_361303000000000043,Negative Touch Point Score,Negative_Touch_Point_Score,32,false,9,0,0,,,,,,,,,Negative Touch Point Score
+zcrm_361303000000058007,zcrm_361303000000000045,Positive Touch Point Score,Positive_Touch_Point_Score,32,false,9,0,0,,,,,,,,,Positive Touch Point Score
+zcrm_361303000000058009,zcrm_361303000000000045,Touch Point Score,Touch_Point_Score,32,false,9,0,0,,,,,,,,,Touch Point Score
+zcrm_361303000000058011,zcrm_361303000000000045,Negative Touch Point Score,Negative_Touch_Point_Score,32,false,9,0,0,,,,,,,,,Negative Touch Point Score
+zcrm_361303000000058013,zcrm_361303000000000047,Positive Touch Point Score,Positive_Touch_Point_Score,32,false,9,0,0,,,,,,,,,Positive Touch Point Score
+zcrm_361303000000058015,zcrm_361303000000000047,Touch Point Score,Touch_Point_Score,32,false,9,0,0,,,,,,,,,Touch Point Score
+zcrm_361303000000058017,zcrm_361303000000000047,Negative Touch Point Score,Negative_Touch_Point_Score,32,false,9,0,0,,,,,,,,,Negative Touch Point Score
+zcrm_361303000000058019,zcrm_361303000000000047,Lead Score,Lead_Score,32,false,9,0,0,,,,,,,,,Lead Score
+zcrm_361303000000058021,zcrm_361303000000000049,Positive Touch Point Score,Positive_Touch_Point_Score,32,false,9,0,0,,,,,,,,,Positive Touch Point Score
+zcrm_361303000000058023,zcrm_361303000000000049,Touch Point Score,Touch_Point_Score,32,false,9,0,0,,,,,,,,,Touch Point Score
+zcrm_361303000000058025,zcrm_361303000000000049,Negative Touch Point Score,Negative_Touch_Point_Score,32,false,9,0,0,,,,,,,,,Negative Touch Point Score
+zcrm_361303000000060001,zcrm_361303000000000115,Sent On,Sent_On,200,false,25,2,2,,,,,,,,,Sent On
+zcrm_361303000000065001,zcrm_361303000000000115,Email_Source,Email_Source,32,false,10,2,2,,,,,,,,,Email_Source
+zcrm_361303000000065002,zcrm_361303000000000115,Status,Status,1,false,25,2,2,,,,,,,,,Status
+zcrm_361303000000069031,zcrm_361303000000000045,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069033,zcrm_361303000000000109,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069035,zcrm_361303000000000047,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069037,zcrm_361303000000000111,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069039,zcrm_361303000000000105,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069041,zcrm_361303000000000043,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069043,zcrm_361303000000000107,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069045,zcrm_361303000000000101,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069047,zcrm_361303000000000103,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069051,zcrm_361303000000000097,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069055,zcrm_361303000000000099,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069059,zcrm_361303000000000095,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069061,zcrm_361303000000000049,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000069063,zcrm_361303000000000051,Tag,Tag,209,false,2000,2,2,,,,,,,,,Tag
+zcrm_361303000000075001,zcrm_361303000000000061,Role,role,16,false,120,2,2,,,,,,,,zcrm_361303000000177737,Role.id
+zcrm_361303000000075003,zcrm_361303000000000061,Date of Birth,dob,24,false,20,2,2,,,,,,,,,Date of Birth
+zcrm_361303000000075005,zcrm_361303000000000061,Added By,created_by,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Added By.id
+zcrm_361303000000075007,zcrm_361303000000000061,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000075009,zcrm_361303000000000061,Added Time,created_time,333,false,25,2,2,,,,,,,,,Added Time
+zcrm_361303000000075011,zcrm_361303000000000061,Modified Time,Modified_Time,333,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000075013,zcrm_361303000000000061,Profile,profile,210,false,120,2,2,,,,,,,,zcrm_361303000000177713,Profile.id
+zcrm_361303000000075015,zcrm_361303000000000061,Time Format,time_format,2,false,120,2,2,,,,,,,,,Time Format
+zcrm_361303000000075017,zcrm_361303000000000061,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000075019,zcrm_361303000000000061,Isonline,Isonline,301,false,50,2,2,,,,,,,,,Online Status
+zcrm_361303000000095001,zcrm_361303000000000045,Record Image,Record_Image,66,false,255,2,2,,,,,,,,,Village Image
+zcrm_361303000000095003,zcrm_361303000000000047,Record Image,Record_Image,66,false,255,2,2,,,,,,,,,Donor Image
+zcrm_361303000000095005,zcrm_361303000000000043,Record Image,Record_Image,66,false,255,2,2,,,,,,,,,Staff Member Image
+zcrm_361303000000095007,zcrm_361303000000000101,Record Image,Record_Image,66,false,255,2,2,,,,,,,,,Town/District Image
+zcrm_361303000000095009,zcrm_361303000000000099,Record Image,Record_Image,66,false,255,2,2,,,,,,,,,Product Image
+zcrm_361303000000104005,zcrm_361303000000104001,Contact Name,Contact_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000047,Donor Name.id
+zcrm_361303000000104007,zcrm_361303000000104001,Potential Name,Potential_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000049,Deal Name.id
+zcrm_361303000000104009,zcrm_361303000000104001,Role,Role,2,false,50,2,2,,false,,,,,,,Role
+zcrm_361303000000112005,zcrm_361303000000112001,Product Name,Product_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000112007,zcrm_361303000000112001,Account Name,Account_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000045,Village Name.id
+zcrm_361303000000112017,zcrm_361303000000112013,Product Name,Product_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000112019,zcrm_361303000000112013,Lead Name,Lead_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000043,Staff Member Name.id
+zcrm_361303000000112029,zcrm_361303000000112025,Product Name,Product_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000112031,zcrm_361303000000112025,Contact Name,Contact_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000047,Donor Name.id
+zcrm_361303000000112041,zcrm_361303000000112037,Product Name,Product_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000112043,zcrm_361303000000112037,Potential Name,Potential_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000049,Deal Name.id
+zcrm_361303000000113005,zcrm_361303000000113001,Potential Name,Potential_Name,133,false,50,2,2,,,,,,,,zcrm_361303000000000049,Deal Name.id
+zcrm_361303000000113007,zcrm_361303000000113001,Stage,Stage,2,false,100,2,2,,,,,,,,,Stage
+zcrm_361303000000113009,zcrm_361303000000113001,Stage Duration (Calendar Days),Stage_Duration_Calendar_Days,32,false,50,2,2,,false,,,,,,,Stage Duration (Calendar Days)
+zcrm_361303000000113011,zcrm_361303000000113001,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000113011,zcrm_361303000000113001,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000113013,zcrm_361303000000113001,Modified Time,Modified_Time,333,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000113015,zcrm_361303000000113001,Amount,Amount,36,false,16,2,2,,,,,,,,,Amount
+zcrm_361303000000113017,zcrm_361303000000113001,Probability,Probability,32,false,3,2,2,,,,,,,,,Probability (%)
+zcrm_361303000000113019,zcrm_361303000000113001,Expected Revenue,Expected_Revenue,36,false,16,2,2,,,,,,,,,Expected Revenue
+zcrm_361303000000113021,zcrm_361303000000113001,Closing Date,Closing_Date,24,false,20,2,2,,,,,,,,,Closing Date
+zcrm_361303000000113023,zcrm_361303000000113001,Exchange Rate,Exchange_Rate,40,false,19,2,2,,,,,,,,,Exchange Rate
+zcrm_361303000000113025,zcrm_361303000000113001,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000115001,zcrm_361303000000000095,Record Image,Record_Image,66,false,255,2,2,,,,,,,,,Case Image
+zcrm_361303000000115003,zcrm_361303000000000049,Record Image,Record_Image,66,false,255,2,2,,,,,,,,,Deal Image
+zcrm_361303000000115005,zcrm_361303000000000097,Record Image,Record_Image,66,false,255,2,2,,,,,,,,,Solution Image
+zcrm_361303000000119001,zcrm_361303000000000047,LAST_ACTION,LAST_ACTION,32,false,50,2,2,,,,,,,,,LAST_ACTION
+zcrm_361303000000119003,zcrm_361303000000000047,LAST_SENT_TIME,LAST_SENT_TIME,333,false,50,2,2,,,,,,,,,LAST_SENT_TIME
+zcrm_361303000000119005,zcrm_361303000000000047,LAST_ACTION_TIME,LAST_ACTION_TIME,333,false,50,2,2,,,,,,,,,LAST_ACTION_TIME
+zcrm_361303000000119007,zcrm_361303000000000043,LAST_ACTION,LAST_ACTION,32,false,50,2,2,,,,,,,,,LAST_ACTION
+zcrm_361303000000119009,zcrm_361303000000000043,LAST_SENT_TIME,LAST_SENT_TIME,333,false,50,2,2,,,,,,,,,LAST_SENT_TIME
+zcrm_361303000000119011,zcrm_361303000000000043,LAST_ACTION_TIME,LAST_ACTION_TIME,333,false,50,2,2,,,,,,,,,LAST_ACTION_TIME
+zcrm_361303000000119013,zcrm_361303000000000049,LAST_ACTION,LAST_ACTION,32,false,50,2,2,,,,,,,,,LAST_ACTION
+zcrm_361303000000119015,zcrm_361303000000000049,LAST_SENT_TIME,LAST_SENT_TIME,333,false,50,2,2,,,,,,,,,LAST_SENT_TIME
+zcrm_361303000000119017,zcrm_361303000000000049,LAST_ACTION_TIME,LAST_ACTION_TIME,333,false,50,2,2,,,,,,,,,LAST_ACTION_TIME
+zcrm_361303000000122001,zcrm_361303000000000047,Reporting To,Reporting_To,133,false,100,2,2,,,,,,,,zcrm_361303000000000047,Reporting To.id
+zcrm_361303000000129001,zcrm_361303000000000043,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129003,zcrm_361303000000000043,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129005,zcrm_361303000000000043,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129007,zcrm_361303000000000043,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129009,zcrm_361303000000000045,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129011,zcrm_361303000000000045,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129013,zcrm_361303000000000045,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129015,zcrm_361303000000000045,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129017,zcrm_361303000000000047,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129019,zcrm_361303000000000047,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129021,zcrm_361303000000000047,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129023,zcrm_361303000000000047,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129025,zcrm_361303000000000049,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129027,zcrm_361303000000000049,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129029,zcrm_361303000000000049,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129031,zcrm_361303000000000049,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129033,zcrm_361303000000000051,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129035,zcrm_361303000000000051,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129037,zcrm_361303000000000051,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129039,zcrm_361303000000000051,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129073,zcrm_361303000000000095,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129075,zcrm_361303000000000095,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129077,zcrm_361303000000000095,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129079,zcrm_361303000000000095,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129081,zcrm_361303000000000097,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129083,zcrm_361303000000000097,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129085,zcrm_361303000000000097,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129087,zcrm_361303000000000097,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129089,zcrm_361303000000000099,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129091,zcrm_361303000000000099,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129093,zcrm_361303000000000099,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129095,zcrm_361303000000000099,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129097,zcrm_361303000000000101,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129099,zcrm_361303000000000101,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129101,zcrm_361303000000000101,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129103,zcrm_361303000000000101,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129105,zcrm_361303000000000103,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129107,zcrm_361303000000000103,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129109,zcrm_361303000000000103,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129111,zcrm_361303000000000103,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129113,zcrm_361303000000000105,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129115,zcrm_361303000000000105,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129117,zcrm_361303000000000105,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129119,zcrm_361303000000000105,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129121,zcrm_361303000000000107,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129123,zcrm_361303000000000107,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129125,zcrm_361303000000000107,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129127,zcrm_361303000000000107,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129129,zcrm_361303000000000109,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129131,zcrm_361303000000000109,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129133,zcrm_361303000000000109,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129135,zcrm_361303000000000109,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000129137,zcrm_361303000000000111,User Modified Time,User_Modified_Time,333,false,25,2,2,,,,,,,,,User Modified Time
+zcrm_361303000000129139,zcrm_361303000000000111,System Related Activity Time,System_Related_Activity_Time,333,false,25,2,2,,,,,,,,,System Related Activity Time
+zcrm_361303000000129141,zcrm_361303000000000111,User Related Activity Time,User_Related_Activity_Time,333,false,25,2,2,,,,,,,,,User Related Activity Time
+zcrm_361303000000129143,zcrm_361303000000000111,System Modified Time,System_Modified_Time,333,false,25,2,2,,,,,,,,,System Modified Time
+zcrm_361303000000134001,zcrm_361303000000000051,Parent Campaign,Parent_Campaign,133,false,120,2,2,,,,,,,,zcrm_361303000000000051,Parent Campaign.id
+zcrm_361303000000135001,zcrm_361303000000000049,Pipeline,Pipeline,2,false,50,2,2,,,,,,,,,Pipeline
+zcrm_361303000000139033,zcrm_361303000000113001,Stage Duration (Time),Stage_Duration_Time,53,false,25,2,2,,,,,,,,,Stage Duration (Time)
+zcrm_361303000000143001,zcrm_361303000000000115,Cc,Cc,25,false,250,2,2,,,,,,,,,Cc
+zcrm_361303000000143003,zcrm_361303000000000115,Sender,Sender,25,false,250,2,2,,,,,,,,,Sender
+zcrm_361303000000143005,zcrm_361303000000000115,Attachment Name,Attachment_Name,1,false,32000,2,2,,,,,,,,,Attachment Name
+zcrm_361303000000143007,zcrm_361303000000000115,Has Attachment,Has_Attachment,301,false,50,2,2,,,,,,,,,Has Attachment
+zcrm_361303000000143009,zcrm_361303000000000115,Email Sentiment,Email_Sentiment,2,false,120,2,2,,,,,,,,,Email Sentiment
+zcrm_361303000000149001,zcrm_361303000000000115,Source,Source,2,false,50,2,2,,,,,,,,,Source
+zcrm_361303000000154007,zcrm_361303000000154001,Status,Status,2,false,255,2,2,,,,,,,,,Status
+zcrm_361303000000168696,zcrm_361303000000000043,Converted Date Time,Converted_Date_Time,333,false,50,2,2,,,,,,,,,Converted Date Time
+zcrm_361303000000168698,zcrm_361303000000000043,Record Approval Status,Record_Approval_Status,32,false,50,2,2,,,,,,,,,Record Approval Status
+zcrm_361303000000168700,zcrm_361303000000000043,Is Record Duplicate,Is_Record_Duplicate,301,false,50,2,2,,,,,,,,,Is Record Duplicate
+zcrm_361303000000168702,zcrm_361303000000000047,Record Approval Status,Record_Approval_Status,32,false,50,2,2,,,,,,,,,Record Approval Status
+zcrm_361303000000168704,zcrm_361303000000000047,Is Record Duplicate,Is_Record_Duplicate,301,false,50,2,2,,,,,,,,,Is Record Duplicate
+zcrm_361303000000168706,zcrm_361303000000000095,Record Approval Status,Record_Approval_Status,32,false,50,2,2,,,,,,,,,Record Approval Status
+zcrm_361303000000168708,zcrm_361303000000000095,Is Record Duplicate,Is_Record_Duplicate,301,false,50,2,2,,,,,,,,,Is Record Duplicate
+zcrm_361303000000168710,zcrm_361303000000000049,Deal Category Status,Deal_Category_Status,2,false,120,2,2,,,,,,,,,Deal Category Status
+zcrm_361303000000174201,zcrm_361303000000174001,S.NO,Sequence_Number,52,false,18,2,2,,,,,,,,,S.NO
+zcrm_361303000000174203,zcrm_361303000000174001,InvoicedItems Name,Name,111,false,120,2,2,,,,,,,1,,InvoicedItems Name
+zcrm_361303000000174205,zcrm_361303000000174001,InvoicedItems Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,InvoicedItems Owner.id
+zcrm_361303000000174207,zcrm_361303000000174001,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000174209,zcrm_361303000000174001,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000174211,zcrm_361303000000174001,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000174213,zcrm_361303000000174001,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000174215,zcrm_361303000000174001,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000174217,zcrm_361303000000174001,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000174219,zcrm_361303000000174001,Parent Id,Parent_Id,133,false,120,2,2,,,,,,,,zcrm_361303000000000111,Parent.id
+zcrm_361303000000174221,zcrm_361303000000174001,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000174223,zcrm_361303000000174001,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000174225,zcrm_361303000000174001,Product Name,Product_Name,133,false,120,2,2,,false,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000174227,zcrm_361303000000174001,Description,Description,3,false,2000,2,2,,,,,,,,,Description
+zcrm_361303000000174229,zcrm_361303000000174001,Quantity,Quantity,38,false,16,9,2,,,,,,,,,Quantity
+zcrm_361303000000174231,zcrm_361303000000174001,Price Book,Price_Book_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000103,Price Book.id
+zcrm_361303000000174233,zcrm_361303000000174001,List Price,List_Price,36,false,16,9,2,,,,,,,,,List Price
+zcrm_361303000000174236,zcrm_361303000000174001,Amount,Total,116,false,16,9,2,,,currency,9,,,,,Amount
+zcrm_361303000000174238,zcrm_361303000000174001,Discount,Discount,36,false,16,9,2,,,,,,,,,Discount
+zcrm_361303000000174240,zcrm_361303000000174001,Total After Discount,Total_After_Discount,116,false,16,9,2,,,currency,9,,,,,Total After Discount
+zcrm_361303000000174242,zcrm_361303000000174001,Tax,Tax,36,false,16,9,2,,,,,,,,,Tax
+zcrm_361303000000174244,zcrm_361303000000174001,Total,Net_Total,116,false,16,9,2,,,currency,9,,,,,Total
+zcrm_361303000000174246,zcrm_361303000000174001,Tax by Percentage,Line_Tax,47,false,10000,2,2,,,,,,,,,Tax by Percentage
+zcrm_361303000000174247,zcrm_361303000000000111,Invoiced_Items,Invoiced_Items,500,false,50,2,2,,,,,,,,,Invoiced_Items
+zcrm_361303000000174619,zcrm_361303000000174419,S.NO,Sequence_Number,52,false,18,2,2,,,,,,,,,S.NO
+zcrm_361303000000174621,zcrm_361303000000174419,PurchaseItems Name,Name,111,false,120,2,2,,,,,,,1,,PurchaseItems Name
+zcrm_361303000000174623,zcrm_361303000000174419,PurchaseItems Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,PurchaseItems Owner.id
+zcrm_361303000000174625,zcrm_361303000000174419,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000174627,zcrm_361303000000174419,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000174629,zcrm_361303000000174419,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000174631,zcrm_361303000000174419,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000174633,zcrm_361303000000174419,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000174635,zcrm_361303000000174419,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000174637,zcrm_361303000000174419,Parent Id,Parent_Id,133,false,120,2,2,,,,,,,,zcrm_361303000000000109,Parent.id
+zcrm_361303000000174639,zcrm_361303000000174419,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000174641,zcrm_361303000000174419,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000174643,zcrm_361303000000174419,Product Name,Product_Name,133,false,120,2,2,,false,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000174645,zcrm_361303000000174419,Description,Description,3,false,2000,2,2,,,,,,,,,Description
+zcrm_361303000000174647,zcrm_361303000000174419,Quantity,Quantity,38,false,16,9,2,,,,,,,,,Quantity
+zcrm_361303000000174649,zcrm_361303000000174419,Price Book,Price_Book_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000103,Price Book.id
+zcrm_361303000000174651,zcrm_361303000000174419,List Price,List_Price,36,false,16,9,2,,,,,,,,,List Price
+zcrm_361303000000174654,zcrm_361303000000174419,Amount,Total,116,false,16,9,2,,,currency,9,,,,,Amount
+zcrm_361303000000174656,zcrm_361303000000174419,Discount,Discount,36,false,16,9,2,,,,,,,,,Discount
+zcrm_361303000000174658,zcrm_361303000000174419,Total After Discount,Total_After_Discount,116,false,16,9,2,,,currency,9,,,,,Total After Discount
+zcrm_361303000000174660,zcrm_361303000000174419,Tax,Tax,36,false,16,9,2,,,,,,,,,Tax
+zcrm_361303000000174662,zcrm_361303000000174419,Total,Net_Total,116,false,16,9,2,,,currency,9,,,,,Total
+zcrm_361303000000174664,zcrm_361303000000174419,Tax by Percentage,Line_Tax,47,false,10000,2,2,,,,,,,,,Tax by Percentage
+zcrm_361303000000174665,zcrm_361303000000000109,Purchase_Items,Purchase_Items,500,false,50,2,2,,,,,,,,,Purchase_Items
+zcrm_361303000000175037,zcrm_361303000000174837,S.NO,Sequence_Number,52,false,18,2,2,,,,,,,,,S.NO
+zcrm_361303000000175039,zcrm_361303000000174837,OrderedItems Name,Name,111,false,120,2,2,,,,,,,1,,OrderedItems Name
+zcrm_361303000000175041,zcrm_361303000000174837,OrderedItems Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,OrderedItems Owner.id
+zcrm_361303000000175043,zcrm_361303000000174837,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000175045,zcrm_361303000000174837,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000175047,zcrm_361303000000174837,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000175049,zcrm_361303000000174837,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000175051,zcrm_361303000000174837,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000175053,zcrm_361303000000174837,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000175055,zcrm_361303000000174837,Parent Id,Parent_Id,133,false,120,2,2,,,,,,,,zcrm_361303000000000107,Parent.id
+zcrm_361303000000175057,zcrm_361303000000174837,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000175059,zcrm_361303000000174837,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000175061,zcrm_361303000000174837,Product Name,Product_Name,133,false,120,2,2,,false,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000175063,zcrm_361303000000174837,Description,Description,3,false,2000,2,2,,,,,,,,,Description
+zcrm_361303000000175065,zcrm_361303000000174837,Quantity,Quantity,38,false,16,9,2,,,,,,,,,Quantity
+zcrm_361303000000175067,zcrm_361303000000174837,Price Book,Price_Book_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000103,Price Book.id
+zcrm_361303000000175069,zcrm_361303000000174837,List Price,List_Price,36,false,16,9,2,,,,,,,,,List Price
+zcrm_361303000000175072,zcrm_361303000000174837,Amount,Total,116,false,16,9,2,,,currency,9,,,,,Amount
+zcrm_361303000000175074,zcrm_361303000000174837,Discount,Discount,36,false,16,9,2,,,,,,,,,Discount
+zcrm_361303000000175076,zcrm_361303000000174837,Total After Discount,Total_After_Discount,116,false,16,9,2,,,currency,9,,,,,Total After Discount
+zcrm_361303000000175078,zcrm_361303000000174837,Tax,Tax,36,false,16,9,2,,,,,,,,,Tax
+zcrm_361303000000175080,zcrm_361303000000174837,Total,Net_Total,116,false,16,9,2,,,currency,9,,,,,Total
+zcrm_361303000000175082,zcrm_361303000000174837,Tax by Percentage,Line_Tax,47,false,10000,2,2,,,,,,,,,Tax by Percentage
+zcrm_361303000000175083,zcrm_361303000000000107,Ordered_Items,Ordered_Items,500,false,50,2,2,,,,,,,,,Ordered_Items
+zcrm_361303000000175455,zcrm_361303000000175255,S.NO,Sequence_Number,52,false,18,2,2,,,,,,,,,S.NO
+zcrm_361303000000175457,zcrm_361303000000175255,QuotedItems Name,Name,111,false,120,2,2,,,,,,,1,,QuotedItems Name
+zcrm_361303000000175459,zcrm_361303000000175255,QuotedItems Owner,Owner,8,false,120,2,2,,,,,,,,zcrm_361303000000000061,QuotedItems Owner.id
+zcrm_361303000000175461,zcrm_361303000000175255,Created By,Created_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000175463,zcrm_361303000000175255,Modified By,Modified_By,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000175465,zcrm_361303000000175255,Created Time,Created_Time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000175467,zcrm_361303000000175255,Modified Time,Modified_Time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000175469,zcrm_361303000000175255,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000175471,zcrm_361303000000175255,Layout,Layout,208,false,50,2,2,,,,,,,,,Layout.id
+zcrm_361303000000175473,zcrm_361303000000175255,Parent Id,Parent_Id,133,false,120,2,2,,,,,,,,zcrm_361303000000000105,Parent.id
+zcrm_361303000000175475,zcrm_361303000000175255,Currency,Currency,39,false,5,2,2,,,,,,,,,Currency
+zcrm_361303000000175477,zcrm_361303000000175255,Exchange Rate,Exchange_Rate,40,false,19,9,2,,,,,,,,,Exchange Rate
+zcrm_361303000000175479,zcrm_361303000000175255,Product Name,Product_Name,133,false,120,2,2,,false,,,,,,zcrm_361303000000000099,Product Name.id
+zcrm_361303000000175481,zcrm_361303000000175255,Description,Description,3,false,2000,2,2,,,,,,,,,Description
+zcrm_361303000000175483,zcrm_361303000000175255,Quantity,Quantity,38,false,16,9,2,,,,,,,,,Quantity
+zcrm_361303000000175485,zcrm_361303000000175255,Price Book,Price_Book_Name,133,false,120,2,2,,,,,,,,zcrm_361303000000000103,Price Book.id
+zcrm_361303000000175487,zcrm_361303000000175255,List Price,List_Price,36,false,16,9,2,,,,,,,,,List Price
+zcrm_361303000000175490,zcrm_361303000000175255,Amount,Total,116,false,16,9,2,,,currency,9,,,,,Amount
+zcrm_361303000000175492,zcrm_361303000000175255,Discount,Discount,36,false,16,9,2,,,,,,,,,Discount
+zcrm_361303000000175494,zcrm_361303000000175255,Total After Discount,Total_After_Discount,116,false,16,9,2,,,currency,9,,,,,Total After Discount
+zcrm_361303000000175496,zcrm_361303000000175255,Tax,Tax,36,false,16,9,2,,,,,,,,,Tax
+zcrm_361303000000175498,zcrm_361303000000175255,Total,Net_Total,116,false,16,9,2,,,currency,9,,,,,Total
+zcrm_361303000000175500,zcrm_361303000000175255,Tax by Percentage,Line_Tax,47,false,10000,2,2,,,,,,,,,Tax by Percentage
+zcrm_361303000000175501,zcrm_361303000000000105,Quoted_Items,Quoted_Items,500,false,50,2,2,,,,,,,,,Quoted_Items
+zcrm_361303000000177632,zcrm_361303000000154001,Meeting Title,Event_Id,133,false,120,2,2,,,,,,,,zcrm_361303000000000065,Title.id
+zcrm_361303000000177634,zcrm_361303000000154001,Participant Name,Participant_Id,132,false,120,2,2,,,,,,,,zcrm_361303000000000043,Participant Name.id
+zcrm_361303000000177634,zcrm_361303000000154001,Participant Name,Participant_Id,132,false,120,2,2,,,,,,,,zcrm_361303000000000047,Participant Name.id
+zcrm_361303000000177634,zcrm_361303000000154001,Participant Name,Participant_Id,132,false,120,2,2,,,,,,,,zcrm_361303000000000061,Participant Name.id
+zcrm_361303000000177636,zcrm_361303000000154001,Invitee Status,Invitee_Status,1,false,120,2,2,,,,,,,,,Invitee Status
+zcrm_361303000000177638,zcrm_361303000000154001,Email,Email,25,false,120,2,2,,,,,,,,,Email
+zcrm_361303000000177640,zcrm_361303000000154001,Notification Sent,Notification_Sent,301,false,120,2,2,,,,,,,,,Notification Sent
+zcrm_361303000000177642,zcrm_361303000000154001,Invited Time,Invited_Time,200,false,120,2,2,,,,,,,,,Invited Time
+zcrm_361303000000177644,zcrm_361303000000154001,Email Message Id,Email_Message_Id,1,false,120,2,2,,,,,,,,,Email Message Id
+zcrm_361303000000177646,zcrm_361303000000154001,Event Hosted By,Event_Hosted_By,1,false,120,2,2,,,,,,,,,Event Hosted By
+zcrm_361303000000177648,zcrm_361303000000154001,Thirdparty Event Details,Tp_Event_Details,110,false,2000,2,2,,,,,,,,,Thirdparty Event Details
+zcrm_361303000000177650,zcrm_361303000000154001,Invitee Note,Invitee_Note,110,false,2000,2,2,,,,,,,,,Invitee Note
+zcrm_361303000000177652,zcrm_361303000000154001,Invitee Details,Invitee_Details,3,false,32000,2,2,,,,,,,,,Invitee Details
+zcrm_361303000000177717,zcrm_361303000000177713,Profile Name,name,1,false,50,2,2,,,,,,,,,Profile Name
+zcrm_361303000000177719,zcrm_361303000000177713,Created By,created_by,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000000177721,zcrm_361303000000177713,Modified By,modified_by,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000177723,zcrm_361303000000177713,Created Time,created_time,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000177725,zcrm_361303000000177713,Modified Time,modified_time,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000000177727,zcrm_361303000000177713,Description,description,110,false,250,2,2,,,,,,,,,Description
+zcrm_361303000000177741,zcrm_361303000000177737,Role Name,name,1,false,50,2,2,,,,,,,,,Role Name
+zcrm_361303000000177743,zcrm_361303000000177737,Reports To,reporting_to,133,false,25,2,2,,,,,,,,zcrm_361303000000177737,Reports To.id
+zcrm_361303000000177745,zcrm_361303000000177737,Share Data with Peers,share_data_with_peers,301,false,0,2,2,,,,,,,,,Share Data with Peers
+zcrm_361303000000177747,zcrm_361303000000177737,Description,description,110,false,250,2,2,,,,,,,,,Description
+zcrm_361303000000192015,zcrm_361303000000000061,Status,status,2,false,120,2,2,,,,,,,,,Status
+zcrm_361303000000197009,zcrm_361303000000000061,Full Name,full_name,1,false,120,2,2,,,,,,,,,Full Name
+zcrm_361303000000197011,zcrm_361303000000000061,Confirm,confirm,301,false,50,2,2,,,,,,,,,Confirm
+zcrm_361303000000197013,zcrm_361303000000000061,Zuid,zuid,52,false,18,2,2,,,,,,,,,Zuid
+zcrm_361303000000197015,zcrm_361303000000000061,Reporting To,Reporting_To,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Reporting To.id
+zcrm_361303000000197017,zcrm_361303000000000061,Date Format,date_format,2,false,120,2,2,,,,,,,,,Date Format
+zcrm_361303000000205018,zcrm_361303000000205016,Field Label,Field_Label,1,false,120,2,2,,,,,,,,,Field Label
+zcrm_361303000000221013,zcrm_361303000000000043,Lead Conversion Time,Lead_Conversion_Time,32,false,9,0,0,,,,,,,,,Staff Member Conversion Time
+zcrm_361303000000221024,zcrm_361303000000000115,Bounce Reason,Bounce_Reason,1,false,250,2,2,,,,,,,,,Bounce Reason
+zcrm_361303000000224001,zcrm_361303000000000043,Unsubscribed Mode,Unsubscribed_Mode,2,false,50,2,2,,false,,,,,,,Unsubscribed Mode
+zcrm_361303000000224002,zcrm_361303000000000043,Unsubscribed Time,Unsubscribed_Time,333,false,50,2,2,,,,,,,,,Unsubscribed Time
+zcrm_361303000000224022,zcrm_361303000000000047,Unsubscribed Mode,Unsubscribed_Mode,2,false,50,2,2,,false,,,,,,,Unsubscribed Mode
+zcrm_361303000000224023,zcrm_361303000000000047,Unsubscribed Time,Unsubscribed_Time,333,false,50,2,2,,,,,,,,,Unsubscribed Time
+zcrm_361303000000225027,zcrm_361303000000000061,Current Shift,Current_Shift,133,false,20,2,2,,,,,,,,zcrm_361303000000225011,Current Shift.id
+zcrm_361303000000225029,zcrm_361303000000000061,Next Shift,Next_Shift,133,false,20,2,2,,,,,,,,zcrm_361303000000225011,Next Shift.id
+zcrm_361303000000225031,zcrm_361303000000000061,Shift Effective From,Shift_Effective_From,333,false,50,2,2,,,,,,,,,Shift Effective From
+zcrm_361303000000226001,zcrm_361303000000000043,Converted Account,Converted_Account,133,false,25,2,2,,,,,,,,zcrm_361303000000000045,Converted Account.id
+zcrm_361303000000226003,zcrm_361303000000000043,Converted Contact,Converted_Contact,133,false,25,2,2,,,,,,,,zcrm_361303000000000047,Converted Contact.id
+zcrm_361303000000226005,zcrm_361303000000000043,Converted Deal,Converted_Deal,133,false,25,2,2,,,,,,,,zcrm_361303000000000049,Converted Deal.id
+zcrm_361303000000237001,zcrm_361303000000000073,Role,Role,999,false,25,2,2,,,,,,,,zcrm_361303000000177737,Role
+zcrm_361303000000237003,zcrm_361303000000000073,Parent Forecast,Parent_Forecast,301,false,10,2,2,,,,,,,,,Parent Forecast
+zcrm_361303000000237005,zcrm_361303000000000073,Target excluding child,Target_excluding_child,36,false,25,2,2,,,,,,,,,Target excluding child
+zcrm_361303000000237007,zcrm_361303000000000073,Target achieved excluding child,Target_achieved_excluding_child,36,false,25,2,2,,,,,,,,,Target achieved excluding child
+zcrm_361303000000237009,zcrm_361303000000000073,Target achieved percentage excluding child,Target_achieved_percentage_excluding_child,34,false,5,2,2,,,,,,,,,Target Achieved Percentage Excluding Child
+zcrm_361303000000237011,zcrm_361303000000000073,Pipeline excluding child,Pipeline_excluding_child,36,false,25,2,2,,,,,,,,,Pipeline excluding child
+zcrm_361303000000237013,zcrm_361303000000000073,Target Achieved,Target_Achieved,36,false,25,2,2,,,,,,,,,Target Achieved
+zcrm_361303000000237015,zcrm_361303000000000073,Target Achieved Percentage,Target_Achieved_Percentage,34,false,5,2,2,,,,,,,,,Target Achieved Percentage
+zcrm_361303000000237017,zcrm_361303000000000073,Potential Pipeline,Potential_Pipeline,36,false,25,2,2,,,,,,,,,Deal Pipeline
+zcrm_361303000000237019,zcrm_361303000000000073,Last Computed Time,Last_Computed_Time,200,false,25,2,2,,,,,,,,,Last Computed Time
+zcrm_361303000000237021,zcrm_361303000000000073,Target Achieved Count,Target_Achieved_Count,52,false,19,2,2,,,,,,,,,Target Achieved Count
+zcrm_361303000000237023,zcrm_361303000000000073,Pipeline Count,Pipeline_Count,52,false,19,2,2,,,,,,,,,Pipeline Count
+zcrm_361303000000237089,zcrm_361303000000000043,Territories,Territories,999,false,120,2,2,,,,,,,,,Territories
+zcrm_361303000000237091,zcrm_361303000000000045,Territories,Territories,999,false,120,2,2,,,,,,,,,Territories
+zcrm_361303000000237093,zcrm_361303000000000047,Territories,Territories,999,false,120,2,2,,,,,,,,,Territories
+zcrm_361303000000237095,zcrm_361303000000000049,Territory,Territory,999,false,120,2,2,,,,,,,,,Territory
+zcrm_361303000000237103,zcrm_361303000000237101,Territory Name,name,1,false,50,2,2,,,,,,,,,Territory Name
+zcrm_361303000000237104,zcrm_361303000000237101,Description,description,3,false,250,2,2,,,,,,,,,Description
+zcrm_361303000000237105,zcrm_361303000000237101,Created By,created_by,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By
+zcrm_361303000000237106,zcrm_361303000000237101,Created Time,created_time,333,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000000237107,zcrm_361303000000237101,Modified By,modified_by,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000000237108,zcrm_361303000000237101,Mofified Time,modified_time,333,false,25,2,2,,,,,,,,,Mofified Time
+zcrm_361303000000237109,zcrm_361303000000237101,Parent Territory,reporting_to,133,false,100,2,2,,,,,,,,zcrm_361303000000237101,Parent Territory.id
+zcrm_361303000000237112,zcrm_361303000000237101,Manager,manager,221,false,50,2,2,,,,,,,,zcrm_361303000000000061,Manager.id
+zcrm_361303000000237113,zcrm_361303000000237101,Access,permission_type,32,false,9,2,2,,,,,,,,,Access
+zcrm_361303000000240001,zcrm_361303000000000043,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240002,zcrm_361303000000000047,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240003,zcrm_361303000000000045,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240004,zcrm_361303000000000049,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240006,zcrm_361303000000000099,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240007,zcrm_361303000000000105,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240008,zcrm_361303000000000107,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240009,zcrm_361303000000000109,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240010,zcrm_361303000000000111,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240011,zcrm_361303000000000051,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240012,zcrm_361303000000000101,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240013,zcrm_361303000000000103,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240014,zcrm_361303000000000095,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240015,zcrm_361303000000000097,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240016,zcrm_361303000000000073,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240026,zcrm_361303000000000061,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240033,zcrm_361303000000000069,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240036,zcrm_361303000000000071,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240040,zcrm_361303000000000113,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240041,zcrm_361303000000000115,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240044,zcrm_361303000000154001,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240045,zcrm_361303000000174001,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240046,zcrm_361303000000174419,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240047,zcrm_361303000000174837,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240048,zcrm_361303000000175255,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000240049,zcrm_361303000000113001,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000000244001,zcrm_361303000000000051,Integration Type,Integration_Type,2,false,120,2,2,,,,,,,,,Integration Type
+zcrm_361303000000249007,zcrm_361303000000000115,Bcc,Bcc,25,false,500,2,2,,,,,,,,,Bcc
+zcrm_361303000000252005,zcrm_361303000000113001,Last Activity Time,Last_Activity_Time,786,false,25,2,2,,,,,,,,,Last Activity Time
+zcrm_361303000000252066,zcrm_361303000000000073,Period Name,Period_Name,133,false,100,2,2,,,,,,,,zcrm_361303000000252021,Period Name.id
+zcrm_361303000000252069,zcrm_361303000000000073,Forecast Group Name,Group_Id,133,false,100,2,2,,,,,,,,zcrm_361303000000252027,Forecast Group Name.id
+zcrm_361303000000252072,zcrm_361303000000000073,Is Archived,Is_Archived,301,false,50,2,2,,,,,,,,,Is Archived
+zcrm_361303000000260011,zcrm_361303000000000049,Change Log Time,Change_Log_Time__s,333,false,25,2,2,,,,,,,,,Change Log Time
+zcrm_361303000000260012,zcrm_361303000000000043,Change Log Time,Change_Log_Time__s,333,false,25,2,2,,,,,,,,,Change Log Time
+zcrm_361303000000260013,zcrm_361303000000000045,Change Log Time,Change_Log_Time__s,333,false,25,2,2,,,,,,,,,Change Log Time
+zcrm_361303000000260014,zcrm_361303000000000047,Change Log Time,Change_Log_Time__s,333,false,25,2,2,,,,,,,,,Change Log Time
+zcrm_361303000000261003,zcrm_361303000000000061,Grouping,number_separator,2,false,120,2,2,,false,,,,,,,Grouping
+zcrm_361303000000261005,zcrm_361303000000000061,Decimal,decimal_separator,2,false,120,2,2,,false,,,,,,,Decimal
+zcrm_361303000000265001,zcrm_361303000000000043,Is Converted,Converted__s,301,false,50,2,2,,,,,,,,,Is Converted
+zcrm_361303000000269759,zcrm_361303000000000097,Village,Village,133,true,120,2,2,,false,,,,,,zcrm_361303000000000045,Village Id
+zcrm_361303000000269769,zcrm_361303000000000097,Expected Direct Beneficiary Reach,Expected_beneficiary_reach,32,true,9,2,2,,false,,,,,,,Expected Direct Beneficiary Reach
+zcrm_361303000000269775,zcrm_361303000000000097,Endline Due Date,Endline_Survey_Due_Date,24,true,20,2,2,,,,,,,,,Endline Due Date
+zcrm_361303000000269787,zcrm_361303000000000097,Endline Survey Completed,Endline_Survey_Completed,301,true,3,2,2,,,,,,,,,Endline Survey Completed
+zcrm_361303000000269793,zcrm_361303000000000097,Baseline Survey Completed,Baseline_Completed,301,true,3,2,2,,,,,,,,,Baseline Survey Completed
+zcrm_361303000000274141,zcrm_361303000000274130,Current Record Name,Current_Record_Name,132,false,50,2,2,,,,,,,,,Current Record Name.id
+zcrm_361303000000274143,zcrm_361303000000274130,Instance id,id,52,false,50,2,2,,,,,,,,,Instance id
+zcrm_361303000000274145,zcrm_361303000000274130,Owner,Owner,8,false,50,2,2,,,,,,,,zcrm_361303000000000061,Owner.id
+zcrm_361303000000274147,zcrm_361303000000274130,Orchestration version,Version,1,false,50,2,2,,,,,,,,,Journey Builder version
+zcrm_361303000000274149,zcrm_361303000000274130,Status,Status,2,false,50,2,2,,,,,,,,,Status
+zcrm_361303000000274151,zcrm_361303000000274130,Current state,Current_state,2,false,120,2,2,,,,,,,,,Current state
+zcrm_361303000000274153,zcrm_361303000000274130,State entered time,State_entered_time,333,false,50,2,2,,,,,,,,,State entered time
+zcrm_361303000000274155,zcrm_361303000000274130,Orchestration start time,Orchestration_start_time,333,false,50,2,2,,,,,,,,,Journey Builder start time
+zcrm_361303000000274157,zcrm_361303000000274130,Total time,Total_time,53,false,50,2,2,,,,,,,,,Total time
+zcrm_361303000000274159,zcrm_361303000000274130,Orchestration deadline,Orchestration_deadline,333,false,50,2,2,,,,,,,,,Journey Builder deadline
+zcrm_361303000000274161,zcrm_361303000000274130,State deadline,State_deadline,333,false,50,2,2,,,,,,,,,State deadline
+zcrm_361303000000274744,zcrm_361303000000274130,Call attempt 1 > Trigger - Call unattended > Call,Call_attempt_1_Trigger_Call_unattended_Call,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Call attempt 1 > Trigger - Call unattended > Call Id
+zcrm_361303000000274752,zcrm_361303000000274130,Call attempt 1 > Trigger - Call unattended > CurrentRecord,Call_attempt_1_Trigger_Call_unattended_CurrentReco,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Call attempt 1 > Trigger - Call unattended > CurrentRecord Id
+zcrm_361303000000274764,zcrm_361303000000274130,Lead answered the call > Trigger - Edit > EditedRecord,Lead_answered_the_call_Trigger_Edit_EditedRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead answered the call > Trigger - Edit > EditedRecord Id
+zcrm_361303000000274774,zcrm_361303000000274130,Lead answered the call > Trigger - Edit > Module,Lead_answered_the_call_Trigger_Edit_Module,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Lead answered the call > Trigger - Edit > Module Id
+zcrm_361303000000274784,zcrm_361303000000274130,Scheduled call > Trigger - Create > CreatedRecord,Scheduled_call_Trigger_Create_CreatedRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Scheduled call > Trigger - Create > CreatedRecord Id
+zcrm_361303000000274794,zcrm_361303000000274130,Scheduled call > Trigger - Create > Module,Scheduled_call_Trigger_Create_Module,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Scheduled call > Trigger - Create > Module Id
+zcrm_361303000000274804,zcrm_361303000000274130,Lead to Contact from manual attempt > Trigger - Convert > CreatedContact,Lead_to_Contact_from_manual_attempt_Trigger_Conver,133,true,120,2,2,,false,,,,,,zcrm_361303000000000047,Lead to Contact from manual attempt > Trigger - Convert > CreatedContact Id
+zcrm_361303000000274812,zcrm_361303000000274130,Lead to Contact from manual attempt > Trigger - Convert > CreatedDeal,Lead_to_Contact_from_manual_attempt_Trigger_Conver1,133,true,120,2,2,,false,,,,,,zcrm_361303000000000049,Lead to Contact from manual attempt > Trigger - Convert > CreatedDeal Id
+zcrm_361303000000274820,zcrm_361303000000274130,Lead to Contact from manual attempt > Trigger - Convert > CreatedAccount,Lead_to_Contact_from_manual_attempt_Trigger_Conv1,133,true,120,2,2,,false,,,,,,zcrm_361303000000000045,Lead to Contact from manual attempt > Trigger - Convert > CreatedAccount Id
+zcrm_361303000000274834,zcrm_361303000000274130,Lead to Contact from manual attempt > Trigger - Convert > ConvertedTime,Lead_to_Contact_from_manual_attempt_Trigger_Conver2,333,true,120,2,2,,false,,,,,,,Lead to Contact from manual attempt > Trigger - Convert > ConvertedTime
+zcrm_361303000000274840,zcrm_361303000000274130,Lead was reached after schedule miss > Trigger - Edit > EditedRecord,Lead_was_reached_after_schedule_miss_Trigger_Edit,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead was reached after schedule miss > Trigger - Edit > EditedRecord Id
+zcrm_361303000000274850,zcrm_361303000000274130,Lead was reached after schedule miss > Trigger - Edit > Module,Lead_was_reached_after_schedule_miss_Trigger_Edit1,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Lead was reached after schedule miss > Trigger - Edit > Module Id
+zcrm_361303000000274860,zcrm_361303000000274130,Lead incoming call > Trigger - Call received > Call,Lead_incoming_call_Trigger_Call_received_Call,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Lead incoming call > Trigger - Call received > Call Id
+zcrm_361303000000274868,zcrm_361303000000274130,Lead incoming call > Trigger - Call received > CurrentRecord,Lead_incoming_call_Trigger_Call_received_CurrentRe,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead incoming call > Trigger - Call received > CurrentRecord Id
+zcrm_361303000000274880,zcrm_361303000000274130,Lead was reached > Trigger - Edit > EditedRecord,Lead_was_reached_Trigger_Edit_EditedRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead was reached > Trigger - Edit > EditedRecord Id
+zcrm_361303000000274890,zcrm_361303000000274130,Lead was reached > Trigger - Edit > Module,Lead_was_reached_Trigger_Edit_Module,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Lead was reached > Trigger - Edit > Module Id
+zcrm_361303000000274900,zcrm_361303000000274130,Call attempt direct > Trigger - Call unattended > Call,Call_attempt_direct_Trigger_Call_unattended_Call,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Call attempt direct > Trigger - Call unattended > Call Id
+zcrm_361303000000274908,zcrm_361303000000274130,Call attempt direct > Trigger - Call unattended > CurrentRecord,Call_attempt_direct_Trigger_Call_unattended_Curren,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Call attempt direct > Trigger - Call unattended > CurrentRecord Id
+zcrm_361303000000274920,zcrm_361303000000274130,Lead incoming call from create > Trigger - Call received > Call,Lead_incoming_call_from_create_Trigger_Call_receiv,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Lead incoming call from create > Trigger - Call received > Call Id
+zcrm_361303000000274928,zcrm_361303000000274130,Lead incoming call from create > Trigger - Call received > CurrentRecord,Lead_incoming_call_from_create_Trigger_Call_receiv1,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead incoming call from create > Trigger - Call received > CurrentRecord Id
+zcrm_361303000000274940,zcrm_361303000000274130,Create Lead > Trigger - Create > CreatedRecord,Create_Lead_Trigger_Create_CreatedRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Create Lead > Trigger - Create > CreatedRecord Id
+zcrm_361303000000274950,zcrm_361303000000274130,Create Lead > Trigger - Create > Module,Create_Lead_Trigger_Create_Module,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Create Lead > Trigger - Create > Module Id
+zcrm_361303000000274960,zcrm_361303000000274130,Lead incoming call after call attempt 1 > Trigger - Call received > Call,Lead_incoming_call_after_call_attempt_1_Trigger_Ca,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Lead incoming call after call attempt 1 > Trigger - Call received > Call Id
+zcrm_361303000000274968,zcrm_361303000000274130,Lead incoming call after call attempt 1 > Trigger - Call received > CurrentRecord,Lead_incoming_call_after_call_attempt_1_Trigger_Ca1,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead incoming call after call attempt 1 > Trigger - Call received > CurrentRecord Id
+zcrm_361303000000274980,zcrm_361303000000274130,Lead contacted us 3 > Trigger - Call received > Call,Lead_contacted_us_3_Trigger_Call_received_Call,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Lead contacted us 3 > Trigger - Call received > Call Id
+zcrm_361303000000274988,zcrm_361303000000274130,Lead contacted us 3 > Trigger - Call received > CurrentRecord,Lead_contacted_us_3_Trigger_Call_received_CurrentR,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead contacted us 3 > Trigger - Call received > CurrentRecord Id
+zcrm_361303000000275000,zcrm_361303000000274130,Lead incoming call after call attempt 2 > Trigger - Call received > Call,Lead_incoming_call_after_call_attempt_2_Trigger_Ca,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Lead incoming call after call attempt 2 > Trigger - Call received > Call Id
+zcrm_361303000000275008,zcrm_361303000000274130,Lead incoming call after call attempt 2 > Trigger - Call received > CurrentRecord,Lead_incoming_call_after_call_attempt_2_Trigger_Ca1,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead incoming call after call attempt 2 > Trigger - Call received > CurrentRecord Id
+zcrm_361303000000275020,zcrm_361303000000274130,Call attempt 2 > Trigger - Call unattended > Call,Call_attempt_2_Trigger_Call_unattended_Call,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Call attempt 2 > Trigger - Call unattended > Call Id
+zcrm_361303000000275028,zcrm_361303000000274130,Call attempt 2 > Trigger - Call unattended > CurrentRecord,Call_attempt_2_Trigger_Call_unattended_CurrentReco,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Call attempt 2 > Trigger - Call unattended > CurrentRecord Id
+zcrm_361303000000275040,zcrm_361303000000274130,Lead to contact > Trigger - Convert > CreatedContact,Lead_to_contact_Trigger_Convert_CreatedContact,133,true,120,2,2,,false,,,,,,zcrm_361303000000000047,Lead to contact > Trigger - Convert > CreatedContact Id
+zcrm_361303000000275048,zcrm_361303000000274130,Lead to contact > Trigger - Convert > CreatedDeal,Lead_to_contact_Trigger_Convert_CreatedDeal,133,true,120,2,2,,false,,,,,,zcrm_361303000000000049,Lead to contact > Trigger - Convert > CreatedDeal Id
+zcrm_361303000000275056,zcrm_361303000000274130,Lead to contact > Trigger - Convert > CreatedAccount,Lead_to_contact_Trigger_Convert_CreatedAccount,133,true,120,2,2,,false,,,,,,zcrm_361303000000000045,Lead to contact > Trigger - Convert > CreatedAccount Id
+zcrm_361303000000275070,zcrm_361303000000274130,Lead to contact > Trigger - Convert > ConvertedTime,Lead_to_contact_Trigger_Convert_ConvertedTime,333,true,120,2,2,,false,,,,,,,Lead to contact > Trigger - Convert > ConvertedTime
+zcrm_361303000000275076,zcrm_361303000000274130,Missed scheduled call > Trigger - Call overdue > Call,Missed_scheduled_call_Trigger_Call_overdue_Call,133,true,120,2,2,,false,,,,,,zcrm_361303000000000067,Missed scheduled call > Trigger - Call overdue > Call Id
+zcrm_361303000000275084,zcrm_361303000000274130,Missed scheduled call > Trigger - Call overdue > CurrentRecord,Missed_scheduled_call_Trigger_Call_overdue_Current,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Missed scheduled call > Trigger - Call overdue > CurrentRecord Id
+zcrm_361303000000275107,zcrm_361303000000274130,Lead contacted us > instant_action_Fieldupdate1 > Module,Lead_contacted_us_instant_action_Fieldupdate1_Modu,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Lead contacted us > instant_action_Fieldupdate1 > Module Id
+zcrm_361303000000275144,zcrm_361303000000275133,Current Record Name,Current_Record_Name,132,false,50,2,2,,,,,,,,,Current Record Name.id
+zcrm_361303000000275146,zcrm_361303000000275133,Instance id,id,52,false,50,2,2,,,,,,,,,Instance id
+zcrm_361303000000275148,zcrm_361303000000275133,Owner,Owner,8,false,50,2,2,,,,,,,,zcrm_361303000000000061,Owner.id
+zcrm_361303000000275150,zcrm_361303000000275133,Orchestration version,Version,1,false,50,2,2,,,,,,,,,Journey Builder version
+zcrm_361303000000275152,zcrm_361303000000275133,Status,Status,2,false,50,2,2,,,,,,,,,Status
+zcrm_361303000000275154,zcrm_361303000000275133,Current state,Current_state,2,false,120,2,2,,,,,,,,,Current state
+zcrm_361303000000275156,zcrm_361303000000275133,State entered time,State_entered_time,333,false,50,2,2,,,,,,,,,State entered time
+zcrm_361303000000275158,zcrm_361303000000275133,Orchestration start time,Orchestration_start_time,333,false,50,2,2,,,,,,,,,Journey Builder start time
+zcrm_361303000000275160,zcrm_361303000000275133,Total time,Total_time,53,false,50,2,2,,,,,,,,,Total time
+zcrm_361303000000275162,zcrm_361303000000275133,Orchestration deadline,Orchestration_deadline,333,false,50,2,2,,,,,,,,,Journey Builder deadline
+zcrm_361303000000275164,zcrm_361303000000275133,State deadline,State_deadline,333,false,50,2,2,,,,,,,,,State deadline
+zcrm_361303000000275655,zcrm_361303000000275133,Email sent > Trigger - Email Sent > Email,Email_sent_Trigger_Email_Sent_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Email sent > Trigger - Email Sent > Email Id
+zcrm_361303000000275663,zcrm_361303000000275133,Email sent > Trigger - Email Sent > CurrentRecord,Email_sent_Trigger_Email_Sent_CurrentRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Email sent > Trigger - Email Sent > CurrentRecord Id
+zcrm_361303000000275767,zcrm_361303000000275133,Lead Clicked email 3 > Trigger - Email clicked > Email,Lead_Clicked_email_3_Trigger_Email_clicked_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Lead Clicked email 3 > Trigger - Email clicked > Email Id
+zcrm_361303000000275775,zcrm_361303000000275133,Lead Clicked email 3 > Trigger - Email clicked > CurrentRecord,Lead_Clicked_email_3_Trigger_Email_clicked_Current,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead Clicked email 3 > Trigger - Email clicked > CurrentRecord Id
+zcrm_361303000000275787,zcrm_361303000000275133,Email Follow 2 > Trigger - Email Sent > Email,Email_Follow_2_Trigger_Email_Sent_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Email Follow 2 > Trigger - Email Sent > Email Id
+zcrm_361303000000275795,zcrm_361303000000275133,Email Follow 2 > Trigger - Email Sent > CurrentRecord,Email_Follow_2_Trigger_Email_Sent_CurrentRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Email Follow 2 > Trigger - Email Sent > CurrentRecord Id
+zcrm_361303000000275807,zcrm_361303000000275133,Lead Clicked email 2 > Trigger - Email clicked > Email,Lead_Clicked_email_2_Trigger_Email_clicked_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Lead Clicked email 2 > Trigger - Email clicked > Email Id
+zcrm_361303000000275815,zcrm_361303000000275133,Lead Clicked email 2 > Trigger - Email clicked > CurrentRecord,Lead_Clicked_email_2_Trigger_Email_clicked_Current,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead Clicked email 2 > Trigger - Email clicked > CurrentRecord Id
+zcrm_361303000000275827,zcrm_361303000000275133,Email Bounced > Trigger - Email Unsubscribe > CurrentRecord,Email_Bounced_Trigger_Email_Unsubscribe_CurrentRec,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Email Bounced > Trigger - Email Unsubscribe > CurrentRecord Id
+zcrm_361303000000275837,zcrm_361303000000275133,Email Bounced > Trigger - Email bounced > Email,Email_Bounced_Trigger_Email_bounced_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Email Bounced > Trigger - Email bounced > Email Id
+zcrm_361303000000275845,zcrm_361303000000275133,Email Bounced > Trigger - Email bounced > CurrentRecord,Email_Bounced_Trigger_Email_bounced_CurrentRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Email Bounced > Trigger - Email bounced > CurrentRecord Id
+zcrm_361303000000275857,zcrm_361303000000275133,Email Follow 1 > Trigger - Email Sent > Email,Email_Follow_1_Trigger_Email_Sent_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Email Follow 1 > Trigger - Email Sent > Email Id
+zcrm_361303000000275865,zcrm_361303000000275133,Email Follow 1 > Trigger - Email Sent > CurrentRecord,Email_Follow_1_Trigger_Email_Sent_CurrentRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Email Follow 1 > Trigger - Email Sent > CurrentRecord Id
+zcrm_361303000000275877,zcrm_361303000000275133,Lead Clicked email > Trigger - Email clicked > Email,Lead_Clicked_email_Trigger_Email_clicked_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Lead Clicked email > Trigger - Email clicked > Email Id
+zcrm_361303000000275885,zcrm_361303000000275133,Lead Clicked email > Trigger - Email clicked > CurrentRecord,Lead_Clicked_email_Trigger_Email_clicked_CurrentRe,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead Clicked email > Trigger - Email clicked > CurrentRecord Id
+zcrm_361303000000275903,zcrm_361303000000275133,Unsubscribed > Trigger - Email Unsubscribe > CurrentRecord,Unsubscribed_Trigger_Email_Unsubscribe_CurrentReco,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Unsubscribed > Trigger - Email Unsubscribe > CurrentRecord Id
+zcrm_361303000000275913,zcrm_361303000000275133,Unsubscribe 3 > Trigger - Email Unsubscribe > CurrentRecord,Unsubscribe_3_Trigger_Email_Unsubscribe_CurrentRec,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Unsubscribe 3 > Trigger - Email Unsubscribe > CurrentRecord Id
+zcrm_361303000000275923,zcrm_361303000000275133,Unsubscribe 4 > Trigger - Email Unsubscribe > CurrentRecord,Unsubscribe_4_Trigger_Email_Unsubscribe_CurrentRec,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Unsubscribe 4 > Trigger - Email Unsubscribe > CurrentRecord Id
+zcrm_361303000000275933,zcrm_361303000000275133,Unsubscribed 2 > Trigger - Email Unsubscribe > CurrentRecord,Unsubscribed_2_Trigger_Email_Unsubscribe_CurrentRe,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Unsubscribed 2 > Trigger - Email Unsubscribe > CurrentRecord Id
+zcrm_361303000000275943,zcrm_361303000000275133,Lead Creation > Trigger - Create > CreatedRecord,Lead_Creation_Trigger_Create_CreatedRecord,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead Creation > Trigger - Create > CreatedRecord Id
+zcrm_361303000000275953,zcrm_361303000000275133,Lead Creation > Trigger - Create > Module,Lead_Creation_Trigger_Create_Module,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Lead Creation > Trigger - Create > Module Id
+zcrm_361303000000275963,zcrm_361303000000275133,Unsubscribe 5 > Trigger - Email Unsubscribe > CurrentRecord,Unsubscribe_5_Trigger_Email_Unsubscribe_CurrentRec,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Unsubscribe 5 > Trigger - Email Unsubscribe > CurrentRecord Id
+zcrm_361303000000275973,zcrm_361303000000275133,Lead opens email 2 > Trigger - Email opened > Email,Lead_opens_email_2_Trigger_Email_opened_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Lead opens email 2 > Trigger - Email opened > Email Id
+zcrm_361303000000275981,zcrm_361303000000275133,Lead opens email 2 > Trigger - Email opened > CurrentRecord,Lead_opens_email_2_Trigger_Email_opened_CurrentRec,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead opens email 2 > Trigger - Email opened > CurrentRecord Id
+zcrm_361303000000275993,zcrm_361303000000275133,Lead opens email > Trigger - Email opened > Email,Lead_opens_email_Trigger_Email_opened_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Lead opens email > Trigger - Email opened > Email Id
+zcrm_361303000000276001,zcrm_361303000000275133,Lead opens email > Trigger - Email opened > CurrentRecord,Lead_opens_email_Trigger_Email_opened_CurrentRecor,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead opens email > Trigger - Email opened > CurrentRecord Id
+zcrm_361303000000276013,zcrm_361303000000275133,Lead opens email 3 > Trigger - Email opened > Email,Lead_opens_email_3_Trigger_Email_opened_Email,133,true,120,2,2,,false,,,,,,zcrm_361303000000000115,Lead opens email 3 > Trigger - Email opened > Email Id
+zcrm_361303000000276021,zcrm_361303000000275133,Lead opens email 3 > Trigger - Email opened > CurrentRecord,Lead_opens_email_3_Trigger_Email_opened_CurrentRec,133,true,120,2,2,,false,,,,,,zcrm_361303000000000043,Lead opens email 3 > Trigger - Email opened > CurrentRecord Id
+zcrm_361303000000276083,zcrm_361303000000275133,Lead opened Email > instant_action_Fieldupdate1 > Module,Lead_opened_Email_instant_action_Fieldupdate1_Modu,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Lead opened Email > instant_action_Fieldupdate1 > Module Id
+zcrm_361303000000276091,zcrm_361303000000275133,Attempted to Contact Lead > instant_action_Fieldupdate1 > Module,Attempted_to_Contact_Lead_instant_action_Fieldupda,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Attempted to Contact Lead > instant_action_Fieldupdate1 > Module Id
+zcrm_361303000000276099,zcrm_361303000000275133,Junk Lead > instant_action_Fieldupdate1 > Module,Junk_Lead_instant_action_Fieldupdate1_Module,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Junk Lead > instant_action_Fieldupdate1 > Module Id
+zcrm_361303000000276107,zcrm_361303000000275133,Lead Created > instant_action_Fieldupdate1 > Module,Lead_Created_instant_action_Fieldupdate1_Module,133,true,120,2,2,,false,,,,,,zcrm_361303000000198140,Lead Created > instant_action_Fieldupdate1 > Module Id
+zcrm_361303000000276125,zcrm_361303000000275133,Lead Clicked on Email > instant_action_Task1 > AssignedTask,Lead_Clicked_on_Email_instant_action_Task1_Assigne,133,true,120,2,2,,false,,,,,,zcrm_361303000000000063,Lead Clicked on Email > instant_action_Task1 > AssignedTask Id
+zcrm_361303000000276141,zcrm_361303000000275133,Lead opened Email > scheduled_action1_Task1 > AssignedTask,Lead_opened_Email_scheduled_action1_Task1_Assigned,133,true,120,2,2,,false,,,,,,zcrm_361303000000000063,Lead opened Email > scheduled_action1_Task1 > AssignedTask Id
+zcrm_361303000000282213,zcrm_361303000000000097,Project Start Date,Project_start_date,24,true,20,2,2,,,,,,,,,Project Start Date
+zcrm_361303000000282219,zcrm_361303000000000097,Project End Date,Project_end_date,24,true,20,2,2,,,,,,,,,Project End Date
+zcrm_361303000000282225,zcrm_361303000000000097,Donor 1 (D1),Donor,133,true,120,2,2,,false,,,,,,zcrm_361303000000000047,Donor 1 (D1) Id
+zcrm_361303000000282235,zcrm_361303000000000097,D1 - Interim Report Due,st_report_due,24,true,20,2,2,,,,,,,,,D1 - Interim Report Due
+zcrm_361303000000282241,zcrm_361303000000000097,D1 - Amount Donated,Amount_donated,36,true,16,2,2,,,,,,,,,D1 - Amount Donated
+zcrm_361303000000284046,zcrm_361303000000000045,Households,Villagers_in_Farming_Households,32,true,9,2,2,,false,,,,,,,Households
+zcrm_361303000000284058,zcrm_361303000000000045,Average Household Income,Average_Household_Income,36,true,16,2,2,,,,,,,,,Average Household Income
+zcrm_361303000000284076,zcrm_361303000000000045,Road Conditions,Good_Road_Access,2,true,120,2,2,,false,,,,,,,Road Conditions
+zcrm_361303000000284088,zcrm_361303000000000045,Total Population,Number_of_Villagers,32,true,9,2,2,,false,,,,,,,Total Population
+zcrm_361303000000284192,zcrm_361303000000000047,Donor Org Name,Donor_Org_Name,1,true,255,2,2,,,,,,,,,Donor Org Name
+zcrm_361303000000290003,zcrm_361303000000000043,Team,Team,100,true,1000,2,2,,,,,,,,,Team
+zcrm_361303000000290023,zcrm_361303000000000043,Current Staff Member,Current_Staff_Member,301,true,3,2,2,,,,,,,,,Current Staff Member
+zcrm_361303000000290087,zcrm_361303000000000097,Donor 3 (D3),Donor_3_D3,133,true,120,2,2,,,,,,,,zcrm_361303000000000047,Donor 3 (D3) Id
+zcrm_361303000000290097,zcrm_361303000000000097,D3 - Amount Donated,D3_Amount_Donated,36,true,16,2,2,,,,,,,,,D3 - Amount Donated
+zcrm_361303000000290103,zcrm_361303000000000097,D3 - Interim Report Due,D3_1st_Report_Due_Date,24,true,20,2,2,,,,,,,,,D3 - Interim Report Due
+zcrm_361303000000290115,zcrm_361303000000000097,D1 - Final Report Due,D1_3rd_Report_Due,24,true,20,2,2,,,,,,,,,D1 - Final Report Due
+zcrm_361303000000290121,zcrm_361303000000000097,D3 - Funds Received,D3_Funds_Received,301,true,3,2,2,,,,,,,,,D3 - Funds Received
+zcrm_361303000000290127,zcrm_361303000000000097,D1 - Funds Received,D1_Funds_Received,301,true,3,2,2,,,,,,,,,D1 - Funds Received
+zcrm_361303000000290133,zcrm_361303000000000097,D3 - Final Report Due,D3_2nd_Report_Due_Date,24,true,20,2,2,,,,,,,,,D3 - Final Report Due
+zcrm_361303000000290139,zcrm_361303000000000097,D2 - Interim Report Due,D2_1st_Report_Due,24,true,20,2,2,,,,,,,,,D2 - Interim Report Due
+zcrm_361303000000290145,zcrm_361303000000000097,Donor 2 (D2),Donor_2_D2,133,true,120,2,2,,,,,,,,zcrm_361303000000000047,Donor 2 (D2) Id
+zcrm_361303000000290161,zcrm_361303000000000097,D2 - Final Report Due,D2_2nd_Report_Due,24,true,20,2,2,,,,,,,,,D2 - Final Report Due
+zcrm_361303000000290167,zcrm_361303000000000097,D2 - Amount Donated,D2_Amount_Donated,36,true,16,2,2,,,,,,,,,D2 - Amount Donated
+zcrm_361303000000290179,zcrm_361303000000000097,D2 - Funds Received,D2_Funds_Received,301,true,3,2,2,,,,,,,,,D2 - Funds Received
+zcrm_361303000000290193,zcrm_361303000000000097,Funding Gap GBP,Funding,116,true,16,2,2,,,number,2,,,,,Funding Gap GBP
+zcrm_361303000000344001,zcrm_361303000000000097,Project Type,Project_Type,2,true,120,2,2,,false,,,,,,,Project Type
+zcrm_361303000000344023,zcrm_361303000000000097,Expected Direct Household Reach,Expected_Household_Reach,32,true,9,2,2,,false,,,,,,,Expected Direct Household Reach
+zcrm_361303000000344035,zcrm_361303000000000097,KHTF Staff,KHTF_Staff,100,true,1000,2,2,,false,,,,,,,KHTF Staff
+zcrm_361303000000344053,zcrm_361303000000000097,Project Code,Project_Code,32,true,4,2,2,,false,,,,,,,Project Code
+zcrm_361303000000344081,zcrm_361303000000000097,Household Surveys Needed,Household_Surveys_Needed,116,true,16,2,2,,,number,0,,,,,Household Surveys Needed
+zcrm_361303000000344119,zcrm_361303000000000097,Gravel & Sand Sources,Gravel_Sand_Sources,1,true,255,2,2,,,,,,,,,Gravel & Sand Sources
+zcrm_361303000000344131,zcrm_361303000000000097,Other Donors List (D4),Other_Donors_List_D4,1,true,255,2,2,,,,,,,,,Other Donors List (D4)
+zcrm_361303000000344137,zcrm_361303000000000097,Suitable for UK Volunteers,Suitable_for_UK_Volunteers,301,true,3,2,2,,,,,,,,,Suitable for UK Volunteers
+zcrm_361303000000344143,zcrm_361303000000000097,No. In Water Committee,No_In_Water_Committee,32,true,9,2,2,,false,,,,,,,No. In Water Committee
+zcrm_361303000000344149,zcrm_361303000000000097,D4 - Amount Donated,D4_Amount_Donated,36,true,16,2,2,,,,,,,,,D4 - Amount Donated
+zcrm_361303000000344155,zcrm_361303000000000097,D4 - Funds Received,D4_Funds_Received,301,true,3,2,2,,,,,,,,,D4 - Funds Received
+zcrm_361303000000344161,zcrm_361303000000000097,D4 - Final Report Due,D4_Final_Report_Due,24,true,20,2,2,,,,,,,,,D4 - Final Report Due
+zcrm_361303000000344167,zcrm_361303000000000097,D4 - Interim Report Due,D4_Interim_Report_Due,24,true,20,2,2,,,,,,,,,D4 - Interim Report Due
+zcrm_361303000000344173,zcrm_361303000000000097,New Latrines Needed,New_Latrines_Needed,301,true,3,2,2,,,,,,,,,New Latrines Needed
+zcrm_361303000000344179,zcrm_361303000000000097,Case Studies,Case_Studies,110,true,2000,2,2,,,,,,,,,Case Studies
+zcrm_361303000000344185,zcrm_361303000000000097,Distance From New Source (m),Distance_From_New_Source_m,32,true,9,2,2,,false,,,,,,,Distance From New Source (m)
+zcrm_361303000000344191,zcrm_361303000000000097,Distance From New Tanks (m),Distance_From_New_Tanks_m,32,true,9,2,2,,false,,,,,,,Distance From New Tanks (m)
+zcrm_361303000000344197,zcrm_361303000000000097,Source Water Flow,Source_Water_Flow,2,true,120,2,2,,false,,,,,,,Source Water Flow
+zcrm_361303000000344211,zcrm_361303000000000097,Farmland Above  Source,Farmland_Above_Source,301,true,3,2,2,,,,,,,,,Farmland Above  Source
+zcrm_361303000000344217,zcrm_361303000000000097,No. Potential Sources,No_Potential_Sources,32,true,9,2,2,,false,,,,,,,No. Potential Sources
+zcrm_361303000000344223,zcrm_361303000000000097,System Will Affect Farmland,System_Will_Affect_Farmland,301,true,3,2,2,,,,,,,,,System Will Affect Farmland
+zcrm_361303000000344235,zcrm_361303000000000097,Soil Type,Soil_Type,100,true,1000,2,2,,false,,,,,,,Soil Type
+zcrm_361303000000344249,zcrm_361303000000000097,No. Taps to Build,No_Taps_to_Build,32,true,9,2,2,,false,,,,,,,No. Taps to Build
+zcrm_361303000000344261,zcrm_361303000000000097,WASH Construction Challenges,Construction_Challenges,100,true,1000,2,2,,false,,,,,,,WASH Construction Challenges
+zcrm_361303000000344297,zcrm_361303000000000097,Supplementary Sources,Supplementary_Sources,100,true,1000,2,2,,false,,,,,,,Supplementary Sources
+zcrm_361303000000344317,zcrm_361303000000000097,Village Water Sources,Village_Water_Sources,100,true,1000,2,2,,false,,,,,,,Village Water Sources
+zcrm_361303000000344337,zcrm_361303000000000097,HH With V. Poor Latrines,HH_With_V_Poor_Latrines,32,true,9,2,2,,false,,,,,,,HH With V. Poor Latrines
+zcrm_361303000000344343,zcrm_361303000000000097,Defecation Place When No Latrine,Defecation_Place_When_No_Latrine,100,true,1000,2,2,,false,,,,,,,Defecation Place When No Latrine
+zcrm_361303000000344361,zcrm_361303000000000097,HH Without Latrines,HH_Without_Latrines,32,true,9,2,2,,false,,,,,,,HH Without Latrines
+zcrm_361303000000344367,zcrm_361303000000000097,Water Problems Description,Water_Problems_Description,110,true,2000,2,2,,,,,,,,,Water Problems Description
+zcrm_361303000000344379,zcrm_361303000000000097,Irrigation Problem,Irrigation_Problem,100,true,1000,2,2,,false,,,,,,,Irrigation Problem
+zcrm_361303000000344397,zcrm_361303000000000097,Infrastructure Built,Infrastructure_Built,2,true,120,2,2,,false,,,,,,,Infrastructure Built
+zcrm_361303000000344417,zcrm_361303000000000097,Irrigation Construction Challenges,Irrigation_Construction_Challenges,100,true,1000,2,2,,false,,,,,,,Irrigation Construction Challenges
+zcrm_361303000000344441,zcrm_361303000000000097,Water Ever Rationed,Water_Ever_Rationed,1,true,255,2,2,,,,,,,,,Water Ever Rationed
+zcrm_361303000000344447,zcrm_361303000000000097,Distance From Old Source (m),Distance_From_Old_Source_m,32,true,9,2,2,,false,,,,,,,Distance From Old Source (m)
+zcrm_361303000000344453,zcrm_361303000000000097,HH With Latrines,HH_With_Latrines,32,true,9,2,2,,false,,,,,,,HH With Latrines
+zcrm_361303000000344461,zcrm_361303000000000097,Rai of Village Flat/Paddy Fields,Rai_of_Village_Flat_Paddy_Fields,32,true,9,2,2,,false,,,,,,,Rai of Village Flat/Paddy Fields
+zcrm_361303000000344467,zcrm_361303000000000097,Livelihoods Project Notes,Livelihoods_Project_Notes,110,true,2000,2,2,,,,,,,,,Livelihoods Project Notes
+zcrm_361303000000344491,zcrm_361303000000000097,WASH Project Notes,WASH_Project_Notes,110,true,2000,2,2,,,,,,,,,WASH Project Notes
+zcrm_361303000000344543,zcrm_361303000000000045,Latest Livelihoods Survey,Latest_Livelihoods_Survey,24,true,20,2,2,,,,,,,,,Latest Livelihoods Survey
+zcrm_361303000000344549,zcrm_361303000000000045,Potential KHT Projects,Potential_KHT_Projects,100,true,1000,2,2,,false,,,,,,,Potential KHT Projects
+zcrm_361303000000344575,zcrm_361303000000000045,Latest Education Survey,Latest_Education_Survey,24,true,20,2,2,,,,,,,,,Latest Education Survey
+zcrm_361303000000344581,zcrm_361303000000000045,Potential Project Notes,Potential_Project_Notes,110,true,2000,2,2,,,,,,,,,Potential Project Notes
+zcrm_361303000000344587,zcrm_361303000000000045,Villagers Consulted,Villagers_Consulted,100,true,1000,2,2,,false,,,,,,,Villagers Consulted
+zcrm_361303000000344599,zcrm_361303000000000045,GPS Latitude,GPS_Latitude,38,true,9,7,2,,false,,,,,,,GPS Latitude
+zcrm_361303000000344611,zcrm_361303000000000045,GPS Longitude,GPS_Longitude,38,true,9,7,2,,false,,,,,,,GPS Longitude
+zcrm_361303000000344617,zcrm_361303000000000045,Latest WASH Survey,Latest_WASH_Survey,24,true,20,2,2,,,,,,,,,Latest WASH Survey
+zcrm_361303000000344685,zcrm_361303000000000101,Sub-District,Sub_District,133,true,120,2,2,,,,,,,,zcrm_361303000000000101,Sub-District Id
+zcrm_361303000000344693,zcrm_361303000000000101,District,District,133,true,120,2,2,,,,,,,,zcrm_361303000000000101,District Id
+zcrm_361303000000344701,zcrm_361303000000000101,Typ,Type,2,true,120,2,2,,false,,,,,,,Typ
+zcrm_361303000000344719,zcrm_361303000000000101,GPS Latitude,GPS_Latitude,38,true,9,7,2,,false,,,,,,,GPS Latitude
+zcrm_361303000000344725,zcrm_361303000000000101,Address,Address,110,true,2000,2,2,,,,,,,,,Address
+zcrm_361303000000344731,zcrm_361303000000000101,GPS Longitude,GPS_Longitude,38,true,9,7,2,,false,,,,,,,GPS Longitude
+zcrm_361303000000344775,zcrm_361303000000000045,% Population Without Enough Rice,Population_Without_Enough_Rice,34,true,5,2,2,,,,,,,,,% Population Without Enough Rice
+zcrm_361303000000344801,zcrm_361303000000000045,District,Sub_District1,133,true,120,2,2,,,,,,,,zcrm_361303000000000101,District Id
+zcrm_361303000000344821,zcrm_361303000000000045,Nearest Town,Nearest_Town,133,true,120,2,2,,,,,,,,zcrm_361303000000000101,Nearest Town Id
+zcrm_361303000000344831,zcrm_361303000000000045,Children (Aged 0 - 18),Children,32,true,9,2,2,,false,,,,,,,Children (Aged 0 - 18)
+zcrm_361303000000344837,zcrm_361303000000000045,Distance to Town (km),Distance_to_Town_km,32,true,9,2,2,,false,,,,,,,Distance to Town (km)
+zcrm_361303000000344843,zcrm_361303000000000045,Adult Males,Adult_Males,32,true,9,2,2,,false,,,,,,,Adult Males
+zcrm_361303000000344849,zcrm_361303000000000045,Tribe,Tribe,100,true,1000,2,2,,,,,,,,,Tribe
+zcrm_361303000000344865,zcrm_361303000000000045,Forest Department,Forest_Department,1,true,255,2,2,,,,,,,,,Forest Department
+zcrm_361303000000344871,zcrm_361303000000000045,Adult Females,Adult_Females,32,true,9,2,2,,false,,,,,,,Adult Females
+zcrm_361303000000344877,zcrm_361303000000000045,Season Accesibility,Season_Accesibility,2,true,120,2,2,,,,,,,,,Season Accesibility
+zcrm_361303000000344891,zcrm_361303000000000045,Average Annual HH Income (THB),Average_Annual_HH_Income_THB,32,true,9,2,2,,false,,,,,,,Average Annual HH Income (THB)
+zcrm_361303000000344897,zcrm_361303000000000045,Province,Province,1,true,255,2,2,,,,,,,,,Province
+zcrm_361303000000344961,zcrm_361303000000000097,School,School,133,true,120,2,2,,false,,,,,,zcrm_361303000000000101,School Id
+zcrm_361303000000344971,zcrm_361303000000000097,KHT Staff Owner,KHT_Staff_Owner,2,true,120,2,2,,false,,,,,,,KHT Staff Owner
+zcrm_361303000000344993,zcrm_361303000000000045,Village has Dorm,Village_has_Dorm,301,true,3,2,2,,,,,,,,,Village has Dorm
+zcrm_361303000000344999,zcrm_361303000000000045,Distance to Hospital (km),Distance_to_Hospital_km,32,true,9,2,2,,false,,,,,,,Distance to Hospital (km)
+zcrm_361303000000347005,zcrm_361303000000000045,Annual Malaria Cases,Annual_Malaria_Cases,32,true,9,2,2,,false,,,,,,,Annual Malaria Cases
+zcrm_361303000000347011,zcrm_361303000000000045,No. Children in Dorm,No_Children_in_Dorm,32,true,9,2,2,,false,,,,,,,No. Children in Dorm
+zcrm_361303000000347017,zcrm_361303000000000045,Nearest Health Centre,Nearest_Health_Centre,1,true,255,2,2,,,,,,,,,Nearest Health Centre
+zcrm_361303000000347023,zcrm_361303000000000045,Distance to Pratom (km),Distance_to_Pratom_km,32,true,9,2,2,,false,,,,,,,Distance to Pratom (km)
+zcrm_361303000000347029,zcrm_361303000000000045,Annual Typhoid Cases,Annual_Typhoid_Cases,32,true,9,2,2,,false,,,,,,,Annual Typhoid Cases
+zcrm_361303000000347035,zcrm_361303000000000045,No. Students at Uni,No_Students_at_Uni,32,true,9,2,2,,false,,,,,,,No. Students at Uni
+zcrm_361303000000347041,zcrm_361303000000000045,Distance to Health Centre (km),Distance_to_Health_Centre_km,32,true,9,2,2,,false,,,,,,,Distance to Health Centre (km)
+zcrm_361303000000347047,zcrm_361303000000000045,No. Children Go To Pratom,No_Children_Go_To_Pratom,32,true,9,2,2,,false,,,,,,,No. Children Go To Pratom
+zcrm_361303000000347053,zcrm_361303000000000045,Annual Stomarch Ulcer Cases,Annual_Stomarch_Ulcer_Cases,38,true,16,2,2,,false,,,,,,,Annual Stomarch Ulcer Cases
+zcrm_361303000000347059,zcrm_361303000000000045,No. Graduates,No_Graduates,32,true,9,2,2,,false,,,,,,,No. Graduates
+zcrm_361303000000347065,zcrm_361303000000000045,Annual Diabetes Cases,Annual_Diabetes_Cases,38,true,16,2,2,,false,,,,,,,Annual Diabetes Cases
+zcrm_361303000000347071,zcrm_361303000000000045,Nearest Mathayom (Seconary),Nearest_Mathayom_Seconary,133,true,120,2,2,,,,,,,,zcrm_361303000000000101,Nearest Mathayom (Seconary) Id
+zcrm_361303000000347081,zcrm_361303000000000045,Annual Cancer Cases,Annual_Cancer_Cases,38,true,16,2,2,,false,,,,,,,Annual Cancer Cases
+zcrm_361303000000347087,zcrm_361303000000000045,No. Children Go To Mathayom,No_Children_Go_To_Mathayom,32,true,9,2,2,,false,,,,,,,No. Children Go To Mathayom
+zcrm_361303000000347093,zcrm_361303000000000045,Village Deaths in Last Year,Village_Deaths_in_Last_Year,38,true,16,2,2,,false,,,,,,,Village Deaths in Last Year
+zcrm_361303000000347099,zcrm_361303000000000045,Distance to Mathayom (km),Distance_to_Mathayom_km,32,true,9,2,2,,false,,,,,,,Distance to Mathayom (km)
+zcrm_361303000000347105,zcrm_361303000000000045,Common Diseases,Other_Diseases,1,true,255,2,2,,,,,,,,,Common Diseases
+zcrm_361303000000347111,zcrm_361303000000000045,Nearest Pratom (Primary),Nearest_Pratom_Primary,133,true,120,2,2,,,,,,,,zcrm_361303000000000101,Nearest Pratom (Primary) Id
+zcrm_361303000000347121,zcrm_361303000000000045,Village Schools,Village_Schools,2,true,120,2,2,,false,,,,,,,Village Schools
+zcrm_361303000000347137,zcrm_361303000000000045,Nearest Hospital,Nearest_Hospital,133,true,120,2,2,,,,,,,,zcrm_361303000000000101,Nearest Hospital Id
+zcrm_361303000000347149,zcrm_361303000000000045,Latest non-KHT Clean Water Project,Latest_non_KHT_Clean_Water_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT Clean Water Project
+zcrm_361303000000347155,zcrm_361303000000000045,Latest non-KHT Rice Bank Project,Latest_non_KHT_Rice_Bank_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT Rice Bank Project
+zcrm_361303000000347161,zcrm_361303000000000045,Latest non-KHT Electricity Project,Latest_non_KHT_Electricity_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT Electricity Project
+zcrm_361303000000347167,zcrm_361303000000000045,Sufficient Drinking Water in Dry Season,Sufficient_Drinking_Water_in_Dry_Season,2,true,120,2,2,,false,,,,,,,Sufficient Drinking Water in Dry Season
+zcrm_361303000000347181,zcrm_361303000000000045,Non-KHT Projects Comments,Non_KHT_Projects_Comments,110,true,2000,2,2,,,,,,,,,Non-KHT Projects Comments
+zcrm_361303000000347187,zcrm_361303000000000045,Latest non-KHT Animal Bank Project,Latest_non_KHT_Animal_Bank_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT Animal Bank Project
+zcrm_361303000000347193,zcrm_361303000000000045,Previous Gov/Royal Aid Projects,Previous_Gov_Royal_Aid_Projects,2,true,120,2,2,,false,,,,,,,Previous Gov/Royal Aid Projects
+zcrm_361303000000347207,zcrm_361303000000000045,General Comments,General_Comments,110,true,2000,2,2,,,,,,,,,General Comments
+zcrm_361303000000347213,zcrm_361303000000000045,Latest non-KHT School Project,Latest_non_KHT_School_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT School Project
+zcrm_361303000000347219,zcrm_361303000000000045,Previous Non-KHT NGO Projects,Previous_Non_KHT_NGO_Projects,2,true,120,2,2,,false,,,,,,,Previous Non-KHT NGO Projects
+zcrm_361303000000347233,zcrm_361303000000000045,Current Water Sources,Current_Water_Sources,100,true,1000,2,2,,,,,,,,,Current Water Sources
+zcrm_361303000000347253,zcrm_361303000000000045,Latest non-KHT Solar Project,Latest_non_KHT_Solar_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT Solar Project
+zcrm_361303000000347259,zcrm_361303000000000045,Latest non-KHT Road Project,Latest_non_KHT_Road_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT Road Project
+zcrm_361303000000347265,zcrm_361303000000000045,Sufficient Drinking Water in Wet Season,Sufficient_Drinking_Water_in_Wet_Season,2,true,120,2,2,,false,,,,,,,Sufficient Drinking Water in Wet Season
+zcrm_361303000000347279,zcrm_361303000000000045,Latest non-KHT Satelite Project,Latest_non_KHT_Satelite_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT Satelite Project
+zcrm_361303000000383875,zcrm_361303000000000097,Crops Grown in Dry Season,Crops_Grown_in_Dry_Season,2,true,120,2,2,,false,,,,,,,Crops Grown in Dry Season
+zcrm_361303000000383903,zcrm_361303000000000097,Sufficient Water for Irrigation,Sufficient_Water_for_Irrigation,2,true,120,2,2,,false,,,,,,,Sufficient Water for Irrigation
+zcrm_361303000000383917,zcrm_361303000000000097,Sufficient Water In Dry Season,Sufficient_Water_In_Dry_Season,2,true,120,2,2,,false,,,,,,,Sufficient Water In Dry Season
+zcrm_361303000000383931,zcrm_361303000000000097,Sufficient Water In Wet Season,Sufficient_Water_In_Wet_Season,2,true,120,2,2,,false,,,,,,,Sufficient Water In Wet Season
+zcrm_361303000000384943,zcrm_361303000000000097,Donor Notes,Donor_Notes,110,true,2000,2,2,,,,,,,,,Donor Notes
+zcrm_361303000000393553,zcrm_361303000000000045,Village's Name,Village_s_Name,116,true,1000,2,2,,,string,,,,,,Village's Name
+zcrm_361303000000394419,zcrm_361303000000000045,Name of Village,Name_of_Village,116,true,1000,2,2,,,string,,,,,,Name of Village
+zcrm_361303000000400239,zcrm_361303000000000045,Latest non-KHT Irrigation Project,Latest_non_KHT_Irrigation_Project,24,true,20,2,2,,,,,,,,,Latest non-KHT Irrigation Project
+zcrm_361303000000403157,zcrm_361303000000000101,Sub-District (if not one),Town_if_not_one,133,true,120,2,2,,,,,,,,zcrm_361303000000000101,Sub-District (if not one) Id
+zcrm_361303000000410250,zcrm_361303000000000097,Other Villages,Other_Villages,1,true,255,2,2,,,,,,,,,Other Villages
+zcrm_361303000000410256,zcrm_361303000000000097,Monthly Expenditure Notes,Monthly_Expenditure_Notes,110,true,2000,2,2,,,,,,,,,Monthly Expenditure Notes
+zcrm_361303000000410262,zcrm_361303000000000097,Males,Boys,52,true,18,2,2,,false,,,,,,,Males
+zcrm_361303000000410268,zcrm_361303000000000097,Education Project Notes,Education_Project_Notes,110,true,2000,2,2,,,,,,,,,Education Project Notes
+zcrm_361303000000410280,zcrm_361303000000000097,Females,Girls,52,true,18,2,2,,false,,,,,,,Females
+zcrm_361303000000410286,zcrm_361303000000000097,No. of Buses/Dorms,No_of_Buses_Dorms,2,true,120,2,2,,false,,,,,,,No. of Buses/Dorms
+zcrm_361303000000410306,zcrm_361303000000000097,THB GBP FX Rate,THB_GBP_FX_Rate,38,true,16,2,2,,false,,,,,,,THB GBP FX Rate
+zcrm_361303000000410312,zcrm_361303000000000097,Project Budget THB,Project_Budget_THP,52,true,18,2,2,,false,,,,,,,Project Budget THB
+zcrm_361303000000410318,zcrm_361303000000000097,Other Schools,Other_Schools,1,true,255,2,2,,,,,,,,,Other Schools
+zcrm_361303000000410324,zcrm_361303000000000097,Monthly Expenditure THB,Monthly_Expenditure_THB,52,true,18,2,2,,false,,,,,,,Monthly Expenditure THB
+zcrm_361303000000411440,zcrm_361303000000000097,Access to Education Issues,Access_to_Education_Issues,100,true,1000,2,2,,false,,,,,,,Access to Education Issues
+zcrm_361303000000411458,zcrm_361303000000000097,Child Ages,Child_Ages,100,true,1000,2,2,,false,,,,,,,Child Ages
+zcrm_361303000000413692,zcrm_361303000000000097,Overheads THB,Overheads_THB,38,true,16,0,2,,false,,,,,,,Overheads THB
+zcrm_361303000000413698,zcrm_361303000000000097,Project Proposal Cost THB,Project_Proposal_Costing_THB,52,true,18,2,2,,false,,,,,,,Project Proposal Cost THB
+zcrm_361303000000414838,zcrm_361303000000000097,% Villagers Affected by Flooding in 2 Years,Villagers_Affected_by_Flooding_in_2_Years,2,true,120,2,2,,false,,,,,,,% Villagers Affected by Flooding in 2 Years
+zcrm_361303000000414868,zcrm_361303000000000097,% Budget Spent,Budget_Spent,116,true,16,2,2,,,number,2,,,,,% Budget Spent
+zcrm_361303000000452011,zcrm_361303000000000097,No. Tanks to Build,No_Tanks_to_Build,2,true,120,2,2,,false,,,,,,,No. Tanks to Build
+zcrm_361303000000452033,zcrm_361303000000000097,KY Project Account Spend THB,KY_Project_Account_Spend_THB,32,true,9,2,2,,false,,,,,,,KY Project Account Spend THB
+zcrm_361303000000452039,zcrm_361303000000000097,KHT Project Transfer List Spend THB,Supplier_Spend_THB,32,true,9,2,2,,false,,,,,,,KHT Project Transfer List Spend THB
+zcrm_361303000000452045,zcrm_361303000000000097,% Labour Paid,Labour_Paid,2,true,120,2,2,,false,,,,,,,% Labour Paid
+zcrm_361303000000452075,zcrm_361303000000000097,Manual Adjustments Notes,Manual_Adjustments_Notes,110,true,2000,2,2,,,,,,,,,Manual Adjustments Notes
+zcrm_361303000000452081,zcrm_361303000000000097,Manual Finance Adjustments,Manual_Finance_Adjustments,32,true,9,2,2,,false,,,,,,,Manual Finance Adjustments
+zcrm_361303000000452093,zcrm_361303000000000097,Total Spend THB,Total_Spend_THB,116,true,16,2,2,,,number,2,,,,,Total Spend THB
+zcrm_361303000000452117,zcrm_361303000000000097,Budget Notes,Budget_Notes,110,true,2000,2,2,,,,,,,,,Budget Notes
+zcrm_361303000000452123,zcrm_361303000000000097,Project Budget GBP,Project_Budget_GBP,116,true,16,2,2,,,number,2,,,,,Project Budget GBP
+zcrm_361303000000455973,zcrm_361303000000000101,Types,Types,100,true,1000,2,2,,,,,,,,,Types
+zcrm_361303000000458493,zcrm_361303000000000097,Project Linked to Other Projects,Project_Linked_to_Other_Projects,301,true,3,2,2,,,,,,,,,Project Linked to Other Projects
+zcrm_361303000000458499,zcrm_361303000000000097,Endline Survey Actual Date,Endline_Survey_Actual_Date,24,true,20,2,2,,,,,,,,,Endline Survey Actual Date
+zcrm_361303000000458505,zcrm_361303000000000097,Other Project Notes,Other_Project_Notes,110,true,2000,2,2,,,,,,,,,Other Project Notes
+zcrm_361303000000460807,zcrm_361303000000000097,Month of Construction,Month_of_Construction,24,true,20,2,2,,,,,,,,,Month of Construction
+zcrm_361303000000484003,zcrm_361303000000000115,Sent From,Sent_From,2,false,50,2,2,,,,,,,,,Sent From
+zcrm_361303000000484005,zcrm_361303000000000115,Link,Link,110,false,2000,2,2,,,,,,,,,Link
+zcrm_361303000000484007,zcrm_361303000000000115,Email Properties,Email_Properties,110,false,1000,2,2,,,,,,,,,Email Properties
+zcrm_361303000000496007,zcrm_361303000000000105,Discount Type Input,Discount_Type_Input,2,false,120,2,2,,false,,,,,,,Discount Type Input
+zcrm_361303000000496009,zcrm_361303000000000105,Discount Percentage Input,Discount_Percentage_Input,34,false,5,2,2,,,,,,,,,Discount Percentage Input
+zcrm_361303000000496011,zcrm_361303000000175255,Discount Type Input,Discount_Type_Input,2,false,120,2,2,,false,,,,,,,Discount Type Input
+zcrm_361303000000496013,zcrm_361303000000175255,Discount Percentage Input,Discount_Percentage_Input,34,false,5,2,2,,,,,,,,,Discount Percentage Input
+zcrm_361303000000496015,zcrm_361303000000000107,Discount Type Input,Discount_Type_Input,2,false,120,2,2,,false,,,,,,,Discount Type Input
+zcrm_361303000000496017,zcrm_361303000000000107,Discount Percentage Input,Discount_Percentage_Input,34,false,5,2,2,,,,,,,,,Discount Percentage Input
+zcrm_361303000000496019,zcrm_361303000000174837,Discount Type Input,Discount_Type_Input,2,false,120,2,2,,false,,,,,,,Discount Type Input
+zcrm_361303000000496021,zcrm_361303000000174837,Discount Percentage Input,Discount_Percentage_Input,34,false,5,2,2,,,,,,,,,Discount Percentage Input
+zcrm_361303000000496023,zcrm_361303000000000109,Discount Type Input,Discount_Type_Input,2,false,120,2,2,,false,,,,,,,Discount Type Input
+zcrm_361303000000496025,zcrm_361303000000000109,Discount Percentage Input,Discount_Percentage_Input,34,false,5,2,2,,,,,,,,,Discount Percentage Input
+zcrm_361303000000496027,zcrm_361303000000174419,Discount Type Input,Discount_Type_Input,2,false,120,2,2,,false,,,,,,,Discount Type Input
+zcrm_361303000000496029,zcrm_361303000000174419,Discount Percentage Input,Discount_Percentage_Input,34,false,5,2,2,,,,,,,,,Discount Percentage Input
+zcrm_361303000000496031,zcrm_361303000000000111,Discount Type Input,Discount_Type_Input,2,false,120,2,2,,false,,,,,,,Discount Type Input
+zcrm_361303000000496033,zcrm_361303000000000111,Discount Percentage Input,Discount_Percentage_Input,34,false,5,2,2,,,,,,,,,Discount Percentage Input
+zcrm_361303000000496035,zcrm_361303000000174001,Discount Type Input,Discount_Type_Input,2,false,120,2,2,,false,,,,,,,Discount Type Input
+zcrm_361303000000496037,zcrm_361303000000174001,Discount Percentage Input,Discount_Percentage_Input,34,false,5,2,2,,,,,,,,,Discount Percentage Input
+zcrm_361303000000512001,zcrm_361303000000000097,Course (Scholars Only),Course_Scholars_Only,1,true,255,2,2,,,,,,,,,Course (Scholars Only)
+zcrm_361303000000512007,zcrm_361303000000000097,School Type,School_Type,100,true,1000,2,2,,false,,,,,,,School Type
+zcrm_361303000000529019,zcrm_361303000000000097,Full Name (Scholar Only),Full_Name_Scholar_Only,1,true,255,2,2,,,,,,,,,Full Name (Scholar Only)
+zcrm_361303000000534353,zcrm_361303000000000047,Full Donor Name,Full_Donor_Name,1,true,255,2,2,true,,,,,,,,Full Donor Name
+zcrm_361303000000552021,zcrm_361303000000000097,No Interim Reports Due,No_Interim_Reports_Due,116,true,3,2,2,,,boolean,,,,,,No Interim Reports Due
+zcrm_361303000000552027,zcrm_361303000000000097,Last Update,Last_Update,333,true,120,2,2,,,,,,,,,Last Update
+zcrm_361303000000579088,zcrm_361303000000000097,Village Proposal Date,Village_Proposal_Date,24,true,20,2,2,,,,,,,,,Village Proposal Date
+zcrm_361303000000579094,zcrm_361303000000000097,Baseline Survey Date,Baseline_Survey_Date,24,true,20,2,2,,,,,,,,,Baseline Survey Date
+zcrm_361303000000806007,zcrm_361303000000000061,Sort order preference,sort_order_preference__s,2,false,120,2,2,,,,,,,,,Sort order preference
+zcrm_361303000000806009,zcrm_361303000000000061,Name format,name_format__s,2,false,120,2,2,,,,,,,,,Name format
+zcrm_361303000001154017,zcrm_361303000000000097,D2 - Final Report Sent,D2_Final_Report_Sent,301,true,3,2,2,,,,,,,,,D2 - Final Report Sent
+zcrm_361303000001154023,zcrm_361303000000000097,D1 - Interim Report Sent,D1_Interim_Report_Sent,301,true,3,2,2,,,,,,,,,D1 - Interim Report Sent
+zcrm_361303000001154029,zcrm_361303000000000097,D4 - Interim Report Sent,D4_Interim_Report_Sent,301,true,3,2,2,,,,,,,,,D4 - Interim Report Sent
+zcrm_361303000001154035,zcrm_361303000000000097,D3 -  Interim Report Sent,D3_Interim_Report_Sent,301,true,3,2,2,,,,,,,,,D3 -  Interim Report Sent
+zcrm_361303000001154041,zcrm_361303000000000097,D4 - Final Report Sent,D4_Final_Report_Sent,301,true,3,2,2,,,,,,,,,D4 - Final Report Sent
+zcrm_361303000001154047,zcrm_361303000000000097,D1 - Final Report Sent,D1_Final_Report_Sent,301,true,3,2,2,,,,,,,,,D1 - Final Report Sent
+zcrm_361303000001154053,zcrm_361303000000000097,D2 - Interim Report Sent,D2_Interim_Report_Sent,301,true,3,2,2,,,,,,,,,D2 - Interim Report Sent
+zcrm_361303000001156807,zcrm_361303000000000097,D3 - Final Report Sent,D3_Final_Report_Sent,301,true,3,2,2,,,,,,,,,D3 - Final Report Sent
+zcrm_361303000001174003,zcrm_361303000000237101,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000001270013,zcrm_361303000000177713,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000001270015,zcrm_361303000000177737,Created By,created_by__s,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Created By.id
+zcrm_361303000001270017,zcrm_361303000000177737,Modified By,modified_by__s,20,false,25,2,2,,,,,,,,zcrm_361303000000000061,Modified By.id
+zcrm_361303000001270019,zcrm_361303000000177737,Created Time,created_time__s,200,false,25,2,2,,,,,,,,,Created Time
+zcrm_361303000001270021,zcrm_361303000000177737,Modified Time,modified_time__s,200,false,25,2,2,,,,,,,,,Modified Time
+zcrm_361303000001270023,zcrm_361303000000177737,Record Id,id,52,false,18,2,2,,,,,,,,,Record Id
+zcrm_361303000001462005,zcrm_361303000000177737,Forecast Manager,forecast_manager__s,220,false,20,2,2,,,,,,,,zcrm_361303000000000061,Forecast Manager.id
+zcrm_361303000001586137,zcrm_361303000000000097,Unused Rai of Flat/Paddy Fields,Unused_Rai_of_Flat_Paddy_Fields,32,true,9,2,2,,false,,,,,,,Unused Rai of Flat/Paddy Fields
+zcrm_361303000001586143,zcrm_361303000000000097,No. Latrines to Build,No_Latrines_to_Build,32,true,9,2,2,,false,,,,,,,No. Latrines to Build
+zcrm_361303000001586149,zcrm_361303000000000097,Rai of Village Hill Farmland,Rai_of_Village_Hill_Farmland,32,true,9,2,2,,false,,,,,,,Rai of Village Hill Farmland
+zcrm_361303000001586155,zcrm_361303000000000097,Wooden Dams Used,Wooden_Dams_Used,33,true,30,2,2,,,,,,,,,Wooden Dams Used
+zcrm_361303000001586161,zcrm_361303000000000097,Final Grade (Scholars Only),Final_Grade_Scholars_Only,38,true,16,2,2,,false,,,,,,,Final Grade (Scholars Only)
+zcrm_361303000001586167,zcrm_361303000000000097,Cost per Beneficiary GBP (From Budget),Cost_per_Beneficiary_GBP_From_Budget,116,true,16,2,2,,,number,2,,,,,Cost per Beneficiary GBP (From Budget)
+zcrm_361303000001586177,zcrm_361303000000000097,Funds Remaining GBP,Funds_Remaining_GBP,116,true,16,2,2,,,currency,2,,,,,Funds Remaining GBP
+zcrm_361303000001586183,zcrm_361303000000000097,Pre-Project Water Tests,Pre_Project_Water_Tests,100,true,1000,2,2,,false,,,,,,,Pre-Project Water Tests
+zcrm_361303000001586195,zcrm_361303000000000097,Endline Water Test Date,Endline_Water_Test_Date,333,true,120,2,2,,,,,,,,,Endline Water Test Date
+zcrm_361303000001586201,zcrm_361303000000000097,Failed Pre-Project Water Tests,Failed_Pre_Project_Water_Tests,100,true,1000,2,2,,false,,,,,,,Failed Pre-Project Water Tests
+zcrm_361303000001586213,zcrm_361303000000000097,Water Tests and Failures Notes,Water_Tests_and_Failures_Notes,3,true,32000,2,2,,,,,,,,,Water Tests and Failures Notes
+zcrm_361303000001586219,zcrm_361303000000000097,Pre-Project Water Test Date,Pre_Project_Water_Test_Date,333,true,120,2,2,,,,,,,,,Pre-Project Water Test Date
+zcrm_361303000001586225,zcrm_361303000000000097,Baseline Water Tests,Baseline_Water_Tests,100,true,1000,2,2,,false,,,,,,,Baseline Water Tests
+zcrm_361303000001586237,zcrm_361303000000000097,Failed Baseline Water Tests,Failed_Baseline_Water_Tests,100,true,1000,2,2,,false,,,,,,,Failed Baseline Water Tests
+zcrm_361303000001586249,zcrm_361303000000000097,Baseline Water Test Date,Baseline_Water_Test_Date,333,true,120,2,2,,,,,,,,,Baseline Water Test Date
+zcrm_361303000001586255,zcrm_361303000000000097,Endline Water Tests,Endline_Water_Tests,100,true,1000,2,2,,false,,,,,,,Endline Water Tests
+zcrm_361303000001586267,zcrm_361303000000000097,Failed Endline Water Tests,Failed_Endline_Water_Tests,100,true,1000,2,2,,false,,,,,,,Failed Endline Water Tests
+zcrm_361303000001586279,zcrm_361303000000000097,Pre-Project E Coli MPN/100ml,Pre_Project_E_Coli_MPN_100ml,2,true,120,2,2,,false,,,,,,,Pre-Project E Coli MPN/100ml
+zcrm_361303000001586313,zcrm_361303000000000097,Baseline E Coli MPN,Baseline_E_Coli_MPN,2,true,120,2,2,,false,,,,,,,Baseline E Coli MPN
+zcrm_361303000001586333,zcrm_361303000000000097,Endline E Coli MPN,Endline_E_Coli_MPN,2,true,120,2,2,,false,,,,,,,Endline E Coli MPN
+zcrm_361303000001647001,zcrm_361303000000000097,Target Litres Per Person on Day 1,Target_Litres_Per_Person_on_Day_1,38,true,16,0,2,,false,,,,,,,Target Litres Per Person on Day 1
+zcrm_361303000001671025,zcrm_361303000000000045,Number of People without Thai ID Cards,Number_of_People_without_Thai_ID_Cards,32,true,9,2,2,,false,,,,,,,Number of People without Thai ID Cards
+zcrm_361303000001671031,zcrm_361303000000000045,Are Any KHT Staff Connected to the Village?,Are_Any_KHT_Staff_Connected_to_the_Village,110,true,2000,2,2,,,,,,,,,Are Any KHT Staff Connected to the Village?
+zcrm_361303000001671037,zcrm_361303000000000045,No. Children Living Away in Dormitories,No_Children_Living_Away_in_Dormitories,32,true,9,2,2,,false,,,,,,,No. Children Living Away in Dormitories
+zcrm_361303000001671043,zcrm_361303000000000045,No. Children Who Don't Go to Mathayom but Should,No_Children_Who_Don_t_Go_to_Mathayom_but_Should,52,true,18,2,2,,false,,,,,,,No. Children Who Don't Go to Mathayom but Should
+zcrm_361303000001671049,zcrm_361303000000000045,No. Children Who Don't Go to Pratom but Should,No_Children_Who_Don_t_Go_to_Pratom_but_Should,52,true,18,2,2,,false,,,,,,,No. Children Who Don't Go to Pratom but Should
+zcrm_361303000001673791,zcrm_361303000000000097,How Did KHT Identify the Project and Site,How_Did_KHT_Identify_the_Project_and_Site,3,true,32000,2,2,,,,,,,,,How Did KHT Identify the Project and Site
+zcrm_361303000001690013,zcrm_361303000000000097,Corrective Work Requied,Corrective_Work_Requied,2,true,120,2,2,,false,,,,,,,Corrective Work Requied
+zcrm_361303000001811001,zcrm_361303000000000111,Potential Name,Deal_Name__s,133,false,120,2,2,,,,,,,,zcrm_361303000000000049,Deal Name.id
+zcrm_361303000001860032,zcrm_361303000000000097,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860034,zcrm_361303000000000101,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860036,zcrm_361303000000000103,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860038,zcrm_361303000000000105,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860040,zcrm_361303000000000107,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860042,zcrm_361303000000000043,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860044,zcrm_361303000000000109,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860046,zcrm_361303000000000045,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860048,zcrm_361303000000000111,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860050,zcrm_361303000000000047,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860052,zcrm_361303000000000049,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860054,zcrm_361303000000000051,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001860056,zcrm_361303000000000095,Locked,Locked__s,301,false,50,2,2,,,,,,,,,Locked
+zcrm_361303000001883003,zcrm_361303000000205016,system_mandatory,system_mandatory,301,false,3,2,2,,,,,,,,,system_mandatory
+zcrm_361303000001883005,zcrm_361303000000205016,filterable,filterable,301,false,3,2,2,,,,,,,,,filterable
+zcrm_361303000001883007,zcrm_361303000000205016,custom_field,custom_field,301,false,3,2,2,,,,,,,,,custom_field
+zcrm_361303000001883009,zcrm_361303000000205016,private,private,110,false,2000,2,2,,,,,,,,,private
+zcrm_361303000001883011,zcrm_361303000000205016,virtual_field,virtual_field,301,false,3,2,2,,,,,,,,,virtual_field
+zcrm_361303000001883013,zcrm_361303000000205016,tooltip,tooltip,1,false,255,2,2,,,,,,,,,tooltip
+zcrm_361303000001883015,zcrm_361303000000205016,length,length,32,false,9,2,2,,,,,,,,,length
+zcrm_361303000001883017,zcrm_361303000000205016,column_name,column_name,1,false,255,2,2,,,,,,,,,column_name
+zcrm_361303000001883019,zcrm_361303000000205016,created_source,created_source,1,false,255,2,2,,,,,,,,,created_source
+zcrm_361303000001883021,zcrm_361303000000205016,display_field,display_field,301,false,3,2,2,,,,,,,,,display_field
+zcrm_361303000001883023,zcrm_361303000000205016,type,type,1,false,255,2,2,,,,,,,,,type
+zcrm_361303000001883025,zcrm_361303000000205016,searchable,searchable,301,false,3,2,2,,,,,,,,,searchable
+zcrm_361303000001883027,zcrm_361303000000205016,display_label,display_label,1,false,255,2,2,,,,,,,,,display_label
+zcrm_361303000001883029,zcrm_361303000000205016,display_type,display_type,32,false,9,2,2,,,,,,,,,display_type
+zcrm_361303000001883031,zcrm_361303000000205016,show_type,show_type,32,false,9,2,2,,,,,,,,,show_type
+zcrm_361303000001883033,zcrm_361303000000205016,ui_type,ui_type,32,false,9,2,2,,,,,,,,,ui_type
+zcrm_361303000001883035,zcrm_361303000000205016,api_name,api_name,1,false,255,2,2,,,,,,,,,api_name
+zcrm_361303000001883037,zcrm_361303000000205016,id,id,52,false,50,2,2,,,,,,,,,id
+zcrm_361303000001883039,zcrm_361303000000205016,category,category,32,false,9,2,2,,,,,,,,,category
+zcrm_361303000001883041,zcrm_361303000000205016,hipaa_compliance_enabled,hipaa_compliance_enabled,301,false,3,2,2,,,,,,,,,hipaa_compliance_enabled
+zcrm_361303000001883043,zcrm_361303000000205016,decimal_place,decimal_place,32,false,9,2,2,,,,,,,,,decimal_place
+zcrm_361303000002000301,zcrm_361303000000000097,Corrective Work Details,Corrective_Work_Details,3,true,32000,2,2,,,,,,,,,Corrective Work Details
+zcrm_361303000002004553,zcrm_361303000000000097,Water Filters to Install,Water_Filters_to_Install,100,true,1000,2,2,,,,,,,,,Water Filters to Install
+zcrm_361303000002013727,zcrm_361303000000000097,Latest WASH Result,Latest_WASH_Result,116,true,1000,2,2,,,string,,,,,,Latest WASH Result
+zcrm_361303000002059062,zcrm_361303000000000045,Hosted KHT Projects,Hosted_KHT_Projects,100,true,1000,2,2,,,,,,,,,Hosted KHT Projects
+zcrm_361303000002085820,zcrm_361303000000000097,All Donors,All_Donors,116,true,1000,2,2,,,string,,,,,,All Donors
+zcrm_361303000002132007,zcrm_361303000000000043,Last Enriched Time,Last_Enriched_Time__s,333,false,50,2,2,,,,,,,,,Last Enriched Time
+zcrm_361303000002132008,zcrm_361303000000000047,Last Enriched Time,Last_Enriched_Time__s,333,false,50,2,2,,,,,,,,,Last Enriched Time
+zcrm_361303000002132009,zcrm_361303000000000045,Last Enriched Time,Last_Enriched_Time__s,333,false,50,2,2,,,,,,,,,Last Enriched Time
+zcrm_361303000002132010,zcrm_361303000000000043,Enrich Status,Enrich_Status__s,2,false,120,2,2,,,,,,,,,Enrich Status
+zcrm_361303000002132011,zcrm_361303000000000047,Enrich Status,Enrich_Status__s,2,false,120,2,2,,,,,,,,,Enrich Status
+zcrm_361303000002132012,zcrm_361303000000000045,Enrich Status,Enrich_Status__s,2,false,120,2,2,,,,,,,,,Enrich Status
+zcrm_361303000002360001,zcrm_361303000000000061,status reason,status_reason__s,2,false,120,2,2,,,,,,,,,status reason
+zcrm_361303000002402001,zcrm_361303000000000049,Reason For Loss,Reason_For_Loss__s,2,false,120,2,2,,,,,,,,,Reason For Loss
+zcrm_361303000002751007,zcrm_361303000000113001,Moved To,Moved_To__s,2,false,50,2,2,,,,,,,,,Moved To
+zcrm_361303000002792027,zcrm_361303000000000115,Email Intent,Email_Intent,2,false,50,2,2,,,,,,,,,Email Intent

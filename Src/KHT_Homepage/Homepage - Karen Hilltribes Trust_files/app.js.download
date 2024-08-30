@@ -1,0 +1,52 @@
+function toggleNightMode(){
+  jQuery('html').toggleClass('night');
+
+  if(localStorage.getItem("nightMode") === 'on'){
+    localStorage.setItem("nightMode", 'off');
+  } else {
+    localStorage.setItem("nightMode", 'on');
+  }
+}
+
+jQuery(function() {
+
+  // Handle toggle of main menu on small screens
+  jQuery(".nav-mobile__toggle, .nav-mobile__mask").on("click", function() {
+    jQuery(".nav-mobile__menu").toggle();
+    jQuery(".nav-mobile__icon.fa-caret-down").toggleClass("fa-caret-up");
+    jQuery(".nav-mobile__mask").fadeToggle("fast");
+  })
+
+  // Handle toggle of accessibility menu
+  jQuery("body").on("keydown", function(e) {
+    if(e.keyCode === 9){
+      jQuery(".accessibility-links-wrapper").show();
+    }
+  })  
+
+  // Handle toggle night mode
+  jQuery(".toggleNightMode").on("click", function() {
+    toggleNightMode();
+  });
+
+  // Check if night mode is enabled and if so, add the class to the html tag
+  if(localStorage.getItem("nightMode") === 'on'){
+    jQuery('html').addClass('night');
+  }
+
+  // Handle toggling of search bar
+  jQuery(".toggleSearch, .closeSearch").on("click", function () {
+    jQuery(".site-search").slideToggle("fast");
+  })
+
+  // On button click to close the cookie notification, fade it out and set a local storage item
+  jQuery('.cookie-notification__accept').on("click", function() {
+    jQuery('.cookie-notification').fadeOut();
+    localStorage.setItem("cookies", 'off');
+  })
+
+  // Check if the cookie notification is not marked as closed, if it isn't, fade it in
+  if(!localStorage.getItem("cookies", 'off')){
+      jQuery('.cookie-notification').fadeIn();
+  }
+});

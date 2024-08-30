@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Village URL</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <h1>Add new post to the map</h1>
+    <form id="village-url-form">
+        <label for="password"><b>*Please input in your password to add new post:</b></label>
+        <input type="password" id="password" name="password" required><br>
+        <div id="parent-container" style="width: 100%; position: relative;">
+            <label for="village_name">Village Name:</label>
+            <input type="text" id="village_name" class="village_name" autocomplete="off" required>
+            <div id="result-container" class="result-container"></div>
+        <label for="url">A link to the post:</label>
+        <input type="text" id="url" name="url" required><br>
+        <label for="image_url">Image Link (optional):</label>
+        <input type="text" id="image_url" name="image_url"><br>
+        <label for="article_title">Article Title (optional):</label>
+        <input type="text" id="article_title" name="article_title"><br>
+        <label for="posted_date">Posted Date (optional):</label>
+        <input type="date" id="posted_date" name="posted_date"><br>
+        <button type="submit" id="submit-button">Create Village URL</button>
+        <button type="button" id="clear-button">Clear Form</button>
+        <p id="message"></p>
+    </form>
+    <script src="script.js"></script>
+    <script src="https://kht-map.org:2546/api/testpackage/"></script>
+</body>
+</html>

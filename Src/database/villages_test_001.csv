@@ -1,0 +1,322 @@
+village_name,created_time,households,road_conditions,total_population,gps_latitude,gps_longitude,_population_without_enough_rice,children_aged_0_-_18,distance_to_town_km,adult_males,adult_females,distance_to_hospital_km,nearest_health_centre,distance_to_pratom_km,annual_typhoid_cases,distance_to_health_centre_km,distance_to_mathayom_km,common_diseases,hosted_kht_projects,record_id
+Ban Mae Kong Pae,2021-09-22 15:52:54,53,Average (some paved road. some potholes),250,18.565066,98.116619,60.0,-1,58.0,130,120,58.0,Ban Kok Luang,5.0,2,11.0,4.0,Flu,Irrigation;WASH,zcrm_361303000000383834
+Ban Mae Yuam Noi,2021-09-24 16:34:30,30,Good (paved roads. few potholes),118,18.8184,98.05048,50.0,29,16.0,43,46,16.0,Ban Pong Tong,1.0,3,5.0,16.0,Ulcer. Flu,WASH,zcrm_361303000000461001
+Ban Mae Ho Klang,2021-10-27 14:25:02,33,Very Good (paved roads),153,18.133738,98.078612,40.0,24,20.0,68,61,20.0,Ban Mae Ho,2.0,1,2.0,2.0,Ulcer & Flu,WASH,zcrm_361303000000521001
+Ban Khun Mae La,2021-10-28 11:14:18,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses;Further Education Scholarships,zcrm_361303000000522010
+Ban Huay Peung Kao,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses,zcrm_361303000000527031
+Ban Rom Yen,2021-10-28 12:25:05,24,,117,,,20.0,31,42.0,43,43,42.0,Ban Mae Ki,10.0,1,10.0,42.0,Flu. Ulcer,School Buses;Irrigation;Further Education Scholarships;WASH,zcrm_361303000000527032
+Ban Huay Pong Lao,2021-10-28 12:25:05,46,,231,18.61241,97.8565,40.0,80,40.0,73,78,40.0,Ban Mae Ki,9.0,1,9.0,40.0,Flu and Ulcer,School Buses;Further Education Scholarships;WASH,zcrm_361303000000527033
+Ban Mae Sapei Nua,2021-10-28 12:25:05,70,,300,18.90522,97.85216,50.0,99,25.0,101,100,25.0,Khun Yuam,,38,25.0,,Ulcer. influenza,School Buses;WASH,zcrm_361303000000527034
+Ban Mae Sapei Tai,2021-10-28 12:25:05,88,,395,18.9324,97.86873,40.0,114,14.0,146,135,14.0,Ban Mae Su Rin,,10,12.0,14.0,,School Buses;Further Education Scholarships;WASH,zcrm_361303000000527035
+Ban Mae Oompai Tai,2021-10-28 12:25:05,88,,397,18.75611,98.03743,20.0,-1,54.0,-1,-1,54.0,Ban Mae To,,7,3.0,,Flu. Stomach ache. Headache,Irrigation;School Buses;WASH,zcrm_361303000000527036
+Ban Huay Pong Karn,2021-10-28 12:25:05,37,Very Good (paved roads),132,19.11397,97.97173,60.0,35,30.0,46,51,30.0,Huay Pong,11.0,-1,8.0,,Flu,School Buses;Further Education Scholarships;WASH,zcrm_361303000000527037
+Ban Hua Pon,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses;Further Education Scholarships,zcrm_361303000000527038
+Ban Kham Suk,2021-10-28 12:25:05,11,,84,18.82074,98.0462,30.0,37,14.0,23,24,14.0,Khun Yuam,,2,14.0,,,School Buses;Further Education Scholarships;WASH,zcrm_361303000000527039
+Ban Mai Pattana,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses;Further Education Scholarships,zcrm_361303000000527040
+Ban Pattana Poo Koo,2021-10-28 12:25:05,80,Very Good (paved roads),305,18.923076,97.869539,60.0,-1,7.0,153,152,7.0,Ban Pang Tong,0.0,-1,10.0,7.0,Flu,School Buses;Irrigation;Further Education Scholarships,zcrm_361303000000527041
+Ban Huay Ku Pa,2021-10-28 12:25:05,33,,126,18.54035,97.89712,50.0,49,26.0,-1,-1,26.0,Ban Mae La Luang,,-1,6.0,6.0,,School Buses;Further Education Scholarships;WASH,zcrm_361303000000527042
+Ban Huay Rin,2021-10-28 12:25:05,99,,401,,,20.0,80,5.0,153,168,5.0,Mae La Noi,,5,5.0,,Flu. Ulcer,School Buses;Further Education Scholarships;WASH,zcrm_361303000000527044
+Ban Mae La Luang,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses;Further Education Scholarships,zcrm_361303000000527045
+Ban Santi Suk,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses,zcrm_361303000000527046
+Ban Huay Kai Pa,2021-10-28 12:25:05,113,,539,18.9509,97.79007,40.0,160,22.0,191,188,22.0,Ban Mae Su,,-1,5.0,12.0,Flu. Ulcer and headache,School Buses;School Meals;Further Education Scholarships;WASH,zcrm_361303000000527047
+Ban Huay Pueng Mai,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Meals,zcrm_361303000000527048
+Khun Yuam,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Meals;Further Education Scholarships,zcrm_361303000000527049
+Ban Huay San,2021-10-28 12:25:05,21,,109,18.68857,97.83369,40.0,44,40.0,33,32,40.0,Ban Mae Ki,,19,5.0,,Flu. Ulcer. blood pressure. diarrhea,School Meals;WASH,zcrm_361303000000527050
+Ban Mae Kheed,2021-10-28 12:25:05,118,Average (some paved road. some potholes),418,18.52724,98.08081,40.0,-1,50.0,217,201,50.0,Ban Kok Luang,0.0,-1,8.0,0.0,Dengue fever,Irrigation;Further Education Scholarships;WASH,zcrm_361303000000527051
+Ban Mae La Pa Wai,2021-10-28 12:25:05,22,,131,18.57165,98.14273,40.0,60,80.0,61,64,80.0,In the village,,-1,,,,School Meals;WASH,zcrm_361303000000527052
+Ban Mae Tho,2021-10-28 12:25:05,12,,67,,,,-1,,-1,-1,,,,-1,,,,Irrigation;School Meals;Further Education Scholarships,zcrm_361303000000527053
+Ban Mae Tho Tai,2021-10-28 12:25:05,105,,312,18.62961,97.99961,10.0,-1,,-1,-1,45.0,Ban Mae To,,-1,6.0,,,Irrigation;School Buses;School Meals;Further Education Scholarships;WASH,zcrm_361303000000527054
+Ban Mae La Noi Duransik,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Meals,zcrm_361303000000527055
+Ban Pa Pong,2021-10-28 12:25:05,90,,371,18.13999,98.16411,35.0,119,35.0,131,121,35.0,Ban Huay Kung,,6,7.0,,ulcer. high blood pressure. flu,Further Education Scholarships;WASH,zcrm_361303000000527056
+Ban Kong Pae Nua,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000000527057
+Ban Jaw Si Der,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000000527058
+Ban San Jao,2021-10-28 12:25:05,17,,92,,,30.0,45,11.0,23,24,11.0,Ban Pang Tong,1.0,3,7.0,,,WASH,zcrm_361303000000527060
+Ban Santi Pattana,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000000527061
+Ban Na ngeiw,2021-10-28 12:25:05,30,,147,19.09541,97.52298,50.0,60,11.0,37,50,11.0,Khun Yuam,,-1,11.0,,,Further Education Scholarships;WASH,zcrm_361303000000527062
+Ban Hak Mai Tai,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000000527063
+Ban Mae Pang,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000000527064
+Ban Mae Poon,2021-10-28 12:25:05,83,Average (some paved road. some potholes),313,18.25059,98.12688,40.0,83,47.0,110,120,47.0,Ban Chang Maw,0.0,3,27.0,28.0,,Further Education Scholarships;WASH,zcrm_361303000000527065
+Khun Yuam Wittaya,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Meals;Further Education Scholarships,zcrm_361303000000527066
+Mae Tho,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000000527067
+Ban Tee Hue Lue,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000000527068
+Ban Nam Tok,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000000527069
+Ban Khun Mae Yod,2021-10-28 12:25:05,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000000527070
+Ban Ma Hing Luang,2021-10-28 12:25:05,72,,473,18.682,98.04242,30.0,202,43.0,135,136,43.0,Ban Mae La Ka,,18,7.0,,Flu. Ulcer,Further Education Scholarships;WASH,zcrm_361303000000527071
+Ban Huay Ma Ba,2021-10-28 16:47:15,38,Average (some paved road. some potholes),198,18.56305,98.08861,60.0,-1,56.0,96,102,56.0,Ban Khun Mae La Noi,6.0,-1,6.0,65.0,Flu,Irrigation;Further Education Scholarships;WASH,zcrm_361303000000534424
+Ban Pa Maak,2021-11-01 13:07:27,100,Very Good (paved roads),350,18.430025,97.879721,60.0,-1,1.0,170,180,1.0,Mae La Noi,0.0,-1,1.0,1.0,Flu,Irrigation;Further Education Scholarships;WASH,zcrm_361303000000543001
+Ban Mae Khi,2021-11-01 17:10:12,81,,396,18.66254,97.85096,40.0,84,34.0,166,146,34.0,In the village,,3,,34.0,Flu and Ulcer,School Meals;Further Education Scholarships;WASH,zcrm_361303000000546098
+Ban Pho So,2021-11-19 08:24:16,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Meals,zcrm_361303000000654001
+Ban Mae Au (Mae Chaem),2021-11-22 07:54:33,34,Poor (not paved. lots of potholes),113,18.808386,98.252471,40.0,46,87.0,35,32,50.0,Ban Pang Ung,6.0,10,23.0,87.0,Cholera. Hepatisis A & parasites,WASH,zcrm_361303000000667001
+Ban Mae Yuam Luang,2021-11-26 04:07:54,19,Very Good (paved roads),87,18.82872,97.917326,50.0,-1,12.0,47,40,12.0,Ban Pang Tong,1.0,-1,4.0,12.0,Flu,Irrigation;Further Education Scholarships;WASH,zcrm_361303000000702001
+Ban Huay Ton Noon,2021-11-26 04:33:45,150,Very Good (paved roads),565,18.77794,97.75461,45.0,-1,25.0,275,290,25.0,Ban Huay Ton Noon,0.0,-1,0.0,25.0,Flu,Irrigation;Further Education Scholarships;WASH,zcrm_361303000000702035
+Ban Ler Wa Day,2021-11-26 07:38:22,17,Average (some paved road. some potholes),105,18.409533,97.705962,50.0,-1,70.0,51,54,70.0,Ban Po Saw,3.0,-1,10.0,10.0,Fllu,Irrigation,zcrm_361303000000707091
+Ban Po Saw,2021-11-26 07:59:56,123,Very Good (paved roads),537,18.346565,97.693357,50.0,-1,60.0,254,283,60.0,Ban Po Saw,0.0,-1,0.0,0.0,Flu,Irrigation;WASH,zcrm_361303000000707147
+Ban Mae Lor,2021-11-26 08:24:13,45,Average (some paved road. some potholes),299,18.43209,97.693,50.0,-1,73.0,137,162,73.0,Ban Po Saw,0.0,-1,10.0,10.0,Flu,Irrigation;WASH,zcrm_361303000000707181
+Ban Huay Na,2021-11-26 08:50:08,125,Very Good (paved roads),486,19.05218,98.35587,45.0,-1,25.0,242,244,25.0,Ban Huay Na,0.0,1,0.0,25.0,Stomach. Flu. Skin infection,Irrigation;Further Education Scholarships;WASH,zcrm_361303000000707225
+Ban Huay Pong,2021-11-28 05:32:07,35,Average (some paved road. some potholes),123,,,50.0,-1,73.0,58,65,73.0,Ban Po Saw,5.0,-1,13.0,13.0,Flu,Irrigation;WASH,zcrm_361303000000716013
+Ban Nong Heang,2021-11-28 05:47:14,122,Very Good (paved roads),408,18.63574,97.94905,55.0,-1,25.0,-1,-1,25.0,Ban Muang Pon,0.0,-1,10.0,0.0,Flu,Irrigation;Further Education Scholarships;WASH,zcrm_361303000000716047
+Ban Mae Jaa,2021-11-28 06:11:03,81,Good (paved roads. few potholes),335,18.986531,97.989024,55.0,-1,35.0,178,157,35.0,Ban Huay Pong,0.0,-1,3.0,35.0,15 others affected by illnesses,Irrigation;Further Education Scholarships;WASH,zcrm_361303000000716116
+Ban Mae Song,2021-11-28 06:40:40,36,Average (some paved road. some potholes),175,,,50.0,-1,85.0,90,85,80.0,Ban Sa La Jiang Tong,12.0,1,12.0,12.0,Flu,Irrigation;Further Education Scholarships,zcrm_361303000000716180
+Ban Mae Po,2021-11-29 03:16:25,65,Average (some paved road. some potholes),315,,,50.0,-1,90.0,151,164,90.0,Ban Sa La Jiang Tong,15.0,-1,15.0,15.0,Flu,Irrigation;WASH,zcrm_361303000000716289
+Ban Mae Phae,2021-11-29 03:23:28,85,Average (some paved road. some potholes),380,,,50.0,-1,70.0,196,184,70.0,Ban Sa La Jiang Tong,20.0,-1,20.0,20.0,,Irrigation,zcrm_361303000000716314
+Ban Thung Pa Kha,2022-03-09 08:59:51,151,Good (paved roads. few potholes),420,18.62569,97.95176,40.0,-1,23.0,201,219,23.0,Ban Mae Suk,3.0,-1,3.0,23.0,Dengue Fever: 2,School Buses;Irrigation;WASH,zcrm_361303000001197125
+Ban Nong Khao Nua,2022-05-11 08:38:28,25,Good (paved roads. few potholes),93,19.236202,98.145748,50.0,20,45.0,34,39,45.0,Ban Nong Khao Klong,12.0,2,5.0,12.0,Parasites,WASH,zcrm_361303000001443001
+Ban Mae Tia,2022-05-12 08:47:17,296,Very Good (paved roads),1081,18.297219,97.917109,40.0,257,15.0,397,427,15.0,Ban Mae Tia,0.0,30,0.0,15.0,Hepatitis/ Parasites,Further Education Scholarships;WASH,zcrm_361303000001443196
+Ban Kong Soum,2022-06-01 07:48:30,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001611292
+Ban Huay Po,2022-06-01 08:05:00,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001611368
+Ban Khun Mae Ruam,2022-06-01 08:07:11,125,,703,18.91706,98.19787,35.0,166,32.0,277,260,32.0,Ban Mae La Up,,-1,20.0,,Flu and Ulcer,Further Education Scholarships;WASH,zcrm_361303000001611394
+Ban Klo Se Lo,2022-06-01 08:11:55,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001611430
+Ban Pang Tong,2022-06-01 08:18:32,233,,863,18.84205,98.06347,50.0,22,13.0,419,422,13.0,Ban Pang Tong,,3,,,Flu and Diarrhea,Further Education Scholarships;WASH,zcrm_361303000001611496
+Ban Huay Hu Pa,2022-06-01 08:24:03,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001611560
+Ban Mae Taw La,2022-06-01 08:27:45,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001611591
+Ban Huay Sua,2022-06-01 08:36:00,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001611617
+Ban Pang Chang,2022-06-01 08:40:32,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001611643
+Ban Mae Sa,2022-06-01 08:45:09,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001611690
+Ban Mae Wa Luang,2022-06-20 07:12:44,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001699013
+Sao Hin,2022-06-20 07:26:27,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001699049
+Pa Mark,2022-06-20 07:29:43,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001699075
+Mae Tor,2022-06-20 07:31:03,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001699101
+Ban Aum Da Nua,2022-06-20 07:54:16,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001699139
+Ban Huay Ma Kok,2022-06-20 08:06:00,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001699181
+Ban Aae Auh,2022-07-25 11:19:24,57,,297,18.92632,98.21819,40.0,80,80.0,109,108,36.0,Ban Mae La Oop,5.0,9,10.0,5.0,Flu and Ulcer,WASH,zcrm_361303000001881585
+Ban Chan Muang,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881587
+Ban Den,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881588
+Ban Doi Liam,2022-07-25 11:19:24,36,,173,18.25842,98.09135,40.0,65,35.0,53,55,35.0,Ban Mae Ho,,5,10.0,,Flu. Ulcer and cancer,Further Education Scholarships;WASH,zcrm_361303000001881589
+Ban Du La Per,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881590
+Ban Eh Loo,2022-07-25 11:19:24,42,,207,18.42941,97.66358,60.0,45,78.0,81,81,78.0,Ban Po Suar,10.0,11,15.0,15.0,Flu,WASH,zcrm_361303000001881591
+Ban Gano. KY Dist,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881592
+Ban Goong Sum Tai,2022-07-25 11:19:24,22,Very Poor (not paved. inaccesible in wet season),107,18.400235,97.614122,70.0,27,81.0,41,39,81.0,Ban Po Saw,0.0,10,25.0,25.0,Cholera,WASH,zcrm_361303000001881594
+Ban Hak Mai Nua,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881595
+Ban Hiau Bong,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881597
+Ban Hua Ha,2022-07-25 11:19:24,19,,110,19.10263,98.0745,90.0,47,70.0,32,31,70.0,Ban Paw New Khee,,6,13.0,,Flu,Further Education Scholarships;WASH,zcrm_361303000001881598
+Ban Hua Ha (Khun Yuam),2022-07-25 11:19:24,21,,100,,,30.0,30,37.0,35,35,37.0,Ban Pang Tong,3.0,-1,20.0,,Stomach problem. Skin infection. ulcer,WASH,zcrm_361303000001881599
+Ban Hua La,2022-07-25 11:19:24,95,,449,18.54534,97.95983,40.0,151,26.0,151,147,26.0,In the village,,3,,,Flu. Ulcer. Prostate. Stones (stone in bladder because of unclean water),Further Education Scholarships;WASH,zcrm_361303000001881600
+Ban Hua Mae Surin,2022-07-25 11:19:24,21,,220,18.92328,98.08674,20.0,57,33.0,81,82,33.0,Ban Pang Tong,,-1,18.0,,Stomach problem. Skin infection,Further Education Scholarships;WASH,zcrm_361303000001881601
+Ban Hua Mae Tho,2022-07-25 11:19:24,90,Very Good (paved roads),349,18.64773,98.06686,50.0,-1,70.0,178,171,70.0,Ban Mae Tho,0.0,-1,10.0,10.0,Flu,Irrigation;Further Education Scholarships;WASH,zcrm_361303000001881602
+Ban Hua Ngao,2022-07-25 11:19:24,50,,245,,,,-1,,-1,-1,,,,-1,,,,Irrigation;Further Education Scholarships,zcrm_361303000001881604
+Ban Hua Taad,2022-07-25 11:19:24,53,,233,18.58668,98.02205,40.0,88,23.0,73,72,23.0,Ban Mae Pang,,6,10.0,,Flu and Ulcer,Further Education Scholarships;WASH,zcrm_361303000001881606
+Ban Huang Puang (Tha Pha Pum),2022-07-25 11:19:24,44,,184,,,40.0,61,22.0,61,62,22.0,Ban Mae Tai,,10,35.0,,Flu. Ulcer,WASH,zcrm_361303000001881607
+Ban Huay Ba Ban,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881608
+Ban Huay Chai Yong,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881609
+Ban Huay Chang Kam,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881610
+Ban Huay Dua,2022-07-25 11:19:24,120,,426,,,,-1,,-1,-1,,,,-1,,,,Irrigation;Further Education Scholarships,zcrm_361303000001881611
+Ban Huay Hak Mai Ta,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881613
+Ban Huay Hia,2022-07-25 11:19:24,48,Very Poor (not paved. inaccesible in wet season),245,18.46444,97.61937,45.0,114,92.0,63,68,92.0,Ban Sa La Jiang Tong,0.0,2,14.0,36.0,Cholera,Irrigation;Further Education Scholarships;WASH,zcrm_361303000001881614
+Ban Huay Hia Noi,2022-07-25 11:19:24,25,Very Good (paved roads),87,18.07754,98.14618,,34,50.0,27,26,50.0,Ban Kong Pae,6.0,5,7.0,25.0,,WASH,zcrm_361303000001881615
+Ban Huay Hom,2022-07-25 11:19:24,89,,316,19.17179,98.28864,45.0,80,45.0,119,117,6.0,Ban Huay Bong,2.0,20,11.0,2.0,Typhoid.Ulcer,WASH,zcrm_361303000001881616
+Ban Huay Keaw,2022-07-25 11:19:24,45,,189,19.23504,97.91825,80.0,68,20.0,55,66,20.0,Ban Pa Pong,,8,5.0,,Flu and skin infection,WASH,zcrm_361303000001881619
+Ban Huay Kong Paw,2022-07-25 11:19:24,52,,519,18.53264,97.84733,30.0,166,34.0,178,175,34.0,Ban Mae Su,,2,13.0,,Flu. Ulcer. Stomach,School Buses;WASH,zcrm_361303000001881620
+Ban Huay Ma Nam,2022-07-25 11:19:24,65,,344,17.64024,98.09067,50.0,125,104.0,111,108,84.0,Ban Na Doi,4.0,7,12.0,4.0,Flu and Ulcer,WASH,zcrm_361303000001881624
+Ban Huay Maak Lang,2022-07-25 11:19:24,45,,251,18.87872,98.0117,60.0,102,50.0,76,73,50.0,Ban Paw Naw Khi,3.0,2,5.0,,,Further Education Scholarships;WASH,zcrm_361303000001881625
+Ban Huay Mai Sand,2022-07-25 11:19:24,74,,282,18.62415,98.00061,50.0,78,40.0,97,107,40.0,Ban Mae Tho,,8,8.0,8.0,Flu and skin infection,WASH,zcrm_361303000001881626
+Ban Huay Mai Sang,2022-07-25 11:19:24,57,,425,,,,-1,40.0,-1,-1,40.0,Ban Mae La ka,,5,6.0,,,School Buses;Irrigation;Further Education Scholarships;WASH,zcrm_361303000001881627
+Ban Huay Mak Lang,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881628
+Ban Huay Mak Nam,2022-07-25 11:19:24,35,Very Poor (not paved. inaccesible in wet season),116,18.06412,98.03655,,71,50.0,43,56,50.0,Ban Mae Ho,4.0,5,30.0,30.0,,WASH,zcrm_361303000001881629
+Ban Huay Mak Noon,2022-07-25 11:19:24,198,Very Good (paved roads),620,18.33886,97.99521,,212,12.0,202,206,12.0,Ban Mae Tia,,4,24.0,,1 Dengue Fever,,zcrm_361303000001881630
+Ban Huay Moo,2022-07-25 11:19:24,14,Average (some paved road. some potholes),82,19.135383,98.127936,40.0,15,53.0,35,32,53.0,Ban Huay Poo Ling,3.0,4,3.0,53.0,Flu,WASH,zcrm_361303000001881631
+Ban Huay Na (Mae Sariang),2022-07-25 11:19:24,21,,109,18.9509,97.79007,40.0,32,48.0,40,37,48.0,Ban Mae Lid Pa Kae,2.0,6,,26.0,Flu. Ulcer and skin infection,WASH,zcrm_361303000001881633
+Ban Huay Nam Sai,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881634
+Ban Huay Ngao,2022-07-25 11:19:24,82,,337,,,40.0,101,32.0,121,115,32.0,Ban Huay Na,,14,4.0,32.0,Flu and Ulcer,WASH,zcrm_361303000001881635
+Ban Huay Ngoo,2022-07-25 11:19:24,42,,234,,,40.0,72,26.0,74,88,26.0,Mae Sariang,,40,26.0,,skin infection. diarrhea. (They need a lot paracetamol for Colds + antihistimine). No AIDS Though they are awals of it,WASH,zcrm_361303000001881636
+Ban Huay Ngoo Luam,2022-07-25 11:19:24,20,,87,,,50.0,24,10.0,34,29,10.0,Mae La Noi,,3,10.0,,Flu and Ulcer,WASH,zcrm_361303000001881637
+Ban Huay Noong,2022-07-25 11:19:24,30,,153,,,80.0,71,31.0,41,41,31.0,Ban Mae Surin,,1,19.0,,Stomach. ulcer,WASH,zcrm_361303000001881638
+Ban Huay Pak Pai,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881639
+Ban Huay Phak Kood,2022-07-25 11:19:24,102,,561,18.74639,98.2152,30.0,257,50.0,153,151,50.0,Ban Pang Ung,,14,20.0,50.0,Flu and cancer,WASH,zcrm_361303000001881641
+Ban Huay Phan,2022-07-25 11:19:24,34,,184,18.99936,97.87624,30.0,73,35.0,56,55,35.0,Ban Mae Surin,,10,28.0,,Flu,WASH,zcrm_361303000001881642
+Ban Huay Pla Kang,2022-07-25 11:19:24,185,Good (paved roads. few potholes),607,18.06347,98.03399,40.0,271,38.0,186,150,38.0,Ban Mae Ho,,2,18.0,38.0,Ulcer,WASH,zcrm_361303000001881643
+Ban Huay Ploo,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,WASH,zcrm_361303000001881644
+Ban Huay Pong (Khun Yuam),2022-07-25 11:19:24,26,,149,,,40.0,65,39.0,42,42,39.0,Ban Mae Jae,4.0,-1,4.0,,Flu. Ulcer. respiratory diseases,WASH,zcrm_361303000001881647
+Ban Huay Poo Leoy,2022-07-25 11:19:24,84,Very Poor (not paved. inaccesible in wet season),370,19.14775,98.02886,60.0,90,70.0,132,148,20.0,Ban Huay Tong,0.0,10,10.0,20.0,,WASH,zcrm_361303000001881650
+Ban Huay Poo Ling,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881651
+Ban Huay Sai,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881654
+Ban Huay Ta Phaap,2022-07-25 11:19:24,22,,111,,,45.0,29,40.0,45,37,40.0,Mae La Luang,4.0,3,20.0,,Flu,WASH,zcrm_361303000001881657
+Ban Huay Tong,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881659
+Ban Huay Tong Jing,2022-07-25 11:19:24,38,,182,18.76571,98.00907,45.0,64,30.0,59,59,30.0,Ban Mae Jae,2.0,5,7.0,30.0,Flu,Further Education Scholarships;WASH,zcrm_361303000001881660
+Ban Huay Tong Kaw,2022-07-25 11:19:24,23,,106,,,50.0,20,40.0,44,42,40.0,Ban Me Pang,15.0,9,20.0,,Malaria. Typhoid.Flue.Ulcer,WASH,zcrm_361303000001881661
+Ban Huay Yao,2022-07-25 11:19:24,24,,106,,,20.0,50,37.0,28,28,37.0,Ban Papae,4.0,2,12.0,,Flu. Ulcer,WASH,zcrm_361303000001881663
+Ban Huayn Maak lang,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881664
+Ban Huey Tung,2022-07-25 11:19:24,42,,195,,,50.0,130,32.0,34,31,32.0,In the village,,-1,,,,WASH,zcrm_361303000001881665
+Ban Huy Kae Pa,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881666
+Ban Ka No,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881668
+Ban Kaw Ka,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881669
+Ban Kew Mae Oo Khor Noi,2022-07-25 11:19:24,9,,54,,,60.0,33,40.0,11,10,40.0,Ban Pang Tong,3.0,2,22.0,,diarrhea,WASH,zcrm_361303000001881670
+Ban Kew Pak Ped,2022-07-25 11:19:24,28,,214,19.2169,97.97999,60.0,116,74.0,48,50,26.0,Ban Huay Tong,5.0,4,16.0,74.0,Flu and Ulcer,WASH,zcrm_361303000001881671
+Ban Kha Noon,2022-07-25 11:19:24,17,,105,18.20182,98.08428,50.0,22,43.0,43,40,43.0,Ban Mae Lid Pa Kae,2.0,5,5.0,30.0,Flu. Ulcer and skin infection,WASH,zcrm_361303000001881672
+Ban Khun Mae Hu,2022-07-25 11:19:24,55,,221,18.50773,98.01113,50.0,66,30.0,81,74,30.0,Ban Mae Pang Nok,20.0,5,20.0,30.0,Flu and Ulcer,WASH,zcrm_361303000001881674
+Ban Khun Mae La Noi,2022-07-25 11:19:24,37,,92,,,,-1,,-1,-1,,,,-1,,,,Irrigation;Further Education Scholarships,zcrm_361303000001881676
+Ban Khun Mae La Noi Tai,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881677
+Ban Khun Mae La Tai,2022-07-25 11:19:24,30,,201,18.61816,98.11526,40.0,-1,72.0,-1,-1,72.0,Ban PaKae,6.0,2,10.0,,Flu. Ulcer and skin infection,Irrigation;WASH,zcrm_361303000001881678
+Ban Khun Mae Song,2022-07-25 11:19:24,116,,338,18.535,97.76708,50.0,134,120.0,104,100,120.0,Ban Po Suar,5.0,20,30.0,30.0,Flu and Skin effection,WASH,zcrm_361303000001881680
+Ban Khun Su,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881682
+Ban Khun Wong Nua,2022-07-25 11:19:24,74,,237,18.07641,98.00478,50.0,106,22.0,64,67,22.0,Ban Mae Ho,,8,25.0,22.0,,WASH,zcrm_361303000001881683
+Ban Khun Wong Tai,2022-07-25 11:19:24,70,Poor (not paved. lots of potholes),228,18.06871,98.01409,,70,33.0,83,75,33.0,Ban Mae Ho,,7,37.0,33.0,,WASH,zcrm_361303000001881684
+Ban Kiew Kha Min,2022-07-25 11:19:24,37,,162,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881685
+Ban Ko Mai Loo,2022-07-25 11:19:24,52,,301,,,30.0,222,52.0,35,44,52.0,Ban Papae,2.0,-1,5.0,,Flu. Ulcer,WASH,zcrm_361303000001881687
+Ban Kok Luang,2022-07-25 11:19:24,82,,420,18.53201,98.13988,40.0,134,90.0,138,148,90.0,In the village,,4,,,Flu. Ulcer. Arthritis. high blood pressure,WASH,zcrm_361303000001881688
+Ban Kong Pae Tai,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881690
+Ban Kor Moo Der,2022-07-25 11:19:24,92,,505,17.92925,97.74395,90.0,220,90.0,129,156,60.0,Mae Sam Laeb,,13,12.0,,Flu,WASH,zcrm_361303000001881692
+Ban Kra Baw Noi,2022-07-25 11:19:24,48,,229,17.88288,97.79634,50.0,80,50.0,76,73,30.0,Ban Mae Sam Laep,,7,20.0,,Skin effection,WASH,zcrm_361303000001881693
+Ban Kre Bor,2022-07-25 11:19:24,47,,199,17.88299,97.79637,90.0,75,55.0,64,60,30.0,Mae Sam Laeb,,4,35.0,30.0,Flu,WASH,zcrm_361303000001881694
+Ban La Oop,2022-07-25 11:19:24,163,,962,18.34237,98.0578,30.0,432,25.0,265,265,25.0,In the village,,-1,,,,WASH,zcrm_361303000001881695
+Ban Maak Noon,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881698
+Ban Mae Au,2022-07-25 11:19:24,36,,204,18.77433,98.03734,25.0,50,25.0,82,72,25.0,Ban Hua Pon,,1,4.0,,,WASH,zcrm_361303000001881699
+Ban Mae Bang,2022-07-25 11:19:24,40,,203,,,60.0,67,61.0,68,68,61.0,Ban Mae Lui,,8,15.0,61.0,,WASH,zcrm_361303000001881700
+Ban Mae Bor Tha,2022-07-25 11:19:24,25,,126,,,40.0,70,25.0,28,28,25.0,Ban Pa Pae,,3,4.0,,Flu. Skin Infection,WASH,zcrm_361303000001881701
+Ban Mae Harn,2022-07-25 11:19:24,277,,1053,18.21005,97.89129,20.0,453,13.0,303,297,13.0,Ban Sop Harn,,5,6.0,,Flu. Ulcer,WASH,zcrm_361303000001881702
+Ban Mae Hei,2022-07-25 11:19:24,32,,132,,,40.0,62,76.0,35,35,76.0,Ban Mae Tho,,4,16.0,,Flu. Ulcer,WASH,zcrm_361303000001881703
+Ban Mae Hor,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881705
+Ban Mae Hu,2022-07-25 11:19:24,49,,251,18.43715,97.99202,40.0,68,35.0,11,140,35.0,Ban Mae Hu,,7,,35.0,Flu,WASH,zcrm_361303000001881706
+Ban Mae Ja Noi,2022-07-25 11:19:24,15,,110,19.27481,98.13777,90.0,41,18.0,36,33,18.0,Ban Pha Bong,18.0,5,8.0,,,WASH,zcrm_361303000001881707
+Ban Mae Jae,2022-07-25 11:19:24,59,,382,18.74397,98.02142,50.0,105,40.0,138,139,40.0,In the village,,6,,40.0,Flu,Irrigation;WASH,zcrm_361303000001881709
+Ban Mae Jang Bon,2022-07-25 11:19:24,21,Average (some paved road. some potholes),107,18.08325,98.05088,50.0,29,36.0,45,33,36.0,Ban Mae Ho,1.0,8,17.0,17.0,Flu,WASH,zcrm_361303000001881710
+Ban Mae Jaw Klang,2022-07-25 11:19:24,40,,110,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001881712
+Ban Mae Jaw Nua,2022-07-25 11:19:24,16,,89,18.64099,98.02831,20.0,34,54.0,26,29,54.0,Ban Mae To,6.0,2,6.0,,Flu. Ulcer and skin infection,WASH,zcrm_361303000001881713
+Ban Mae Jaw Tai,2022-07-25 11:19:24,45,,97,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001881714
+Ban Mae Jew Saw,2022-07-25 11:19:24,66,,337,,,40.0,76,52.0,130,131,52.0,Ban Mae Tho,,3,4.0,,Flu. Ulcer,WASH,zcrm_361303000001881715
+Ban Mae Kha Nua,2022-07-25 11:19:24,34,,187,17.86616,98.00782,55.0,65,30.0,146,141,30.0,Ban Huay Muang,15.0,6,15.0,,Ulcer,WASH,zcrm_361303000001881716
+Ban Mae Khae Noi,2022-07-25 11:19:24,24,,100,17.91669,97.80789,50.0,35,91.0,33,32,91.0,Ban Mae Sam Laep,,8,25.0,12.0,Flu ans Ulcer,WASH,zcrm_361303000001881717
+Ban Mae Kheed Noi,2022-07-25 11:19:24,33,,144,18.52738,98.08076,60.0,69,40.0,37,38,40.0,Ban Mae Kheed,10.0,4,,10.0,Flu and cancer,WASH,zcrm_361303000001881719
+Ban Mae Kho Joo,2022-07-25 11:19:24,54,,206,18.66808,98.01402,25.0,80,43.0,63,63,43.0,Ban Mae La Ka,,20,4.0,,Flu. Cold. Stomach. Flu,WASH,zcrm_361303000001881721
+Ban Mae khor,2022-07-25 11:19:24,17,,76,18.61241,97.8565,40.0,29,35.0,24,23,35.0,Ban Mae Ki,5.0,1,5.0,35.0,Flu,WASH,zcrm_361303000001881722
+Ban Maw Ko Jaw,2022-07-25 11:19:24,54,,232,,,40.0,62,80.0,77,93,80.0,Ban Paw Saw,4.0,15,18.0,18.0,Flu and Ulcer,WASH,zcrm_361303000001881723
+Ban Mae Ko Pee,2022-07-25 11:19:24,82,,412,18.70616,98.06654,40.0,170,42.0,120,122,42.0,Ban Mae Jae,,5,13.0,,Flu. Ulcer,WASH,zcrm_361303000001881724
+Ban Mae Kor,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881726
+Ban Mae Kwang Nua,2022-07-25 11:19:24,43,Average (some paved road. some potholes),176,18.3165,98.01632,,51,20.0,65,60,20.0,Ban Huay Phueng,,7,3.0,3.0,3 Skin injection,WASH,zcrm_361303000001881727
+Ban Mae Kwang Tai,2022-07-25 11:19:24,45,,168,18.29993,98.00051,50.0,95,30.0,35,38,30.0,Ban Huay Phuang,,6,7.0,30.0,Flu and Ulcer,WASH,zcrm_361303000001881728
+Ban Mae La,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881729
+Ban Mae La Ka,2022-07-25 11:19:24,96,,452,,,,151,377.0,155,146,37.0,Ban Mae La Ka,0.0,20,0.0,,,Further Education Scholarships;WASH,zcrm_361303000001881730
+Ban Mae Lamong Nua,2022-07-25 11:19:24,34,,218,18.42977,97.88109,30.0,79,30.0,67,72,30.0,Ban Mae Su,,12,15.0,30.0,Flu. Ulcer,WASH,zcrm_361303000001881733
+Ban Mae Lid,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881734
+Ban Mae Lid -Pakae,2022-07-25 11:19:24,55,,263,,,40.0,-1,40.0,143,120,40.0,In the village,51.0,5,,,Flu,WASH,zcrm_361303000001881735
+Ban Mae Lit Luang,2022-07-25 11:19:24,55,,305,18.18921,98.13689,40.0,180,44.0,62,63,44.0,Ban Mae Lid Pa Kae,,5,,,ulcer. high blood pressure. flu,Further Education Scholarships;WASH,zcrm_361303000001881736
+Ban Mae Na Jang Tai,2022-07-25 11:19:24,85,,480,18.565,98.0989,50.0,-1,75.0,-1,-1,75.0,In the village,,7,,,Flu,Irrigation;WASH,zcrm_361303000001881738
+Ban Mae Najang,2022-07-25 11:19:24,84,,420,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001881739
+Ban Mae Najang Nua,2022-07-25 11:19:24,49,,448,18.57837,98.08287,30.0,223,75.0,112,113,75.0,Ban Kok Luang,,2,15.0,,Diarrhea and Ulcer,WASH,zcrm_361303000001881740
+Ban Mae Nill Nok,2022-07-25 11:19:24,57,,360,,,50.0,129,42.0,185,179,42.0,Ban Mae Na Chon,8.0,8,8.0,42.0,Flu and skin infection,WASH,zcrm_361303000001881741
+Ban Mae Nin Nai,2022-07-25 11:19:24,50,,261,18.8933,98.13987,45.0,72,52.0,92,97,52.0,Ban Na Hong,,7,18.0,52.0,Flu,WASH,zcrm_361303000001881742
+Ban Mae Ookhor Noi,2022-07-25 11:19:24,9,,54,18.91044,98.07681,60.0,33,40.0,11,10,40.0,Ban Pang Tong,3.0,2,22.0,,diarrhea,Further Education Scholarships;WASH,zcrm_361303000001881744
+Ban Mae Ookhor Nua,2022-07-25 11:19:24,11,,59,18.84619,98.04371,50.0,30,20.0,14,15,20.0,Ban Pang Tong,4.0,-1,4.0,,,WASH,zcrm_361303000001881745
+Ban Mae Oom Pai Nua,2022-07-25 11:19:24,42,,228,18.59939,98.02629,20.0,119,55.0,54,55,55.0,Ban Mae To,,9,5.0,,,WASH,zcrm_361303000001881746
+Ban Mae Oomong,2022-07-25 11:19:24,38,,154,19.51834,98.26003,50.0,70,18.0,42,42,18.0,Pang Ma Pa,,1,18.0,,Flu,Further Education Scholarships;WASH,zcrm_361303000001881747
+Ban Mae Oompai,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881748
+Ban Mae Oompai Nua,2022-07-25 11:19:24,90,,-1,,,,-1,,-1,-1,,,,-1,,,,Irrigation;Further Education Scholarships,zcrm_361303000001881749
+Ban Mae Pa Luang,2022-07-25 11:19:24,28,Average (some paved road. some potholes),133,17.86883,98.0263,50.0,37,42.0,61,35,20.0,Ban Huay Muang School,4.0,1,4.0,20.0,Flu,WASH,zcrm_361303000001881751
+Ban Mae Pae,2022-07-25 11:19:24,65,,503,19.00722,98.70691,50.0,169,90.0,173,161,90.0,Sa La Jiang Tong,7.0,11,7.0,12.0,Flu,Irrigation;Further Education Scholarships;WASH,zcrm_361303000001881752
+Ban Mae Pang Nae,2022-07-25 11:19:24,48,,222,,,40.0,82,13.0,70,70,13.0,Ban Mae Pang Nok,2.0,4,2.0,13.0,Flu and Ulcer,WASH,zcrm_361303000001881754
+Ban Mae Piang Luang,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881756
+Ban Mae Ping,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881757
+Ban Mae Sa Kua,2022-07-25 11:19:24,58,,311,,,50.0,130,15.0,92,89,15.0,Ban Mae Tia,,5,22.0,,Flu. Skin Infection. Ulcer,WASH,zcrm_361303000001881761
+Ban Mae Sa Kud,2022-07-25 11:19:24,28,,130,18.29699,98.0174,45.0,45,31.0,41,44,31.0,Ban Mae Tia,,7,35.0,5.0,,WASH,zcrm_361303000001881762
+Ban Mae Sa Wan Luang,2022-07-25 11:19:24,50,Average (some paved road. some potholes),234,18.18644,98.08458,,92,32.0,71,71,32.0,Ban Mae Lid,0.0,7,5.0,0.0,,WASH,zcrm_361303000001881763
+Ban Mae Sam Leab,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881764
+Ban Mae Sam Peng Nua,2022-07-25 11:19:24,21,,90,,,50.0,36,30.0,27,27,30.0,Ban Mae Su,,3,8.0,30.0,Ulcer,WASH,zcrm_361303000001881765
+Ban Mae Samaeng,2022-07-25 11:19:24,24,,106,18.44956,98.07254,,43,56.0,44,67,56.0,Ban Kad Luang,3.0,-1,10.0,,Flu,WASH,zcrm_361303000001881766
+Ban Mae Sapueng Klang,2022-07-25 11:19:24,30,,112,18.39894,98.02352,50.0,41,39.0,37,34,39.0,Ban Mae Hu,3.0,5,12.0,39.0,Flu and Ulcer,WASH,zcrm_361303000001881769
+Ban Mae Sapueng Tai,2022-07-25 11:19:24,44,,183,,,,-1,,-1,-1,,,,-1,,,,WASH,zcrm_361303000001881770
+Ban Mae Satop Nua,2022-07-25 11:19:24,32,,250,,,40.0,124,34.0,61,65,34.0,Ban Pang Ung,,110,13.0,,Stomach ulcer. Influenza,WASH,zcrm_361303000001881771
+Ban Mae Saw,2022-07-25 11:19:24,38,,153,18.72245,97.9478,50.0,45,20.0,54,54,20.0,Ban Mueng Pong,5.0,8,5.0,,,Irrigation;Further Education Scholarships;WASH,zcrm_361303000001881772
+Ban Mae Sawan Luang,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881773
+Ban Mae Sawan Noi,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881774
+Ban Mae Su,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses,zcrm_361303000001881776
+Ban Mae Surin Noi,2022-07-25 11:19:24,17,,82,18.94511,98.05146,30.0,35,45.0,23,24,45.0,Ban Paw New Khei,,2,4.0,,Flu. Ulcer,Further Education Scholarships;WASH,zcrm_361303000001881777
+Ban Mae Surin Nua,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881778
+Ban Mae Talu,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881779
+Ban Mae Tho Klang,2022-07-25 11:19:24,137,,428,18.62173,98.02811,30.0,293,60.0,66,69,60.0,In the village,,2,,,Flu and Ulcer,Irrigation;WASH,zcrm_361303000001881782
+Ban Mae Tho Noi,2022-07-25 11:19:24,93,,413,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001881783
+Ban Mae Top,2022-07-25 11:19:24,55,,250,,,50.0,85,95.0,82,83,95.0,Ban Sa La Jiang Tong,4.0,15,4.0,20.0,Flu and Skin effection,Irrigation;WASH,zcrm_361303000001881786
+Ban Mae Yod,2022-07-25 11:19:24,55,,281,18.84447,98.15605,45.0,81,40.0,106,94,40.0,Ban Pang Uhg,,4,15.0,,Typhoid. Flue. Ulcer,WASH,zcrm_361303000001881788
+Ban Mai Huay Wai,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881792
+Ban Mai Poo Koo,2022-07-25 11:19:24,18,Good (paved roads. few potholes),74,19.06048,98.32013,20.0,28,6.0,24,22,6.0,Khun Yuam,,8,6.0,,Stomach. Flu,WASH,zcrm_361303000001881794
+Ban Mai Sang Nam,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881795
+Ban Manora,2022-07-25 11:19:24,31,,189,19.31473,98.44322,,68,25.0,58,63,25.0,Pang Ma Pa,,-1,25.0,,,WASH,zcrm_361303000001881796
+Ban Muang Noi,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881797
+Ban Muang Paem,2022-07-25 11:19:24,108,,528,19.5833,98.30855,50.0,210,13.0,161,157,13.0,Ban Tham Lod,,-1,6.0,,Flu. Ulcer,WASH,zcrm_361303000001881798
+Ban Muang Pon,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881799
+Ban Na Hua Laem,2022-07-25 11:19:24,42,,183,18.87181,97.81282,50.0,54,30.0,65,64,30.0,Ban Huay Na,,13,5.0,,Flu. Ulcer. blood pressure,Further Education Scholarships;WASH,zcrm_361303000001881800
+Ban Na Pa Pae,2022-07-25 11:19:24,35,,193,18.48107,97.7637,50.0,46,90.0,83,64,90.0,Ban Sa La Jiang Tong,7.0,9,7.0,90.0,Flu,Irrigation;WASH,zcrm_361303000001881802
+Ban Nae Jaa,2022-07-25 11:19:24,81,,356,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001881803
+Ban Nam Som,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881804
+Ban Nangew,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881807
+Ban Nong Mae La,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Meals,zcrm_361303000001881810
+Ban Nong Muan,2022-07-25 11:19:24,85,,346,18.48009,98.0942,30.0,245,52.0,46,55,52.0,Ban Kok Luang,,1,12.0,,Flu,Further Education Scholarships;WASH,zcrm_361303000001881811
+Ban Nong Pak Nam,2022-07-25 11:19:24,51,,256,18.10912,97.9365,15.0,98,7.0,77,81,5.0,Mae Sariang,7.0,20,5.0,,Stomach. Flu,Further Education Scholarships;WASH,zcrm_361303000001881812
+Ban Omlarn,2022-07-25 11:19:24,35,,197,18.59847,98.19565,50.0,105,62.0,45,47,62.0,Ban Pakae,,5,4.0,,Flu. Ulcer,WASH,zcrm_361303000001881813
+Ban Pa Kae Tai,2022-07-25 11:19:24,40,,250,18.61338,98.17514,30.0,80,94.0,84,86,94.0,Ban Pa Kae,,5,,30.0,ulcer. high blood pressure. flu,WASH,zcrm_361303000001881814
+Ban Pa Kha,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881815
+Ban Pa Kluay,2022-07-25 11:19:24,35,Good (paved roads. few potholes),117,18.22223,98.0359,20.0,43,27.0,39,35,27.0,Ban Mae Ho,2.0,3,22.0,27.0,Flu,WASH,zcrm_361303000001881816
+Ban Pa La Pi Nua,2022-07-25 11:19:24,18,Very Poor (not paved. inaccesible in wet season),69,18.80271,98.23071,50.0,21,64.0,25,23,64.0,Ban Pong Oong,8.0,2,10.0,64.0,,WASH,zcrm_361303000001881817
+Ban Pa La Pi Tai,2022-07-25 11:19:24,65,Good (paved roads. few potholes),323,18.80372,98.231558,25.0,70,40.0,131,122,40.0,Ban Pang Dong,0.0,15,17.0,80.0,,WASH,zcrm_361303000001881818
+Ban Pa Pae Klang,2022-07-25 11:19:24,35,,87,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001881820
+Ban Pa Pong Scond,2022-07-25 11:19:24,45,,184,,,40.0,80,60.0,52,52,60.0,Ban Huay Kung,4.0,5,60.0,60.0,,WASH,zcrm_361303000001881822
+Ban Pae,2022-07-25 11:19:24,215,,2113,18.22409,97.91208,20.0,318,8.0,94,1172,8.0,Ban Sop Harn,,3,,,Flu. Ulcer,WASH,zcrm_361303000001881823
+Ban Pae Kha Puang,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881824
+Ban Pahuey,2022-07-25 11:19:24,24,,236,18.16741,97.93263,30.0,169,46.0,33,34,46.0,Ban Pakae,2.0,2,4.0,,Flu. Ulcer,WASH,zcrm_361303000001881825
+Ban Pakae Nua,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881826
+Ban Pakhae,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881827
+Ban Pang Oong,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881829
+Ban Pang Tong Tai,2022-07-25 11:19:24,12,,71,18.91337,98.1294,70.0,31,20.0,20,20,20.0,Ban Pang Tong,3.0,2,3.0,,Headache. Skin infection,WASH,zcrm_361303000001881831
+Ban Paw Naw Khee,2022-07-25 11:19:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001881833
+Ban Paw Ta Law Khee,2022-07-25 11:19:24,35,,183,,,40.0,75,45.0,55,53,45.0,Ban Khun Mae Hu,,2,15.0,,Ulcer,WASH,zcrm_361303000001881834
+Ban Mae Jaw,2022-07-25 05:36:37,45,,120,,,,-1,,-1,-1,,,,-1,,,,School Buses;Irrigation;Further Education Scholarships,zcrm_361303000001884037
+Ban Mae Ookhor Luang,2022-07-25 05:43:47,49,,282,18.88618,98.05073,15.0,117,17.0,83,82,17.0,Ban Huay Pong,,6,15.0,,,Further Education Scholarships;WASH,zcrm_361303000001884078
+Ban Huay Phueng,2022-07-25 07:10:57,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001884168
+Ban Pha Aeh Doo,2022-07-25 11:19:26,57,,303,,,40.0,130,70.0,87,86,70.0,Mae La Noi,,7,10.0,70.0,Flu,WASH,zcrm_361303000001899092
+Ban Pha Daeng Luang,2022-07-25 11:19:26,90,,256,18.57674,98.01635,60.0,-1,60.0,-1,-1,60.0,Ban Mae To,,1,20.0,,,Irrigation;WASH,zcrm_361303000001899093
+Ban Pha La Pi,2022-07-25 11:19:26,28,,174,18.80189,98.2298,50.0,65,40.0,55,54,42.0,Ban Pang Ung,3.0,6,17.0,85.0,Flu and Ulcer,WASH,zcrm_361303000001899094
+Ban Pha Tho,2022-07-25 11:19:26,27,,115,,,50.0,41,44.0,37,37,44.0,Ban Mae Ki,8.0,10,13.0,44.0,Flu. Ulcer,WASH,zcrm_361303000001899095
+Ban Pha Wai,2022-07-25 11:19:26,110,,580,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001899096
+Ban Pha Wai Klang,2022-07-25 11:19:26,30,,150,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001899097
+Ban Piang Luang,2022-07-25 11:19:26,57,,454,19.68282,98.62659,20.0,54,34.0,205,195,34.0,Ban Mae Ki,3.0,4,3.0,,,Further Education Scholarships;WASH,zcrm_361303000001899099
+Ban Po No Khee,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899100
+Ban Prabart Huay Phueng,2022-07-25 11:19:26,52,,182,18.47005,98.03474,50.0,62,40.0,62,58,40.0,Ban Mae Hu,,4,10.0,,Flu and Ulcer,WASH,zcrm_361303000001899102
+Ban Rak Mai Nua,2022-07-25 11:19:26,57,,350,,,50.0,115,,118,117,,Ban Paphae,,30,7.0,7.0,Flu. Ulcer,WASH,zcrm_361303000001899103
+Ban Sa La Jiang Tong,2022-07-25 11:19:26,80,,280,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001899105
+Ban Sao Hin,2022-07-25 11:19:26,116,,426,18.55079,97.66752,40.0,125,107.0,156,145,107.0,Ban Sa La Jiang Tong,,20,,4.0,,Irrigation;WASH,zcrm_361303000001899109
+Ban Siwader,2022-07-25 11:19:26,107,,423,17.92466,97.76701,45.0,164,71.0,125,134,71.0,Ban Mae Sam Laep,,15,15.0,,Flu ans Ulcer,WASH,zcrm_361303000001899110
+Ban Sob Mae Sa Top,2022-07-25 11:19:26,60,,351,18.70611,98.24978,40.0,141,50.0,107,103,50.0,Ban Na Hong,22.0,5,15.0,50.0,Flu,WASH,zcrm_361303000001899111
+Ban Som Poi,2022-07-25 11:19:26,91,,350,,,,-1,,-1,-1,,,,-1,,,,Irrigation;Further Education Scholarships,zcrm_361303000001899112
+Ban Sud Huay Na,2022-07-25 11:19:26,26,,129,18.16981,98.14823,30.0,50,38.0,40,39,38.0,Ban Mae Lid Pa Kae,,2,10.0,,Flu. Ulcer,WASH,zcrm_361303000001899113
+Ban Suk Jai,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses,zcrm_361303000001899114
+Ban Tha Hin Som,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899116
+Ban Tha Song Kaew,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899117
+Ban Thung Ma Kham Pom,2022-07-25 11:19:26,65,,311,18.95415,98.07761,40.0,104,42.0,106,101,42.0,Ban Huay Mak Lang,4.0,5,8.0,4.0,Flu and Ulcer,Further Education Scholarships;WASH,zcrm_361303000001899118
+Ban Thung Pra Pon,2022-07-25 11:19:26,25,,135,18.59948,98.20399,60.0,64,105.0,35,36,105.0,Ban Pa Kae,8.0,10,,40.0,Flu and Ulcer,WASH,zcrm_361303000001899120
+Ban Tung Wang Kwang,2022-07-25 11:19:26,24,Poor (not paved. lots of potholes),92,,,40.0,31,,32,29,45.0,Ban Mae La Luang,11.0,5,20.0,10.0,,WASH,zcrm_361303000001899121
+Ban Wa No,2022-07-25 11:19:26,98,,320,18.7657,98.0091,35.0,135,28.0,90,95,28.0,Ban Mae Jae,,3,5.0,28.0,Flu,WASH,zcrm_361303000001899122
+Ban Wa Thoo,2022-07-25 11:19:26,20,,110,,,,-1,,-1,-1,,,,-1,,,,Irrigation,zcrm_361303000001899123
+Ban Yod Phai,2022-07-25 11:19:26,35,Average (some paved road. some potholes),177,18.84884,98.12946,20.0,30,35.0,90,57,35.0,Ban Pang Ung,8.0,2,8.0,8.0,Ulcer. Flu,WASH,zcrm_361303000001899124
+Huai Koo Pa,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899125
+Huay Ka Pa,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Buses,zcrm_361303000001899126
+Hui Sai Leang. Mae Jam Dist,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899127
+Khun Mae La,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899128
+Ko Mai Loo,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899131
+Mae La Ka,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899132
+Mae La Noi Duransik,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,School Meals,zcrm_361303000001899133
+Mae Om Pai,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899134
+Mae Tho Thai,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001899136
+Missing Village Details,2022-07-25 11:19:26,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships;WASH,zcrm_361303000001899138
+Paw Naw Khi,2022-07-25 11:19:26,76,,379,18.95964,98.08249,40.0,153,45.0,115,111,45.0,In village,,8,,,,Further Education Scholarships;WASH,zcrm_361303000001899140
+Mon Ta Lang,2022-07-26 05:01:45,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001905020
+Mae Salit Luang,2022-07-26 05:03:14,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000001905042
+Ban Huay Bong Tha,2022-08-04 04:57:10,29,,122,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044003
+Ban Thung Ruang Thong,2022-08-04 05:06:32,320,,710,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044029
+Ban Huay Pom Fard,2022-08-04 05:09:42,25,,132,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044055
+Ban Sob Mae Ruam,2022-08-04 05:15:09,50,,485,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044081
+Ban Ruam Mo,2022-08-04 05:17:28,61,,207,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044107
+Ban Eeh Vee Jo,2022-08-04 05:26:01,78,,367,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044150
+Ban Mae Phae Noi,2022-08-04 05:29:37,25,,110,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044176
+Ban Mae Lui Bon,2022-08-04 05:32:03,43,,165,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044202
+Ban Hua Mae La Ka,2022-08-04 05:36:53,36,Very Poor (not paved. inaccesible in wet season),175,18.74628,98.07401,60.0,68,33.0,56,51,33.0,Ban Pong Ung,,5,8.0,8.0,Flu and Ulcer,WASH,zcrm_361303000002044244
+Ban Huay Khi Pher,2022-08-04 05:40:56,35,,166,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002044270
+Wangkhan,2022-08-26 02:14:33,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,Further Education Scholarships,zcrm_361303000002194023
+Ban Kong Sum Nua,2022-09-13 10:46:35,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,WASH,zcrm_361303000002242022
+Ban Kong Sum Tai,2022-09-13 10:47:36,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002242074
+Ban Mae Nil Nok,2022-09-14 03:13:22,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002250064
+Ban Mae Nil Nok,2022-09-14 03:13:24,-1,,-1,,,,-1,,-1,-1,,,,-1,,,,,zcrm_361303000002250074
+Ban Mae Ja,2022-09-27 10:00:15,81,Good (paved roads. few potholes),365,18.990789,97.97441,40.0,-1,35.0,128,135,,,0.0,-1,,25.0,,Irrigation,zcrm_361303000002296049
+Ban Mae Laep,2022-09-28 02:59:26,280,Good (paved roads. few potholes),1135,18.413644,97.863467,50.0,-1,,435,365,,,,-1,,,,Irrigation,zcrm_361303000002304022
+Ban Mae La Ngew,2022-11-18 11:08:57,70,Average (some paved road. some potholes),237,18.41844,97.856597,,-1,20.0,95,85,20.0,Ban Mae Leap,0.0,10,6.0,20.0,,Irrigation;WASH,zcrm_361303000002447085
+Ban Huay Mai Dam,2023-01-19 06:24:20,44,Average (some paved road. some potholes),183,19.216291,98.14891,20.0,-1,45.0,86,72,41.0,Ban Huay Poo Ling,7.0,4,7.0,7.0,Flu,Irrigation;WASH,zcrm_361303000002660046
+Ban Thuan,2023-02-20 14:38:16,92,Very Good (paved roads),282,18.51941,97.28241,60.0,-1,14.0,148,134,14.0,Ban Song Thasn,13.0,-1,32.0,14.0,Malaria. Typhoid. Cholera. Parasites,WASH,zcrm_361303000002764085
+Ban Eh Vee Jo,2023-05-02 16:00:57,78,Average (some paved road. some potholes),367,17.62537,98.07884,,200,94.0,141,126,66.0,Khri Khee,0.0,4,9.0,5.0,Malaria. Typoid. Diarrhea,,zcrm_361303000002929061
+Ban Pha Khae,2023-05-30 09:27:01,28,Average (some paved road. some potholes),107,18.69036,97.80586,50.0,22,40.0,46,39,40.0,Ban Mae Ki,5.0,-1,8.0,40.0,Malaria. Typhoid and Dengue Fever,,zcrm_361303000003002061

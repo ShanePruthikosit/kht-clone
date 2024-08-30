@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+.coordinate {
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+}
+
+.legend {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    /* width: 100%; */
+    width: 150px;
+    height: 110%;
+    /* height: 340px; */
+    font-size: 160%;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+}
+
+/* Media query for smaller screens */  
+@media (max-width: 767px) {
+    .legend {
+        font-size: 10px;
+        width: 100px;
+        height: 80%;
+    }
+}
+
+.radio-button-container {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+}
+
+.radio-button-control {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 1000;
+    /* Make sure the control is on top of other elements */
+}
+
+@media screen and (max-height: 400px) {
+    #radioContainer {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    #radioContainer > :last-child {
+        margin-bottom: 75px; /* Adjust as needed */
+    }
+}
+
+.search-button-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.search-button-control {
+    background-color: rgb(188, 185, 185);
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    /* Make sure the control is on top of other elements */
+}
+
+.searchButtonControl {
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+    background-color: paleturquoise;
+    border-color: white;
+}
+
+
+.legend .logo-container {
+    margin-top: 5px;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+}
+
+.legend .logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
+
+.leaflet-bottom .leaflet-right {
+    width: 30%;
+    height: 50%;
+}
+
+.toggle-instruction-frame {
+    width: 30px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.toggle-instruction {
+    background: white;
+    border: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 9%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.toggle-legend {
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    padding: 0;
+    width: 15%;
+    height: 100%;
+}
+
+.leaflet-bottom.leaflet-right {
+    width: 100%;
+    height: 400px;
+    font-size: 10px;
+}
+
+.leaflet-top.leaflet-right {
+    width: 50%;
+    height: 40%;
+    font-size: 1.2vw;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .leaflet-top.leaflet-right {
+        font-size: 12px;
+    }
+}
+
+.leaflet-control-layers-toggle.leaflet-control {
+    width: 40px;
+    height: 40px;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px 5px 5px 5px;
+    visibility: hidden;
+}
+
+.newLayerButtonStyle {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.leaflet-top.leaflet-left {
+    width: 50%;
+}
+
+.search-button-control.leaflet-control {
+    background: 0;
+    border: 0;
+    padding: 0;
+}
+
+.radio-button-control.leaflet-control {
+    visibility: hidden;
+}
+
+.leaflet-control-layers-selector {
+    width: 10%;
+    height: 10%;
+}
+
+.layer-control-title {
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+}
+
+.leaflet-control-layers-expanded {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.leaflet-control-attribution {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.toggleLayerControlButton{
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    background-color: paleturquoise;
+    border: 1px solid grey;
+    border-radius: 20%;
+    font-size: 115%;
+}
+
+.leaflet-control-layers-toggle {
+    background-color: paleturquoise;
+    ;
+}

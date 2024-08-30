@@ -1,0 +1,2 @@
+Currency Id,Name,ISO Code,Symbol,Is Home Currency,Is Active,Prefix Symbol,Decimal Seperator,Decimals,Exchange Rate,Created By Id,Modified By Id,Created Time,Modified Time
+zcrm_361303000003377001,British Pound Sterling - GBP,GBP,£,false,false,true,|,2,1.000000000,zcrm_361303000000269001,zcrm_361303000000269001,2023-09-08 02:22:06,2023-09-08 02:22:06

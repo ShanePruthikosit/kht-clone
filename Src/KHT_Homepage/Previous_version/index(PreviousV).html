@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet</title>
+
+    <!-- leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .coordinate {
+            position: absolute;
+            bottom: 10px;
+            right: 50%;
+        }
+
+        .legend {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+        }
+
+        .radio-button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .radio-button-control {
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+            z-index: 1000;
+            /* Make sure the control is on top of other elements */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <link rel="stylesheet" href="dog.css"> -->
+    <div id="map">
+        <div class="leaflet-control coordinate"></div>
+    </div>
+    <div id="widget">
+        <!-- Content of the widget goes here -->
+    </div>
+    <div class="radio-button-container">
+        <input type="radio" id="radio1" name="radio" value="radio1">
+        <label for="radio1">Option 1</label>
+    </div>
+    </script>
+</body>
+
+</html>
+
+<!-- leaflet js -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- <script src = "./data/point.js"></script>
+<script src = "./data/line.js"></script> -->
+<!-- <script src = "./data/polygon.js"></script> -->
+<!-- <script src = "./data/hotdogcat.js"></script> -->
+<script src="./data/waterline.js"></script>
+<!-- <script src = "./data/THA_roads.js"></script> -->
+<script src="./data/District_MAE_HONG_SON.js"></script>
+<!-- <script src = "./data/village_point.js"></script> -->
+<script src="./data/subdistrict_area.js"></script>
+<!-- <script src="./data/Village_Details.js"></script>
+<script src="./data/School.js"></script>
+<script src="./data/mhs_roads.js"></script>
+<script src="./data/msh_water_areas.js"></script>
+<script src="./data/msh_water_lines.js"></script> -->
+<!-- <script src = "./data/Contour.js"></script> -->
+<scirpt src="./data/Contourline.js"></scirpt>
+
+<!-- <style>
+    .leaflet-control-scale-line {
+        border: 2px solid #777;
+        border-top: none;
+        line-height: 20px;
+        font-size: 20px;
+    }
+</style> -->
+
+<script>
+
+
+    var map = L.map('map').setView([18.7370, 97.8722], 9.45);
+
+    var scale = L.control.scale({
+        position: 'bottomleft',
+        imperial: true
+    }).addTo(map);
+
+
+
+
+    /* ==========================================
+                TILE  LAYER and WMS
+    =============================================*/
+    // osm layer
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    osm.addTo(map);
+
+    // water color
+    var watercolor = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.{ext}', {
+        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains: 'abcd',
+        minZoom: 1,
+        maxZoom: 16,
+        ext: 'jpg'
+    });
+    // watercolor.addTo(map)
+
+    // dark map
+    var dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    });
+    // dark.addTo(map)
+
+    var nexrad = L.tileLayer.wms("http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+        layers: 'nexrad-n0r-900913',
+        format: 'image/png',
+        transparent: true,
+        attribution: "Weather data © 2012 IEM Nexrad"
+    });
+
+
+    /* ==========================================
+                        MARKER
+    =============================================*/
+    var myIcon = L.icon({
+        iconUrl: 'img/hospital_marker.png',
+        iconSize: [30, 30],
+    });
+
+    var myIcon2 = L.icon({
+        iconUrl: 'img/school_marker.png',
+        iconSize: [40, 40],
+    });
+
+
+    /* ==========================================
+                        GEOJSON
+    =============================================*/
+    
+    async function fetchData() {
+        try {
+            const response = await fetch('https://172.105.120.121:443/api/village');
+            const data = await response.json();
+            console.log('Data from API:', data);
+            console.log("Village Name:", data.features[0].properties.village_name);
+
+
+            //print the the first village in the array
+            console.log('First Village:', villageData[0]);
+
+            var clickedLayer;
+
+            function resetClickedLayer() {
+                if (clickedLayer) {
+                    clickedLayer.setStyle({ fillColor: 'blue', color: 'white' });
+                }
+            }
+
+            var VillageData = L.geoJSON(data, {
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        radius: 8,
+                        fillColor: 'blue',
+                        color: 'white',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.7
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.village_name);
+
+                    layer.on('click', function (e) {
+                        // Reset the style of the previously clicked layer
+                        resetClickedLayer();
+                        localStorage.removeItem('project-details');
+                        localStorage.removeItem('start-dates');
+                        localStorage.removeItem('end-dates');
+
+                        // Change the marker color to red
+                        layer.setStyle({ fillColor: 'red', color: 'white' });
+
+                        // Bring the clicked layer to the front
+                        layer.bringToFront();
+
+                        // Store the currently clicked layer
+                        clickedLayer = layer;
+                        const id = feature.properties["id"];
+                        console.log('ID:', id);
+                        localStorage.setItem('id', id);
+                        async function fetchData(id) {
+                            try {
+                                const response = await fetch("https://172.105.120.121:443/api/project/?village_id=" + id);
+                                const data = await response.json();
+                                console.log(data);
+
+                                data.features.forEach(feature => {
+                                    const projectDetail = feature.properties.project_name_en;
+                                    // console.log('Project Name:', projectDetail);
+                                    // Get the existing data from local storage
+                                    let projectDetails = JSON.parse(localStorage.getItem('project-details')) || [];
+
+                                    console.log('Project Details:', projectDetails.length);
+
+                                    // Add the new project detail to the array
+                                    projectDetails.push(projectDetail);
+
+                                    // Store the updated array in local storage
+                                    localStorage.setItem('project-details', JSON.stringify(projectDetails));
+
+
+                                    const startDate = feature.properties.start_date;
+                                    console.log('Start Date:', startDate);
+
+                                    // Get the existing data from local storage
+                                    let startDates = JSON.parse(localStorage.getItem('start-dates')) || [];
+
+                                    console.log('Start Dates:', startDates.length);
+
+                                    // Add the new start date to the array
+                                    startDates.push(startDate);
+
+                                    // Store the updated array in local storage
+                                    localStorage.setItem('start-dates', JSON.stringify(startDates));
+
+                                    const endDate = feature.properties.end_date;
+                                    console.log('End Date:', endDate);
+
+                                    // Get the existing data from local storage
+                                    let endDates = JSON.parse(localStorage.getItem('end-dates')) || [];
+
+                                    console.log('End Dates:', endDates.length);
+
+                                    // Add the new end date to the array
+                                    endDates.push(endDate);
+
+                                    let projectTypes = JSON.parse(localStorage.getItem('project-types')) || [];
+                                    console.log('Project Types:', projectTypes.length);
+                                    projectTypes.push(projectType);
+
+                                    let statusNames = JSON.parse(localStorage.getItem('status-names')) || [];
+                                    console.log('Status Names:', statusNames.length);
+                                    statusNames.push(statusName);
+
+
+                                    // Store the updated array in local storage
+                                    localStorage.setItem('end-dates', JSON.stringify(endDates));
+                                    localStorage.setItem('project-types', JSON.stringify(projectTypes));
+                                    localStorage.setItem('status-names', JSON.stringify(statusNames));
+
+                                    console.log('Project Details:', projectDetails);
+                                    console.log('Start Date:', startDate, ', End Date:', endDate);
+                                });
+                            } catch (error) {
+                                console.error('Error:', error);
+                            }
+                        }
+
+                        fetchData(id);
+
+
+                        const villageName = feature.properties["village_name"];
+                        localStorage.setItem('village-name', villageName);
+
+                        const roadQuality = feature.properties["road_conditions"];
+                        localStorage.setItem('road-quality', roadQuality);
+
+                        const distancePratom = feature.properties["distance_to_pratom_km"];
+                        localStorage.setItem('distance-pratom', distancePratom);
+
+                        const distanceMathayom = feature.properties["distance_to_mathayom_km"]
+                        localStorage.setItem('distance-mathayom', distanceMathayom);
+
+                        const projectName = feature.properties["hosted_kht_projects"]
+                        localStorage.setItem('project-name', projectName);
+
+                        const adultmale = feature.properties["adult_males"]
+                        localStorage.setItem('adult-male', adultmale);
+
+                        const adultfemale = feature.properties["adult_females"]
+                        localStorage.setItem('adult-female', adultfemale);
+
+                        const commonDisease = feature.properties["common_diseases"]
+                        localStorage.setItem('common-disease', commonDisease);
+
+                        const Households = feature.properties["households"]
+                        localStorage.setItem('Households', Households);
+
+                        const riceRatio = feature.properties["population_without_enough_rice"]
+                        localStorage.setItem('rice-ratio', riceRatio);
+
+                        const children = feature.properties["children_aged_0_18"]
+                        localStorage.setItem('children', children);
+
+                        const distanceTown = feature.properties["distance_to_town_km"]
+                        localStorage.setItem('distance-town', distanceTown);
+
+                        const distanceHospital = feature.properties["distance_to_hospital_km"]
+                        localStorage.setItem('distance-hospital', distanceHospital);
+
+                        const nearestHealthCenter = feature.properties["nearest_health_centre"]
+                        localStorage.setItem('nearest-health-center', nearestHealthCenter);
+
+                        const annualTyphoid = feature.properties["annual_typhoid_cases"]
+                        localStorage.setItem('annual-typhoid', annualTyphoid);
+
+                        const projectType = feature.properties["project_type"];
+                        localStorage.setItem('project-type', projectType);
+
+                        const statusName = feature.properties["status_name"];
+                        localStorage.setItem('status-name', statusName);
+                    });
+                }
+            }).addTo(map);
+        } catch (error) {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+
+    Promise.all([
+        fetch('https://172.105.120.121/api/mhs_water_areas')
+            .then(response => response.json())
+            .then(data => {
+                return L.geoJSON(data, {
+                    style: function (feature) {
+                        return { color: "blue" };
+                    }
+                }).addTo(map);
+            }),
+        fetch('https://172.105.120.121/api/mhs_water_lines')
+            .then(response => response.json())
+            .then(data => {
+                return L.geoJSON(data, {
+                    style: function (feature) {
+                        return { color: "steelblue" };
+                    }
+                }).addTo(map);
+            }),
+        fetch('https://172.105.120.121/api/mhs_roads')
+            .then(response => response.json())
+            .then(data => {
+                return L.geoJSON(data, {
+                    style: function (feature) {
+                        return {
+                            color: "brown",
+                            fillOpacity: 0.5
+                        };
+                    }
+                }).addTo(map);
+            })
+    ]).then(([mhswater, mhswaterline, mhsroad]) => {
+        var geographicInformation = L.layerGroup([mhswater, mhswaterline, mhsroad]);
+        var baseMaps = {
+            "Geographic Information": geographicInformation
+        };
+        L.control.layers(baseMaps).addTo(map);
+    }).catch(error => console.error('Error:', error));
+    fetch('https://172.105.120.121/api/hospital')
+        .then(response => {
+            console.log('Response:', response);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data:', data);
+            var hospital = L.geoJSON(data, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, { icon: myIcon });
+                },
+                onEachFeature: function (feature, layer) {
+                    var popupContent = (feature.properties['hospital_name']);
+                    layer.bindPopup(popupContent);
+                }
+            }).addTo(map);
+        })
+        .catch(error => console.error('Error:', error));
+    fetch('https://172.105.120.121/api/mhs_districts')
+        .then(response => response.json())
+        .then(data => {
+            var mhsdistrict = L.geoJSON(data, {
+                style: {
+                    color: '#FA8072',
+                    opacity: 1,
+                    fill: false
+                }
+            }).addTo(map);
+        })
+        .catch(error => console.error('Error:', error));
+    fetch('https://172.105.120.121/api/school')
+        .then(response => response.json())
+        .then(data => {
+            schoolLayer = L.geoJSON(data, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, { icon: myIcon2 });
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties["school_name"]);
+                }
+            }).addTo(map);
+        })
+        .catch(error => console.error('Error:', error));
+
+    // var village = L.geoJSON(village).addTo(map)
+    var elevation = L.imageOverlay('img/elevation.png', [[19.815284943, 97.343636681], [17.636673832, 98.651692237]], { interactive: false, opacity: 0.7 }).addTo(map);
+    var elevationColor = L.imageOverlay('img/DEM.png', [[19.815284943, 97.343636681], [17.636673832, 98.651692237]], { interactive: false, opacity: 0.4 }).addTo(map);
+    var elevavtionMono = L.imageOverlay('img/elevation.png', [[19.815284943, 97.343636681], [17.636673832, 98.651692237]], { interactive: false, opacity: 0.7 }).addTo(map);
+    var subdistrict = L.geoJSON(subdistrict, {
+        style: {
+            color: 'pink',
+            opacity: 1,
+            fill: false
+        }
+    }).addTo(map);
+
+    var geographicInformation = L.layerGroup([mhswater, mhswaterline, mhsroad]);
+
+
+    L.control.layers(baseMaps).addTo(map);
+
+    // Variable to store the currently clicked layer
+    var clickedLayer;
+
+    // Function to reset the style of the previously clicked layer
+    function resetClickedLayer() {
+        if (clickedLayer) {
+            clickedLayer.setStyle({ fillColor: 'blue', color: 'white' });
+        }
+    }
+
+    // // Create a layer group for markers
+    var markersLayerGroup = L.layerGroup([VillageData]);
+
+    // Create a layer group for GeoJSON data
+    var SubdistrictLayer = L.layerGroup([subdistrict]);
+
+    var DistrictLayer = L.layerGroup([district]);
+
+    var elevationLayer = L.layerGroup([elevation, elevationColor])
+
+    var elevationmonoLayer = L.layerGroup([elevavtionMono])
+
+    var SchoolLayer = L.layerGroup([school])
+
+    // var HospitalLayer = L.layerGroup([hospital])
+
+    // var GeographicLayer = L.layerGroup([mhsroad, mhswater, mhswaterline])
+    // var ContourLayer = L.layerGroup([contourline])
+
+    // Define a new control
+    var RecenterControl = L.Control.extend({
+        options: {
+            position: 'topleft' // Position of the control
+        },
+
+        onAdd: function (map) {
+            // Create an img element
+            var img = L.DomUtil.create('img');
+
+            // Set the source of the image
+            img.src = 'img/re-center.png';
+
+            // Set the width and height of the image
+            img.style.width = '32px';
+            img.style.height = '32px';
+
+            img.style.borderRadius = '10%';
+
+            // Add a border to the image
+            img.style.border = '1.1px solid grey';
+
+            // Attach the onclick event to the image
+            img.onclick = function () {
+                map.setView([18.7370, 97.8722], 9.45); // Recenter the map
+            }
+
+            return img;
+        }
+    });
+
+    // Add the control to the map
+    new RecenterControl().addTo(map);
+
+    // Create a new control
+    var radioButtonControl = L.control({ position: 'topleft' });
+
+    // When the control is added to the map
+    radioButtonControl.onAdd = function (map) {
+        // Create a div for the control
+        var div = L.DomUtil.create('div', 'radio-button-control');
+
+        // Add a radio button to the div
+        div.innerHTML = '<input type="search" id="searchBox" name="searchBox" placeholder="Search..."><br><input type="radio" id="radio1" name="radio" value="radio1"><label for="radio1">Time</label><br><input type="radio" id="radio2" name="radio" value="radio2"><label for="radio2">Date</label>';
+        return div;
+    };
+
+    // Add the control to the map
+    radioButtonControl.addTo(map);
+
+    /* ==========================================
+                    LAYER CONTROL
+    =============================================*/
+    var baseMaps = {
+        "OSM": osm,
+        'Dark': dark,
+        'Google Street': googleStreets,
+        "Google Satellite": googleHybrid,
+    };
+
+    
+    var overlayMaps = {
+        "Geographic Information": geographicInformation
+    //     'Terrain': elevationLayer,
+    //     "Terrain (Monochrome)": elevationmonoLayer,
+    //     'Subdistrict': SubdistrictLayer,
+    //     'District': DistrictLayer,
+    //     'School': SchoolLayer,
+    //     // 'Geographical Info': GeographicLayer,
+    //     // 'Hospital': HospitalLayer,
+
+    //     // 'nexrad': nexrad
+    };
+    map.removeLayer(singleMarker)
+    // Create a legend control
+    var legendControl = L.control({ position: 'bottomright' });
+
+    legendControl.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'legend');
+        div.innerHTML +=
+            '<strong>Legend</strong><br><br>' +
+            '<img src="img/elevation.png" alt="Elevation" height="20"> Terrain<br>' +
+            '<img src="img/DEM.png" alt="Monochrome Elevation" height="20"> Terrain (Monochrome)<br>' +
+            '<svg height="20" width="20"><circle cx="10" cy="10" r="8" style="fill: blue; stroke: white; stroke-width: 3;"></circle></svg> Village<br>' +
+            '<svg height="20" width="20"><circle cx="10" cy="10" r="8" style="fill: red; stroke: white; stroke-width: 3;"></circle></svg> Village Clicked<br>' +
+            '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:pink;stroke-width:2"></line></svg> Subdistrict<br>' +
+            '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:#FA8072;stroke-width:2"></line></svg> District<br>' +
+            '<img src="img/school_marker.png" alt="School" height="20"> School<br>' +
+            '<img src="img/hospital_marker.png" alt="Hospital" height="20"> Hospital<br>' +
+            '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:brown;stroke-width:2"></line></svg> Road<br>' +
+            '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:steelblue;stroke-width:2"></line></svg> Water Line<br>' +
+            '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:blue;stroke-width:2"></line></svg> Water Area<br>'
+
+        return div;
+    };
+
+    // Add the legend control to the map
+    legendControl.addTo(map);
+
+    L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
+
+    /* ==========================================
+                    LEAFLET EVENT
+    =============================================*/
+    /* map.on('mouseover', function() {
+        console.log('your mouse is over the map')
+    })
+
+    map.on('mousemove', function(e) {
+        document.getElementsByClassName('coordinate')[0].innerHTML = 'Lat: ' + e.latlng.lat + ' Lng: ' + e.latlng.lng
+        console.log('Lat: ' + e.latlng.lat, 'Lng' + e.latlng.lng)
+    }) */
+
+</script>

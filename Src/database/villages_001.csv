@@ -1,0 +1,46 @@
+village_name,created_time,households,road_conditions,total_population,gps_latitude,gps_longitude,_population_without_enough_rice,children_aged_0_-_18,distance_to_town_km,adult_males,adult_females,distance_to_hospital_km,nearest_health_centre,distance_to_pratom_km,annual_typhoid_cases,distance_to_health_centre_km,distance_to_mathayom_km,common_diseases,hosted_kht_projects,record_id
+Ban Khun Mae La,2021-10-28 11:14:18,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,School Buses;Further Education Scholarships,zcrm_361303000000522010
+Ban Pho So,2021-11-19 08:24:16,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,School Meals,zcrm_361303000000654001
+Ban Mae Song,2021-11-28 06:40:40,36,Average (some paved road. some potholes),175,,,50,-1,85,90,85,80,Ban Sa La Jiang Tong,12,1,12,12,Flu,Irrigation;Further Education Scholarships,zcrm_361303000000716180
+Ban Mae Po,2021-11-29 03:16:25,65,Average (some paved road. some potholes),315,,,50,-1,90,151,164,90,Ban Sa La Jiang Tong,15,-1,15,15,Flu,Irrigation;WASH,zcrm_361303000000716289
+Ban Mae Phae,2021-11-29 03:23:28,85,Average (some paved road. some potholes),380,,,50,-1,70,196,184,70,Ban Sa La Jiang Tong,20,-1,20,20,,Irrigation,zcrm_361303000000716314
+Ban Kong Soum,2022-06-01 07:48:30,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001611292
+Ban Huay Po,2022-06-01 08:05:00,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001611368
+Ban Klo Se Lo,2022-06-01 08:11:55,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001611430
+Ban Huay Hu Pa,2022-06-01 08:24:03,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001611560
+Ban Mae Taw La,2022-06-01 08:27:45,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001611591
+Ban Huay Sua,2022-06-01 08:36:00,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001611617
+Ban Pang Chang,2022-06-01 08:40:32,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001611643
+Ban Mae Sa,2022-06-01 08:45:09,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001611690
+Ban Mae Wa Luang,2022-06-20 07:12:44,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001699013
+Sao Hin,2022-06-20 07:26:27,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001699049
+Pa Mark,2022-06-20 07:29:43,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001699075
+Mae Tor,2022-06-20 07:31:03,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001699101
+Ban Aum Da Nua,2022-06-20 07:54:16,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001699139
+Ban Huay Ma Kok,2022-06-20 08:06:00,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001699181
+Ban Mae Jaw,2022-07-25 05:36:37,45,,120,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,School Buses;Irrigation;Further Education Scholarships,zcrm_361303000001884037
+Ban Huay Phueng,2022-07-25 07:10:57,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001884168
+Mon Ta Lang,2022-07-26 05:01:45,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001905020
+Mae Salit Luang,2022-07-26 05:03:14,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000001905042
+Ban Huay Bong Tha,2022-08-04 04:57:10,29,,122,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044003
+Ban Thung Ruang Thong,2022-08-04 05:06:32,320,,710,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044029
+Ban Huay Pom Fard,2022-08-04 05:09:42,25,,132,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044055
+Ban Sob Mae Ruam,2022-08-04 05:15:09,50,,485,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044081
+Ban Ruam Mo,2022-08-04 05:17:28,61,,207,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044107
+Ban Eeh Vee Jo,2022-08-04 05:26:01,78,,367,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044150
+Ban Mae Phae Noi,2022-08-04 05:29:37,25,,110,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044176
+Ban Mae Lui Bon,2022-08-04 05:32:03,43,,165,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044202
+Ban Huay Khi Pher,2022-08-04 05:40:56,35,,166,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002044270
+Wangkhan,2022-08-26 02:14:33,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Further Education Scholarships,zcrm_361303000002194023
+Ban Kong Sum Nua,2022-09-13 10:46:35,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,WASH,zcrm_361303000002242022
+Ban Kong Sum Tai,2022-09-13 10:47:36,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002242074
+Ban Mae Nil Nok,2022-09-14 03:13:22,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002250064
+Ban Mae Nil Nok,2022-09-14 03:13:24,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000002250074
+Ban Huay Ha Mai,2023-10-17 14:27:35,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,Irrigation;WASH,zcrm_361303000003472001
+ban mae oom pawk,2024-01-19 08:48:12,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,WASH,zcrm_361303000003712654
+Ban Luk Ka Paw,2024-01-22 04:50:21,-1,Very Poor (not paved. inaccesible in wet season),205,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,WASH,zcrm_361303000003722001
+BAN Mae Sa Maeng Song,2024-03-12 17:15:18,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,WASH,zcrm_361303000003864001
+Ban Mae La Ka Tai,2024-03-13 16:15:48,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000003867001
+Ban Mae La Ka Tai,2024-03-13 16:16:49,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000003867011
+Ban Mae Na Jang Nua,2024-04-29 15:17:09,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000004061025
+Ban Hua Nam Mae Sa Kud,2024-05-14 16:16:37,-1,,-1,,,-1,-1,-1,-1,-1,-1,,-1,-1,-1,-1,,,zcrm_361303000004108328

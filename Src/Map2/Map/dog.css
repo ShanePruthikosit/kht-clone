@@ -1,0 +1,131 @@
+/* :root {
+  --nav-icon-width: 50px;
+  --nav-border-width: 8px;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.page-container {
+  height: inherit;
+  display: flex;
+}
+
+.main {
+  height: inherit;
+  padding: 0;
+  padding-left: 5%;
+  overflow-y: auto;
+}
+
+.nav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.main {
+  margin-left: 250px;
+  transition: margin-left 0.3s;
+}
+
+.nav--collapsed {
+  width: 0;
+}
+
+.main--expanded {
+  margin-left: 0;
+}
+
+.nav--collapsed {
+  width: var(--nav-icon-width);
+}
+
+.nav--collapsed .nav__label {
+  display: none;
+}
+
+.nav__link {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+
+.nav__link:hover {
+  background-color: #dddddd;
+}
+
+.nav__icon-container {
+  width: var(--nav-icon-width);
+  height: var(--nav-icon-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav__label {
+  white-space: nowrap;
+}
+
+.nav__border {
+  position: absolute;
+  left: 100%;
+  top: 0; /* Adjusted from top: 50 */
+  /* width: var(--nav-border-width);
+  height: inherit;
+  background-color: #dddddd;
+  transition: background-color 0.2s;
+  cursor: ew-resize;
+}
+
+/* Add these styles to your existing CSS */
+/* .nav__label h1 {
+  font-size: 24px;
+  margin-left: 0%;
+}
+
+.nav__label h2 {
+  font-size: 18px;
+  margin-left: 0%;
+}
+
+.nav__label h3 {
+  font-size: 20px;
+  margin-left: 1%;
+}
+
+.nav__border:hover {
+  background-color: #cccccc;
+}
+.nav.collapsed {
+  width: 60px;
+}
+
+/* Style the sidebar links when it is collapsed */
+.nav.collapsed .nav__link {
+  padding: 16px 8px;
+  text-align: center;
+}
+
+/* Style the sidebar button when it is collapsed */
+.nav.collapsed .nav__border {
+  margin-left: 0;
+  right: 0;
+}
+#map-container {
+  height: 100%;
+  width: 75%;
+  float: right;
+} */ */ */

@@ -1,0 +1,39 @@
+Module Id,Name,Label,Api Name,Singular Label,Module Type,Web Link,Visibility,Parent Module Id,Modified By,Modified Time
+zcrm_361303000000000043,Leads,Staff Members,Leads,Staff Member,1,,1,,zcrm_361303000000269001,2022-08-10 01:37:11
+zcrm_361303000000000045,Accounts,Villages,Accounts,Village,1,,1,,zcrm_361303000000269001,2022-08-05 04:24:21
+zcrm_361303000000000047,Contacts,Donors,Contacts,Donor,1,,1,,zcrm_361303000000269001,2021-11-01 12:13:24
+zcrm_361303000000000049,Potentials,Deals,Deals,Deal,1,,1,,zcrm_361303000000269001,2021-08-17 15:17:42
+zcrm_361303000000000051,Campaigns,Campaigns,Campaigns,Campaign,1,,1,,zcrm_361303000000269001,2021-08-17 15:17:42
+zcrm_361303000000000061,Users,Users,users,User,1,,1,,,
+zcrm_361303000000000069,Notes,Notes,Notes,Note,1,,1,,,
+zcrm_361303000000000071,Competitors,Competitors,Competitors,Competitor,1,,1,,,
+zcrm_361303000000000073,Forecasts,Forecasts,Forecasts,Forecast,1,,1,,zcrm_361303000000269001,2021-09-22 15:43:07
+zcrm_361303000000000095,Cases,Cases,Cases,Case,1,,1,,zcrm_361303000000269001,2021-09-22 15:43:07
+zcrm_361303000000000097,Solutions,Project Cases,Solutions,Solution,1,,1,,zcrm_361303000000269001,2022-08-05 08:36:49
+zcrm_361303000000000099,Products,Programmes,Products,Product,1,,1,,zcrm_361303000000269001,2021-09-22 16:40:40
+zcrm_361303000000000101,Vendors,Schools/Towns/Districts,Vendors,Town/District,1,,1,,zcrm_361303000000269001,2021-10-28 09:51:34
+zcrm_361303000000000103,PriceBooks,Price Books,Price_Books,Price Book,1,,1,,zcrm_361303000000269001,2021-09-22 15:43:07
+zcrm_361303000000000105,Quotes,Quotes,Quotes,Quote,1,,1,,zcrm_361303000000269001,2021-09-22 15:43:07
+zcrm_361303000000000107,SalesOrders,Sales Orders,Sales_Orders,Sales Order,1,,1,,zcrm_361303000000269001,2021-09-22 15:43:07
+zcrm_361303000000000109,PurchaseOrders,Purchase Orders,Purchase_Orders,Purchase Order,1,,1,,zcrm_361303000000269001,2021-09-22 15:43:07
+zcrm_361303000000000111,Invoices,Invoices,Invoices,Invoice,1,,1,,zcrm_361303000000269001,2021-09-22 15:43:07
+zcrm_361303000000000113,Attachments,Attachments,Attachments,Attachment,1,,1,,,
+zcrm_361303000000000115,Emails,Emails,Emails,Email,1,,1,,,
+zcrm_361303000000104001,DealContactRole,Deal Contact Role,DealContactRole,Deal Contact Role,1,,1,,,
+zcrm_361303000000112001,AccountProductRelations,Account Product Relation,AccountProductRelations,Account Product Relations,1,,1,,,
+zcrm_361303000000112013,LeadProductRelations,Lead Product Relation,LeadProductRelations,Lead Product Relations,1,,1,,,
+zcrm_361303000000112025,ContactProductRelations,Contact Product Relation,ContactProductRelations,Contact Product Relations,1,,1,,,
+zcrm_361303000000112037,DealProductRelations,Deal Product Relation,DealProductRelations,Deal Product Relations,1,,1,,,
+zcrm_361303000000113001,DealHistory,Stage History,DealHistory,Stage History,9,,1,zcrm_361303000000000049,,
+zcrm_361303000000154001,Invitees,Invitees,Invitees,Invitee,1,,1,,,
+zcrm_361303000000174001,InvoicedItems,Invoiced Items,Invoiced_Items,Invoiced Item,7,,10236,zcrm_361303000000000111,,
+zcrm_361303000000174419,PurchaseItems,Purchase Items,Purchase_Items,Purchase Item,7,,10236,zcrm_361303000000000109,,
+zcrm_361303000000174837,OrderedItems,Ordered Items,Ordered_Items,Ordered Item,7,,10236,zcrm_361303000000000107,,
+zcrm_361303000000175255,QuotedItems,Quoted Items,Quoted_Items,Quoted Item,7,,10236,zcrm_361303000000000105,,
+zcrm_361303000000177713,Profiles,Profiles,Profiles,Profile,1,,1,,,
+zcrm_361303000000177737,Roles,Roles,Roles,Role,1,,1,,,
+zcrm_361303000000198140,Modules,Modules,Modules,Module,1,,1,,,
+zcrm_361303000000205016,Fields,Fields,Fields,Field,1,,1,,,
+zcrm_361303000000237101,Territories,Territories,Territories,Territory,1,,1,,,
+zcrm_361303000000274130,Orchestration1,Qualify Leads through Call,Qualify_Leads_through_Call,Qualify Leads through Call,1,,6142,,zcrm_361303000000269001,2021-08-17 16:17:43
+zcrm_361303000000275133,Orchestration2,Qualify Leads through Email,Qualify_Leads_through_Email,Qualify Leads through Email,1,,6142,,zcrm_361303000000269001,2021-08-17 16:17:45

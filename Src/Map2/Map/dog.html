@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHT Map</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="dog.css">
+
+  <style>
+
+    html, body {
+      overflow: hidden;
+      height: 100%;
+    }
+    #map-container {
+      height: 100vh;
+      width: 100%;
+      float: right;
+    }
+    #sidebar {
+    overflow-y: auto; /* Add a vertical scrollbar if necessary */
+    height: 100vh; /* Set maximum height to viewport height */
+    }
+
+    /* Add this style to make text color black */
+    h1, h2, h3 {
+      padding-left: 10px;
+    }
+    h6 {
+      padding-top: 10px;
+      color: black;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <nav class="nav flex-column">
+          <!-- Add a button to toggle the sidebar -->
+          <button class="btn btn-primary d-md-none" data-bs-toggle="collapse" data-bs-target="#sidebar">Toggle Sidebar</button>
+          <div class="collapse show" id="sidebar"> <!-- Add the collapse class and an id -->
+            <a href="#" class="nav-link">
+              <div style="margin-left: 6%; margin-top: 10%; margin-bottom: 10%">
+                <img src="img/KHT.jpg" alt="Karen village" width="500" height="250">
+              </div>
+            </a>
+            <a href="#" class="nav-link">
+              <h1>
+                <p id="village-name"></p>
+              </h1>
+            </a>
+            <a href="#" class="nav-link">
+              <h2>
+                <p id="road-quality"></p>
+              </h2>
+            </a>
+            <a href="#" class="nav-link">
+              <h3>
+                <p id="distance-pratom"></p>
+              </h3>
+            </a>
+            <a href="#" class="nav-link">
+              <h3>
+                <p id="distance-mathayom"></p>
+              </h3>
+            </a>
+            <a href="#" class="nav-link">
+              <h3>
+                <p id="project-name"></p>
+              </h3>
+            </a>
+            <a href="#" class="nav-link">
+              <h3> </h3>
+            </a>
+            <a href="#" class="nav-link">
+              <h3><Details><h6>Good health and wellbeing is one of the 17 United Nations Sustainable Development Goals. Promoting a healthy community is one of the most important ways to reduce poverty and inequality, helping communities to thrive.
+
+                One of the main reasons for poor health in Karen communities is through lack of access to adequate clean water, sanitation and hygiene (WASH) facilities. Around 40% of the population in Mae Hong Son lack access to clean drinking water and adequate waste disposal making. This makes them vulnerable to many diseases including diarrhea, typhoid, stomach ulcers and parasitic worms. Not only do these cause short-term health problems but they can also cause long-term chronic complications which have lasting impacts on health, education and livelihoods outcomes, helping continue the cycle of poverty.
+                
+                The Karen Hilltribes Trust (KHT) is one of the few organisations working in this region, reaching out to the poorest and most isolated communities Mae Hong Son. We are dedicated to working towards good health and wellbeing. All our projects are coordinated in cooperation with every village we work in to ensure long-term sustainability and local ownership. Our current health project is WASH – Water, Sanitation and Hygiene. Read more about our WASH project below.
+                
+                So far, our health projects have provided 55,643 Karen people with improved WASH conditions through installing over 200 water systems and building or repairing 3,150 latrines!</h6></Details></h3>
+            </a>
+            <a href="#" class="nav-link">
+              <h3> Gender charts</h3>
+            </a>
+            <div style="width: 300px; height: 300px; padding-left: 100px;">
+              <!-- Create a canvas element where the chart will be rendered -->
+
+              <canvas id="myChart"></canvas>
+          </div>
+          
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          
+          <script>
+            const adultfemale = parseInt(sessionStorage.getItem('adult-female')) || 0;
+            const adultmale = parseInt(sessionStorage.getItem('adult-male')) || 0;
+          
+            // Define your data
+            var labels = ['Female', 'Male'];
+            var data = [adultfemale, adultmale];
+          
+            // Get the canvas element
+            var ctx = document.getElementById('myChart').getContext('2d');
+          
+            // Create the pie chart
+            var myChart = new Chart(ctx, {
+              type: 'pie',
+              data: {
+                labels: labels,
+                datasets: [{
+                  data: data,
+                  backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+              }
+            });
+          
+            // Update chart function
+            function updateChart() {
+              const newAdultFemale = parseInt(sessionStorage.getItem('adult-female')) || 0;
+              const newAdultMale = parseInt(sessionStorage.getItem('adult-male')) || 0;
+          
+              // Update data and labels
+              myChart.data.datasets[0].data = [newAdultFemale, newAdultMale];
+              myChart.update();
+            }
+          
+            // Add an event listener for the storage event
+            window.addEventListener('storage', function (e) {
+              // Check if the changed key is 'adult-female' or 'adult-male'
+              if (e.key === 'adult-female' || e.key === 'adult-male') {
+                // Update the chart when adult-female or adult-male values change
+                updateChart();
+              }
+              // Add other conditions if needed for other storage keys
+            });
+          </script>
+            <script src="Village_Details.js"></script>
+          </div>
+        </nav>
+      </div>
+      <div class="col-md-8">
+        <div id="map-container">
+          <iframe src="index.html" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper-base.min.js"
+    integrity="sha384-+5z5zjJ1JZJ7vJ8jz9zvWUJvJZ8v5vJj5LJyJzJf3zjKvzJzqJ4zJzJzJ4zJzJzJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZEENe/1pzoEVhF5K59JQ5N"
+    crossorigin="anonymous"></script>
+  <script>
+    window.onload = function() {
+    document.getElementById('village-name').innerHTML = 'Village Name';
+    document.getElementById('road-quality').innerHTML = 'Road Quality';
+    document.getElementById('distance-pratom').innerHTML = 'Distance to Pratom';
+    document.getElementById('distance-mathayom').innerHTML = 'Distance to Mathayom';
+    document.getElementById('project-name').innerHTML = 'Project Name';
+}
+    // Add an event listener for the storage event
+    window.addEventListener('storage', function (e) {
+    // Check if the changed key is 'village-name'
+    if (e.key === 'village-name') {
+        // Update the content in the widget
+        const villageName = sessionStorage.getItem('village-name');
+        document.getElementById("village-name").innerHTML = villageName;
+    }
+    if (e.key === 'road-quality') {
+        // Update the content in the widget
+        const roadQuality = sessionStorage.getItem('road-quality');
+        document.getElementById("road-quality").innerHTML = "Road quality: " + roadQuality;
+    }
+    if (e.key === 'distance-pratom') {
+      const distancePratom = sessionStorage.getItem('distance-pratom');
+      document.getElementById("distance-pratom").innerHTML = "Distance to Pratom: " + distancePratom + " km";
+    }
+    if (e.key === 'distance-mathayom') {
+      const distanceMathayom = sessionStorage.getItem('distance-mathayom');
+      document.getElementById("distance-mathayom").innerHTML = "Distance to Mathayom: " + distanceMathayom + " km";
+    }
+    if (e.key === 'project-name') {
+      const projectName = sessionStorage.getItem('project-name');
+      document.getElementById("project-name").innerHTML = "Project Name: " + projectName;
+
+    }
+});
+  </script>
+</body>
+
+</html>

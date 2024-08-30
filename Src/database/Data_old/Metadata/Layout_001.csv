@@ -1,0 +1,36 @@
+Layout Id,Layout Name,Tab Name,Created By Id,Modified By Id,Created Time,Modified Time,Status
+zcrm_361303000000032007,Standard,Products,,zcrm_361303000000269001,,2021-09-22 18:40:39,false
+zcrm_361303000000032011,Standard,Solutions,,zcrm_361303000000269001,,2022-08-05 10:36:49,false
+zcrm_361303000000032013,Standard,Invoices,,,,,false
+zcrm_361303000000032015,Standard,Cases,,,,,false
+zcrm_361303000000032021,Standard,Visits,,,,,false
+zcrm_361303000000032029,Standard,Campaigns,,,,,false
+zcrm_361303000000032033,Standard,Leads,,zcrm_361303000000269001,,2021-08-20 16:30:47,false
+zcrm_361303000000032035,Standard,Accounts,,zcrm_361303000000269001,,2022-08-05 06:24:20,false
+zcrm_361303000000032037,Standard,Events,,,,,false
+zcrm_361303000000032039,Standard,Contacts,,zcrm_361303000000269001,,2021-11-01 13:13:24,false
+zcrm_361303000000032041,Standard,Calls,,,,,false
+zcrm_361303000000032043,Standard,Potentials,,,,,false
+zcrm_361303000000032045,Standard,PurchaseOrders,,,,,false
+zcrm_361303000000032047,Standard,SalesOrders,,,,,false
+zcrm_361303000000032051,Standard,Users,,,,,false
+zcrm_361303000000032053,Standard,Quotes,,,,,false
+zcrm_361303000000032055,Standard,Tasks,,,,,false
+zcrm_361303000000032057,Standard,PriceBooks,,,,,false
+zcrm_361303000000032059,Standard,Vendors,,zcrm_361303000000269001,,2021-09-23 11:00:50,false
+zcrm_361303000000085039,Standard,CheckLists,,,,,false
+zcrm_361303000000104003,Standard,DealContactRole,,,,,false
+zcrm_361303000000112003,Standard,AccountProductRelations,,,,,false
+zcrm_361303000000112015,Standard,LeadProductRelations,,,,,false
+zcrm_361303000000112027,Standard,ContactProductRelations,,,,,false
+zcrm_361303000000112039,Standard,DealProductRelations,,,,,false
+zcrm_361303000000113003,Standard,DealHistory,,,2018-08-27 11:50:18,2018-08-27 11:50:18,false
+zcrm_361303000000154003,Standard,Invitees,,,,,false
+zcrm_361303000000171208,Standard,Review Processes,,,,,false
+zcrm_361303000000174418,Standard,InvoicedItems,,,,,false
+zcrm_361303000000174836,Standard,PurchaseItems,,,,,false
+zcrm_361303000000175254,Standard,OrderedItems,,,,,false
+zcrm_361303000000175672,Standard,QuotedItems,,,,,false
+zcrm_361303000000205024,Standard,Fields,,,,,false
+zcrm_361303000000274139,Standard,Orchestration1,,,,,false
+zcrm_361303000000275142,Standard,Orchestration2,,,,,false

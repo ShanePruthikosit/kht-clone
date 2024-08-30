@@ -1,0 +1,3 @@
+Record Id,Role Name,Reports To,Share Data with Peers,Description,Created By,Modified By,Created Time,Modified Time,Forecast Manager
+zcrm_361303000000026968,CEO,,true,crm.security.role.admin.desc,,,,,
+zcrm_361303000000026970,Manager,zcrm_361303000000026968,false,crm.security.role.standard.desc,,,,,

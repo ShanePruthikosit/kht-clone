@@ -1,0 +1,3 @@
+Profile Id,Profile Name,Category,Created By Id,Modified By Id,Created Time,Modified Time,Type,Description
+zcrm_361303000000026972,Administrator,false,,,,,,crm.security.profile.admin.desc
+zcrm_361303000000026974,Standard,false,,zcrm_361303000000269001,,2022-08-10 03:29:12,,crm.security.profile.std.desc

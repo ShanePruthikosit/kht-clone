@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet</title>
+
+    <!-- leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .coordinate {
+            position: absolute;
+            bottom: 10px;
+            right: 50%;
+        }
+        .legend {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <link rel="stylesheet" href="dog.css"> -->
+    <div id="map">
+        <div class="leaflet-control coordinate"></div>
+    </div>
+    <div id="widget">
+        <!-- Content of the widget goes here -->
+    </div>
+   
+
+  
+</body>
+
+</html>
+
+<!-- leaflet js -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- <script src = "./data/point.js"></script>
+<script src = "./data/line.js"></script> -->
+<!-- <script src = "./data/polygon.js"></script> -->
+<!-- <script src = "./data/hotdogcat.js"></script> -->
+<script src="./data/waterline.js"></script>
+<!-- <script src = "./data/THA_roads.js"></script> -->
+<script src="./data/District_MAE_HONG_SON.js"></script>
+<!-- <script src = "./data/village_point.js"></script> -->
+<script src="./data/subdistrict_area.js"></script>
+<script src="./data/Village_Details.js"></script>
+<script src="./data/School.js"></script>
+<script src="./data/amenity_hospital.js"></script>
+<script src="./data/mhs_roads.js"></script>
+<script src="./data/msh_water_areas.js"></script>
+<script src="./data/msh_water_lines.js"></script>
+<!-- <script src = "./data/Contour.js"></script> -->
+<scirpt src="./data/Contourline.js"></scirpt>
+<scirpt src="pop_up_button.js"></scirpt>
+
+
+
+<!-- <style>
+    .leaflet-control-scale-line {
+        border: 2px solid #777;
+        border-top: none;
+        line-height: 20px;
+        font-size: 20px;
+    }
+</style> -->
+
+<script>
+
+
+    var map = L.map('map').setView([18.7370, 97.8722], 9.45);
+
+    var scale = L.control.scale({
+        position: 'bottomleft',
+        imperial: true
+    }).addTo(map);
+    
+
+
+
+    /* ==========================================
+                TILE  LAYER and WMS
+    =============================================*/
+    // osm layer
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    osm.addTo(map);
+
+    // water color
+    var watercolor = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.{ext}', {
+        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains: 'abcd',
+        minZoom: 1,
+        maxZoom: 16,
+        ext: 'jpg'
+    });
+    // watercolor.addTo(map)
+
+    // dark map
+    var dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    });
+    // dark.addTo(map)
+
+    // google street
+    googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    // googleStreets.addTo(map)
+
+    // google hybrid
+    googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    // googleHybrid.addTo(map)
+
+    var nexrad = L.tileLayer.wms("http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+        layers: 'nexrad-n0r-900913',
+        format: 'image/png',
+        transparent: true,
+        attribution: "Weather data © 2012 IEM Nexrad"
+    });
+
+
+    /* ==========================================
+                        MARKER
+    =============================================*/
+    var myIcon = L.icon({
+        iconUrl: 'img/hospital_marker.png',
+        iconSize: [30, 30],
+    });
+
+    var myIcon2 = L.icon({
+        iconUrl: 'img/school_marker.png',
+        iconSize: [40, 40],
+    });
+
+    // var SchoolIcon = L.icon({
+    // iconUrl: 'img/school_marker.png',
+    // iconSize: [18, 18],
+    // });
+
+
+    // var singleMarker = L.marker([18.7370, 97.8722], { icon: myIcon, draggable: false});
+    // var popup1 = singleMarker.bindPopup('This is Maehongson ' + singleMarker.getLatLng().toString()).openPopup()
+    // popup1.addTo(map)
+
+    // var Ban_Mae_Kong_Pae_Marker = L.marker([18.565066, 98.116619], { icon: myIcon, draggable: false});
+    // var popup2 = Ban_Mae_Kong_Pae_Marker.bindPopup('This is Ban Mae Kong Pae ' + Ban_Mae_Kong_Pae_Marker.getLatLng().toString()).openPopup()
+    // popup2.addTo(map)
+
+
+    // console.log(singleMarker.toGeoJSON())
+
+
+    /* ==========================================
+                        GEOJSON
+    =============================================*/
+    // var poinData = L.geoJSON(pointJson).addTo(map)
+    // var lineData = L.geoJSON(lineJson).addTo(map)
+    // Use Fetch API to get GeoJSON data from the provided URL
+
+     // import the village class from village.js
+     class Village {
+        constructor(id, village_name, households, road_conditions, total_population, gps_latitude, gps_longitude, population_without_enough_rice, children_aged_0_18, distance_to_town_km, adult_males, adult_females, distance_to_hospital_km, nearest_health_centre, distance_to_pratom_km, annual_typhoid_cases, distance_to_health_centre_km, distance_to_mathayom_km, common_diseases, hosted_kht_projects, record_id, geom) {
+            this.id = id;
+            this.village_name = village_name;
+            this.households = households;
+            this.road_conditions = road_conditions;
+            this.total_population = total_population;
+            this.gps_latitude = gps_latitude;
+            this.gps_longitude = gps_longitude;
+            this.population_without_enough_rice = population_without_enough_rice;
+            this.children_aged_0_18 = children_aged_0_18;
+            this.distance_to_town_km = distance_to_town_km;
+            this.adult_males = adult_males;
+            this.adult_females = adult_females;
+            this.distance_to_hospital_km = distance_to_hospital_km;
+            this.nearest_health_centre = nearest_health_centre;
+            this.distance_to_pratom_km = distance_to_pratom_km;
+            this.annual_typhoid_cases = annual_typhoid_cases;
+            this.distance_to_health_centre_km = distance_to_health_centre_km;
+            this.distance_to_mathayom_km = distance_to_mathayom_km;
+            this.common_diseases = common_diseases;
+            this.hosted_kht_projects = hosted_kht_projects;
+            this.record_id = record_id;
+            this.geom = geom;
+        }
+    }
+
+    async function fetchData() {
+        try {
+            const response = await fetch('http://103.153.118.77:2546/api/get/?table=village');
+            const data = await response.json();
+            console.log('Data from API:', data);
+            console.log("Village Name:", data.features[0].properties.village_name);
+
+            // Create an array to store all the village data
+            const villageData = [];
+
+            // Loop through the data.features array and create a new instance of the Village class for each item using the Village class constructor
+            data.features.forEach(feature => {
+                const village = new Village(
+                    feature.properties.id,
+                    feature.properties.village_name,
+                    feature.properties.households,
+                    feature.properties.road_conditions,
+                    feature.properties.total_population,
+                    feature.properties.gps_latitude,
+                    feature.properties.gps_longitude,
+                    feature.properties.population_without_enough_rice,
+                    feature.properties.children_aged_0_18,
+                    feature.properties.distance_to_town_km,
+                    feature.properties.adult_males,
+                    feature.properties.adult_females,
+                    feature.properties.distance_to_hospital_km,
+                    feature.properties.nearest_health_centre,
+                    feature.properties.distance_to_pratom_km,
+                    feature.properties.annual_typhoid_cases,
+                    feature.properties.distance_to_health_centre_km,
+                    feature.properties.distance_to_mathayom_km,
+                    feature.properties.common_diseases,
+                    feature.properties.hosted_kht_projects,
+                    feature.properties.record_id,
+                    feature.properties.geom
+                );
+                villageData.push(village);
+            });
+
+            //print the the first village in the array
+            console.log('First Village:', villageData[0]);
+            
+            var clickedLayer;
+
+            function resetClickedLayer() {
+                if (clickedLayer) {
+                    clickedLayer.setStyle({ fillColor: 'blue', color: 'white' });
+                }
+            }
+
+            var VillageData = L.geoJSON(data, {
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        radius: 8,
+                        fillColor: 'blue',
+                        color: 'white',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.7
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.village_name);
+
+                    layer.on('click', function (e) {
+                        // Reset the style of the previously clicked layer
+                        resetClickedLayer();
+                        localStorage.removeItem('project-details');
+                        localStorage.removeItem('start-dates');
+                        localStorage.removeItem('end-dates');
+
+                        // Change the marker color to red
+                        layer.setStyle({ fillColor: 'red', color: 'white' });
+
+                        // Bring the clicked layer to the front
+                        layer.bringToFront();
+
+                        // Store the currently clicked layer
+                        clickedLayer = layer;
+                        const id = feature.properties["id"];
+                        console.log('ID:', id);
+                        localStorage.setItem('id', id);
+                        async function fetchData(id) {
+                            try {
+                                const response = await fetch("http://103.153.118.77:2546/api/get/?table=project&village_id=" + id);
+                                const data = await response.json();
+                                console.log(data);
+
+                                data.features.forEach(feature => {
+                                    const projectDetail = feature.properties.project_name_en;
+                                    // console.log('Project Name:', projectDetail);
+                                    // Get the existing data from local storage
+                                    let projectDetails = JSON.parse(localStorage.getItem('project-details')) || [];
+
+                                    console.log('Project Details:', projectDetails.length);
+
+                                    // Add the new project detail to the array
+                                    projectDetails.push(projectDetail);
+
+                                    // Store the updated array in local storage
+                                    localStorage.setItem('project-details', JSON.stringify(projectDetails));
+
+
+                                    const startDate = feature.properties.start_date;
+                                    console.log('Start Date:', startDate);
+
+                                    // Get the existing data from local storage
+                                    let startDates = JSON.parse(localStorage.getItem('start-dates')) || [];
+
+                                    console.log('Start Dates:', startDates.length);
+
+                                    // Add the new start date to the array
+                                    startDates.push(startDate);
+
+                                    // Store the updated array in local storage
+                                    localStorage.setItem('start-dates', JSON.stringify(startDates));
+
+                                    const endDate = feature.properties.end_date;
+                                    console.log('End Date:', endDate);
+
+                                    // Get the existing data from local storage
+                                    let endDates = JSON.parse(localStorage.getItem('end-dates')) || [];
+
+                                    console.log('End Dates:', endDates.length);
+
+                                    // Add the new end date to the array
+                                    endDates.push(endDate);
+
+                                    // Store the updated array in local storage
+                                    localStorage.setItem('end-dates', JSON.stringify(endDates));
+
+                                    console.log('Project Details:', projectDetails);
+                                    console.log('Start Date:', startDate, ', End Date:', endDate);
+                                });
+                            } catch (error) {
+                                console.error('Error:', error);
+                            }
+                        }
+
+                        fetchData(id);
+
+
+                        const villageName = feature.properties["village_name"];
+                        localStorage.setItem('village-name', villageName);
+
+                        const roadQuality = feature.properties["road_conditions"];
+                        localStorage.setItem('road-quality', roadQuality);
+
+                        const distancePratom = feature.properties["distance_to_pratom_km"];
+                        localStorage.setItem('distance-pratom', distancePratom);
+
+                        const distanceMathayom = feature.properties["distance_to_mathayom_km"]
+                        localStorage.setItem('distance-mathayom', distanceMathayom);
+
+                        const projectName = feature.properties["hosted_kht_projects"]
+                        localStorage.setItem('project-name', projectName);
+
+                        const adultmale = feature.properties["adult_males"]
+                        localStorage.setItem('adult-male', adultmale);
+
+                        const adultfemale = feature.properties["adult_females"]
+                        localStorage.setItem('adult-female', adultfemale);
+
+                        const commonDisease = feature.properties["common_diseases"]
+                        localStorage.setItem('common-disease', commonDisease);
+
+                        const Households = feature.properties["households"]
+                        localStorage.setItem('Households', Households);
+
+                        const riceRatio = feature.properties["population_without_enough_rice"]
+                        localStorage.setItem('rice-ratio', riceRatio);
+
+                        const children = feature.properties["children_aged_0_18"]
+                        localStorage.setItem('children', children);
+
+                        const distanceTown = feature.properties["distance_to_town_km"]
+                        localStorage.setItem('distance-town', distanceTown);
+
+                        const distanceHospital = feature.properties["distance_to_hospital_km"]
+                        localStorage.setItem('distance-hospital', distanceHospital);
+
+                        const nearestHealthCenter = feature.properties["nearest_health_centre"]
+                        localStorage.setItem('nearest-health-center', nearestHealthCenter);
+
+                        const annualTyphoid = feature.properties["annual_typhoid_cases"]
+                        localStorage.setItem('annual-typhoid', annualTyphoid);
+                    });
+                }
+            }).addTo(map);
+        } catch (error) {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+
+    fetchData();
+
+    //     var contourline = L.geoJson(contourline, {
+    //     style: function(feature) {
+    //         console.log('feature', feature);
+    //         return {color: 'orange'};
+    //     }
+    // }).addTo(map);
+
+    // console.log('Contourline:', contourline);
+
+    var mhswater = L.geoJSON(waterarea, {
+        style: function (feature) {
+            return { color: "blue" };
+        }
+    }).addTo(map);
+
+    var mhswaterline = L.geoJSON(waterline, {
+        style: function (feature) {
+            return { color: "steelblue" };
+        }
+    }).addTo(map);
+
+    var mhsroad = L.geoJSON(roads, {
+        style: function (feature) {
+            return {
+                color: "brown",
+                fillOpacity: 0.5
+            };
+        }
+    }).addTo(map);
+    var hospital = L.geoJSON(hospital, {
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, { icon: myIcon });
+        },
+        onEachFeature: function (feature, layer) {
+            var popupContent = (feature.properties['name:en']);
+            layer.bindPopup(popupContent);
+        }
+    }).addTo(map);
+    var district = L.geoJSON(district, {
+        style: {
+            color: '#FA8072',
+            opacity: 1,
+            fill: false
+        }
+    }).addTo(map);
+    var school = L.geoJSON(school, {
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, {icon: myIcon2});
+    },
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.CUL_PNAME);
+    }
+}).addTo(map);
+    // var village = L.geoJSON(village).addTo(map)
+    var elevation = L.imageOverlay('img/elevation.png', [[19.815284943, 97.343636681], [17.636673832, 98.651692237]], { interactive: false, opacity: 0.7 }).addTo(map);
+    var elevationColor = L.imageOverlay('img/DEM.png', [[19.815284943, 97.343636681], [17.636673832, 98.651692237]], { interactive: false, opacity: 0.4 }).addTo(map);
+    var elevavtionMono = L.imageOverlay('img/elevation.png', [[19.815284943, 97.343636681], [17.636673832, 98.651692237]], { interactive: false, opacity: 0.7 }).addTo(map);
+    var subdistrict = L.geoJSON(subdistrict, {
+        style: {
+            color: 'pink',
+            opacity: 1,
+            fill: false
+        }
+    }).addTo(map);
+    // var VillageData = L.geoJSON(VillageData, {
+    //     pointToLayer: function (feature, latlng) {
+    //         return L.circleMarker(latlng, {
+    //             radius: 8,
+    //             fillColor: 'blue',
+    //             color: 'white',
+    //             weight: 2,
+    //             opacity: 1,
+    //             fillOpacity: 0.7
+    //         });
+    //     },
+    //     onEachFeature: function (feature, layer) {
+    //         layer.bindPopup(feature.properties["Village Name"]);
+
+    //         layer.on('click', function (e) {
+    //             // Reset the style of the previously clicked layer
+    //             resetClickedLayer();
+
+    //             // Change the marker color to red
+    //             layer.setStyle({ fillColor: 'red', color: 'white' });
+
+    //             // Bring the clicked layer to the front
+    //             layer.bringToFront();
+
+    //             // Store the currently clicked layer
+    //             clickedLayer = layer;
+
+    //             const villageName = feature.properties["Village Name"];
+    //             localStorage.setItem('village-name', villageName);
+
+    //             const roadQuality = feature.properties["Road Conditions"];
+    //             localStorage.setItem('road-quality', roadQuality);
+
+    //             const distancePratom = feature.properties["Distance to Pratom (km)"];
+    //             localStorage.setItem('distance-pratom', distancePratom);
+
+    //             const distanceMathayom = feature.properties["Distance to Mathayom (km)"]
+    //             localStorage.setItem('distance-mathayom', distanceMathayom);
+
+    //             const projectName = feature.properties["Hosted KHT Projects"]
+    //             localStorage.setItem('project-name', projectName);
+
+    //             const adultmale = feature.properties["Adult Males"]
+    //             localStorage.setItem('adult-male', adultmale);
+
+    //             const adultfemale = feature.properties["Adult Females"]
+    //             localStorage.setItem('adult-female', adultfemale);
+
+    //             const commonDisease = feature.properties["Common Diseases"]
+    //             localStorage.setItem('common-disease', commonDisease);
+
+    //             const Households = feature.properties["Households"]
+    //             localStorage.setItem('Households', Households);
+
+    //             const riceRatio = feature.properties["% Population Without Enough Rice"]
+    //             localStorage.setItem('rice-ratio', riceRatio);
+
+    //             const children = feature.properties["Children (Aged 0 - 18)"]
+    //             localStorage.setItem('children', children);
+
+    //             const distanceTown = feature.properties["Distance to Town (km)"]
+    //             localStorage.setItem('distance-town', distanceTown);
+
+    //             const distanceHospital = feature.properties["Distance to Hospital (km)"]
+    //             localStorage.setItem('distance-hospital', distanceHospital);
+
+    //             const nearestHealthCenter = feature.properties["Nearest Health Centre"]
+    //             localStorage.setItem('nearest-health-center', nearestHealthCenter);
+
+    //             const annualTyphoid = feature.properties["Annual Typhoid Cases"]
+    //             localStorage.setItem('annual-typhoid', annualTyphoid);
+    //         });
+    //     }
+    // }).addTo(map);
+
+    // Variable to store the currently clicked layer
+    var clickedLayer;
+
+    // Function to reset the style of the previously clicked layer
+    function resetClickedLayer() {
+        if (clickedLayer) {
+            clickedLayer.setStyle({ fillColor: 'blue', color: 'white' });
+        }
+    }
+    // var hotdogcat = L.geoJSON(hotdogcatdata).addTo(map)
+    // var waterline = L.geoJSON(waterlinedata).addTo(map)
+    // var road = L.geoJSON(roaddata, {
+    //     onEachFeature: function(feature, layer) {
+    //     //     layer.bindPopup(`<b>Name: </b>` + feature.properties.Name)
+    //     },
+    //     style: {
+    //         color: 'red',
+    //         opacity: 0.5,
+    //     }
+    // }).addTo(map)
+
+    // var polygonData = L.geoJSON(polygonJson, {
+    //     onEachFeature: function(feature, layer) {
+    //         layer.bindPopup(`<b>Name: </b>` + feature.properties.Name)
+    //     },
+    //     /*style: {
+    //         fillColor: 'red',
+    //         fillOpacity: 1,
+    //         color: '#c0c0c0',
+    //     }*/
+    // }).addTo(map)
+
+
+    // Create a layer group for markers
+    var markersLayerGroup = L.layerGroup([VillageData]);
+
+    // Create a layer group for GeoJSON data
+    var SubdistrictLayer = L.layerGroup([subdistrict]);
+
+    var DistrictLayer = L.layerGroup([district]);
+
+    var elevationLayer = L.layerGroup([elevation, elevationColor])
+
+    var elevationmonoLayer = L.layerGroup([elevavtionMono])
+
+    var SchoolLayer = L.layerGroup([school])
+
+    var HospitalLayer = L.layerGroup([hospital])
+
+    var GeographicLayer = L.layerGroup([mhsroad, mhswater, mhswaterline])
+    // var ContourLayer = L.layerGroup([contourline])
+
+
+    // Define a new control
+    var RecenterControl = L.Control.extend({
+        options: {
+            position: 'topleft' // Position of the control
+        },
+
+        onAdd: function (map) {
+            // Create an img element
+            var img = L.DomUtil.create('img');
+
+            // Set the source of the image
+            img.src = 'img/re-center.png';
+
+            // Set the width and height of the image
+            img.style.width = '32px';
+            img.style.height = '32px';
+
+            img.style.borderRadius = '10%';
+
+            // Add a border to the image
+            img.style.border = '1.1px solid grey';
+
+            // Attach the onclick event to the image
+            img.onclick = function () {
+                map.setView([18.7370, 97.8722], 9.45); // Recenter the map
+            }
+
+            return img;
+        }
+    });
+
+    // Add the control to the map
+    new RecenterControl().addTo(map);
+
+    /* ==========================================
+                    LAYER CONTROL
+    =============================================*/
+    var baseMaps = {
+        "OSM": osm,
+        'Dark': dark,
+        'Google Street': googleStreets,
+        "Google Satellite": googleHybrid,
+    };
+
+    var overlayMaps = {
+        'Terrain': elevationLayer,
+        "Terrain (Monochrome)": elevationmonoLayer,
+        'Subdistrict': SubdistrictLayer,
+        'District': DistrictLayer,
+        'School': SchoolLayer,
+        'Geographical Info': GeographicLayer,
+        'Hospital': HospitalLayer,
+
+        // 'nexrad': nexrad
+    };
+    // map.removeLayer(singleMarker)
+    // Create a legend control
+var legendControl = L.control({ position: 'bottomright' });
+
+legendControl.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'legend');
+    div.innerHTML +=
+        '<strong>Legend</strong><br><br>' + 
+        '<img src="img/elevation.png" alt="Elevation" height="20"> Terrain<br>' +
+        '<img src="img/DEM.png" alt="Monochrome Elevation" height="20"> Terrain (Monochrome)<br>' +
+        '<svg height="20" width="20"><circle cx="10" cy="10" r="8" style="fill: blue; stroke: white; stroke-width: 3;"></circle></svg> Village<br>' +
+        '<svg height="20" width="20"><circle cx="10" cy="10" r="8" style="fill: red; stroke: white; stroke-width: 3;"></circle></svg> Village Clicked<br>' +
+        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:pink;stroke-width:2"></line></svg> Subdistrict<br>'+
+        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:#FA8072;stroke-width:2"></line></svg> District<br>' +
+        '<img src="img/school_marker.png" alt="School" height="20"> School<br>' +
+        '<img src="img/hospital_marker.png" alt="Hospital" height="20"> Hospital<br>' +
+        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:brown;stroke-width:2"></line></svg> Road<br>'+
+        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:steelblue;stroke-width:2"></line></svg> Water Line<br>'+
+        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:blue;stroke-width:2"></line></svg> Water Area<br>'
+        
+    return div;
+};
+
+// Add the legend control to the map
+legendControl.addTo(map);
+
+    L.control.layers(baseMaps, overlayMaps, { collapsed: true }).addTo(map);
+
+    /* ==========================================
+                    LEAFLET EVENT
+    =============================================*/
+    /* map.on('mouseover', function() {
+        console.log('your mouse is over the map')
+    })
+
+    map.on('mousemove', function(e) {
+        document.getElementsByClassName('coordinate')[0].innerHTML = 'Lat: ' + e.latlng.lat + ' Lng: ' + e.latlng.lng
+        console.log('Lat: ' + e.latlng.lat, 'Lng' + e.latlng.lng)
+    }) */
+
+    var popup = L.popup();
+
+function togglePopup() {
+    if (popup.getContent() === null) {
+        popup.setContent(`
+            <!-- Popup content -->
+            <div id="popup" class="popup">
+                <label><input type="radio" name="options" value="option1"> Option 1</label>
+                <label><input type="radio" name="options" value="option2"> Option 2</label>
+                <label><input type="radio" name="options" value="option3"> Option 3</label>
+            </div>
+        `);
+    } else {
+        popup.setContent(null);
+    }
+}
+
+// Button to toggle the radio button popup
+document.querySelector('.search-button').addEventListener('click', togglePopup);
+popup.addTo(map);
+togglePopup.addTo(map);
+</script>

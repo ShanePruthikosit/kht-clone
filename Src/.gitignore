@@ -1,0 +1,9 @@
+# Ignore .pyc files
+*.pyc
+
+# Ignore .vscode directory
+.vscode/
+
+*.log
+node_modules/
+build/

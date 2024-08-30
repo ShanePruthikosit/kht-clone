@@ -1,0 +1,47 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 20%;
+  width: 100%;
+  font-family: "Poppins";
+  padding: 30px;
+  text-align: center;
+  background: url(/Src/KHT_Homepage/MAP_IMAGE.png);
+  background-size: cover;
+  user-select: none;
+}
+
+h1 {
+  color: #fff;
+}
+
+h3 {
+  color: #e1e5ea;
+}
+
+.btn {
+  margin: 50px;
+  height: 50px;
+  width: 200px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Poppins";
+  color: #fff; /* Change text color to white */
+  background-color: rgba(45, 45, 45, 0.95); /* Change background color to black with 0.7 opacity */
+  border-radius: 15px;
+  border: 2px solid #2d2d2d;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #2d2d2d; /* Change text color to black when hovered */
+  border: 2px solid whitesmoke  ;
+  background: #fff; /* Change background color to white when hovered */
+} */

@@ -1,0 +1,20 @@
+{
+  "name": "javatest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^6.3.6",
+    "csv-parse": "^5.5.3",
+    "csv-parser": "^3.0.0",
+    "express": "^4.19.2",
+    "json2csv": "^6.0.0-alpha.2",
+    "node-fetch": "^2.7.0"
+  }
+}

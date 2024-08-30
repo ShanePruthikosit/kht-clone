@@ -1,0 +1,32 @@
+Connecting to the PostgreSQL database...
+Connecting to the PostgreSQL database...
+
+Adding new rows to the village table...
+38 rows added.
+38 rows deleted where gps_latitude and gps_longitude are null from the village table.
+0 rows total added to the village table.
+Database connection closed.
+Connecting to the PostgreSQL database...
+
+No new rows to add to the project table.
+Database connection closed.
+Connecting to the PostgreSQL database...
+
+projectVillage table created successfully.
+Database connection closed.
+Connecting to the PostgreSQL database...
+
+No new rows to add to the donor table.
+Database connection closed.
+Connecting to the PostgreSQL database...
+
+projectDonor table created successfully.
+Database connection closed.
+Connecting to the PostgreSQL database...
+
+No new rows to add to the district table.
+Database connection closed.
+PostgreSQL database version:
+('PostgreSQL 13.14 (Ubuntu 13.14-1.pgdg22.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit',)
+Database connection closed.
+Script run at 2024/06/02 23:05

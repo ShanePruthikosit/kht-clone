@@ -1,0 +1,100 @@
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+#map-container {
+    height: 100vh;
+    width: 100%;
+    float: right;
+}
+
+#sidebar {
+    /* background-color: beige; */
+    overflow-y: auto;
+    height: 100vh;
+}
+
+p.large-text {
+    font-size: 1.1vw; /* changed from 1.7vw to 1vw */
+    font-weight: 400;
+}
+
+.p-extra {
+    font-size: 1.2vw;
+    margin-bottom: 1vw; /* changed from 1.7vw to 1.2vw */
+}
+
+h1,
+h2 {
+    padding-left: 5%;
+    padding-top: 5%;
+    font-size: 1.7vw; /* changed from 3vw to 1.7vw */
+}
+
+h3 {
+    padding-left: 5%;
+    font-size: 1.7vw;
+}
+
+h4 {
+    padding-right: 5%;
+    font-size: 1.2vw;
+}
+
+h5 {
+    padding-top: 10px;
+    padding-left: 10%;
+    color: black;
+    font-size: 1.2vw; /* changed from 1.7vw to 1.2vw */
+}
+
+h6 {
+    padding-top: 10px;
+    padding-left: 32px;
+    color: black;
+    font-size: 20px;
+}
+
+.nav-link {
+    font-size: 1.7vw;
+}
+
+summary {
+    font-size: 27px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+
+.large-text {
+    font-size: 1.5em;
+    padding-left: 5%;
+    /* Adjust as needed */
+}
+
+/* button for Toggle Village Details KHT blue */
+.btn-toggle-details-color {
+    background-color: #2360bb;
+    color: #FFF;
+}
+
+.btn-toggle-details-color:hover {
+    background-color: #1f53a1;
+    color: #FFF;
+}
+
+               
+/* #toggleButton {
+background-color: palegreen; 
+color: white;
+border-color: palegreen;
+}
+
+#toggleButton:hover {
+background-color: palegreen;
+color: white; 
+}
+#sidebar h1, #sidebar h2, #sidebar h3, #sidebar h5, #sidebar h6, #sidebar summary {
+color: palegreen;
+} */

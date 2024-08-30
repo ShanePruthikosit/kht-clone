@@ -1,0 +1,104 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.circle-container{
+    display: flex;
+    justify-content: space-around;
+}
+.circle{
+
+    height: 250px;
+    width: 350px;
+    border-radius: 0%;
+    background-color: blanchedalmond;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 50%;
+    text-align: center; /* Center the text inside the circle */
+    line-height: 350px; /* Vertically center the text */   
+    transition: transform 0.3s ease-in-out;
+}
+
+.circle3{
+
+    height: 250px;
+    width: 350px;
+    border-radius: 0%;
+    background-color: blanchedalmond;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 50%;
+    text-align: center; /* Center the text inside the circle */
+    line-height: 350px; /* Vertically center the text */   
+    transition: transform 0.3s ease-in-out;
+}
+
+.circle4{
+
+    height: 45px;
+    width: 150px;
+    border-radius: 0%;
+    background-color: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: auto;
+    width: 50%;
+    text-align: left; /* Center the text inside the circle */
+    line-height: 350px; /* Vertically center the text */   
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.circle2{
+
+    height: 350px;
+    width: 1000px;
+    border-radius: 0%;
+    background-color: transparent;
+    margin: auto;
+    padding: auto;
+    text-align: center; /* Center the text inside the circle */
+    line-height: 350px; /* Vertically center the text */   
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.circle:hover {
+    transform: scale(1.1); /* Apply the scale transformation on hover */
+}
+.circle3:hover {
+    transform: scale(1.1); /* Apply the scale transformation on hover */
+}
+.circle2:hover::after {
+    content: "Click here for more information";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+h2{
+    /*make it center*/
+    position: relative;
+    top: 5%;
+}
+h3{
+    /*make it center*/
+    position: relative;
+    top: 20%;
+}
+
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: table;
+}

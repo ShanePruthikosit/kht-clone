@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Button Using HTML and CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test1.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Explore Mae Hong Son Thailand</h1>
+        <h3>Get more information about each Village by clicking here</h3>
+        <a href="KHT_Map.html"><button class="btn">Click Me!</button></a>
+    </div>
+</body>
+</html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+        font-family: "Poppins";
+        padding: 30px;
+        text-align: center;
+        background: url(/Src/KHT_Homepage/MAP_IMAGE.png);
+        background-size: cover;
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 50%;
+    }
+
+    h1 {
+        color: #fff;
+    }
+
+    h3 {
+        color: #e1e5ea;
+    }
+
+    .btn {
+        margin: 50px auto;
+        height: 50px;
+        width: 100%;
+        max-width: 200px;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: "Poppins";
+        color: #fff;
+        background-color: rgba(45, 45, 45, 0.95);
+        border-radius: 15px;
+        border: 2px solid #2d2d2d;
+        transition: all 0.5s ease;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+        color: #2d2d2d;
+        border: 2px solid whitesmoke;
+        background: #fff;
+    }
+</style>

@@ -1,0 +1,66 @@
+<!-- 
+map.html is the main file that contains the structure of the webpage.
+It includes the leaflet library and the main javascript file that will be used to create the map.
+The main javascript file will be used to create the map and add the layers to the map.
+The layers are stored in the data folder/ API and will be imported into the main javascript file.
+The main javascript file will also contain the logic to add the layers to the map and create the layer control.
+The layer control will allow the user to toggle the layers on and off.
+              Created by Krittin Kamolpornwijit & Ittiphat Kijpaisansak & Tatchphol Charoensupthaworn
+                      Oct 6, 2023 -->
+                      <!DOCTYPE html>
+                      <html lang="en">
+                      
+                      <head>
+                          <meta charset="UTF-8">
+                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          <title>Leaflet</title>
+                      
+                          <!-- leaflet css -->
+                          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                              integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+                          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                          <link rel="stylesheet" href="stylesheet.css">
+                      </head>
+                      
+                      <body>
+                          <!-- <link rel="stylesheet" href="dog.css"> -->
+                          <div id="map">
+                              <div class="leaflet-control coordinate"></div>
+                              <div class="leaflet-control toggle-instruction-frame">
+                                 <button class="toggle-instruction">
+                                    <img src="img/next-single-arrow.png" 
+                                        style="width: 100%; height: 100%; transform: rotate(180deg);">
+                                    </img>
+                                 </button>
+                              </div>
+                          </div>   
+                          
+                          <div id="widget">
+                              <!-- Content of the widget goes here -->
+                          </div>
+                      </body>
+                      
+                      </html>
+                      
+                      <!-- leaflet js -->
+                      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+                      <script src="https://kht-map.org:2546/api/testpackage/"></script>
+                      <script src="index.js"></script>
+                      <!-- <script src = "./data/point.js"></script>
+                      <script src = "./data/line.js"></script> -->
+                      <!-- <script src = "./data/polygon.js"></script> -->
+                      <!-- <script src = "./data/hotdogcat.js"></script> -->
+                      <!-- <script src="./data/waterline.js"></script> -->
+                      <!-- <script src = "./data/THA_roads.js"></script> -->
+                      <!-- <script src="./data/District_MAE_HONG_SON.js"></script> -->
+                      <!-- <script src = "./data/village_point.js"></script> -->
+                      <!-- <script src="./data/subdistrict_area.js"></script> -->
+                      <!-- <script src="./data/Village_Details.js"></script>
+                      <script src="./data/School.js"></script>
+                      <script src="./data/amenity_hospital.js"></script>
+                      <script src="./data/mhs_roads.js"></script>
+                      <script src="./data/msh_water_areas.js"></script>
+                      <script src="./data/msh_water_lines.js"></script> -->
+                      <!-- <script src = "./data/Contour.js"></script> -->
+                      <!-- <scirpt src="./data/Contourline.js"></scirpt>    -->
