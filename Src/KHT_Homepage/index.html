@@ -179,6 +179,9 @@
                    window.addEventListener('storage', function (e) {
                      if (e.key === 'adult-female' || e.key === 'adult-male') {
                        updateChart();
+                       villageDetails.style.display = 'block';
+                       instructions.style.display = 'none';
+                       toggleButton.textContent = 'Toggle Help';
                      }
                    });
                
