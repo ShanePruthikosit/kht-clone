@@ -34,8 +34,8 @@
                            </a> -->
                            <div id="villageDetails" style="display: none;">
                              <a href="#" class="nav-link">
-                               <h1>
-                                 <p id="village-name"></p>
+                               <h1 style="font-size: 36px;">
+                                 <b><p id="village-name"></p></b>
                                </h1>
                              </a>
                              <a href="#" class="nav-link">
@@ -63,7 +63,7 @@
                              </a>
                              <a href="#" class="nav-link">
                                 <details>
-                                  <summary style="font-size: 1.5vw;">Details</summary>
+                                  <summary style="font-size: 1.5vw;">Village Details</summary>
                                     <h6>
                                       <p class="p-extra" id="distance-town"></p>
                                       <p class="p-extra" id="distance-hospital"></p>
@@ -80,7 +80,7 @@
                              </a>
                              <a href="#" class="nav-link">
                                <details>
-                                 <summary style="font-size: 1.5vw;">Links </summary>
+                                 <summary style="font-size: 1.5vw;">Article Links</summary>
                                  <h5>
                                    <p id="articleDetails" style="width: 90%;"></p>
                                  </h5>
@@ -331,11 +331,11 @@
                
                        let content = "";
                        for (var i = 0; i < projectDetails.length; i++) {
-                         content += "Project Detail: " + projectDetails[i] + "<br>";
+                         content += "<b>Project Name:</b> " + projectDetails[i] + "<br>";
                          content += "Start Date: " + startDates[i] + "<br>";
                          content += "End Date: " + endDates[i] + "<br>";
                          content += "Project Type: " + projectTypes[i] + "<br>";
-                         content += "Status Name: " + statusNames[i] + "<br>";
+                         content += "Status: " + statusNames[i] + "<br>";
                          content += "<br>";
                        }
                        document.getElementById("project-details").innerHTML = content;
