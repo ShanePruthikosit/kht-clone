@@ -27,7 +27,7 @@ from village_url_model import village_url_data
 import sys
 testing_path = '/home/kht-team/secret_function/'
 sys.path.append(testing_path)
-from testing_cache import hash
+#from testing_cache import hash
 
 # Database configurations
 db_host = "127.0.0.1" 
