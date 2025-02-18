@@ -199,6 +199,8 @@ var VillageData;
 var done = true; 
 var last = [' ', ' '];
 
+getData.getVillageData(url,villagePointColor)
+
 /* ==========================================
                     MARKER
 =============================================*/
@@ -221,7 +223,7 @@ async function fetchInitialVillageData() {
         const time = getCurrentTime();
         const hash = await getTestPackage(time);
         const url = `${protocol}://${host}:${port}/api/village/?time=${time}&key=${hash}`;
-        getData.getVillageData(url, 'blue')
+        getVillageData(url, 'blue');
     } catch (error) {
         if (error.name === 'AbortError') {
             console.log('Fetch aborted');

@@ -1,9 +1,13 @@
+/* ==========================================
+            Get Village data from api
+=============================================*/
+
 var firstLoad = true;
 var VillageData;
 var done = true; 
 var last = [' ', ' '];
 
-export async function getVillageData(url, villagePointColor) {
+async function getVillageData(url, villagePointColor) {
     if (done == true) { 
         done = false;
         // close old village points
@@ -45,5 +49,9 @@ export async function getVillageData(url, villagePointColor) {
         last[0] = url;
         last[1] = villagePointColor;
     }
+}
+
+export default {
+    getVillageData
 }
 
