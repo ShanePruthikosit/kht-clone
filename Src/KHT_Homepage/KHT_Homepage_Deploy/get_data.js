@@ -1,3 +1,6 @@
+import sideOverlay from "./index.js"
+import { map } from "./index.js"
+
 /* ==========================================
             Get Village data from api
 =============================================*/
@@ -16,7 +19,7 @@ async function getVillageData(url, villagePointColor) {
         } 
         const response = await fetch(url);
         const data = await response.json();
-        data_length = data.features.length;
+        let data_length = data.features.length;
         //if the data is empty, alert the user. after user clicks ok on alert, set done to true and return
         if (data_length == 0 && firstLoad == false) {
             alert("No Villages data found");
@@ -24,6 +27,7 @@ async function getVillageData(url, villagePointColor) {
             done = true;
             return;
         }
+
         VillageData = L.geoJSON(data, {
             pointToLayer: function (feature, latlng) {
                 return L.circleMarker(latlng, {
@@ -35,7 +39,7 @@ async function getVillageData(url, villagePointColor) {
                     fillOpacity: 0.7
                 });
             },
-            onEachFeature: onEachFeatureFunction
+            onEachFeature: sideOverlay.onEachFeatureFunction
         }).addTo(map);
         done = true;
         if (last[0] != ' ' && last[1] != ' ') {
@@ -51,7 +55,9 @@ async function getVillageData(url, villagePointColor) {
     }
 }
 
+
+
 export default {
-    getVillageData
+    getVillageData,
 }
 

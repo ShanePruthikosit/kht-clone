@@ -1173,3 +1173,16 @@ var overlayMaps = {
     'Hospital': null, // hospital,
     // 'nexrad': nexrad
 };
+
+
+
+
+
+
+
+
+export default {
+    onEachFeatureFunction
+}
+
+export { map } 
