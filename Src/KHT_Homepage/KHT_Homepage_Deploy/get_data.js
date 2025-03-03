@@ -1,5 +1,5 @@
 import sideOverlay from "./index.js"
-import { map } from "./index.js"
+import { map, port, host, protocol, } from "./index.js"
 
 /* ==========================================
             Get Village data from api
@@ -55,9 +55,25 @@ async function getVillageData(url, villagePointColor) {
     }
 }
 
+async function fetchInitialVillageData() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/village/?time=${time}&key=${hash}`;
+        getData.getVillageData(url, 'blue')
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+fetchInitialVillageData();
 
 
 export default {
     getVillageData,
+    fetchInitialVillageData
 }
 

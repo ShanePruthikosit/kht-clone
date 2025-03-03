@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
     // Toggle Legend -  old version with arrow*
     // const legendButton = document.querySelector('.toggle-legend');
     // const legendDiv = document.querySelector('.leaflet-bottom.leaflet-right');
@@ -132,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //         }
     //     });
     // }
+
     const legendButton = document.querySelector('.toggle-legend');
     const legendDiv = document.querySelector('.legend'); 
     const bottomright = document.querySelector('.leaflet-bottom.leaflet-right');
@@ -190,14 +192,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Create a new layer control that is collapsible
     // layerControl = L.control.layers(baseMaps, overlayMaps, { collapsed: true }).addTo(map);
 });
-
-/* ==========================================
-            Get Village data from api
-=============================================*/
-var firstLoad = true;
-var VillageData;
-var done = true; 
-var last = [' ', ' '];
 
 /* ==========================================
                     MARKER
@@ -844,7 +838,7 @@ radioButtonControl.onAdd = function (map) {
         document.getElementById('input5').value = '';
         document.getElementById('input6').value = ' ';
         
-        fetchInitialVillageData();
+        getData.fetchInitialVillageData();
     });
 
     // Attach event listener to the cancel button
@@ -865,7 +859,7 @@ radioButtonControl.onAdd = function (map) {
 
     // Attach event listener to the search button
     div.querySelector('#searchButton').addEventListener('click', function () {
-        div.querySelector('#searchButton').removeEventListener('click', fetchInitialVillageData);
+        div.querySelector('#searchButton').removeEventListener('click', getData.fetchInitialVillageData);
         // Check which radio button is selected
         var selectedRadioButton = document.querySelector('input[name="radio"]:checked');
         if (selectedRadioButton) {
@@ -1185,4 +1179,9 @@ export default {
     onEachFeatureFunction
 }
 
-export { map } 
+export { 
+    map,
+    host,
+    port,
+    protocol 
+} 
