@@ -1,5 +1,4 @@
-import sideOverlay from "./index.js"
-import { map, port, host, protocol, } from "./index.js"
+import { map, port, host, protocol, getCurrentTime as getCurrentTime, onEachFeatureFunction as onEachFeatureFunction} from "./index.js"
 
 /* ==========================================
             Get Village data from api
@@ -39,7 +38,7 @@ async function getVillageData(url, villagePointColor) {
                     fillOpacity: 0.7
                 });
             },
-            onEachFeature: sideOverlay.onEachFeatureFunction
+            onEachFeature: onEachFeatureFunction
         }).addTo(map);
         done = true;
         if (last[0] != ' ' && last[1] != ' ') {
@@ -60,7 +59,7 @@ async function fetchInitialVillageData() {
         const time = getCurrentTime();
         const hash = await getTestPackage(time);
         const url = `${protocol}://${host}:${port}/api/village/?time=${time}&key=${hash}`;
-        getData.getVillageData(url, 'blue')
+        getVillageData(url, 'blue')
     } catch (error) {
         if (error.name === 'AbortError') {
             console.log('Fetch aborted');
@@ -71,6 +70,33 @@ async function fetchInitialVillageData() {
 }
 fetchInitialVillageData();
 
+/* Call api to get the water areas */
+async function getWaterAreas() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/mhs_water_areas/?time=${time}&key=${hash}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                mhswater = L.geoJSON(data, {
+                    style: function (feature) {
+                        return { color: "blue" };
+                    }
+                }).addTo(map);
+
+                // Add the new layer to the layer control
+                layerControl.addOverlay(mhswater, 'Water Area');
+            });
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+getWaterAreas();
 
 export default {
     getVillageData,
