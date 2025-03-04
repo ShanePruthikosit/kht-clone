@@ -211,6 +211,8 @@ var School_Icon = L.icon({
                     GEOJSON
 =============================================*/
 
+getData.fetchInitialVillageData();
+
 // This is the working layer but it need to be in the data file which is js file
 var baseMaps = {
     "OSM": osm,
@@ -282,33 +284,33 @@ layerControl.addOverlay(elevavtionMono, 'Terrain (Monochrome)');
 
 var layers = {};
 
-// /* Call api to get the water areas */
-// async function getWaterAreas() {
-//     try {
-//         const time = getCurrentTime();
-//         const hash = await getTestPackage(time);
-//         const url = `${protocol}://${host}:${port}/api/mhs_water_areas/?time=${time}&key=${hash}`;
-//         fetch(url)
-//             .then(response => response.json())
-//             .then(data => {
-//                 mhswater = L.geoJSON(data, {
-//                     style: function (feature) {
-//                         return { color: "blue" };
-//                     }
-//                 }).addTo(map);
+/* Call api to get the water areas */
+async function getWaterAreas() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/mhs_water_areas/?time=${time}&key=${hash}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                mhswater = L.geoJSON(data, {
+                    style: function (feature) {
+                        return { color: "blue" };
+                    }
+                }).addTo(map);
 
-//                 // Add the new layer to the layer control
-//                 layerControl.addOverlay(mhswater, 'Water Area');
-//             });
-//     } catch (error) {
-//         if (error.name === 'AbortError') {
-//             console.log('Fetch aborted');
-//         } else {
-//             console.error('Error fetching GeoJSON:', error);
-//         }
-//     }
-// }
-// getWaterAreas();
+                // Add the new layer to the layer control
+                layerControl.addOverlay(mhswater, 'Water Area');
+            });
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+getWaterAreas();
 
 /* Call api to get the water lines */
 async function getWaterLines() {
