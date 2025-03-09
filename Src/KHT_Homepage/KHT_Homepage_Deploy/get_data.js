@@ -1,4 +1,9 @@
-import { map, layerControl, port, host, protocol, getCurrentTime as getCurrentTime, onEachFeatureFunction as onEachFeatureFunction} from "./index.js"
+// get_data.js is the file that stores all of the base API calls and functions that are used to get data from the API
+//               Refactored from the work of of the previous team by Sunidhi Pruthikosit 
+//               Mar 10, 2025
+
+import { map, layerControl, port, host, protocol, getCurrentTime} from "./index.js"
+import { onEachFeatureFunction } from './onEachFeatureFunction.js';
 
 /* for use with getVillageData and fetchInitialVillageData */
 var firstLoad = true;
