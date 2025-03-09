@@ -1,14 +1,37 @@
 import { map, layerControl, port, host, protocol, getCurrentTime as getCurrentTime, onEachFeatureFunction as onEachFeatureFunction} from "./index.js"
 
-/* ==========================================
-            Get Village data from api
-=============================================*/
-
+/* for use with getVillageData and fetchInitialVillageData */
 var firstLoad = true;
 var VillageData;
 var done = true; 
 var last = [' ', ' '];
-var mhswater;
+
+/* global variables for storing layers */
+var mhsWater;
+var mhsWaterlines;
+var mhsRoads;
+var mhsHospital;
+var mhsSchool;
+var mhsDistrict;
+var mhsSubdistrict;
+
+/* ==========================================
+                    MARKER
+=============================================*/
+
+var Hospital_Icon = L.icon({
+    iconUrl: 'img/hospital_marker.png',
+    iconSize: [30, 30],
+});
+
+var School_Icon = L.icon({
+    iconUrl: 'img/school_marker.png',
+    iconSize: [40, 40],
+});
+
+/* ==========================================
+            Get Village data from api
+=============================================*/
 
 async function getVillageData(url, villagePointColor) {
     if (done == true) { 
@@ -74,27 +97,20 @@ fetchInitialVillageData();
 /* Call api to get the water areas */
 async function getWaterAreas() {
     try {
-
-        if (mhswater) {
-            map.removeLayer(mhswater);
-            layerControl.removeLayer(mhswater);
-        }
-        
-
         const time = getCurrentTime();
         const hash = await getTestPackage(time);
         const url = `${protocol}://${host}:${port}/api/mhs_water_areas/?time=${time}&key=${hash}`;
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                mhswater = L.geoJSON(data, {
+                mhsWater = L.geoJSON(data, {
                     style: function (feature) {
                         return { color: "blue" };
                     }
                 }).addTo(map);
 
                 // Add the new layer to the layer control
-                layerControl.addOverlay(mhswater, 'Water Area');
+                layerControl.addOverlay(mhsWater, 'Water Area');
             });
     } catch (error) {
         if (error.name === 'AbortError') {
@@ -105,9 +121,194 @@ async function getWaterAreas() {
     }
 }
 
+/* Call api to get the water lines */
+async function getWaterLines() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/mhs_water_lines/?time=${time}&key=${hash}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                mhsWaterlines = L.geoJSON(data, {
+                    style: function (feature) {
+                        return { color: "steelblue" };
+                    }
+                }).addTo(map);
+
+                // Add the new layer to the layer control
+                layerControl.addOverlay(mhsWaterlines, 'Water Lines');
+            });
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+
+/* Call api to get the roads */
+async function getRoads() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/mhs_roads/?time=${time}&key=${hash}`;
+        // Add other layers to the map and the layer control
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                mhsRoads = L.geoJSON(data, {
+                    style: function (feature) {
+                        return {
+                            color: "brown",
+                            fillOpacity: 0.5
+                        };
+                    }
+                }).addTo(map);
+
+                // Add the new layer to the layer control
+                layerControl.addOverlay(mhsRoads, 'Roads');
+            });
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+
+/* Call api to get the hospitals */
+async function getHospitals() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/hospital/?time=${time}&key=${hash}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                mhsHospital = L.geoJSON(data, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, { icon: Hospital_Icon });
+                    },
+                    onEachFeature: function (feature, layer) {
+                        var popupContent = (feature.properties['hospital_name']);
+                        layer.bindPopup(popupContent);
+                    }
+                });
+
+                // Add the new layer to the layer control
+                layerControl.addOverlay(mhsHospital, 'Hospital');
+            });
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+
+/* Call api to get the schools */
+async function getSchools() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/school/?time=${time}&key=${hash}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                mhsSchool = L.geoJSON(data, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, { icon: School_Icon });
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindPopup(feature.properties["school_name"]);
+                    }
+                });
+
+                // Add the new layer to the layer control
+                layerControl.addOverlay(mhsSchool, 'School');
+            })
+            .catch(error => console.error('Error:', error));
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+
+/* Call api to get the districts */
+async function getDistricts() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/mhs_districts/?time=${time}&key=${hash}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                mhsDistrict = L.geoJSON(data, {
+                    style: {
+                        color: '#FA8072',
+                        opacity: 1,
+                        fill: false
+                    }
+                }).addTo(map);
+
+                // Add the new layer to the layer control
+                layerControl.addOverlay(mhsDistrict, 'Districts');
+            });
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+
+/* Call api to get the subdistricts */
+async function getSubDistricts() {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/mhs_subdistricts/?time=${time}&key=${hash}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                mhsSubdistrict = L.geoJSON(data, {
+                    style: {
+                        color: 'pink',
+                        opacity: 1,
+                        fill: false
+                    }
+                });
+
+                // Add the new layer to the layer control
+                layerControl.addOverlay(mhsSubdistrict, 'Subdistricts');
+            });
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        }
+        else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+
 export default {
     getVillageData,
     fetchInitialVillageData,
-    getWaterAreas
+    getWaterAreas,
+    getWaterLines,
+    getRoads,
+    getHospitals,
+    getSchools,
+    getDistricts,
+    getSubDistricts
 }
 
