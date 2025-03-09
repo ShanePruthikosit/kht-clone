@@ -8,6 +8,7 @@
     Imports
 =============================================*/
 import getData from './get_data.js'
+import { VillageData } from './get_data.js'
 
 /* ==========================================
     Prevent leaflet default marker showing up on the map
