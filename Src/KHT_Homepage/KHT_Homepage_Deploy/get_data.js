@@ -8,7 +8,7 @@ var firstLoad = true;
 var VillageData;
 var done = true; 
 var last = [' ', ' '];
-var mhswater = null;
+var mhswater;
 
 async function getVillageData(url, villagePointColor) {
     if (done == true) { 
@@ -104,7 +104,6 @@ async function getWaterAreas() {
         }
     }
 }
-getWaterAreas();
 
 export default {
     getVillageData,
