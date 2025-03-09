@@ -1,4 +1,4 @@
-import { map, port, host, protocol, getCurrentTime as getCurrentTime, onEachFeatureFunction as onEachFeatureFunction} from "./index.js"
+import { map, layerControl, port, host, protocol, getCurrentTime as getCurrentTime, onEachFeatureFunction as onEachFeatureFunction} from "./index.js"
 
 /* ==========================================
             Get Village data from api
@@ -8,6 +8,7 @@ var firstLoad = true;
 var VillageData;
 var done = true; 
 var last = [' ', ' '];
+var mhswater = null;
 
 async function getVillageData(url, villagePointColor) {
     if (done == true) { 
@@ -73,6 +74,13 @@ fetchInitialVillageData();
 /* Call api to get the water areas */
 async function getWaterAreas() {
     try {
+
+        if (mhswater) {
+            map.removeLayer(mhswater);
+            layerControl.removeLayer(mhswater);
+        }
+        
+
         const time = getCurrentTime();
         const hash = await getTestPackage(time);
         const url = `${protocol}://${host}:${port}/api/mhs_water_areas/?time=${time}&key=${hash}`;
@@ -100,6 +108,7 @@ getWaterAreas();
 
 export default {
     getVillageData,
-    fetchInitialVillageData
+    fetchInitialVillageData,
+    getWaterAreas
 }
 

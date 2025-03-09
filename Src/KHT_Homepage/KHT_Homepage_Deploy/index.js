@@ -285,32 +285,32 @@ layerControl.addOverlay(elevavtionMono, 'Terrain (Monochrome)');
 var layers = {};
 
 /* Call api to get the water areas */
-async function getWaterAreas() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/mhs_water_areas/?time=${time}&key=${hash}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                mhswater = L.geoJSON(data, {
-                    style: function (feature) {
-                        return { color: "blue" };
-                    }
-                }).addTo(map);
+// async function getWaterAreas() {
+//     try {
+//         const time = getCurrentTime();
+//         const hash = await getTestPackage(time);
+//         const url = `${protocol}://${host}:${port}/api/mhs_water_areas/?time=${time}&key=${hash}`;
+//         fetch(url)
+//             .then(response => response.json())
+//             .then(data => {
+//                 mhswater = L.geoJSON(data, {
+//                     style: function (feature) {
+//                         return { color: "blue" };
+//                     }
+//                 }).addTo(map);
 
-                // Add the new layer to the layer control
-                layerControl.addOverlay(mhswater, 'Water Area');
-            });
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        } else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-getWaterAreas();
+//                 // Add the new layer to the layer control
+//                 layerControl.addOverlay(mhswater, 'Water Area');
+//             });
+//     } catch (error) {
+//         if (error.name === 'AbortError') {
+//             console.log('Fetch aborted');
+//         } else {
+//             console.error('Error fetching GeoJSON:', error);
+//         }
+//     }
+// }
+getData.getWaterAreas();
 
 /* Call api to get the water lines */
 async function getWaterLines() {
@@ -771,6 +771,9 @@ YearBoxControl.addTo(map);
 /* ==========================================
         Search Button Control
 =============================================*/
+
+getData.fetchInitialVillageData();
+
 var radioButtonControl = L.control({ position: 'topleft' });
 
 // When the control is added to the map
@@ -894,10 +897,9 @@ radioButtonControl.onAdd = function (map) {
                     var startYear = parseInt(document.getElementById('input2').value);
                     var endYear = parseInt(document.getElementById('input3').value);
                     
-                    inputId2 = 'input2';
-                    inputId3 = 'input3';
-                    inputValue2 = document.getElementById(inputId2).value;
-                    inputValue3 = document.getElementById(inputId3).value;
+
+                    let inputValue2 = document.getElementById('input2').value;
+                    let inputValue3 = document.getElementById('input3').value;
                     
                     // Year Validation
                     if (inputValue2 == "" || inputValue3 == "") {
@@ -974,7 +976,7 @@ radioButtonControl.onAdd = function (map) {
 
                             if (projectTypeMapping[projectType]) {
                                 const url = `${protocol}://${host}:${port}/api/village/?project_type=${projectTypeMapping[projectType]}&time=${time}&key=${hash}`;
-                                getVillageData(url, 'green')
+                                getData.getVillageData(url, 'green')
                             }
 
                             inputId1 = 'input4';
@@ -1023,7 +1025,7 @@ radioButtonControl.onAdd = function (map) {
                             const time = getCurrentTime();
                             const hash = await getTestPackage(time);
                             const url = `${protocol}://${host}:${port}/api/village/?distance=${inputValue5}&facility_type=${inputValue6}&time=${time}&key=${hash}`;
-                            getVillageData(url, 'green')
+                            getData.getVillageData(url, 'green')
                         } catch (error) {
                             console.error('Error:', error);
                         }
@@ -1156,17 +1158,12 @@ var overlayMaps = {
 };
 
 
-
-
-
-
-
-
 export { 
     map,
+    layerControl,
     host,
     port,
     protocol,
     getCurrentTime,
-    onEachFeatureFunction
+    onEachFeatureFunction,
 } 
