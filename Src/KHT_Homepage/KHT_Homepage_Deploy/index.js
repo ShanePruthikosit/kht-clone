@@ -359,21 +359,7 @@ YearBoxControl.onAdd = function (map) {
     rangeInput.oninput = function() {
         yearSpan.innerHTML = this.value;
         targetYear = parseInt(this.value);
-        /* Call api to get the village data */
-        async function fetchVillagebByYear() {
-            // Remove the VillageData layer
-            map.removeLayer(VillageData);
-            
-            try {
-                const time = getCurrentTime();
-                const hash = await getTestPackage(time);
-                const url = `${protocol}://${host}:${port}/api/village/?year=${targetYear}&time=${time}&key=${hash}`;
-                getData.getVillageData(url, 'green')
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-        fetchVillagebByYear();
+        getData.fetchVillagebByYear(targetYear);
     }
 
     // closeButton.addEventListener('click', function() {
@@ -499,17 +485,7 @@ radioButtonControl.onAdd = function (map) {
                         alert("The the target year must be in between " + minimumYear + " - "+ currentYear);
                         break;
                     }
-                    async function fetchVillagebByYear() {
-                        try {
-                            const time = getCurrentTime();
-                            const hash = await getTestPackage(time);
-                            const url = `${protocol}://${host}:${port}/api/village/?year=${inputValue1}&time=${time}&key=${hash}`;
-                            getData.getVillageData(url, 'green')
-                        } catch (error) {
-                            console.error('Error:', error);
-                        }
-                    }
-                    fetchVillagebByYear();
+                    getData.fetchVillagebByYear(inputValue1);
                     break;
                 case 'radio2': /* get village by start and end year */
                     var startYear = parseInt(document.getElementById('input2').value);
@@ -558,19 +534,7 @@ radioButtonControl.onAdd = function (map) {
                         yearText.innerHTML = rangeInput.value;
                     }
                    
-                    // fetch and get api data
-                    async function fetchVillagebByStartAndEndYear() {
-                        try {
-                            const time = getCurrentTime();
-                            const hash = await getTestPackage(time);
-                            const url = `${protocol}://${host}:${port}/api/village/?start_year=${inputValue2}&end_year=${inputValue3}&time=${time}&key=${hash}`;
-                            // fetch("https://kht-map.org:2546/api/village/?start_year=" + inputValue2 + "&end_year=" + inputValue3)
-                            getData.getVillageData(url, 'green');
-                        } catch (error) {
-                            console.error('Error:', error);
-                        }
-                    }
-                    fetchVillagebByStartAndEndYear();
+                    getData.fetchVillagebByStartAndEndYear(inputValue2, inputValue3);
                     break;
                 case 'radio3': /* get village by project type */
                     const projectType = document.getElementById('input4').value;

@@ -305,6 +305,30 @@ async function getSubDistricts() {
     }
 }
 
+async function fetchVillagebByYear(yearInput) {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/village/?year=${yearInput}&time=${time}&key=${hash}`;
+        getVillageData(url, 'green')
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+async function fetchVillagebByStartAndEndYear(startYear, endYear) {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/village/?start_year=${startYear}&end_year=${endYear}&time=${time}&key=${hash}`;
+        console.log(url);
+        // fetch("https://kht-map.org:2546/api/village/?start_year=" + inputValue2 + "&end_year=" + inputValue3)
+        getVillageData(url, 'green');
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 export default {
     getVillageData,
     fetchInitialVillageData,
@@ -314,7 +338,9 @@ export default {
     getHospitals,
     getSchools,
     getDistricts,
-    getSubDistricts
+    getSubDistricts,
+    fetchVillagebByYear,
+    fetchVillagebByStartAndEndYear
 }
 
 export { VillageData }
