@@ -278,15 +278,6 @@ getData.getSchools();
 getData.getDistricts();
 getData.getSubDistricts();
 
-// Variable to store the currently clicked layer
-export var clickedLayer;
-
-// Function to reset the style of the previously clicked layer
-export function resetClickedLayer() {
-    if (clickedLayer) {
-        clickedLayer.setStyle({ fillColor: 'blue', color: 'white' });
-    }
-}
 
 // Define a new control
 var RecenterControl = L.Control.extend({
