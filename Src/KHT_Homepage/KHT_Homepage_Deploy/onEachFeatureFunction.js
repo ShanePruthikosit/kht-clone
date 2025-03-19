@@ -1,5 +1,14 @@
-import { resetClickedLayer, clickedLayer, getCurrentTime, protocol, host, port } from './index.js';
+import { getCurrentTime, protocol, host, port } from './index.js';
 
+// Variable to store the currently clicked layer
+var clickedLayer;
+
+// Function to reset the style of the previously clicked layer
+function resetClickedLayer() {
+    if (clickedLayer) {
+        clickedLayer.setStyle({ fillColor: 'blue', color: 'white' });
+    }
+}
 
 /*
 Function - to get info to display on the left sidebar
