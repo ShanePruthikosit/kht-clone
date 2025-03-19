@@ -718,19 +718,6 @@ radioButtonControl.addTo(map);
 // add the control to the map
 YearBoxControl.addTo(map);
 
-window.onload = function () {
-    // Store the original state
-    var form = document.getElementById('radioContainer');
-    var originalState = form.choice.value;
-
-    // Attach event listener to the cancel button
-    document.getElementById('cancelButton').addEventListener('click', function () {
-        // Revert to the original state
-        form.choice.value = originalState;
-    });
-};
-//window.addTo(map);
-
 // Attach event listener to the search button
 document.getElementById('searchButton').addEventListener('click', function () {
     // Check which radio button is selected
