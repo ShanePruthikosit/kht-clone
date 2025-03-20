@@ -329,6 +329,46 @@ async function fetchVillagebByStartAndEndYear(startYear, endYear) {
     }
 }
 
+async function fetchVillagebyProjectType(projectType) {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+
+        // check the input for project type
+        const projectTypeMapping = {
+            'WASH': 'WASH',
+            'Further Education Scholarship': 'Further%20Education%20Scholarships',
+            'Irrigation': 'Irrigation',
+            'Dormitory Meals': 'Dormitory%20Meals',
+            // 'School Buses': 'School%20Buses'
+        };
+
+        if (projectTypeMapping[projectType]) {
+            const url = `${protocol}://${host}:${port}/api/village/?project_type=${projectTypeMapping[projectType]}&time=${time}&key=${hash}`;
+            getVillageData(url, 'green')
+        }
+
+        inputId1 = 'input4';
+        inputValue1 = document.getElementById(inputId1).value;
+        searchButton.addEventListener('click', function () {
+
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+async function fetchVillageByDistance(distance, facilityType) {
+    try {
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/village/?distance=${distance}&facility_type=${facilityType}&time=${time}&key=${hash}`;
+        getVillageData(url, 'green')
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 export default {
     getVillageData,
     fetchInitialVillageData,
@@ -340,7 +380,9 @@ export default {
     getDistricts,
     getSubDistricts,
     fetchVillagebByYear,
-    fetchVillagebByStartAndEndYear
+    fetchVillagebByStartAndEndYear,
+    fetchVillagebyProjectType,
+    fetchVillageByDistance
 }
 
 export { VillageData }

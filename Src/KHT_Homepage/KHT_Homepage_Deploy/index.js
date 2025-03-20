@@ -485,7 +485,9 @@ radioButtonControl.onAdd = function (map) {
                         alert("The the target year must be in between " + minimumYear + " - "+ currentYear);
                         break;
                     }
+                    
                     getData.fetchVillagebByYear(inputValue1);
+
                     break;
                 case 'radio2': /* get village by start and end year */
                     var startYear = parseInt(document.getElementById('input2').value);
@@ -535,6 +537,7 @@ radioButtonControl.onAdd = function (map) {
                     }
                    
                     getData.fetchVillagebByStartAndEndYear(inputValue2, inputValue3);
+
                     break;
                 case 'radio3': /* get village by project type */
                     const projectType = document.getElementById('input4').value;
@@ -542,36 +545,9 @@ radioButtonControl.onAdd = function (map) {
                         alert("Please select the project type.");
                         break;
                     }
-                    async function fetchVillagebyProjectType() {
-                        try {
-                            const time = getCurrentTime();
-                            const hash = await getTestPackage(time);
 
-                            // check the input for project type
-                            const projectTypeMapping = {
-                                'WASH': 'WASH',
-                                'Further Education Scholarship': 'Further%20Education%20Scholarships',
-                                'Irrigation': 'Irrigation',
-                                'Dormitory Meals': 'Dormitory%20Meals',
-                                // 'School Buses': 'School%20Buses'
-                            };
+                    getData.fetchVillagebyProjectType(projectType);
 
-                            if (projectTypeMapping[projectType]) {
-                                const url = `${protocol}://${host}:${port}/api/village/?project_type=${projectTypeMapping[projectType]}&time=${time}&key=${hash}`;
-                                getData.getVillageData(url, 'green')
-                            }
-
-                            inputId1 = 'input4';
-                            inputValue1 = document.getElementById(inputId1).value;
-                            searchButton.addEventListener('click', function () {
-
-                            });
-                        } catch (error) {
-                            console.error('Error:', error);
-                        }
-                    }
-                    
-                    fetchVillagebyProjectType();
                     break;
                 case 'radio4': /* get village by minimum distance and facility type */
                     var input5 = document.getElementById('input5');
@@ -602,17 +578,8 @@ radioButtonControl.onAdd = function (map) {
                         break;
                     }
 
-                    async function fetchVillageByDistance() {
-                        try {
-                            const time = getCurrentTime();
-                            const hash = await getTestPackage(time);
-                            const url = `${protocol}://${host}:${port}/api/village/?distance=${inputValue5}&facility_type=${inputValue6}&time=${time}&key=${hash}`;
-                            getData.getVillageData(url, 'green')
-                        } catch (error) {
-                            console.error('Error:', error);
-                        }
-                    }
-                    fetchVillageByDistance();
+                    getData.fetchVillageByDistance(inputValue5, inputValue6);   
+
                     break;
             }
             // Hide the radio button container
