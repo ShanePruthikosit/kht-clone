@@ -21,7 +21,7 @@ DB_CONFIG = {
     "user": "postgres",
     "password": "M@3_ge0_D4t4",
     "host": "localhost",
-    "port": "5432"
+    "port": "1150"
 }
 
 # pgRouting Function(SQL)
@@ -111,6 +111,6 @@ def read_root():
 
 if __name__ == "__main__":
     host = "0.0.0.0"
-    port = 2546
+    port = 1150
 
     uvicorn.run(app, host=host, port=port)
