@@ -21,7 +21,7 @@ DB_CONFIG = {
     "user": "postgres",
     "password": "M@3_ge0_D4t4",
     "host": "localhost",
-    "port": "1150"
+    "port": "5432"
 }
 
 # pgRouting Function(SQL)
