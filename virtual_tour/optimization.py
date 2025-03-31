@@ -73,7 +73,7 @@ def process_image(image_path: str, output_prefix: str = "output"):
 
     # Step 2: Adjust brightness and contrast
     # Increase brightness by 30 and contrast by 1.2 times
-    bright_contrast_img = adjust_brightness_contrast(noisy_img, brightness=50, contrast=1.2)
+    bright_contrast_img = adjust_brightness_contrast(noisy_img, brightness=30, contrast=1.2)
     show_image("Brightness & Contrast Adjusted", bright_contrast_img)
     save_image(f"{output_prefix}_bright_contrast.jpg", bright_contrast_img)
 
