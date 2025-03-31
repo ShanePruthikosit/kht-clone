@@ -77,6 +77,21 @@ def adjust_saturation(image, saturation_scale=1.0):
     adjusted_img = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
     return adjusted_img
 
+def apply_gaussian_blur(image, kernel_size=(5, 5), sigma=0):
+    """
+    Apply a Gaussian blur to the image.
+    
+    :param image: Input image in RGB format.
+    :param kernel_size: Size of the kernel.
+    :param sigma: Gaussian kernel standard deviation; if 0, it is computed from kernel size.
+    :return: Blurred image.
+    """
+    # OpenCV expects the image in BGR format for filtering; convert temporarily if needed.
+    image_bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    blurred_bgr = cv2.GaussianBlur(image_bgr, kernel_size, sigma)
+    blurred_rgb = cv2.cvtColor(blurred_bgr, cv2.COLOR_BGR2RGB)
+    return blurred_rgb
+
 def process_image(image_path: str, output_prefix: str = "output"):
     # Load the original image
     original_img = load_image(image_path)
