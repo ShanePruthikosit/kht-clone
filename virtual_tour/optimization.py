@@ -98,24 +98,24 @@ def process_image(image_path: str, output_prefix: str = "output"):
     show_image("Original Image", original_img)
     save_image(f"{output_prefix}_original.jpg", original_img)
 
-    # Step 1: Add Gaussian noise
+    # Add Gaussian noise
     noisy_img = add_gaussian_noise(original_img, mean=0, sigma=25)
     show_image("Image with Gaussian Noise", noisy_img)
     save_image(f"{output_prefix}_noisy.jpg", noisy_img)
 
-    # Step 2: Adjust brightness and contrast
+    # Adjust brightness and contrast
     # Increase brightness by 30 and contrast by 1.2 times
     bright_contrast_img = adjust_brightness_contrast(noisy_img, brightness=30, contrast=1.2)
     show_image("Brightness & Contrast Adjusted", bright_contrast_img)
     save_image(f"{output_prefix}_bright_contrast.jpg", bright_contrast_img)
 
-    # Step 3: Adjust saturation
+    # Adjust saturation
     # Increase saturation by 1.5 times
     saturated_img = adjust_saturation(bright_contrast_img, saturation_scale=1.5)
     show_image("Saturation Adjusted", saturated_img)
     save_image(f"{output_prefix}_saturated.jpg", saturated_img)
 
-    # Step 4: Apply Gaussian blur to smooth the image
+    # Apply Gaussian blur to smooth the image
     blurred_img = apply_gaussian_blur(saturated_img, kernel_size=(7, 7), sigma=0)
     show_image("Gaussian Blurred", blurred_img)
     save_image(f"{output_prefix}_blurred.jpg", blurred_img)
