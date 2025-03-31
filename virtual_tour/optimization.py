@@ -96,11 +96,9 @@ def process_image(image_path: str, output_prefix: str = "output"):
 
     # Step 3: Adjust saturation
     # Increase saturation by 1.5 times
-    saturated_img = adjust_saturation(bright_contrast_img, saturation_scale=1.4)
+    saturated_img = adjust_saturation(bright_contrast_img, saturation_scale=1.5)
     show_image("Saturation Adjusted", saturated_img)
     save_image(f"{output_prefix}_saturated.jpg", saturated_img)
-
-
 
 if __name__ == "__main__":
     import argparse
