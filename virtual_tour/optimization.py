@@ -115,6 +115,12 @@ def process_image(image_path: str, output_prefix: str = "output"):
     show_image("Saturation Adjusted", saturated_img)
     save_image(f"{output_prefix}_saturated.jpg", saturated_img)
 
+    # Step 4: Apply Gaussian blur to smooth the image
+    blurred_img = apply_gaussian_blur(saturated_img, kernel_size=(7, 7), sigma=0)
+    show_image("Gaussian Blurred", blurred_img)
+    save_image(f"{output_prefix}_blurred.jpg", blurred_img)
+
+
 if __name__ == "__main__":
     import argparse
 
