@@ -17,7 +17,7 @@ app.add_middleware(
 
 # Connection setup
 DB_CONFIG = {
-    "dbname": "mhs_geographic",
+    "dbname": "osm_routing_test",
     "user": "postgres",
     "password": "M@3_ge0_D4t4",
     "host": "localhost",
