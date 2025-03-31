@@ -7,6 +7,7 @@ import uvicorn
 
 app = FastAPI()
 
+# CORS middleware allows all origin configurations
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -20,7 +21,7 @@ DB_CONFIG = {
     "user": "postgres",
     "password": "M@3_ge0_D4t4",
     "host": "localhost",
-    "port": "5432"  
+    "port": "5432"
 }
 
 def get_route(start_node: int, end_node: int):
@@ -57,15 +58,25 @@ def get_route(start_node: int, end_node: int):
         cur = conn.cursor()
 
         cur.execute(query, (start_node, end_node))
-        result = cur.fetchone() 
+        result = cur.fetchone()  
 
         features = []
         if result and result[0]:
-            aggregated_geojson = json.loads(result[0])
-            for geojson_str in aggregated_geojson:
+            aggregated = result[0]
+            if isinstance(aggregated, str):
+                aggregated_geojson = json.loads(aggregated)
+            else:
+                aggregated_geojson = aggregated
+
+            for geojson_item in aggregated_geojson:
+                if isinstance(geojson_item, str):
+                    geometry = json.loads(geojson_item)
+                else:
+                    geometry = geojson_item
+
                 features.append({
                     "type": "Feature",
-                    "geometry": json.loads(geojson_str),
+                    "geometry": geometry,
                     "properties": {} 
                 })
 
@@ -88,7 +99,6 @@ def get_route(start_node: int, end_node: int):
 def get_shortest_route(start: int, end: int):
     if not start or not end:
         raise HTTPException(status_code=400, detail="Missing start or end node")
-
     route_data = get_route(start, end)
     return JSONResponse(content=route_data)
 
