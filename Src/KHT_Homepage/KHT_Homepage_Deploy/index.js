@@ -5,6 +5,12 @@
 //                       Oct 6, 2023 
 
 /* ==========================================
+    Imports
+=============================================*/
+import getData from './get_data.js'
+import { VillageData } from './get_data.js'
+
+/* ==========================================
     Prevent leaflet default marker showing up on the map
 =============================================*/
 
@@ -109,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
     // Toggle Legend -  old version with arrow*
     // const legendButton = document.querySelector('.toggle-legend');
     // const legendDiv = document.querySelector('.leaflet-bottom.leaflet-right');
@@ -127,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //         }
     //     });
     // }
+
     const legendButton = document.querySelector('.toggle-legend');
     const legendDiv = document.querySelector('.legend'); 
     const bottomright = document.querySelector('.leaflet-bottom.leaflet-right');
@@ -187,89 +195,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /* ==========================================
-            Get Village data from api
-=============================================*/
-var firstLoad = true;
-var VillageData;
-var done = true; 
-var last = [' ', ' '];
-
-async function getVillageData(url, villagePointColor) {
-    if (done == true) { 
-        done = false;
-        // close old village points
-        if (VillageData) {
-            map.removeLayer(VillageData);
-        } 
-        const response = await fetch(url);
-        const data = await response.json();
-        data_length = data.features.length;
-        //if the data is empty, alert the user. after user clicks ok on alert, set done to true and return
-        if (data_length == 0 && firstLoad == false) {
-            alert("No Villages data found");
-            fetchInitialVillageData();
-            done = true;
-            return;
-        }
-        VillageData = L.geoJSON(data, {
-            pointToLayer: function (feature, latlng) {
-                return L.circleMarker(latlng, {
-                    radius: 8,
-                    fillColor: villagePointColor,
-                    color: 'white',
-                    weight: 2,
-                    opacity: 1,
-                    fillOpacity: 0.7
-                });
-            },
-            onEachFeature: onEachFeatureFunction
-        }).addTo(map);
-        done = true;
-        if (last[0] != ' ' && last[1] != ' ') {
-            getVillageData(last[0], last[1]);
-            last[0] = ' '
-            last[1] = ' '
-        }
-        firstLoad = false; 
-    }   
-    else {
-        last[0] = url;
-        last[1] = villagePointColor;
-    }
-}
-
-/* ==========================================
-                    MARKER
-=============================================*/
-
-var Hospital_Icon = L.icon({
-    iconUrl: 'img/hospital_marker.png',
-    iconSize: [30, 30],
-});
-
-var School_Icon = L.icon({
-    iconUrl: 'img/school_marker.png',
-    iconSize: [40, 40],
-});
-
-/* ==========================================
                     GEOJSON
 =============================================*/
-async function fetchInitialVillageData() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/village/?time=${time}&key=${hash}`;
-        getVillageData(url, 'blue');
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        } else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-fetchInitialVillageData();
+
+getData.fetchInitialVillageData();
 
 // This is the working layer but it need to be in the data file which is js file
 var baseMaps = {
@@ -340,384 +269,15 @@ layerControl.addOverlay(elevationColor, 'Terrain');
 layerControl.addOverlay(elevavtionMono, 'Terrain (Monochrome)');
 // layerControl.addOverlay(subdistrict, 'Subdistrict');
 
-var layers = {};
 
-/* Call api to get the water areas */
-async function getWaterAreas() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/mhs_water_areas/?time=${time}&key=${hash}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                mhswater = L.geoJSON(data, {
-                    style: function (feature) {
-                        return { color: "blue" };
-                    }
-                }).addTo(map);
+getData.getWaterAreas();
+getData.getWaterLines();
+getData.getRoads();
+getData.getHospitals();
+getData.getSchools();   
+getData.getDistricts();
+getData.getSubDistricts();
 
-                // Add the new layer to the layer control
-                layerControl.addOverlay(mhswater, 'Water Area');
-            });
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        } else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-getWaterAreas();
-
-/* Call api to get the water lines */
-async function getWaterLines() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/mhs_water_lines/?time=${time}&key=${hash}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                mhswaterlines = L.geoJSON(data, {
-                    style: function (feature) {
-                        return { color: "steelblue" };
-                    }
-                }).addTo(map);
-
-                // Add the new layer to the layer control
-                layerControl.addOverlay(mhswaterlines, 'Water Lines');
-            });
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        } else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-getWaterLines();
-
-/* Call api to get the roads */
-async function getRoads() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/mhs_roads/?time=${time}&key=${hash}`;
-        // Add other layers to the map and the layer control
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                mhsroads = L.geoJSON(data, {
-                    style: function (feature) {
-                        return {
-                            color: "brown",
-                            fillOpacity: 0.5
-                        };
-                    }
-                }).addTo(map);
-
-                // Add the new layer to the layer control
-                layerControl.addOverlay(mhsroads, 'Roads');
-            });
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        } else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-getRoads();
-
-/* Call api to get the hospitals */
-async function getHospitals() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/hospital/?time=${time}&key=${hash}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                hospital = L.geoJSON(data, {
-                    pointToLayer: function (feature, latlng) {
-                        return L.marker(latlng, { icon: Hospital_Icon });
-                    },
-                    onEachFeature: function (feature, layer) {
-                        var popupContent = (feature.properties['hospital_name']);
-                        layer.bindPopup(popupContent);
-                    }
-                });
-
-                // Add the new layer to the layer control
-                layerControl.addOverlay(hospital, 'Hospital');
-            });
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        } else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-getHospitals()
-
-/* Call api to get the districts */
-async function getDistricts() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/mhs_districts/?time=${time}&key=${hash}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                mhsdistrict = L.geoJSON(data, {
-                    style: {
-                        color: '#FA8072',
-                        opacity: 1,
-                        fill: false
-                    }
-                }).addTo(map);
-
-                // Add the new layer to the layer control
-                layerControl.addOverlay(mhsdistrict, 'Districts');
-            });
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        } else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-getDistricts();
-
-/* Call api to get the subdistricts */
-async function getSubDistricts() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/mhs_subdistricts/?time=${time}&key=${hash}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                mhssubdistrict = L.geoJSON(data, {
-                    style: {
-                        color: 'pink',
-                        opacity: 1,
-                        fill: false
-                    }
-                });
-
-                // Add the new layer to the layer control
-                layerControl.addOverlay(mhssubdistrict, 'Subdistricts');
-            });
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        }
-        else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-getSubDistricts();
-
-/* Call api to get the schools */
-async function getSchools() {
-    try {
-        const time = getCurrentTime();
-        const hash = await getTestPackage(time);
-        const url = `${protocol}://${host}:${port}/api/school/?time=${time}&key=${hash}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                schoolLayer = L.geoJSON(data, {
-                    pointToLayer: function (feature, latlng) {
-                        return L.marker(latlng, { icon: School_Icon });
-                    },
-                    onEachFeature: function (feature, layer) {
-                        layer.bindPopup(feature.properties["school_name"]);
-                    }
-                });
-
-                // Add the new layer to the layer control
-                layerControl.addOverlay(schoolLayer, 'School');
-            })
-            .catch(error => console.error('Error:', error));
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            console.log('Fetch aborted');
-        } else {
-            console.error('Error fetching GeoJSON:', error);
-        }
-    }
-}
-getSchools();
-
-/*
-Function - to get info to display on the left sidebar 
-every time a village is clicked
-Arguments:
-    feature - the feature that is clicked
-    layer - the layer that is clicked
-*/
-function onEachFeatureFunction(feature, layer) {
-    layer.bindPopup(feature.properties.village_name);
-    layer.on('click', function (e) {
-        // Reset the style of the previously clicked layer
-        resetClickedLayer();
-        // Clear the relevant localStorage items
-        localStorage.removeItem('project-details');
-        localStorage.removeItem('start-dates');
-        localStorage.removeItem('end-dates');
-        localStorage.removeItem('project-types');
-        localStorage.removeItem('status-names');
-        localStorage.removeItem('url');
-        localStorage.removeItem('image_urls');
-        localStorage.removeItem('article_titles');
-        localStorage.removeItem('posted_dates');
-
-        // Change the marker color to red
-        layer.setStyle({ fillColor: 'red', color: 'white' });
-
-        // Bring the clicked layer to the front
-        layer.bringToFront();
-
-        // Store the currently clicked layer
-        clickedLayer = layer;
-        const id = feature.properties["id"];
-        localStorage.setItem('id', id);
-
-        /* Call api to get the project data */
-        async function fetchProjectDataWithVillageID(id) {
-            try {
-                const time = getCurrentTime();
-                const hash = await getTestPackage(time);
-                const url = `${protocol}://${host}:${port}/api/project/?village_id=${id}&time=${time}&key=${hash}`;
-                const response = await fetch(url);
-                // const response = await fetch("https://172.105.120.121:443/api/project/?village_id=" + id); old version
-                const data = await response.json();
-
-                data.features.forEach(feature => {
-                    const projectDetail = feature.properties.project_name_en;
-                    // Get the existing data from local storage
-                    let projectDetails = JSON.parse(localStorage.getItem('project-details')) || [];
-
-                    // Add the new project detail to the array
-                    projectDetails.push(projectDetail);
-
-                    // Store the updated array in local storage
-                    localStorage.setItem('project-details', JSON.stringify(projectDetails));
-                    const startDate = feature.properties.start_date;
-
-                    // Get the existing data from local storage
-                    let startDates = JSON.parse(localStorage.getItem('start-dates')) || [];
-                    // Add the new start date to the array
-                    startDates.push(startDate);
-
-                    // Store the updated array in local storage
-                    localStorage.setItem('start-dates', JSON.stringify(startDates));
-
-                    const endDate = feature.properties.end_date;
-                    // Get the existing data from local storage
-                    let endDates = JSON.parse(localStorage.getItem('end-dates')) || [];
-
-                    // Add the new end date to the array
-                    endDates.push(endDate);
-
-                    // Store the updated array in local storage
-                    localStorage.setItem('end-dates', JSON.stringify(endDates));
-
-                    const projectType = feature.properties.project_type;
-                    // Get the existing data from local storage
-                    let projectTypes = JSON.parse(localStorage.getItem('project-types')) || [];
-                    // Add the new project type to the array
-                    projectTypes.push(projectType);
-                    // Store the updated array in local storage
-                    localStorage.setItem('project-types', JSON.stringify(projectTypes));
-
-                    const statusName = feature.properties.status_name;
-                    // Get the existing data from local storage
-                    let statusNames = JSON.parse(localStorage.getItem('status-names')) || [];
-                    // Add the new status name to the array
-                    statusNames.push(statusName);
-                    // Store the updated array in local storage
-                    localStorage.setItem('status-names', JSON.stringify(statusNames));
-                });
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-        fetchProjectDataWithVillageID(id);
-
-        const villageName = feature.properties["village_name"];
-        localStorage.setItem('village-name', villageName === null ? '-' : villageName);
-
-        const roadQuality = feature.properties["road_conditions"];
-        localStorage.setItem('road-quality', roadQuality === null ? '-' : roadQuality);
-
-        const distancePratom = feature.properties["distance_to_pratom_km"];
-        localStorage.setItem('distance-pratom', distancePratom === null ? '-' : distancePratom);
-
-        const distanceMathayom = feature.properties["distance_to_mathayom_km"];
-        localStorage.setItem('distance-mathayom', distanceMathayom === null ? '-' : distanceMathayom);
-
-        const projectName = feature.properties["hosted_kht_projects"];
-        localStorage.setItem('project-name', projectName === null ? '-' : projectName);
-
-        const adultmale = feature.properties["adult_males"];
-        localStorage.setItem('adult-male', adultmale === null ? '-' : adultmale);
-
-        const adultfemale = feature.properties["adult_females"];
-        localStorage.setItem('adult-female', adultfemale === null ? '-' : adultfemale);
-
-        const commonDisease = feature.properties["common_diseases"];
-        localStorage.setItem('common-disease', commonDisease === null ? '-' : commonDisease);
-
-        const Households = feature.properties["households"];
-        localStorage.setItem('Households', Households === null ? '-' : Households);
-
-        const riceRatio = feature.properties["population_without_enough_rice"];
-        localStorage.setItem('rice-ratio', riceRatio === null ? '-' : riceRatio);
-
-        const children = feature.properties["children_aged_0_18"];
-        localStorage.setItem('children', children === null ? '-' : children);
-
-        const distanceTown = feature.properties["distance_to_town_km"];
-        localStorage.setItem('distance-town', distanceTown === null ? '-' : distanceTown);
-
-        const distanceHospital = feature.properties["distance_to_hospital_km"];
-        localStorage.setItem('distance-hospital', distanceHospital === null ? '-' : distanceHospital);
-
-        const nearestHealthCenter = feature.properties["nearest_health_centre"];
-        localStorage.setItem('nearest-health-center', nearestHealthCenter === null ? '-' : nearestHealthCenter);
-
-        const annualTyphoid = feature.properties["annual_typhoid_cases"];
-        localStorage.setItem('annual-typhoid', annualTyphoid === null ? '-' : annualTyphoid);
-        
-        const urls = feature.properties["urls"];
-        const imageUrls = feature.properties["image_urls"];
-        const articleTitles = feature.properties["article_titles"];
-        const postedDates = feature.properties["posted_dates"];
-        localStorage.setItem('url', JSON.stringify(urls));
-        localStorage.setItem('image_urls', JSON.stringify(imageUrls));
-        localStorage.setItem('article_titles', JSON.stringify(articleTitles));
-        localStorage.setItem('posted_dates', JSON.stringify(postedDates));
-
-    });
-}
-
-
-// Variable to store the currently clicked layer
-var clickedLayer;
-
-// Function to reset the style of the previously clicked layer
-function resetClickedLayer() {
-    if (clickedLayer) {
-        clickedLayer.setStyle({ fillColor: 'blue', color: 'white' });
-    }
-}
 
 // Define a new control
 var RecenterControl = L.Control.extend({
@@ -799,21 +359,7 @@ YearBoxControl.onAdd = function (map) {
     rangeInput.oninput = function() {
         yearSpan.innerHTML = this.value;
         targetYear = parseInt(this.value);
-        /* Call api to get the village data */
-        async function fetchVillagebByYear() {
-            // Remove the VillageData layer
-            map.removeLayer(VillageData);
-            
-            try {
-                const time = getCurrentTime();
-                const hash = await getTestPackage(time);
-                const url = `${protocol}://${host}:${port}/api/village/?year=${targetYear}&time=${time}&key=${hash}`;
-                getVillageData(url, 'green')
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-        fetchVillagebByYear();
+        getData.fetchVillagebByYear(targetYear);
     }
 
     // closeButton.addEventListener('click', function() {
@@ -829,6 +375,9 @@ YearBoxControl.addTo(map);
 /* ==========================================
         Search Button Control
 =============================================*/
+
+getData.fetchInitialVillageData();
+
 var radioButtonControl = L.control({ position: 'topleft' });
 
 // When the control is added to the map
@@ -883,7 +432,7 @@ radioButtonControl.onAdd = function (map) {
         document.getElementById('input5').value = '';
         document.getElementById('input6').value = ' ';
         
-        fetchInitialVillageData();
+        getData.fetchInitialVillageData();
     });
 
     // Attach event listener to the cancel button
@@ -904,7 +453,7 @@ radioButtonControl.onAdd = function (map) {
 
     // Attach event listener to the search button
     div.querySelector('#searchButton').addEventListener('click', function () {
-        div.querySelector('#searchButton').removeEventListener('click', fetchInitialVillageData);
+        div.querySelector('#searchButton').removeEventListener('click', getData.fetchInitialVillageData);
         // Check which radio button is selected
         var selectedRadioButton = document.querySelector('input[name="radio"]:checked');
         if (selectedRadioButton) {
@@ -936,26 +485,17 @@ radioButtonControl.onAdd = function (map) {
                         alert("The the target year must be in between " + minimumYear + " - "+ currentYear);
                         break;
                     }
-                    async function fetchVillagebByYear() {
-                        try {
-                            const time = getCurrentTime();
-                            const hash = await getTestPackage(time);
-                            const url = `${protocol}://${host}:${port}/api/village/?year=${inputValue1}&time=${time}&key=${hash}`;
-                            getVillageData(url, 'green')
-                        } catch (error) {
-                            console.error('Error:', error);
-                        }
-                    }
-                    fetchVillagebByYear();
+                    
+                    getData.fetchVillagebByYear(inputValue1);
+
                     break;
                 case 'radio2': /* get village by start and end year */
                     var startYear = parseInt(document.getElementById('input2').value);
                     var endYear = parseInt(document.getElementById('input3').value);
                     
-                    inputId2 = 'input2';
-                    inputId3 = 'input3';
-                    inputValue2 = document.getElementById(inputId2).value;
-                    inputValue3 = document.getElementById(inputId3).value;
+
+                    let inputValue2 = document.getElementById('input2').value;
+                    let inputValue3 = document.getElementById('input3').value;
                     
                     // Year Validation
                     if (inputValue2 == "" || inputValue3 == "") {
@@ -996,19 +536,8 @@ radioButtonControl.onAdd = function (map) {
                         yearText.innerHTML = rangeInput.value;
                     }
                    
-                    // fetch and get api data
-                    async function fetchVillagebByStartAndEndYear() {
-                        try {
-                            const time = getCurrentTime();
-                            const hash = await getTestPackage(time);
-                            const url = `${protocol}://${host}:${port}/api/village/?start_year=${inputValue2}&end_year=${inputValue3}&time=${time}&key=${hash}`;
-                            // fetch("https://kht-map.org:2546/api/village/?start_year=" + inputValue2 + "&end_year=" + inputValue3)
-                            getVillageData(url, 'green');
-                        } catch (error) {
-                            console.error('Error:', error);
-                        }
-                    }
-                    fetchVillagebByStartAndEndYear();
+                    getData.fetchVillagebByStartAndEndYear(inputValue2, inputValue3);
+
                     break;
                 case 'radio3': /* get village by project type */
                     const projectType = document.getElementById('input4').value;
@@ -1016,36 +545,9 @@ radioButtonControl.onAdd = function (map) {
                         alert("Please select the project type.");
                         break;
                     }
-                    async function fetchVillagebyProjectType() {
-                        try {
-                            const time = getCurrentTime();
-                            const hash = await getTestPackage(time);
 
-                            // check the input for project type
-                            const projectTypeMapping = {
-                                'WASH': 'WASH',
-                                'Further Education Scholarship': 'Further%20Education%20Scholarships',
-                                'Irrigation': 'Irrigation',
-                                'Dormitory Meals': 'Dormitory%20Meals',
-                                // 'School Buses': 'School%20Buses'
-                            };
+                    getData.fetchVillagebyProjectType(projectType);
 
-                            if (projectTypeMapping[projectType]) {
-                                const url = `${protocol}://${host}:${port}/api/village/?project_type=${projectTypeMapping[projectType]}&time=${time}&key=${hash}`;
-                                getVillageData(url, 'green')
-                            }
-
-                            inputId1 = 'input4';
-                            inputValue1 = document.getElementById(inputId1).value;
-                            searchButton.addEventListener('click', function () {
-
-                            });
-                        } catch (error) {
-                            console.error('Error:', error);
-                        }
-                    }
-                    
-                    fetchVillagebyProjectType();
                     break;
                 case 'radio4': /* get village by minimum distance and facility type */
                     var input5 = document.getElementById('input5');
@@ -1076,17 +578,8 @@ radioButtonControl.onAdd = function (map) {
                         break;
                     }
 
-                    async function fetchVillageByDistance() {
-                        try {
-                            const time = getCurrentTime();
-                            const hash = await getTestPackage(time);
-                            const url = `${protocol}://${host}:${port}/api/village/?distance=${inputValue5}&facility_type=${inputValue6}&time=${time}&key=${hash}`;
-                            getVillageData(url, 'green')
-                        } catch (error) {
-                            console.error('Error:', error);
-                        }
-                    }
-                    fetchVillageByDistance();
+                    getData.fetchVillageByDistance(inputValue5, inputValue6);   
+
                     break;
             }
             // Hide the radio button container
@@ -1156,19 +649,6 @@ radioButtonControl.addTo(map);
 // add the control to the map
 YearBoxControl.addTo(map);
 
-window.onload = function () {
-    // Store the original state
-    var form = document.getElementById('radioContainer');
-    var originalState = form.choice.value;
-
-    // Attach event listener to the cancel button
-    document.getElementById('cancelButton').addEventListener('click', function () {
-        // Revert to the original state
-        form.choice.value = originalState;
-    });
-};
-//window.addTo(map);
-
 // Attach event listener to the search button
 document.getElementById('searchButton').addEventListener('click', function () {
     // Check which radio button is selected
@@ -1212,3 +692,13 @@ var overlayMaps = {
     'Hospital': null, // hospital,
     // 'nexrad': nexrad
 };
+
+
+export { 
+    map,
+    layerControl,
+    host,
+    port,
+    protocol,
+    getCurrentTime
+} 
