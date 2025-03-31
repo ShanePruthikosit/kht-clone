@@ -20,6 +20,16 @@ def save_image(path: str, image):
     image_bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     cv2.imwrite(path, image_bgr)
 
+def show_image(title: str, image):
+    """
+    Display an image using matplotlib.
+    """
+    plt.figure(figsize=(8, 6))
+    plt.imshow(image)
+    plt.title(title)
+    plt.axis('off')
+    plt.show()
+
 if __name__ == "__main__":
     import argparse
 
