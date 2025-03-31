@@ -60,6 +60,23 @@ def adjust_brightness_contrast(image, brightness=0, contrast=1.0):
     new_image = np.clip(new_image, 0, 255).astype(np.uint8)
     return new_image
 
+def adjust_saturation(image, saturation_scale=1.0):
+    """
+    Adjust the saturation of an image.
+    
+    :param image: Input image in RGB format.
+    :param saturation_scale: Multiplicative factor for saturation.
+    :return: Image with adjusted saturation.
+    """
+    # Convert image to HSV color space
+    hsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV).astype(np.float32)
+    # Scale the saturation channel
+    hsv[..., 1] = hsv[..., 1] * saturation_scale
+    hsv[..., 1] = np.clip(hsv[..., 1], 0, 255)
+    # Convert back to RGB color space
+    adjusted_img = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+    return adjusted_img
+
 def process_image(image_path: str, output_prefix: str = "output"):
     # Load the original image
     original_img = load_image(image_path)
@@ -76,6 +93,13 @@ def process_image(image_path: str, output_prefix: str = "output"):
     bright_contrast_img = adjust_brightness_contrast(noisy_img, brightness=30, contrast=1.2)
     show_image("Brightness & Contrast Adjusted", bright_contrast_img)
     save_image(f"{output_prefix}_bright_contrast.jpg", bright_contrast_img)
+
+    # Step 3: Adjust saturation
+    # Increase saturation by 1.5 times
+    saturated_img = adjust_saturation(bright_contrast_img, saturation_scale=1.5)
+    show_image("Saturation Adjusted", saturated_img)
+    save_image(f"{output_prefix}_saturated.jpg", saturated_img)
+
 
 
 if __name__ == "__main__":
