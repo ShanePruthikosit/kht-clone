@@ -60,22 +60,65 @@ def adjust_brightness_contrast(image, brightness=0, contrast=1.0):
     new_image = np.clip(new_image, 0, 255).astype(np.uint8)
     return new_image
 
+def adjust_saturation(image, saturation_scale=1.0):
+    """
+    Adjust the saturation of an image.
+    
+    :param image: Input image in RGB format.
+    :param saturation_scale: Multiplicative factor for saturation.
+    :return: Image with adjusted saturation.
+    """
+    # Convert image to HSV color space
+    hsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV).astype(np.float32)
+    # Scale the saturation channel
+    hsv[..., 1] = hsv[..., 1] * saturation_scale
+    hsv[..., 1] = np.clip(hsv[..., 1], 0, 255)
+    # Convert back to RGB color space
+    adjusted_img = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+    return adjusted_img
+
+def apply_gaussian_blur(image, kernel_size=(5, 5), sigma=0):
+    """
+    Apply a Gaussian blur to the image.
+    
+    :param image: Input image in RGB format.
+    :param kernel_size: Size of the kernel.
+    :param sigma: Gaussian kernel standard deviation; if 0, it is computed from kernel size.
+    :return: Blurred image.
+    """
+    # OpenCV expects the image in BGR format for filtering; convert temporarily if needed.
+    image_bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    blurred_bgr = cv2.GaussianBlur(image_bgr, kernel_size, sigma)
+    blurred_rgb = cv2.cvtColor(blurred_bgr, cv2.COLOR_BGR2RGB)
+    return blurred_rgb
+
 def process_image(image_path: str, output_prefix: str = "output"):
     # Load the original image
     original_img = load_image(image_path)
     show_image("Original Image", original_img)
     save_image(f"{output_prefix}_original.jpg", original_img)
 
-    # Step 1: Add Gaussian noise
+    # Add Gaussian noise
     noisy_img = add_gaussian_noise(original_img, mean=0, sigma=25)
     show_image("Image with Gaussian Noise", noisy_img)
     save_image(f"{output_prefix}_noisy.jpg", noisy_img)
 
-    # Step 2: Adjust brightness and contrast
+    # Adjust brightness and contrast
     # Increase brightness by 30 and contrast by 1.2 times
-    bright_contrast_img = adjust_brightness_contrast(noisy_img, brightness=50, contrast=1.2)
+    bright_contrast_img = adjust_brightness_contrast(noisy_img, brightness=30, contrast=1.2)
     show_image("Brightness & Contrast Adjusted", bright_contrast_img)
     save_image(f"{output_prefix}_bright_contrast.jpg", bright_contrast_img)
+
+    # Adjust saturation
+    # Increase saturation by 1.5 times
+    saturated_img = adjust_saturation(bright_contrast_img, saturation_scale=1.5)
+    show_image("Saturation Adjusted", saturated_img)
+    save_image(f"{output_prefix}_saturated.jpg", saturated_img)
+
+    # Apply Gaussian blur to smooth the image
+    blurred_img = apply_gaussian_blur(saturated_img, kernel_size=(7, 7), sigma=0)
+    show_image("Gaussian Blurred", blurred_img)
+    save_image(f"{output_prefix}_blurred.jpg", blurred_img)
 
 
 if __name__ == "__main__":
