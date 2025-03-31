@@ -7,10 +7,9 @@ import uvicorn
 
 app = FastAPI()
 
-# CORS middleware allows all origin configurations
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["*"],
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Origin", "Content-Type"],
 )
@@ -21,10 +20,9 @@ DB_CONFIG = {
     "user": "postgres",
     "password": "M@3_ge0_D4t4",
     "host": "localhost",
-    "port": "5432"
+    "port": "5432"  
 }
 
-# pgRouting Function(SQL)
 def get_route(start_node: int, end_node: int):
     query = """
     WITH 
@@ -53,37 +51,29 @@ def get_route(start_node: int, end_node: int):
             new_edges e ON p.edge = e.id
     )
     SELECT json_agg(geojson ORDER BY seq) FROM path_with_geom;
-
     """
-
     try:
-        # Connect to the database
         conn = psycopg2.connect(**DB_CONFIG)
         cur = conn.cursor()
 
-        # Execute query
         cur.execute(query, (start_node, end_node))
-        results = cur.fetchall()
+        result = cur.fetchone() 
 
-        # Make response GeoJSON
-        features = [
-            {
-                "type": "Feature",
-                "geometry": json.loads(row[2]),
-                "properties": {
-                    "seq": row[0],
-                    "edge": row[1]
-                }
-            }
-            for row in results
-        ]
+        features = []
+        if result and result[0]:
+            aggregated_geojson = json.loads(result[0])
+            for geojson_str in aggregated_geojson:
+                features.append({
+                    "type": "Feature",
+                    "geometry": json.loads(geojson_str),
+                    "properties": {} 
+                })
 
         geojson_response = {
             "type": "FeatureCollection",
             "features": features
         }
 
-        # Close connection
         cur.close()
         conn.close()
 
@@ -112,5 +102,4 @@ def read_root():
 if __name__ == "__main__":
     host = "0.0.0.0"
     port = 1150
-
     uvicorn.run(app, host=host, port=port)
