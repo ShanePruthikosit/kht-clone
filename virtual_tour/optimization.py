@@ -135,6 +135,11 @@ def process_image(image_path: str, output_prefix: str = "output"):
     show_image("Gaussian Blurred", blurred_img)
     save_image(f"{output_prefix}_blurred.jpg", blurred_img)
 
+    # Denoise the image
+    denoised_img = denoise_image(blurred_img)
+    show_image("Denoised Image", denoised_img)
+    save_image(f"{output_prefix}_denoised.jpg", denoised_img)
+
 
 if __name__ == "__main__":
     import argparse
