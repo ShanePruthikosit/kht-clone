@@ -201,12 +201,8 @@ document.addEventListener("DOMContentLoaded", function() {
 getData.fetchInitialVillageData();
 
 // This is the working layer but it need to be in the data file which is js file
-var baseMaps = {
-    "OSM": osm,
-    'Dark': dark,
-};
 
-var layerControl = L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
+var layerControl = L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
 var legendControl = L.control({ position: 'bottomright' });
 var layerControlContainer = layerControl.getContainer(); // Get the layer control's HTML container
 
@@ -219,11 +215,12 @@ legendControl.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'legend');
     // div.style = "width: 150px; font-size: 10px; height:340px";
     div.innerHTML +=
-        '<div style="width: 100%; height: 10%; display: flex;"><div style="width: 85%; align-items: center; display: flex;"><strong>Legend</strong></div>' +
+        '<div style="width: 100%; height: 10%; display: flex;">  <div style="width: 85%; align-items: center; display: flex;">  <strong>Legend</strong>  </div>' +
         // '<button class="toggle-legend"><img src="img/next-single-arrow.png" width = "100%" height = "70%" style="transform: rotate(90deg);"></button></div>' +
+        
        '<button class="toggle-legend" style="width: 20%; height: 65%; font-size: 115%; border-radius: 20%; border: 1px solid grey; color: black; background-color: paleturquoise; margin: 5px;"">X</button></div>' +
-        '<img src="img/DEM.png" alt="Elevation" height="5%"> Terrain<br>' +
-        '<img src="img/elevation.png" alt="Monochrome Elevation" height="5%"> Terrain (Monochrome)<br>' +
+
+       //Legend Items
         '<svg height="2vw" width="2vw"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: blue; stroke: white;"></circle></svg> Village<br>' +
         '<svg height="2vw" width="2vw"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: red; stroke: white;"></circle></svg> Village Clicked<br>' +
         '<svg height="2vw" width="2vw"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: green; stroke: white;"></circle></svg> Village from search result<br>' +
@@ -234,7 +231,8 @@ legendControl.onAdd = function (map) {
         '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:brown;stroke-width:2"></line></svg> Road<br>' +
         '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:steelblue;stroke-width:2"></line></svg> Water Line<br>' +
         '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:blue;stroke-width:2"></line></svg> Water Area<br>' +
-        '<div style="width: 10vw height: 20vw" class="logo-container"><a href="https://www.cmkl.ac.th/" target="_blank"><img width="100%" height="10%" src="img/LogoCMKL.png" alt="Logo" class="logo"></a></div>';
+        '<div style="width: 10vw height: 20vw;  margin: 10px;" class="logo-container"><a href="https://www.cmkl.ac.th/" target="_blank"><img width="100%" height="10%" src="img/LogoCMKL.png" alt="Logo" class="logo"></a></div>';
+
     return div;
 };  
 
@@ -265,10 +263,6 @@ var elevationColor = L.imageOverlay('img/DEM.png', [[19.815284943, 97.343636681]
 var elevavtionMono = L.imageOverlay('img/elevation.png', [[19.815284943, 97.343636681], [17.636673832, 98.651692237]], { interactive: false, opacity: 0.7 }).addTo(map);
 
 // Add the new layers to the layer control
-layerControl.addOverlay(elevationColor, 'Terrain');
-layerControl.addOverlay(elevavtionMono, 'Terrain (Monochrome)');
-// layerControl.addOverlay(subdistrict, 'Subdistrict');
-
 
 getData.getWaterAreas();
 getData.getWaterLines();
