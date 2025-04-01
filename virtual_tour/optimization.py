@@ -92,6 +92,21 @@ def apply_gaussian_blur(image, kernel_size=(5, 5), sigma=0):
     blurred_rgb = cv2.cvtColor(blurred_bgr, cv2.COLOR_BGR2RGB)
     return blurred_rgb
 
+
+def denoise_image(image):
+    """
+    Denoise the image using Non-Local Means Denoising.
+    
+    :param image: Input image in RGB format.
+    :return: Denoised image.
+    """
+    # Convert to BGR for denoising function
+    image_bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    denoised_bgr = cv2.fastNlMeansDenoisingColored(image_bgr, None, 10, 10, 7, 21)
+    denoised_rgb = cv2.cvtColor(denoised_bgr, cv2.COLOR_BGR2RGB)
+    return denoised_rgb
+
+
 def process_image(image_path: str, output_prefix: str = "output"):
     # Load the original image
     original_img = load_image(image_path)
@@ -119,6 +134,11 @@ def process_image(image_path: str, output_prefix: str = "output"):
     blurred_img = apply_gaussian_blur(saturated_img, kernel_size=(7, 7), sigma=0)
     show_image("Gaussian Blurred", blurred_img)
     save_image(f"{output_prefix}_blurred.jpg", blurred_img)
+
+    # Denoise the image
+    denoised_img = denoise_image(blurred_img)
+    show_image("Denoised Image", denoised_img)
+    save_image(f"{output_prefix}_denoised.jpg", denoised_img)
 
 
 if __name__ == "__main__":
