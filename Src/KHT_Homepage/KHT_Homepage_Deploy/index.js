@@ -221,16 +221,16 @@ legendControl.onAdd = function (map) {
        '<button class="toggle-legend" style="width: 20%; height: 65%; font-size: 115%; border-radius: 20%; border: 1px solid grey; color: black; background-color: paleturquoise; margin: 5px;"">X</button></div>' +
 
        //Legend Items
-        '<svg height="2vw" width="2vw"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: blue; stroke: white;"></circle></svg> Village<br>' +
-        '<svg height="2vw" width="2vw"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: red; stroke: white;"></circle></svg> Village Clicked<br>' +
-        '<svg height="2vw" width="2vw"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: green; stroke: white;"></circle></svg> Village from search result<br>' +
-        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:pink;stroke-width:2"></line></svg> Subdistrict<br>' +
-        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:#FA8072;stroke-width:2"></line></svg> District<br>' +
+        '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: blue; stroke: white; "></circle></svg> Village<br>' +
+        '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: red; stroke: white;"></circle></svg> Village Clicked<br>' +
+        '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: green; stroke: white;"></circle></svg> Search results<br>' +
+        '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:pink;stroke-width:5"></line></svg> Subdistrict<br>' +
+        '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:#FA8072;stroke-width:5"></line></svg> District<br>' +
         '<img src="img/school_marker.png" alt="School" height="5%"> School<br>' +
         '<img src="img/hospital_marker.png" alt="Hospital" height="5%"> Hospital<br>' +
-        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:brown;stroke-width:2"></line></svg> Road<br>' +
-        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:steelblue;stroke-width:2"></line></svg> Water Line<br>' +
-        '<svg height="20" width="20"><line x1="0" y1="10" x2="20" y2="10" style="stroke:blue;stroke-width:2"></line></svg> Water Area<br>' +
+        '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:brown;stroke-width:5"></line></svg> Road<br>' +
+        '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:steelblue;stroke-width:5"></line></svg> Water Line<br>' +
+        '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:blue;stroke-width:5"></line></svg> Water Area<br>' +
         '<div style="width: 10vw height: 20vw;  margin: 10px;" class="logo-container"><a href="https://www.cmkl.ac.th/" target="_blank"><img width="100%" height="10%" src="img/LogoCMKL.png" alt="Logo" class="logo"></a></div>';
 
     return div;
