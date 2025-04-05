@@ -21,18 +21,103 @@ import hashlib
 import uvicorn
 import ssl
 import execjs
+import psycopg2
 from village_url_model import village_url_data
+
 
 app = FastAPI()
 user_dict = {}
 
-''' CORS middleware to allow all origins confituration '''
+''' CORS middleware to allow all origins configuration '''
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # You can replace '*' with specific origins
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Origin", "Content-Type"],
 )
+
+# --- Begin Integration of Test PG API Functionality ---
+# Define DB configuration for the routing API (adjust if needed)
+ROUTING_DB_CONFIG = {
+    "dbname": "osm_routing_test",
+    "user": "postgres",
+    "password": "M@3_ge0_D4t4",
+    "host": "localhost",
+    "port": "5432"
+}
+
+def get_route(start_node: int, end_node: int):
+    query = """
+    WITH 
+    start_point AS (
+        SELECT id AS source_id FROM new_nodes WHERE id = %s LIMIT 1
+    ),
+    end_point AS (
+        SELECT id AS target_id FROM new_nodes WHERE id = %s LIMIT 1
+    ),
+    path_result AS (
+        SELECT * 
+        FROM pgr_dijkstra(
+            'SELECT id, source, target, cost AS cost FROM new_edges',
+            (SELECT source_id FROM start_point),
+            (SELECT target_id FROM end_point),
+            directed := true
+        )
+    ),
+    path_with_geom AS (
+        SELECT 
+            p.seq,
+            ST_AsGeoJSON(e.geom) AS geojson
+        FROM 
+            path_result p
+        JOIN 
+            new_edges e ON p.edge = e.id
+    )
+    SELECT json_agg(geojson ORDER BY seq) FROM path_with_geom;
+    """
+    try:
+        conn = psycopg2.connect(**ROUTING_DB_CONFIG)
+        cur = conn.cursor()
+        cur.execute(query, (start_node, end_node))
+        result = cur.fetchone()
+        features = []
+        if result and result[0]:
+            aggregated = result[0]
+            # If aggregated is a string, parse it; otherwise, assume it's already a list
+            if isinstance(aggregated, str):
+                aggregated_geojson = json.loads(aggregated)
+            else:
+                aggregated_geojson = aggregated
+
+            for geojson_item in aggregated_geojson:
+                if isinstance(geojson_item, str):
+                    geometry = json.loads(geojson_item)
+                else:
+                    geometry = geojson_item
+
+                features.append({
+                    "type": "Feature",
+                    "geometry": geometry,
+                    "properties": {}  # Add additional properties if needed
+                })
+        geojson_response = {
+            "type": "FeatureCollection",
+            "features": features
+        }
+        cur.close()
+        conn.close()
+        return geojson_response
+    except psycopg2.Error as e:
+        return {"error": f"Database error: {e}"}
+
+@app.get("/api/route/")
+def get_shortest_route(start: int, end: int):
+    if not start or not end:
+        raise HTTPException(status_code=400, detail="Missing start or end node")
+    route_data = get_route(start, end)
+    return JSONResponse(content=route_data)
+# --- End Integration of Test PG API Functionality ---
+
 
 '''
 Encryption ensuring the private connection 
@@ -42,7 +127,6 @@ Arguements
 Return if the key match with the hash value then
 return True, otherwise return False.
 '''
-
 def check_valid(message, key):
     js_code = "const crypto = require('crypto');\n"
     with open("testpackage.js", "r") as js_file:
@@ -85,7 +169,7 @@ Return data output in geojson format
 '''
 @app.get("/api/village/")
 def pull_village_data(village_id="", year="", start_year="", end_year="", project_type="",
-                        distance="", road_distance="", facility_type="",time="", key=""):
+                        distance="", road_distance="", facility_type="", time="", key=""):
     if not check_valid(time, key):
        return {'Error' : 'Key mismatch'}
     if year != "" or (start_year != "" and end_year != ""):
@@ -207,19 +291,19 @@ Function handles water line node query
 Return data output in geojson format
 '''
 @app.get("/api/mhs_water_lines")
-def pull_mhs_water_areas(time="", key=""):
+def pull_mhs_water_lines(time="", key=""):
     geojson_data = postgreSQL.get_mhs_water_lines()
     return geojson_data
 
-'''
+''' 
 Function updates village url in the village_url table 
-Reuturn status message.
+Return status message.
 '''
 @app.post("/api/post/village_url/")
 async def create_village_url(village_url_data: village_url_data):
     # Insert the data into the database
     message = postgreSQL.insert_village_url(village_url_data)
-    # if reutrn Success, then update the url table
+    # if return Success, then update the url table
     return {"message": message}
 
 ''' 
@@ -244,9 +328,5 @@ if __name__ == "__main__":
     ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
     ssl_context.load_cert_chain(certfile=cert_file, keyfile=key_file, password=passphrase)
 
-    # if port == 443:
     uvicorn.run(app, host=host, port=port, ssl_keyfile=key_file, ssl_certfile=cert_file, ssl_keyfile_password=passphrase)
-    # else:
-    #    uvicorn.run(app, host=host, port=2546)
-
     print("Running api_provider.py at host {} port {}".format(host, port))
