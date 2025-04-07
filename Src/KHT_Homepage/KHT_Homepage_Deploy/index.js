@@ -218,7 +218,7 @@ legendControl.onAdd = function (map) {
         '<div style="width: 100%; height: 10%; display: flex;">  <div style="width: 85%; align-items: center; display: flex;">  <strong>Legend</strong>  </div>' +
         // '<button class="toggle-legend"><img src="img/next-single-arrow.png" width = "100%" height = "70%" style="transform: rotate(90deg);"></button></div>' +
         
-       '<button class="toggle-legend" style="width: 20%; height: 65%; font-size: 115%; border-radius: 20%; border: 1px solid grey; color: black; background-color: paleturquoise; margin: 5px;"">X</button></div>' +
+       '<button class="toggle-legend" style="width: 20%; height: 85%; font-size: 115%; border-radius: 20%; border: 1px solid grey; color: black; background-color: paleturquoise; margin: 5px;"">X</button></div>' +
 
        //Legend Items
         '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: blue; stroke: white; "></circle></svg> Village<br>' +
