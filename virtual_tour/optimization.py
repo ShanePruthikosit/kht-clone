@@ -1,3 +1,22 @@
+#  Prim Rajasurang Wongkrasaemongkol 
+#
+#  Author: Prim Rajasurang Wongkrasaemongkol
+#
+#  Enhanced image processing 
+#  
+#  Copyright 2 All rights reserved.
+#  
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#  
+#   https://www.apache.org/licenses/LICENSE-2.0
+#  
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -29,6 +48,7 @@ def show_image(title: str, image):
     plt.title(title)
     plt.axis('off')
     plt.show()
+
 
 def add_gaussian_noise(image, mean=0, sigma=25):
     """
@@ -92,7 +112,6 @@ def apply_gaussian_blur(image, kernel_size=(5, 5), sigma=0):
     blurred_rgb = cv2.cvtColor(blurred_bgr, cv2.COLOR_BGR2RGB)
     return blurred_rgb
 
-
 def denoise_image(image):
     """
     Denoise the image using Non-Local Means Denoising.
@@ -107,24 +126,48 @@ def denoise_image(image):
     return denoised_rgb
 
 
+def ai_super_resolution(image, model_path='ESPCN_x4.pb', scale=4):
+    """
+    Enhance image details using AI-based super resolution from OpenCV's DNN module.
+    
+    :param image: Input image in RGB format.
+    :param model_path: Path to the pre-trained model file.
+    :param scale: Upscaling factor.
+    :return: Super-resolved image.
+    """
+    try:
+        # Initialize the DNN Super Resolution object from OpenCV
+        sr = cv2.dnn_superres.DnnSuperResImpl_create()
+        sr.readModel(model_path)
+        # You can use models like 'espcn', 'edsr', 'fsrcnn', etc.
+        sr.setModel("espcn", scale)
+        # OpenCV expects BGR format for processing
+        image_bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+        result_bgr = sr.upsample(image_bgr)
+        result_rgb = cv2.cvtColor(result_bgr, cv2.COLOR_BGR2RGB)
+        return result_rgb
+    except Exception as e:
+        print("AI super resolution failed. Check the model file and configuration.")
+        print("Error:", e)
+        return image
+
 def process_image(image_path: str, output_prefix: str = "output"):
+
     # Load the original image
     original_img = load_image(image_path)
     show_image("Original Image", original_img)
     save_image(f"{output_prefix}_original.jpg", original_img)
 
-    # Add Gaussian noise
+
     noisy_img = add_gaussian_noise(original_img, mean=0, sigma=25)
     show_image("Image with Gaussian Noise", noisy_img)
     save_image(f"{output_prefix}_noisy.jpg", noisy_img)
 
-    # Adjust brightness and contrast
     # Increase brightness by 30 and contrast by 1.2 times
     bright_contrast_img = adjust_brightness_contrast(noisy_img, brightness=30, contrast=1.2)
     show_image("Brightness & Contrast Adjusted", bright_contrast_img)
     save_image(f"{output_prefix}_bright_contrast.jpg", bright_contrast_img)
 
-    # Adjust saturation
     # Increase saturation by 1.5 times
     saturated_img = adjust_saturation(bright_contrast_img, saturation_scale=1.5)
     show_image("Saturation Adjusted", saturated_img)
@@ -139,6 +182,14 @@ def process_image(image_path: str, output_prefix: str = "output"):
     denoised_img = denoise_image(blurred_img)
     show_image("Denoised Image", denoised_img)
     save_image(f"{output_prefix}_denoised.jpg", denoised_img)
+
+    # Apply AI-based super resolution enhancement (optional)
+    super_res_img = ai_super_resolution(denoised_img, model_path='ESPCN_x4.pb', scale=4)
+    show_image("AI Enhanced (Super Resolution)", super_res_img)
+    save_image(f"{output_prefix}_ai_super_res.jpg", super_res_img)
+
+    # Final combined output can be compared or further processed as needed.
+    print("Image processing pipeline complete. Check output images saved with prefix:", output_prefix)
 
 
 if __name__ == "__main__":
