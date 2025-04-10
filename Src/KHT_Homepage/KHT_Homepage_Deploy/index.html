@@ -171,13 +171,15 @@
                      myChart.data.datasets[0].data = [newAdultFemale, newAdultMale];
                      myChart.update();
                    }
-               
+                   
+                  //  Function called when a village is clicked
                    window.addEventListener('storage', function (e) {
                      if (e.key === 'adult-female' || e.key === 'adult-male') {
                        updateChart();
                        villageDetails.style.display = 'block';
                        instructions.style.display = 'none';
                        toggleButton.textContent = 'Toggle Help';
+                       document.getElementById('sidebar').scrollTop = 0;
                      }
                    });
                
