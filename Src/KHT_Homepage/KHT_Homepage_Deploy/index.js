@@ -636,11 +636,9 @@ searchButtonControl.onAdd = function (map) {
     return div;
 };
 
-// Add the control to the map
+// Add the controls to the map
 searchButtonControl.addTo(map);
-// Add the control to the map
 radioButtonControl.addTo(map);
-// add the control to the map
 YearBoxControl.addTo(map);
 
 // Attach event listener to the search button
