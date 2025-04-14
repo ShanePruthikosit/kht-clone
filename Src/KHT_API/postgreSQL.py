@@ -200,32 +200,31 @@ Arguments:
 Return data all villages that are not within the given distance to the target facility.
 '''
 def get_village_by_distance(distance="", facility_type=""):
-    distance = float(distance) * 1000
-    print(f"Distance: {distance}, Facility type: {facility_type}")
-    query = None 
+    # Convert distance from km to meters
+    distance_m = float(distance) * 1000
+    print(f"Distance (meters): {distance_m}, Facility type: {facility_type}")
     query = sql.SQL("""
-        SELECT v.*, 
+        SELECT DISTINCT v.*, 
             ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
             ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
             ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
             ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
         FROM village v
+        JOIN {table} f 
+          ON ST_DWithin(v.geom::geography, f.geom::geography, %s)
         LEFT JOIN url2 ON v.id = url2.village_id
-        WHERE NOT EXISTS (
-            SELECT 1 FROM {table} f
-            WHERE ST_DWithin(v.geom::geography, f.geom::geography, %s)
-        )
         GROUP BY v.id
     """).format(table=sql.Identifier(facility_type))
     try:
-        mogrified_query = cursor.mogrify(query, (distance,))
+        mogrified_query = cursor.mogrify(query, (distance_m,))
         print(mogrified_query.decode('utf-8'))
         cursor.execute(mogrified_query)
         geojson_result = query_to_geojson(cursor, mogrified_query)
         return geojson_result
     except Exception as e:
-        print(f"Error executing query: {e}")  # Print the error message
-        connection.rollback()  # Rollback the transaction
+        print(f"Error executing query: {e}") #Print the error message
+        connection.rollback() #Rollback the transaction
+
 
 '''
 The function to query village by given a target facility and 
