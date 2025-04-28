@@ -26,7 +26,7 @@ def preprocess(input_path,
     sr.setModel("edsr", 4)
     img_up = sr.upsample(img_clahe)
 
-    # 4. Save
+    # Save
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     cv2.imwrite(output_path, img_up)
     print(f"Preprocessed image saved to {output_path}")
