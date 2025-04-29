@@ -39,12 +39,7 @@
                                </h1>
                              </a>
                              <a href="#" class="nav-link">
-                               <h2>
-                                 <p id="road-quality"></p>
-                               </h2>
-                             </a>
-                             <a href="#" class="nav-link">
-                               <h2>
+                               <h2 style="padding-top: 0%;">
                                  <p id="project-name"></p>
                                </h2>
                              </a>
@@ -68,6 +63,7 @@
                                       <p class="p-extra" id="distance-town"></p>
                                       <p class="p-extra" id="distance-hospital"></p>
                                       <p class="p-extra" id="nearest-health-center"></p>
+                                      <p class ="p-extra" id="road-quality"></p>
                                       <p class="p-extra" id="common-disease"></p>
                                       <p class="p-extra" id="annual-typhoid"></p>
                                       <p class="p-extra" id="children"></p>
@@ -87,7 +83,7 @@
                                </details>
                
                                <a href="#" class="nav-link">
-                                 <h3>Gender charts</h3>
+                                 <h3 style="font-size: 1.5vw; font-weight: 600;">Gender charts</h3>
                                </a>
                                <div style="width: 100%; height: 100%; padding: 10%; margin-bottom: 10px ">
                                  <canvas id="myChart"></canvas>
@@ -175,13 +171,15 @@
                      myChart.data.datasets[0].data = [newAdultFemale, newAdultMale];
                      myChart.update();
                    }
-               
+                   
+                  //  Function called when a village is clicked
                    window.addEventListener('storage', function (e) {
                      if (e.key === 'adult-female' || e.key === 'adult-male') {
                        updateChart();
                        villageDetails.style.display = 'block';
                        instructions.style.display = 'none';
                        toggleButton.textContent = 'Toggle Help';
+                       document.getElementById('sidebar').scrollTop = 0;
                      }
                    });
                
@@ -227,7 +225,7 @@
                      document.getElementById('distance-hospital').innerHTML = 'Distance to Hospital (km)';
                      document.getElementById('nearest-health-center').innerHTML = 'Nearest Health Centre';
                      document.getElementById('annual-typhoid').innerHTML = 'Annual Typhoid Cases';
-                     document.getElementById('url').innerHTML = 'URL';
+                    //  document.getElementById('url').innerHTML = 'URL';
                      
                      // Show instructions and hide village details initially
                      document.getElementById('villageDetails').style.display = 'none';
@@ -259,7 +257,8 @@
                      }
                      if (e.key === 'project-name') {
                        const projectName = localStorage.getItem('project-name');
-                       document.getElementById("project-name").innerHTML = "KHT Hosted Project: " + projectName;
+                       let projectNameParsed = projectName.split(";");
+                       document.getElementById("project-name").innerHTML = "<p style='font-weight:600;'>KHT Hosted Project: <p>"+ '<ul style="font-size: 0.85em;"><li>' + projectNameParsed.join("</li><li>"); + '</li></ul>';
                      }
                      if (e.key === 'common-disease') {
                        const commonDisease = localStorage.getItem('common-disease');
