@@ -61,7 +61,7 @@ def get_route(start_node: int, end_node: int):
             'SELECT id, source, target, cost AS cost FROM new_edges',
             (SELECT source_id FROM start_point),
             (SELECT target_id FROM end_point),
-            directed := true
+            directed := false
         )
     ),
     path_with_geom AS (
