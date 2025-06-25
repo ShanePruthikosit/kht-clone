@@ -509,8 +509,8 @@ def insert_village_url(village_url_data : village_url_data):
 
 def count_user(ip=""):
     query = None
-    query = sql.SQL("""INSERT INTO ipaddr (ip, time_stamp) 
-                       SELECT {}, CAST(TO_CHAR(NOW()::date, 'DD/MM/YYYY') AS VARCHAR(256))""").format(sql.Literal(ip))
+    query = sql.SQL("""INSERT INTO ipaddr (ip, time_stamp) VALUES (%s, NOW())""")
+    cursor.execute(query, (ip,))
     try:
         mogrified_query = cursor.mogrify(query)
         cursor.execute(query)
