@@ -23,6 +23,10 @@ from shapely.geometry import mapping
 from shapely.wkb import loads as wkb_loads
 import json
 from village_url_model import village_url_data
+from datetime import datetime
+import pytz
+
+bangkok_time = datetime.now(pytz.timezone('Asia/Bangkok')) #for future frontend display if needed
 
 import sys
 testing_path = '/home/kht-team/secret_function/'
