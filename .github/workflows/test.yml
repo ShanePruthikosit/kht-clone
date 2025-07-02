@@ -35,5 +35,9 @@ jobs:
         scp -r -i private_key -o StrictHostKeyChecking=no \
           ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:/var/www/KHT_Homepage_Deploy
         
+        # *** NEW: Change ownership to root ***
+        ssh -i private_key -o StrictHostKeyChecking=no \
+          $DEPLOY_USER@$DEPLOY_HOST \
+          "sudo chown -R root:root /var/www/KHT_Homepage_Deploy"
         # Cleanup
         rm private_key creds.env
