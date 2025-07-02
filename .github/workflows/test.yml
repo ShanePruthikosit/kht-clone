@@ -1,4 +1,4 @@
-name: Deploy Directory with SCP
+name: Deploy to frontend to dev server
 on:
   workflow_dispatch:
 jobs:
