@@ -1,0 +1,36 @@
+name: Deploy Directory with SCP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Deploy frontend to dev server
+      env:
+        CREDENTIALS: ${{ secrets.credentials }}
+      run: |
+        # Write credentials to temporary file
+        echo "$CREDENTIALS" > creds.env
+        
+        # Parse credentials
+        export DEPLOY_HOST=$(grep '^DEPLOY_HOST=' creds.env | cut -d'=' -f2-)
+        export DEPLOY_USER=$(grep '^DEPLOY_USER=' creds.env | cut -d'=' -f2-)
+        export DEPLOY_PATH=$(grep '^DEPLOY_PATH=' creds.env | cut -d'=' -f2-)
+        
+        # Extract SSH key (everything after SSH_PRIVATE_KEY= line)
+        sed -n '/^SSH_PRIVATE_KEY=/,$p' creds.env | sed 's/^SSH_PRIVATE_KEY=//' > private_key
+        chmod 600 private_key
+        
+        # Deploy using SCP
+        scp -r -i private_key -o StrictHostKeyChecking=no \
+          ./testdir/ $DEPLOY_USER@$DEPLOY_HOST:/var/www/html/
+        
+        # Cleanup
+        rm private_key creds.env
