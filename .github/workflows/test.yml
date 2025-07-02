@@ -21,11 +21,6 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-        run: |
-          # Create SSH directory and write private key from repository secrets
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
           
           # Add server to known hosts to avoid host key verification
           ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts
