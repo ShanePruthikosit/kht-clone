@@ -1,4 +1,4 @@
-name: Deploy Directory with SCP
+name: Deployment test
 
 on:
   workflow_dispatch:
@@ -16,10 +16,9 @@ jobs:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           # Write SSH private key to temporary file
-          echo "$SSH_PRIVATE_KEY" > private_key
+          echo "secrets.SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
           
           # Deploy using SCP
