@@ -18,7 +18,7 @@ jobs:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
           # Write SSH private key to temporary file
-          echo "secrets.SSH_PRIVATE_KEY" > private_key
+          echo "secrets.PRIVATE_KEY" > private_key
           chmod 600 private_key
           
           # Deploy using SCP
