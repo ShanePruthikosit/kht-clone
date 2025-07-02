@@ -17,15 +17,14 @@ jobs:
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
-
-          # Setup SSH key
-          mkdir -p ~/.ssh
-          echo "${{ secrets.Private_key }}" | tr -d '\r' > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts
-          
-          # Deploy
-          scp -r ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
-          
+          # Write SSH private key to temporary file
+          echo "${{ secrets.PRIVATE_KEY }}" > private_key
+          chmod 600 private_key
+      
+          # Deploy using SCP
+          scp -r -i private_key -o StrictHostKeyChecking=no \
+            ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+      
           # Cleanup
-          rm ~/.ssh/id_rsa
+          rm private_key
+
