@@ -29,15 +29,11 @@ jobs:
         # Delete existing directory contents on server
         ssh -i private_key -o StrictHostKeyChecking=no \
         $DEPLOY_USER@$DEPLOY_HOST \
-        "rm -rf /var/www/KHT_Homepage_Deploy"
+        "rm -rf /var/www/KHT_Homepage_Deploy/*"
         
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
           ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:/var/www/KHT_Homepage_Deploy
         
-        # *** NEW: Change ownership to root ***
-        ssh -i private_key -o StrictHostKeyChecking=no \
-          $DEPLOY_USER@$DEPLOY_HOST \
-          "sudo chown -R root:root /var/www/KHT_Homepage_Deploy"
         # Cleanup
         rm private_key creds.env
