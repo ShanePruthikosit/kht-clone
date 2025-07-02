@@ -26,6 +26,11 @@ jobs:
         sed -n '/^SSH_PRIVATE_KEY=/,$p' creds.env | sed 's/^SSH_PRIVATE_KEY=//' > private_key
         chmod 600 private_key
         
+        # Delete existing directory contents on server
+        ssh -i private_key -o StrictHostKeyChecking=no \
+        $DEPLOY_USER@$DEPLOY_HOST \
+        "rm -rf /var/www/KHT_Homepage_Deploy/* /var/www/KHT_Homepage_Deploy/.*"
+        
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
           ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:/var/www/KHT_Homepage_Deploy
