@@ -10,6 +10,29 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
+    - name: Validate required files
+      run: |
+        SOURCE_DIR="./Src/KHT_Homepage/KHT_Homepage_Deploy"
+        
+        # Check if source directory exists
+        if [ ! -d "$SOURCE_DIR" ]; then
+          echo "Error: Source directory $SOURCE_DIR does not exist"
+          exit 1
+        fi
+        
+        # Check for required files
+        if [ ! -f "$SOURCE_DIR/index.html" ]; then
+          echo "Error: index.html not found in $SOURCE_DIR"
+          exit 1
+        fi
+        
+        if [ ! -f "$SOURCE_DIR/index.js" ]; then
+          echo "Error: index.js not found in $SOURCE_DIR"
+          exit 1
+        fi
+        
+        echo "✓ All required files found:"
+  
     - name: Deploy frontend to prod server
       env:
         CREDENTIALS: ${{ secrets.prod_credential }}
