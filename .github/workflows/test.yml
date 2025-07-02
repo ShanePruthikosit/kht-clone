@@ -1,39 +1,34 @@
-name: Deployment test
-
+name: Deploy Directory with SCP
 on:
   workflow_dispatch:
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: Development
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Deploy frontend to dev server
+      env:
+        CREDENTIALS: ${{ secrets.dev_credential }}
+      run: |
+        # Write credentials to temporary file
+        echo "$CREDENTIALS" > creds.env
         
-      - name: Deploy frontend to dev server
-        env:
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
-          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
-        run: |
-          # Create SSH directory and write private key from repository secrets
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-        run: |
-          # Setup SSH key
-          mkdir -p ~/.ssh
-          echo "${{ secrets.Private_key }}" | tr -d '\r' > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts
-          
-          # Debug: Print private key
-          echo "Private key content:"
-          cat ~/.ssh/id_rsa
-          
-          # Deploy
-          scp -r ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
-          
-          # Cleanup
-          rm ~/.ssh/id_rsa
+        # Parse credentials
+        export DEPLOY_HOST=$(grep '^DEPLOY_HOST=' creds.env | cut -d'=' -f2-)
+        export DEPLOY_USER=$(grep '^DEPLOY_USER=' creds.env | cut -d'=' -f2-)
+        export DEPLOY_PATH=$(grep '^DEPLOY_PATH=' creds.env | cut -d'=' -f2-)
+        
+        # Extract SSH key (everything after SSH_PRIVATE_KEY= line)
+        sed -n '/^SSH_PRIVATE_KEY=/,$p' creds.env | sed 's/^SSH_PRIVATE_KEY=//' > private_key
+        chmod 600 private_key
+        
+        # Deploy using SCP
+        scp -r -i private_key -o StrictHostKeyChecking=no \
+          ./Src/KHT_Homepage/KHT_Homepage_Deploy $DEPLOY_USER@$DEPLOY_HOST:/var/www/html/
+        
+        # Cleanup
+        rm private_key creds.env
