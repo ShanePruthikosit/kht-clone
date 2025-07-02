@@ -28,7 +28,7 @@ jobs:
         
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
-          ./Src/KHT_Homepage/KHT_Homepage_Deploy $DEPLOY_USER@$DEPLOY_HOST:/var/www/html/
+          ./Src/KHT_Homepage/KHT_Homepage_Deploy $DEPLOY_USER@$DEPLOY_HOST:/var/www/
         
         # Cleanup
         rm private_key creds.env
