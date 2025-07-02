@@ -1,4 +1,4 @@
-name: Deploy backend to dev server
+name: Deploy frontend to dev server
 on:
   workflow_dispatch:
 jobs:
@@ -33,7 +33,7 @@ jobs:
         
         echo "✓ All required files found:"
         
-    - name: Deploy backend to dev server
+    - name: Deploy frontend to dev server
       env:
         CREDENTIALS: ${{ secrets.dev_credential }}
       run: |
