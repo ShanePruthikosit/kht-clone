@@ -1,4 +1,4 @@
-name: Deploy frontend to dev server
+name: Deploy backend to dev server
 on:
   workflow_dispatch:
 jobs:
@@ -51,7 +51,7 @@ jobs:
         # Delete existing directory contents on server
         ssh -i private_key -o StrictHostKeyChecking=no \
         $DEPLOY_USER@$DEPLOY_HOST \
-        "rm -rf /home/urd2024/KHT_API"
+        "rm -rf /home/urd2024/KHT_API/*"
         
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
