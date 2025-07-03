@@ -150,4 +150,5 @@ form.addEventListener("submit", async (event) => {
 
 document.getElementById("clear-button").addEventListener("click", function () {
   document.getElementById("village-url-form").reset();
+  document.getElementById("message").innerHTML="";
 });
