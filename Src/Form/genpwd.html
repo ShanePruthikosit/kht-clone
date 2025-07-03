@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- This HTML file is intended for creating a new password for the 
+     village URL form. It takes a plain text password and prints its
+     hashed value. The developer must then update the users table in the 
+     database with the new, hashed password.
+     The file is intended to be executed on a machine that has
+     the GitHub source on the local disk.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Hashed Password</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <h1>Generate Hashed Password</h1>
+    <div width="40%">
+            <label for="password"><b>Enter desired new password in plain text</b></label>
+            <input type="text" id="password" name="password" required><br>
+            <button style="text-align: center;" 
+                id="submit-button" onclick="showHashedValue()">
+                Generate
+            </button>
+            <p id="hashedpwd" style="font-weight: bold; font-size: 24pt; text-align: center;">
+            </p>
+    </div>
+    <script src="../KHT_API/testpackage.js"></script>
+    <script>
+        function showHashedValue() {
+            pwdValue = document.getElementById("password").value;
+            getTestPackage(pwdValue).then(
+                function(value) {
+                    document.getElementById("hashedpwd").innerHTML = value;        
+                }
+            );
+        }
+
+    </script>
+</body>
+</html>
