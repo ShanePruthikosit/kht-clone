@@ -1,5 +1,7 @@
 <?php
 //index.php
+// NB: This file is obsolete. We use index.html instead
+
 
 $error = '';
 $village_name = '';
