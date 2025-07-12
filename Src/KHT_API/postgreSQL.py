@@ -23,6 +23,10 @@ from shapely.geometry import mapping
 from shapely.wkb import loads as wkb_loads
 import json
 from village_url_model import village_url_data
+from datetime import datetime
+import pytz
+
+bangkok_time = datetime.now(pytz.timezone('Asia/Bangkok')) #for future frontend display if needed
 
 import sys
 testing_path = '/home/kht-team/secret_function/'
@@ -350,7 +354,7 @@ Return data output in geojson format.
 '''
 def get_school():
     query = None
-    query = sql.SQL("SELECT * FROM school")
+    query = sql.SQL("SELECT * FROM school_old")
     try:
         cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
@@ -509,8 +513,8 @@ def insert_village_url(village_url_data : village_url_data):
 
 def count_user(ip=""):
     query = None
-    query = sql.SQL("""INSERT INTO ipaddr (ip, time_stamp) 
-                       SELECT {}, CAST(TO_CHAR(NOW()::date, 'DD/MM/YYYY') AS VARCHAR(256))""").format(sql.Literal(ip))
+    query = sql.SQL("""INSERT INTO ipaddr (ip, time_stamp) VALUES (%s, NOW())""")
+    cursor.execute(query, (ip,))
     try:
         mogrified_query = cursor.mogrify(query)
         cursor.execute(query)

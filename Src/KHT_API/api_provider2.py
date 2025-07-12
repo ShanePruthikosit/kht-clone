@@ -46,19 +46,26 @@ ROUTING_DB_CONFIG = {
     "port": "5432"
 }
 
-def get_route(start_node: int, end_node: int):
-    query = """
+def get_route(start_node: int, end_node: int, use_elevation: bool = False):
+    if use_elevation:
+        node_table = "elevation_nodes"
+        edge_table = "elevation_edges"
+    else:
+        node_table = "new_nodes"
+        edge_table = "new_edges"
+
+    query = f"""
     WITH 
     start_point AS (
-        SELECT id AS source_id FROM new_nodes WHERE id = %s LIMIT 1
+        SELECT id AS source_id FROM {node_table} WHERE id = %s LIMIT 1
     ),
     end_point AS (
-        SELECT id AS target_id FROM new_nodes WHERE id = %s LIMIT 1
+        SELECT id AS target_id FROM {node_table} WHERE id = %s LIMIT 1
     ),
     path_result AS (
         SELECT * 
         FROM pgr_dijkstra(
-            'SELECT id, source, target, cost AS cost FROM new_edges',
+            'SELECT id, source, target, cost AS cost FROM {edge_table}',
             (SELECT source_id FROM start_point),
             (SELECT target_id FROM end_point),
             directed := false
@@ -71,10 +78,11 @@ def get_route(start_node: int, end_node: int):
         FROM 
             path_result p
         JOIN 
-            new_edges e ON p.edge = e.id
+            {edge_table} e ON p.edge = e.id
     )
     SELECT json_agg(geojson ORDER BY seq) FROM path_with_geom;
     """
+
     try:
         conn = psycopg2.connect(**ROUTING_DB_CONFIG)
         cur = conn.cursor()
@@ -111,10 +119,10 @@ def get_route(start_node: int, end_node: int):
         return {"error": f"Database error: {e}"}
 
 @app.get("/api/route/")
-def get_shortest_route(start: int, end: int):
+def get_shortest_route(start: int, end: int, use_elevation: int = 0):
     if not start or not end:
         raise HTTPException(status_code=400, detail="Missing start or end node")
-    route_data = get_route(start, end)
+    route_data = get_route(start, end, use_elevation=bool(use_elevation))
     return JSONResponse(content=route_data)
 # --- End Integration of Test PG API Functionality ---
 
