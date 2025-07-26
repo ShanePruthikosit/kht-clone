@@ -1,4 +1,4 @@
-name: deploy Frontend to Production server
+name: deploy frontend to prod server
 on:
   workflow_dispatch:
 jobs:
@@ -35,7 +35,7 @@ jobs:
   
     - name: Deploy frontend to prod server
       env:
-        CREDENTIALS: ${{ secrets.clone_prod_credential }}
+        CREDENTIALS: ${{ secrets.prod_credential }}
       run: |
         # Write credentials to temporary file
         echo "$CREDENTIALS" > creds.env
