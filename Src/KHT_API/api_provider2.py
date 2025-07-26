@@ -329,8 +329,8 @@ if __name__ == "__main__":
         host = argvs[1]
         port = int(argvs[2])
 
-    cert_file = '/etc/letsencrypt/live/ailurophile.xyz:2546/fullchain.pem'
-    key_file = '/etc/letsencrypt/live/ailurophile.xyz:2546/privkey.pem'
+    cert_file = '/etc/letsencrypt/live/kht-map.org/fullchain.pem'
+    key_file = '/etc/letsencrypt/live/kht-map.org/privkey.pem'
     passphrase = b'd0#KHTM@p67'
 
     ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
