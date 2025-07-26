@@ -1,0 +1,62 @@
+name: Deploy frontend to dev server
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Development
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Validate required files
+      run: |
+        SOURCE_DIR="./Src/KHT_Homepage/KHT_Homepage_Deploy"
+        
+        # Check if source directory exists
+        if [ ! -d "$SOURCE_DIR" ]; then
+          echo "Error: Source directory $SOURCE_DIR does not exist"
+          exit 1
+        fi
+        
+        # Check for required files
+        if [ ! -f "$SOURCE_DIR/index.html" ]; then
+          echo "Error: index.html not found in $SOURCE_DIR"
+          exit 1
+        fi
+        
+        if [ ! -f "$SOURCE_DIR/index.js" ]; then
+          echo "Error: index.js not found in $SOURCE_DIR"
+          exit 1
+        fi
+        
+        echo "✓ All required files found:"
+        
+    - name: Deploy frontend to dev server
+      env:
+        CREDENTIALS: ${{ secrets.dev_credential }}
+      run: |
+        # Write credentials to temporary file
+        echo "$CREDENTIALS" > creds.env
+        
+        # Parse credentials
+        export DEPLOY_HOST=$(grep '^DEPLOY_HOST=' creds.env | cut -d'=' -f2-)
+        export DEPLOY_USER=$(grep '^DEPLOY_USER=' creds.env | cut -d'=' -f2-)
+        export DEPLOY_PATH=$(grep '^DEPLOY_PATH=' creds.env | cut -d'=' -f2-)
+        
+        # Extract SSH key (everything after SSH_PRIVATE_KEY= line)
+        sed -n '/^SSH_PRIVATE_KEY=/,$p' creds.env | sed 's/^SSH_PRIVATE_KEY=//' > private_key
+        chmod 600 private_key
+        
+        # Delete existing directory contents on server
+        ssh -i private_key -o StrictHostKeyChecking=no \
+        $DEPLOY_USER@$DEPLOY_HOST \
+        "rm -rf /var/www/KHT_Homepage_Deploy/*"
+        
+        # Deploy using SCP
+        scp -r -i private_key -o StrictHostKeyChecking=no \
+          ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:/var/www/KHT_Homepage_Deploy
+        
+        # Cleanup
+        rm private_key creds.env
