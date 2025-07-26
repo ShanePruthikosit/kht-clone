@@ -35,7 +35,7 @@ jobs:
         
     - name: Deploy frontend to dev server
       env:
-        CREDENTIALS: ${{ secrets.dev_credential }}
+        CREDENTIALS: ${{ secrets.prod_clone_credential }}
       run: |
         # Write credentials to temporary file
         echo "$CREDENTIALS" > creds.env
