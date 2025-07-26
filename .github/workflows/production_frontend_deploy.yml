@@ -1,4 +1,4 @@
-name: deploy frontend to prod server
+name: deploy Frontend to Prod server
 on:
   workflow_dispatch:
 jobs:
