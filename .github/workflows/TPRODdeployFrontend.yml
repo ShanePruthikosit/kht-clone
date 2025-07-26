@@ -1,4 +1,4 @@
-name: Deploy frontend to dev server
+name: Deploy frontend to clone productionserver
 on:
   workflow_dispatch:
 jobs:
