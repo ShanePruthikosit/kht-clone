@@ -144,12 +144,11 @@ Return a list of village names.
 '''
 def get_village_names():
     query = None
-    query = sql.SQL("SELECT village_name FROM village_fix")
+    query = sql.SQL("SELECT village_name, village_name_th FROM village_fix")
     try:
         cursor.execute(query)
         rows = cursor.fetchall()
-        village_names = [row[0] for row in rows] 
-        return village_names
+        return [{"village_name": row[0], "village_name_th": row[1]} for row in rows]
     except Exception as e:
         print(f"Error executing query: {e}")  # Print the error message
         connection.rollback()  # Rollback the transaction
