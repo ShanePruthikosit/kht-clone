@@ -109,6 +109,9 @@ function onEachFeatureFunction(feature, layer) {
         const villageName = feature.properties["village_name"];
         localStorage.setItem('village-name', villageName === null ? '-' : villageName);
 
+        const villageNameTh = feature.properties["village_name_th"];
+        localStorage.setItem('village-name-th', villageNameTh === null ? '-' : villageNameTh);
+
         const roadQuality = feature.properties["road_conditions"];
         localStorage.setItem('road-quality', roadQuality === null ? '-' : roadQuality);
 
