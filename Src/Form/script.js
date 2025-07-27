@@ -12,7 +12,7 @@ function getCurrentTime() {
 /* ==========================================
           Endpoint url configuration
 =============================================*/
-const host = "ailurophile.xyz";
+const host = "kht-map.org";
 const port = "2546";
 const protocol = "https";
 
