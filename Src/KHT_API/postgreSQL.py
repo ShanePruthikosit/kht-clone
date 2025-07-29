@@ -153,6 +153,10 @@ def get_village_names():
         print(f"Error executing query: {e}")  # Print the error message
         connection.rollback()  # Rollback the transaction
 
+'''
+The function to query all village names in Thai.
+Return a list of village names.
+'''
 def get_village_names_th():
     query = None
     query = sql.SQL("SELECT village_name_th FROM village_fix")
