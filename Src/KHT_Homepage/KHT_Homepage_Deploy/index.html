@@ -37,6 +37,9 @@
                                <h1 style="font-size: 36px;">
                                  <b><p id="village-name"></p></b>
                                </h1>
+                               <h2>
+                                 <p id="village-name-th"></p>
+                               </h2>
                              </a>
                              <a href="#" class="nav-link">
                                <h2 style="padding-top: 0%;">
@@ -212,6 +215,8 @@
                    window.onload = function () {
                      document.getElementById('village-name').innerText = 'Village Name';
                      console.log('Village Name1: ' + localStorage.getItem('village-name'));
+                     document.getElementById('village-name-th').innerText = 'Village Name Thai';
+                     console.log('Village Name2: ' + localStorage.getItem('village-name-th'));
                      console.log("local storage length: " + localStorage.length)
                      document.getElementById('road-quality').innerHTML = 'Road Quality';
                      document.getElementById('distance-pratom').innerHTML = 'Distance to Primary school';
@@ -239,6 +244,12 @@
                        document.getElementById("village-name").innerHTML = villageName;
                        console.log('Village Name2: ' + localStorage.getItem('village-name'));
                      }
+                     if (e.key === 'village-name-th') {
+                        const villageNameTh = localStorage.getItem('village-name-th');
+                        document.getElementById("village-name-th").innerHTML = villageNameTh;
+                        console.log('Village Name2: ' + localStorage.getItem('village-name-th'));
+                     }
+
                      if (e.key === 'road-quality') {
                        let roadQuality = localStorage.getItem('road-quality');
                        if (roadQuality == "null") {

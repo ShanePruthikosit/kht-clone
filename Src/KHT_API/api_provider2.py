@@ -205,6 +205,11 @@ def pull_village_names():
     village_names = postgreSQL.get_village_names()
     return village_names
 
+@app.get("/api/village_names_th/")
+def pull_village_names_th():
+    village_names_th = postgreSQL.get_village_names_th()
+    return village_names_th
+
 '''
 Function handles all projects query
 Return data output in json format
