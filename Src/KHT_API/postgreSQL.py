@@ -110,26 +110,26 @@ Return data output in geojson format.
 def get_village(village_id=""):
     query = None
     if village_id == "":
-        query = sql.SQL('''SELECT village_fix.*, 
+        query = sql.SQL('''SELECT village.*, 
                                     ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
                                     ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
                                     ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
                                     ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-                                FROM village_fix
-                                LEFT JOIN url2 ON village_fix.id = url2.village_id
-                                GROUP BY village_fix.id
-                                ORDER BY village_fix.village_name''')
+                                FROM village
+                                LEFT JOIN url2 ON village.id = url2.village_id
+                                GROUP BY village.id
+                                ORDER BY village.village_name''')
     else:
-        query = sql.SQL('''SELECT village_fix.*,
+        query = sql.SQL('''SELECT village.*,
                             ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
                             ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
                             ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
                             ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-                        FROM village_fix
-                        LEFT JOIN url2 ON village_fix.id = url2.village_id
-                        WHERE village_fix.id = {}::uuid
-                        GROUP BY village_fix.id
-                        ORDER BY village_fix.village_name''').format(sql.Literal(village_id)) 
+                        FROM village
+                        LEFT JOIN url2 ON village.id = url2.village_id
+                        WHERE village.id = {}::uuid
+                        GROUP BY village.id
+                        ORDER BY village.village_name''').format(sql.Literal(village_id))
     try:
         cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
@@ -144,11 +144,12 @@ Return a list of village names.
 '''
 def get_village_names():
     query = None
-    query = sql.SQL("SELECT village_name, village_name_th FROM village_fix")
+    query = sql.SQL("SELECT village_name FROM village_fix")
     try:
         cursor.execute(query)
         rows = cursor.fetchall()
-        return [{"village_name": row[0], "village_name_th": row[1]} for row in rows]
+        village_names = [row[0] for row in rows] 
+        return village_names
     except Exception as e:
         print(f"Error executing query: {e}")  # Print the error message
         connection.rollback()  # Rollback the transaction
