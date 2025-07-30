@@ -18,7 +18,9 @@ Arguments:
     layer - the layer that is clicked
 */
 function onEachFeatureFunction(feature, layer) {
-    layer.bindPopup(feature.properties.village_name);
+    const nameEN = feature.properties.village_name || "";
+    const nameTH = feature.properties.village_name_th || "";
+    layer.bindPopup(`${nameEN}<br>${nameTH}`);
     layer.on('click', function (e) {
         // Reset the style of the previously clicked layer
         resetClickedLayer();
