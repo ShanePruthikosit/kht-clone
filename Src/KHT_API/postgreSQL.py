@@ -26,6 +26,8 @@ from village_url_model import village_url_data
 from datetime import datetime
 import pytz
 
+from testing_cache import my_hash
+
 bangkok_time = datetime.now(pytz.timezone('Asia/Bangkok')) #for future frontend display if needed
 
 import sys
@@ -469,7 +471,7 @@ depends on the village name is found in the village table or not.
 '''
 def insert_village_url(village_url_data : village_url_data):
     # print(village_url_data)
-    password = hash(village_url_data.password)
+    password = my_hash(village_url_data.password)
     query_password = sql.SQL('''
                                 SELECT password
                                 FROM Users
