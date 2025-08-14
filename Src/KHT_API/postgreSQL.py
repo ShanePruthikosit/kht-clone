@@ -489,9 +489,10 @@ def insert_village_url(village_url_data : village_url_data):
             INSERT INTO url2 (village_name, url, image_url, article_title, posted_date, created_time, sequence, village_id)
             SELECT %s, %s, %s, %s, %s, CAST(TO_CHAR(NOW()::date, 'DD/MM/YYYY') AS VARCHAR(256)),
                 COALESCE((SELECT MAX(sequence) FROM url2 WHERE village_name = %s), 0) + 1,
-                vf.village_id
+                vf.id
             FROM village_fix vf
             WHERE LOWER(vf.village_name) = LOWER(%s)
+            LIMIT 1;
         """)
         try:
             print(cursor.mogrify(query, params).decode('utf-8'))
