@@ -1,4 +1,4 @@
-name: deploy Backend to Clone server
+name: deploy Backend to Clone server using ENV
 on:
   workflow_dispatch:
 jobs:
