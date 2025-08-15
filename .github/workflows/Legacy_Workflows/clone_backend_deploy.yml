@@ -1,4 +1,4 @@
-name: deploy Backend to Clone server using ENV
+name: deploy Backend to Clone server
 on:
   workflow_dispatch:
 jobs:
@@ -9,13 +9,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: 'Create env file'
-      run: |
-        touch .env
-        echo hostname="kht-dev.poohserver.com" >> .env
-        cat .env
-
+      
     - name: Validate required files
       run: |
         SOURCE_DIR="./Src/KHT_API"

@@ -1,4 +1,4 @@
-name: deploy Backend to Clone server using ENV
+name: deploy Frontend to Clone prod server
 on:
   workflow_dispatch:
 jobs:
@@ -9,16 +9,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: 'Create env file'
-      run: |
-        touch .env
-        echo hostname="kht-dev.poohserver.com" >> .env
-        cat .env
-
+      
     - name: Validate required files
       run: |
-        SOURCE_DIR="./Src/KHT_API"
+        SOURCE_DIR="./Src/KHT_Homepage/KHT_Homepage_Deploy"
         
         # Check if source directory exists
         if [ ! -d "$SOURCE_DIR" ]; then
@@ -27,19 +21,19 @@ jobs:
         fi
         
         # Check for required files
-        if [ ! -f "$SOURCE_DIR/api_provider2.py" ]; then
-          echo "Error: api_provider2.py not found in $SOURCE_DIR"
+        if [ ! -f "$SOURCE_DIR/index.html" ]; then
+          echo "Error: index.html not found in $SOURCE_DIR"
           exit 1
         fi
         
-        if [ ! -f "$SOURCE_DIR/testpackage.js" ]; then
-          echo "Error: testpackage.js not found in $SOURCE_DIR"
+        if [ ! -f "$SOURCE_DIR/index.js" ]; then
+          echo "Error: index.js not found in $SOURCE_DIR"
           exit 1
         fi
         
         echo "✓ All required files found:"
-        
-    - name: Deploy backend to dev server
+  
+    - name: Deploy frontend to prod server
       env:
         CREDENTIALS: ${{ secrets.clone_prod_credential }}
       run: |
@@ -49,7 +43,8 @@ jobs:
         # Parse credentials
         export DEPLOY_HOST=$(grep '^DEPLOY_HOST=' creds.env | cut -d'=' -f2-)
         export DEPLOY_USER=$(grep '^DEPLOY_USER=' creds.env | cut -d'=' -f2-)
-
+        export DEPLOY_PATH=$(grep '^DEPLOY_PATH=' creds.env | cut -d'=' -f2-)
+        
         # Extract SSH key (everything after SSH_PRIVATE_KEY= line)
         sed -n '/^SSH_PRIVATE_KEY=/,$p' creds.env | sed 's/^SSH_PRIVATE_KEY=//' > private_key
         chmod 600 private_key
@@ -57,11 +52,11 @@ jobs:
         # Delete existing directory contents on server
         ssh -i private_key -o StrictHostKeyChecking=no \
         $DEPLOY_USER@$DEPLOY_HOST \
-        "find /home/kht-team/KHT_API/ -mindepth 1 ! -path '*/__pycache__/*' -exec rm -rf {} + 2>/dev/null || true"
+        "rm -rf /var/www/KHT_Homepage_Deploy/*"
         
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
-          ./Src/KHT_API/* $DEPLOY_USER@$DEPLOY_HOST:/home/kht-team/KHT_API
+          ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:/var/www/KHT_Homepage_Deploy
         
         # Cleanup
         rm private_key creds.env
