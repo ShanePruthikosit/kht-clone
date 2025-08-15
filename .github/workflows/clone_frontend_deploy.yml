@@ -10,12 +10,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: 'Create env file'
+    - name: Create config file
       run: |
-        touch .env
-        echo hostname="kht-dev.poohserver.com" >> .env
-        cat .env
-        
+        echo "export const config = { hostname: 'kht-dev.poohserver.com' };" > hostnameConfig.js
+     
     - name: Validate required files
       run: |
         SOURCE_DIR="./Src/KHT_Homepage/KHT_Homepage_Deploy"
