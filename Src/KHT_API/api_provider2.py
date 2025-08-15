@@ -337,8 +337,8 @@ if __name__ == "__main__":
         host = argvs[1]
         port = int(argvs[2])
 
-    cert_file = '/etc/letsencrypt/live/{hostname}/fullchain.pem'
-    key_file = '/etc/letsencrypt/live/{hostname}/privkey.pem'
+    cert_file = f'/etc/letsencrypt/live/{hostname}/fullchain.pem'
+    key_file = f'/etc/letsencrypt/live/{hostname}/privkey.pem'
     passphrase = b'd0#KHTM@p67'
 
     ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
