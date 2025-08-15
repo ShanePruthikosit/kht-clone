@@ -23,8 +23,10 @@ import ssl
 import execjs
 import psycopg2
 import os
+from dotenv import load_dotenv
 from village_url_model import village_url_data
 
+load_dotenv()
 hostname = os.getenv('hostname', 'kht-map.org')
 app = FastAPI()
 user_dict = {}
