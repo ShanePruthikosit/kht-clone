@@ -40,7 +40,7 @@ const currentYear = globalDate.getFullYear();
 /* ==========================================
             Endpoint url configuration
 =============================================*/
-const host = 'kht-map.org';
+const host = process.env.hostname || 'kht-map.org';
 const port = '2546';
 const protocol = 'https';
 // const url = `${protocol}://${host}:${port}/api/option/?time=${time}&key=${hash}` for testing
