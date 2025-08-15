@@ -1,4 +1,4 @@
-name: deploy Backend to Clone server using ENV
+name: deploy Backend to Clone server
 on:
   workflow_dispatch:
 jobs:
@@ -62,6 +62,7 @@ jobs:
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
           ./Src/KHT_API/* $DEPLOY_USER@$DEPLOY_HOST:/home/kht-team/KHT_API
+
         scp -r -i private_key -o StrictHostKeyChecking=no \
           .env $DEPLOY_USER@$DEPLOY_HOST:/home/kht-team/KHT_API
         
