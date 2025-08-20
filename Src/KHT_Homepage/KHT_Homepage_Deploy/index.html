@@ -203,17 +203,17 @@
                    const villageDetails = document.getElementById('villageDetails');
                    const instructions = document.getElementById('instructions');
                
-                  //  toggleButton.addEventListener('click', function () {
-                  //    if (instructions.style.display === 'none') {
-                  //      villageDetails.style.display = 'none';
-                  //      instructions.style.display = 'block';
-                  //      toggleButton.textContent = 'Toggle Village Details';
-                  //    } else {
-                  //      villageDetails.style.display = 'block';
-                  //      instructions.style.display = 'none';
-                  //      toggleButton.textContent = 'Toggle Help';
-                  //    }
-                  //  });
+                   toggleButton.addEventListener('click', function () {
+                     if (instructions.style.display === 'none') {
+                       villageDetails.style.display = 'none';
+                       instructions.style.display = 'block';
+                       toggleButton.textContent = 'Toggle Village Details';
+                     } else {
+                       villageDetails.style.display = 'block';
+                       instructions.style.display = 'none';
+                       toggleButton.textContent = 'Toggle Help';
+                     }
+                   });
                  </script>
                  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
