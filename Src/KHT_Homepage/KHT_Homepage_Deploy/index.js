@@ -306,8 +306,48 @@ var RecenterControl = L.Control.extend({
 });
 
 
-// Add the control to the map
+// Add the recenter control to the map
 new RecenterControl().addTo(map);
+
+// Add the help toggle control to the map
+var ToggleHelpControl = L.Control.extend({
+    options: {
+        position: 'topleft' // Position of the control
+    },
+
+    onAdd: function (map) {
+        // Create an img element to match the recenter button style
+        var img = L.DomUtil.create('img');
+        
+        // Set the source of the image (you'll need to add a help icon to your img folder)
+        img.src = 'img/help.png';
+        
+        // Match styling with the recenter button
+        img.style.width = '2rem';
+        img.style.height = '2rem';
+        img.style.borderRadius = '20%';
+        img.style.border = '1.5px white';
+        img.style.backgroundColor = 'paleturquoise';
+        img.style.padding = '0.4rem';
+        img.style.cursor = 'pointer';
+        img.title = "Help";
+        
+        
+        // Attach the onclick event to the image
+        img.onclick = function () {
+            // Send a message to the parent document to toggle the help/details view
+            let message = JSON.stringify({
+                action: 'toggleHelp'
+            });
+            window.parent.postMessage(message, '*');
+        }
+        
+        return img;
+    }
+});
+
+// Add the control to the map
+new ToggleHelpControl().addTo(map);
 
 // Create a new control
 // Global most usable object
