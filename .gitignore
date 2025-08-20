@@ -1,2 +1,4 @@
 deployAPI.sh
 deployHomePage.sh
+.env
+hostnameConfig.js
