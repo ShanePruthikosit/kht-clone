@@ -10,6 +10,7 @@
 import getData from './get_data.js'
 import { config } from './hostnameConfig.js';
 import { VillageData } from './get_data.js'
+import { toggleRoutingMode, resetRouting } from './routingMode.js';
 
 /* ==========================================
     Prevent leaflet default marker showing up on the map
@@ -711,6 +712,51 @@ document.getElementById('searchButton').addEventListener('click', function () {
         console.log(inputValue);
     }
 });
+
+/* ==========================================
+        Routing Mode Button Control
+=============================================*/
+var routingButtonControl = L.control({ position: 'topleft' });
+
+routingButtonControl.onAdd = function (map) {
+    // Create a div for the control
+    var div = L.DomUtil.create('div', 'routing-button-control');
+    div.className = "leaflet-control-layers leaflet-control";
+    
+    // Add a container for routing buttons
+    var routingContainer = L.DomUtil.create('div', 'routing-buttons-container', div);
+    
+    // Add the routing toggle button
+    var routeButton = L.DomUtil.create('button', 'route-button', routingContainer);
+    routeButton.innerHTML = '<i class="material-icons">directions</i>';
+    routeButton.title = "Route between villages";
+    routeButton.style.width = '32px';
+    routeButton.style.height = '32px';
+    routeButton.style.fontSize = '20px';
+    routeButton.style.borderRadius = '4px';
+    routeButton.style.backgroundColor = 'white';
+    routeButton.style.border = '1px solid #ccc';
+    routeButton.style.cursor = 'pointer';
+    
+    // Add an event listener to the routing button
+    routeButton.addEventListener('click', function () {
+        const isRoutingActive = toggleRoutingMode();
+        if (isRoutingActive) {
+            this.style.backgroundColor = '#ffcc00';
+            alert("Routing mode activated. Click on two villages to find the route between them.");
+        } else {
+            this.style.backgroundColor = 'white';
+        }
+    });
+    
+    // Prevent map interaction when clicking the buttons
+    L.DomEvent.disableClickPropagation(div);
+    
+    return div;
+};
+
+// Add the routing button control to the map
+routingButtonControl.addTo(map);
 
 /* ==========================================
                 LAYER CONTROL
