@@ -202,6 +202,14 @@ async function getHospitals() {
                     onEachFeature: function (feature, layer) {
                         var popupContent = (feature.properties['hospital_name']);
                         layer.bindPopup(popupContent);
+
+                        layer.on('click', function (e) {
+                            console.log("Hospital clicked:", feature.properties["hospital_name"]);
+                            if (isInRoutingMode()) {
+                                handleRoutingVillageClick(feature, layer)
+                                return;
+                            }
+                        });
                     }
                 });
 
@@ -236,7 +244,6 @@ async function getSchools() {
                         layer.on('click', function (e) {
                             console.log("School clicked:", feature.properties["school_name"]);
                             if (isInRoutingMode()) {
-                                console.log("School routing selected");
                                 handleRoutingVillageClick(feature, layer)
                                 return;
                             }

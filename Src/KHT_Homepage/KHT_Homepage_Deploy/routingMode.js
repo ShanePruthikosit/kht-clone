@@ -78,13 +78,14 @@ export function handleRoutingVillageClick(feature, layer) {
 // Function to reset the routing state
 export function resetRouting() {
     // Reset village styles if they exist
-    if (startLayer) {
-        startLayer.setStyle({ fillColor: 'blue', color: 'white' });
-    }
-    if (endLayer) {
-        endLayer.setStyle({ fillColor: 'blue', color: 'white' });
-    }
-    
+    try{
+        if (startLayer) {
+            startLayer.setStyle({ fillColor: 'blue', color: 'white' });
+        }
+        if (endLayer) {
+            endLayer.setStyle({ fillColor: 'blue', color: 'white' });
+        }
+    }catch(error){}
     // Reset state variables
     startVillage = null;
     endVillage = null;
