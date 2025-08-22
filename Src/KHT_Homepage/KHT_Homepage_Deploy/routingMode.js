@@ -37,24 +37,37 @@ export function handleRoutingVillageClick(feature, layer) {
     if (startVillage == null) {
         startVillage = nodeId;
         startLayer = layer;
-        layer.setStyle({ fillColor: 'yellow', color: 'black' });
-        console.log("Start point set:", nodeId);
-        layer.bindPopup(`Selected as starting point: ${feature.properties.village_name}`).openPopup();
+        try
+        {
+            layer.setStyle({ fillColor: 'yellow', color: 'black' });
+            console.log("Start point set:", nodeId);
+            layer.bindPopup(`Selected as starting point: ${feature.properties.village_name}`).openPopup();
+        }
+        catch (error) {
+            // console.error("Error setting start point style:", error);
+            // layer.bindPopup(`Error setting start point style`).openPopup();
+        }
         return;
     } 
     // Set end point
     else if (endVillage == null && startVillage !== nodeId) {
         endVillage = nodeId;
         endLayer = layer;
+        try
+        {
         layer.setStyle({ fillColor: 'orange', color: 'black' });
         layer.bindPopup(`Selected as destination: ${feature.properties.village_name}`).openPopup();
         console.log("End point set:", startVillage);
-
+        }
+        catch (error) {
+            // console.error("Error setting end point style:", error);
+            // layer.bindPopup(`Error setting end point style`).openPopup();
+        }
         // Call getRoute to display the route between the villages
         getData.getRoute(startVillage, endVillage);
 
         //Deactivates routing mode
-        document.querySelector('.route-button').style.backgroundColor = 'white';
+        document.getElementById('routing-button').style.backgroundColor = 'white';
         isRoutingMode = false;
         return;
     }

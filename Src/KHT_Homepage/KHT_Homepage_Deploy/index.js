@@ -721,7 +721,7 @@ var routingButtonControl = L.control({ position: 'topleft' });
 routingButtonControl.onAdd = function (map) {
     // Create a div for the control
     var routeButton = L.DomUtil.create('img');
-    
+    routeButton.id = 'routing-button';
     routeButton.src = 'img/route.png';
 
     // Add the routing toggle button

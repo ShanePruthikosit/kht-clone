@@ -4,6 +4,8 @@
 
 import { map, layerControl, port, host, protocol, getCurrentTime} from "./index.js"
 import { onEachFeatureFunction } from './onEachFeatureFunction.js';
+import { isInRoutingMode, handleRoutingVillageClick } from './routingMode.js';
+
 
 /* for use with getVillageData and fetchInitialVillageData */
 var firstLoad = true;
@@ -230,7 +232,16 @@ async function getSchools() {
                     },
                     onEachFeature: function (feature, layer) {
                         layer.bindPopup(feature.properties["school_name"]);
-                    }
+
+                        layer.on('click', function (e) {
+                            console.log("School clicked:", feature.properties["school_name"]);
+                            if (isInRoutingMode()) {
+                                console.log("School routing selected");
+                                handleRoutingVillageClick(feature, layer)
+                                return;
+                            }
+                        });
+                    }, 
                 });
 
                 // Add the new layer to the layer control
