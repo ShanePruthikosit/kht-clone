@@ -226,6 +226,9 @@ legendControl.onAdd = function (map) {
         '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: blue; stroke: white; "></circle></svg> Village<br>' +
         '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: red; stroke: white;"></circle></svg> Village Clicked<br>' +
         '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: green; stroke: white;"></circle></svg> Search results<br>' +
+        '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: yellow; stroke: black;"></circle></svg> Route start<br>' +
+        '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: orange; stroke: black;"></circle></svg> Route end<br>' +
+        '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:GreenYellow;stroke-width:5"></line></svg> Route path<br>' +
         '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:pink;stroke-width:5"></line></svg> Subdistrict<br>' +
         '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:#FA8072;stroke-width:5"></line></svg> District<br>' +
         '<img src="img/school_marker.png" alt="School" height="5%"> School<br>' +
