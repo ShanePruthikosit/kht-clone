@@ -720,22 +720,19 @@ var routingButtonControl = L.control({ position: 'topleft' });
 
 routingButtonControl.onAdd = function (map) {
     // Create a div for the control
-    var div = L.DomUtil.create('div', 'routing-button-control');
-    div.className = "leaflet-control-layers leaflet-control";
+    var routeButton = L.DomUtil.create('img');
     
-    // Add a container for routing buttons
-    var routingContainer = L.DomUtil.create('div', 'routing-buttons-container', div);
-    
+    routeButton.src = 'img/route.png';
+
     // Add the routing toggle button
-    var routeButton = L.DomUtil.create('button', 'route-button', routingContainer);
-    routeButton.innerHTML = '<i class="material-icons">directions</i>';
     routeButton.title = "Route between villages";
-    routeButton.style.width = '32px';
-    routeButton.style.height = '32px';
+    routeButton.style.width = '2rem';
+    routeButton.style.height = '2rem';
+    routeButton.style.borderRadius = '20%';
     routeButton.style.fontSize = '20px';
-    routeButton.style.borderRadius = '4px';
+    routeButton.style.padding = '0.4rem';
     routeButton.style.backgroundColor = 'white';
-    routeButton.style.border = '1px solid #ccc';
+    routeButton.style.border = '1px solid white';
     routeButton.style.cursor = 'pointer';
     
     // Add an event listener to the routing button
@@ -750,9 +747,9 @@ routingButtonControl.onAdd = function (map) {
     });
     
     // Prevent map interaction when clicking the buttons
-    L.DomEvent.disableClickPropagation(div);
+    L.DomEvent.disableClickPropagation(routeButton);
     
-    return div;
+    return routeButton;
 };
 
 // Add the routing button control to the map
