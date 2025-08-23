@@ -4,6 +4,8 @@
 
 import { map, layerControl, port, host, protocol, getCurrentTime} from "./index.js"
 import { onEachFeatureFunction } from './onEachFeatureFunction.js';
+import { isInRoutingMode, handleRoutingVillageClick } from './routingMode.js';
+
 
 /* for use with getVillageData and fetchInitialVillageData */
 var firstLoad = true;
@@ -200,6 +202,14 @@ async function getHospitals() {
                     onEachFeature: function (feature, layer) {
                         var popupContent = (feature.properties['hospital_name']);
                         layer.bindPopup(popupContent);
+
+                        layer.on('click', function (e) {
+                            console.log("Hospital clicked:", feature.properties["hospital_name"]);
+                            if (isInRoutingMode()) {
+                                handleRoutingVillageClick(feature, layer)
+                                return;
+                            }
+                        });
                     }
                 });
 
@@ -230,7 +240,15 @@ async function getSchools() {
                     },
                     onEachFeature: function (feature, layer) {
                         layer.bindPopup(feature.properties["school_name"]);
-                    }
+
+                        layer.on('click', function (e) {
+                            console.log("School clicked:", feature.properties["school_name"]);
+                            if (isInRoutingMode()) {
+                                handleRoutingVillageClick(feature, layer)
+                                return;
+                            }
+                        });
+                    }, 
                 });
 
                 // Add the new layer to the layer control
@@ -369,6 +387,44 @@ async function fetchVillageByDistance(distance, facilityType) {
     }
 }
 
+/* Call api to get the route between 2 nodes */
+async function getRoute(start,end) {
+    try {
+        // Remove existing route if it exists
+        if (window.Route && map.hasLayer(window.Route)) {
+            map.removeLayer(window.Route);
+            layerControl.removeLayer(window.Route);
+        }
+        
+        const time = getCurrentTime();
+        const hash = await getTestPackage(time);
+        const url = `${protocol}://${host}:${port}/api/route/?start=${start}&end=${end}&time=${time}&key=${hash}`;
+        // Add other layers to the map and the layer control
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                window.Route = L.geoJSON(data, {
+                    style: function (feature) {
+                        return {
+                            color: "GreenYellow",
+                            fillOpacity: 0.5,
+                            weight: 5
+                        };
+                    }
+                }).addTo(map);
+
+                // Add the new layer to the layer control
+                layerControl.addOverlay(window.Route, 'Route');
+            });
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching GeoJSON:', error);
+        }
+    }
+}
+
 export default {
     getVillageData,
     fetchInitialVillageData,
@@ -382,7 +438,8 @@ export default {
     fetchVillagebByYear,
     fetchVillagebByStartAndEndYear,
     fetchVillagebyProjectType,
-    fetchVillageByDistance
+    fetchVillageByDistance,
+    getRoute
 }
 
 export { VillageData }

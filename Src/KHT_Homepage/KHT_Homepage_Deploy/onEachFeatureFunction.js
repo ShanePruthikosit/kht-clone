@@ -1,4 +1,5 @@
 import { getCurrentTime, protocol, host, port } from './index.js';
+import { isInRoutingMode, handleRoutingVillageClick } from './routingMode.js';
 
 // Variable to store the currently clicked layer
 var clickedLayer;
@@ -22,6 +23,13 @@ function onEachFeatureFunction(feature, layer) {
     const nameTH = feature.properties.village_name_th || "";
     layer.bindPopup(`${nameEN}<br>${nameTH}`);
     layer.on('click', function (e) {
+
+        // Check for routing mode
+        if (isInRoutingMode()) {
+            handleRoutingVillageClick(feature, layer)
+            return;
+        }
+        
         // Reset the style of the previously clicked layer
         resetClickedLayer();
         // Clear the relevant localStorage items

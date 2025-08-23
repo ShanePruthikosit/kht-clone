@@ -23,8 +23,8 @@
                    <div class="row">
                      <div class="col-md-4" style="padding: 0; width: 30%;">
                        <nav class="nav flex-column">
-                         <button id="toggleButton" class="btn btn-toggle-details-color" style="font-size: 1.5vw;">
-                          Toggle Village Details
+                         <button id="tourButton" class="btn btn-toggle-details-color" style="font-size: 1.5vw;">
+                          View virtual tour
                         </button>
                          <div class="collapse show" id="sidebar">
                            <!-- <a href="#" class="nav-link">
@@ -136,10 +136,23 @@
                     const col8 = document.querySelector('.col-md-8');
                     window.addEventListener('message', function (e) {
                       const data = JSON.parse(e.data);
-                      if (data['message'] == true) {
+                      if (data.message == true) {
                           col4.style = 'padding: 0; width: 0%'; 
                           col8.style = 'padding: 0; width: 100%';
-                      } else {
+                      }  
+                      
+                      else if (data.action === 'toggleHelp') {
+                            // Handle toggleHelp action
+                            if (instructions.style.display === 'none') {
+                              villageDetails.style.display = 'none';
+                              instructions.style.display = 'block';
+                            } else {
+                              villageDetails.style.display = 'block';
+                              instructions.style.display = 'none';
+                            }
+                      }
+                      
+                      else {
                           col4.style = 'padding: 0; width: 30%';
                           col8.style = 'padding: 0; width: 70%';
                       }
@@ -181,26 +194,18 @@
                        updateChart();
                        villageDetails.style.display = 'block';
                        instructions.style.display = 'none';
-                       toggleButton.textContent = 'Toggle Help';
                        document.getElementById('sidebar').scrollTop = 0;
                      }
                    });
                
-                   const toggleButton = document.getElementById('toggleButton');
+                   const tourButton = document.getElementById('tourButton');
                    const villageDetails = document.getElementById('villageDetails');
                    const instructions = document.getElementById('instructions');
                
-                   toggleButton.addEventListener('click', function () {
-                     if (instructions.style.display === 'none') {
-                       villageDetails.style.display = 'none';
-                       instructions.style.display = 'block';
-                       toggleButton.textContent = 'Toggle Village Details';
-                     } else {
-                       villageDetails.style.display = 'block';
-                       instructions.style.display = 'none';
-                       toggleButton.textContent = 'Toggle Help';
-                     }
+                   tourButton.addEventListener('click', function () {
+                      window.location.href = 'village-map.html';
                    });
+
                  </script>
                  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -235,7 +240,6 @@
                      // Show instructions and hide village details initially
                      document.getElementById('villageDetails').style.display = 'none';
                      document.getElementById('instructions').style.display = 'block';
-                     toggleButton.textContent = 'Toggle Village Details';
                    }
                
                    window.addEventListener('storage', function (e) {
