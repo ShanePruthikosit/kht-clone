@@ -117,7 +117,7 @@ def get_village(village_id=""):
                                     ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
                                     ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
                                     ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-                                FROM village
+                                FROM village_fix AS village
                                 LEFT JOIN url2 ON village.id = url2.village_id
                                 GROUP BY village.id
                                 ORDER BY village.village_name''')
@@ -127,7 +127,7 @@ def get_village(village_id=""):
                             ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
                             ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
                             ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-                        FROM village
+                        FROM village_fix AS village
                         LEFT JOIN url2 ON village.id = url2.village_id
                         WHERE village.id = {}::uuid
                         GROUP BY village.id
@@ -193,7 +193,7 @@ def get_village_project_by_year(year="", start_year="", end_year=""):
             ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
             ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
             ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-        FROM village
+        FROM village_fix AS village
         JOIN projectvillage ON projectvillage.village_id = village.id
         JOIN project ON project.id = projectvillage.project_id
         JOIN projectStatus ON project.status_id = projectStatus.status_id
@@ -231,7 +231,7 @@ def get_village_by_distance(distance="", facility_type=""):
             ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
             ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
             ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-        FROM village v
+        FROM village_fix AS v
         JOIN {table} f 
           ON ST_DWithin(v.geom::geography, f.geom::geography, %s)
         LEFT JOIN url2 ON v.id = url2.village_id
@@ -273,7 +273,7 @@ def get_village_by_project_type(project_type=""):
         	            ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
         	            ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
                             ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-                        FROM village
+                        FROM village_fix AS village
                         JOIN projectvillage ON projectvillage.village_id = village.id
                         JOIN project ON project.id = projectvillage.project_id
  			LEFT JOIN url2 ON village.id = url2.village_id

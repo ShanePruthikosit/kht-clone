@@ -273,7 +273,7 @@
                      if (e.key === 'project-name') {
                        const projectName = localStorage.getItem('project-name');
                        let projectNameParsed = projectName.split(";");
-                       document.getElementById("project-name").innerHTML = "<p style='font-weight:600;'>KHT Hosted Project: <p>"+ '<ul style="font-size: 0.85em;"><li>' + projectNameParsed.join("</li><li>"); + '</li></ul>';
+                       document.getElementById("project-name").innerHTML = "<p style='font-weight:600;'>KHT Hosted Project: <p>"+ '<ul style="font-size: 0.85em;"><li>' + projectNameParsed.join("</li><li>") + '</li></ul>';
                      }
                      if (e.key === 'common-disease') {
                        const commonDisease = localStorage.getItem('common-disease');
