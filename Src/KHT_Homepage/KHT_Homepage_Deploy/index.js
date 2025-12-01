@@ -8,7 +8,9 @@
     Imports
 =============================================*/
 import getData from './get_data.js'
+import { config } from './hostnameConfig.js';
 import { VillageData } from './get_data.js'
+import { toggleRoutingMode, resetRouting } from './routingMode.js';
 
 /* ==========================================
     Prevent leaflet default marker showing up on the map
@@ -40,7 +42,7 @@ const currentYear = globalDate.getFullYear();
 /* ==========================================
             Endpoint url configuration
 =============================================*/
-const host = 'kht-map.org';
+const host = config.hostname || 'kht-map.org';
 const port = '2546';
 const protocol = 'https';
 // const url = `${protocol}://${host}:${port}/api/option/?time=${time}&key=${hash}` for testing
@@ -224,6 +226,9 @@ legendControl.onAdd = function (map) {
         '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: blue; stroke: white; "></circle></svg> Village<br>' +
         '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: red; stroke: white;"></circle></svg> Village Clicked<br>' +
         '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: green; stroke: white;"></circle></svg> Search results<br>' +
+        '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: yellow; stroke: black;"></circle></svg> Route start<br>' +
+        '<svg height="2vw" width="2vw" style="vertical-align: middle"><circle cx="1vw" cy="1vw" r="0.8vw" stroke-width: 0.5vw; style="fill: orange; stroke: black;"></circle></svg> Route end<br>' +
+        '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:GreenYellow;stroke-width:5"></line></svg> Route path<br>' +
         '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:pink;stroke-width:5"></line></svg> Subdistrict<br>' +
         '<svg height="20" width="20" style="vertical-align: middle"><line x1="0" y1="10" x2="20" y2="10" style="stroke:#FA8072;stroke-width:5"></line></svg> District<br>' +
         '<img src="img/school_marker.png" alt="School" height="5%"> School<br>' +
@@ -305,8 +310,48 @@ var RecenterControl = L.Control.extend({
 });
 
 
-// Add the control to the map
+// Add the recenter control to the map
 new RecenterControl().addTo(map);
+
+// Add the help toggle control to the map
+var ToggleHelpControl = L.Control.extend({
+    options: {
+        position: 'topleft' // Position of the control
+    },
+
+    onAdd: function (map) {
+        // Create an img element to match the recenter button style
+        var img = L.DomUtil.create('img');
+        
+        // Set the source of the image (you'll need to add a help icon to your img folder)
+        img.src = 'img/help.png';
+        
+        // Match styling with the recenter button
+        img.style.width = '2rem';
+        img.style.height = '2rem';
+        img.style.borderRadius = '20%';
+        img.style.border = '1.5px white';
+        img.style.backgroundColor = 'paleturquoise';
+        img.style.padding = '0.4rem';
+        img.style.cursor = 'pointer';
+        img.title = "Help";
+        
+        
+        // Attach the onclick event to the image
+        img.onclick = function () {
+            // Send a message to the parent document to toggle the help/details view
+            let message = JSON.stringify({
+                action: 'toggleHelp'
+            });
+            window.parent.postMessage(message, '*');
+        }
+        
+        return img;
+    }
+});
+
+// Add the control to the map
+new ToggleHelpControl().addTo(map);
 
 // Create a new control
 // Global most usable object
@@ -670,6 +715,48 @@ document.getElementById('searchButton').addEventListener('click', function () {
         console.log(inputValue);
     }
 });
+
+/* ==========================================
+        Routing Mode Button Control
+=============================================*/
+var routingButtonControl = L.control({ position: 'topleft' });
+
+routingButtonControl.onAdd = function (map) {
+    // Create a div for the control
+    var routeButton = L.DomUtil.create('img');
+    routeButton.id = 'routing-button';
+    routeButton.src = 'img/route.png';
+
+    // Add the routing toggle button
+    routeButton.title = "Route between villages";
+    routeButton.style.width = '2rem';
+    routeButton.style.height = '2rem';
+    routeButton.style.borderRadius = '20%';
+    routeButton.style.fontSize = '20px';
+    routeButton.style.padding = '0.4rem';
+    routeButton.style.backgroundColor = 'white';
+    routeButton.style.border = '1px solid white';
+    routeButton.style.cursor = 'pointer';
+    
+    // Add an event listener to the routing button
+    routeButton.addEventListener('click', function () {
+        const isRoutingActive = toggleRoutingMode();
+        if (isRoutingActive) {
+            this.style.backgroundColor = '#ffcc00';
+            alert("Routing mode activated. Click on two villages to find the route between them.");
+        } else {
+            this.style.backgroundColor = 'white';
+        }
+    });
+    
+    // Prevent map interaction when clicking the buttons
+    L.DomEvent.disableClickPropagation(routeButton);
+    
+    return routeButton;
+};
+
+// Add the routing button control to the map
+routingButtonControl.addTo(map);
 
 /* ==========================================
                 LAYER CONTROL

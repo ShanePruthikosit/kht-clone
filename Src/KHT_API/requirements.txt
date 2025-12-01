@@ -20,6 +20,7 @@ cryptography==42.0.7
 dbus-python==1.2.18
 distro==1.7.0
 distro-info==1.1+ubuntu0.2
+dotenv==0.9.9 
 exceptiongroup==1.2.0
 fastapi==0.110.0
 filelock==3.14.0
@@ -72,6 +73,7 @@ PySocks==1.7.1
 python-apt==2.4.0+ubuntu3
 python-dateutil==2.9.0.post0
 python-debian==0.1.43+ubuntu1.1
+python-dotenv==1.1.1 
 python-magic==0.4.24
 pytz==2022.1
 PyYAML==5.4.1

@@ -26,6 +26,8 @@ from village_url_model import village_url_data
 from datetime import datetime
 import pytz
 
+from testing_cache import my_hash
+
 bangkok_time = datetime.now(pytz.timezone('Asia/Bangkok')) #for future frontend display if needed
 
 import sys
@@ -469,7 +471,7 @@ depends on the village name is found in the village table or not.
 '''
 def insert_village_url(village_url_data : village_url_data):
     # print(village_url_data)
-    password = hash(village_url_data.password)
+    password = my_hash(village_url_data.password)
     query_password = sql.SQL('''
                                 SELECT password
                                 FROM Users
@@ -484,14 +486,13 @@ def insert_village_url(village_url_data : village_url_data):
         query = None
         params = (village_url_data.village_name, village_url_data.url, village_url_data.image_url, village_url_data.article_title, village_url_data.posted_date, village_url_data.village_name, village_url_data.village_name)
         query = sql.SQL("""
-            INSERT INTO url2 (village_name, url, image_url, article_title, posted_date, created_time, sequence)
+            INSERT INTO url2 (village_name, url, image_url, article_title, posted_date, created_time, sequence, village_id)
             SELECT %s, %s, %s, %s, %s, CAST(TO_CHAR(NOW()::date, 'DD/MM/YYYY') AS VARCHAR(256)),
-            COALESCE((SELECT MAX(sequence) FROM url2 WHERE village_name = %s), 0) + 1
-            WHERE EXISTS (
-                SELECT 1
-                FROM village_fix AS village
-                WHERE LOWER(village.village_name) = LOWER(%s)
-            )
+                COALESCE((SELECT MAX(sequence) FROM url2 WHERE village_name = %s), 0) + 1,
+                vf.id
+            FROM village_fix vf
+            WHERE LOWER(vf.village_name) = LOWER(%s)
+            LIMIT 1;
         """)
         try:
             print(cursor.mogrify(query, params).decode('utf-8'))
