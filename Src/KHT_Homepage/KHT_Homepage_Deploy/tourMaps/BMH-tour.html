@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Village Map</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            background: #d4c5a0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Small floating legend */
+        .legend {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 35px 12px 16px;  /* Extra right padding for close button */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-size: 13px;
+            z-index: 500;
+            color: #3e2723;
+        }
+
+        .legend-close {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #999;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .legend-close:hover {
+            color: #333;
+        }
+
+        .legend p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .exit-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-size: 14px;
+            font-weight: bold;
+            color: #3e2723;
+            cursor: pointer;
+            z-index: 500;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .exit-button:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .map-selector {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 500;
+            min-width: 150px;
+        }
+
+        .map-selector h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #3e2723;
+            font-weight: bold;
+        }
+
+        .map-link {
+            display: block;
+            padding: 8px 12px;
+            margin: 4px 0;
+            background: #f5f5f5;
+            color: #3e2723;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+
+        .map-link:hover {
+            background: #e0e0e0;
+        }
+
+        .map-link.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .map-container {
+            position: relative;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .map-image {
+            width: 100%;  /* Fill container */
+            height: auto;
+            display: block;
+        }
+
+        /* ICON SETTINGS - Size is now defined per icon below */
+        .icon {
+            position: absolute;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            opacity: 0;  /* Hidden by default */
+        }
+
+        .icon:hover {
+            opacity: 1;  /* Visible on hover - no animation */
+        }
+
+        .icon img {
+            width: 100%;
+            height: 100%;
+            opacity: 1;  /* 1 = fully opaque, 0.5 = half transparent, 0 = invisible */
+        }
+
+        /* Modal popup */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .modal h2 {
+            color: #3498db;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .modal-blurb {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script src="imageMapList.js"></script>
+    
+    <!-- Exit button -->
+    <a href="../index.html" class="exit-button">Back to Home</a>
+    
+    <!-- Map Selector -->
+    <div class="map-selector">
+        <h3>Villages</h3>
+        <div id="map-links-container"></div>
+    </div>
+    
+    <!-- Small floating legend -->
+    <div class="legend" id="legend">
+        <span class="legend-close" onclick="document.getElementById('legend').style.display='none'">&times;</span>
+        <p><strong>Click on the highlighted icons to display images.</p>
+    </div>
+    
+    <div class="map-container">
+        <img src="img/BMH/BMHMap.png" class="map-image">
+        
+        <!-- POSITION ICONS HERE - Change left/top percentages to move icons -->
+        
+        <!-- Water Tanks -->
+        <div class="icon" style="left: 15.5%; top: 5.5%; width: 18%;" onclick="showModal(0)">
+            <img src="img/BMH/icons/WaterTanks.png">
+        </div>
+        
+        <!-- School -->
+        <div class="icon" style="left: 80%; top: 81.5%; width: 15%;" onclick="showModal(1)">
+            <img src="img/BMH/icons/School.png">   
+        </div>
+        
+        <!-- Cement Factory -->
+        <div class="icon" style="left: 52%; top: 61%; width: 11%;" onclick="showModal(2)">
+            <img src="img/BMH/icons/CementFactory.png">
+        </div>
+        
+        <!-- Water Faucet -->
+        <div class="icon" style="left: 52.5%; top: 52%; width: 10%;" onclick="showModal(3)">
+            <img src="img/BMH/icons/Faucet.png">
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="title"></h2>
+            <img id="modal-image" class="modal-image" src="" alt="">
+            <p id="blurb" class="modal-blurb"></p>
+        </div>
+    </div>
+
+    <script>
+        // Get current page filename
+        const currentPage = window.location.pathname.split('/').pop();
+        
+        // Populate map selector from config
+        const mapLinksContainer = document.getElementById('map-links-container');
+        availableMaps.forEach(map => {
+            const link = document.createElement('a');
+            link.href = map.filename;
+            link.className = 'map-link';
+            link.textContent = map.name;
+            
+            // Highlight current page
+            if (map.filename === currentPage) {
+                link.classList.add('active');
+            }
+            
+            mapLinksContainer.appendChild(link);
+        });
+        
+        // Location information
+        const locations = [
+            {
+                name: 'Water Tanks',
+                image: 'img/BMH/Water_Tank.JPG',
+                blurb: 'Main water storage facility for the village. Built by volunteers.'
+            },
+            {
+                name: 'School',
+                image: 'img/BMH/School.JPG',
+                blurb: 'Local school complex. Hosts students from multiple villages. Scholarships are also provided to outstanding students.'
+            },
+            {
+                name: 'Cement Factory',
+                image: 'img/BMH/CementFactory.jpg',
+                blurb: 'Small cement production facility made to produce cement for onsite constructions such as water tanks and toilets.'
+            },
+            {
+                name: 'Water Faucet',
+                image: 'img/BMH/WaterFaucet.jpg',
+                blurb: 'Public water access point serving multiple households. Operates at fixed times for conservation purposes.'
+            }
+        ];
+
+        function showModal(index) {
+            const loc = locations[index];
+            document.getElementById('title').textContent = loc.name;
+            document.getElementById('modal-image').src = loc.image;
+            document.getElementById('modal-image').alt = loc.name;
+            document.getElementById('blurb').textContent = loc.blurb;
+            
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
