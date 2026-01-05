@@ -5,6 +5,6 @@ const availableMaps = [
     },
     {
         name: 'Baan Mae Oom Long',
-        filename: 'district_map.html'
+        filename: 'BMOL-tour.html'
     }
 ];
