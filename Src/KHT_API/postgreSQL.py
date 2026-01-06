@@ -45,6 +45,8 @@ connection_params = {
     "password": db_password,
 }
 
+VILLAGE_QUERY_VERSION = "village_fix + url2 subquery + ewkb hex (2026-01-07)"
+
 ''' ================================ Format converter ==================================== '''
 '''
 The function converts query output to a geojson format.
@@ -106,9 +108,8 @@ Return data output in geojson format.
 # Updated to use village_fix table and added COALESCE/FILTER for proper array handling
 def get_village(village_id=""):
     """
-    Village GeoJSON (FeatureCollection) from village_fix.
-    Uses url2 aggregation subquery (pgAdmin-tested) and returns geom as hex EWKB
-    for query_to_geojson() -> wkb.loads(..., hex=True).
+    GeoJSON villages from village_fix.
+    Raises exceptions so API doesn't silently return null.
     """
     url2_agg = sql.SQL("""
         SELECT
@@ -149,17 +150,22 @@ def get_village(village_id=""):
               ON v.id = u.village_id
             WHERE v.id = {village_id}::uuid
             ORDER BY v.village_name;
-        """).format(
-            url2_agg=url2_agg,
-            village_id=sql.Literal(village_id),
-        )
+        """).format(url2_agg=url2_agg, village_id=sql.Literal(village_id))
+
+    # --- Debug: prove deployed code + show real SQL
+    print(f"[get_village] VERSION={VILLAGE_QUERY_VERSION}")
+    try:
+        print(cursor.mogrify(query).decode("utf-8"))
+    except Exception:
+        # mogrify can fail if query is already a bytes-like object; ignore
+        pass
 
     try:
         return query_to_geojson(cursor, query)
     except Exception as e:
-        print(f"Error executing query: {e}")
+        print(f"[get_village] ERROR: {e}")
         connection.rollback()
-        return None
+        raise
 
 '''
 The function to query all village names.
