@@ -1,4 +1,4 @@
-name: deploy Backend to Clone server
+name: deploy Backend to Dev server
 on:
   workflow_dispatch:
 jobs:
@@ -9,13 +9,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: 'Create env file'
-      run: |
-        touch .env
-        echo hostname="kht-dev.poohserver.com" >> .env
-        cat .env
-
+      
     - name: Validate required files
       run: |
         SOURCE_DIR="./Src/KHT_API"
@@ -41,7 +35,7 @@ jobs:
         
     - name: Deploy backend to dev server
       env:
-        CREDENTIALS: ${{ secrets.clone_prod_credential }}
+        CREDENTIALS: ${{ secrets.dev_credential }}
       run: |
         # Write credentials to temporary file
         echo "$CREDENTIALS" > creds.env
@@ -57,14 +51,11 @@ jobs:
         # Delete existing directory contents on server
         ssh -i private_key -o StrictHostKeyChecking=no \
         $DEPLOY_USER@$DEPLOY_HOST \
-        "find /home/kht-team/KHT_API/ -mindepth 1 ! -path '*/__pycache__/*' -exec rm -rf {} + 2>/dev/null || true"
+        "find /home/urd2024/KHT_API/ -mindepth 1 ! -path '*/__pycache__/*' -exec rm -rf {} + 2>/dev/null || true"
         
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
-          ./Src/KHT_API/* $DEPLOY_USER@$DEPLOY_HOST:/home/kht-team/KHT_API
-
-        scp -r -i private_key -o StrictHostKeyChecking=no \
-          .env $DEPLOY_USER@$DEPLOY_HOST:/home/kht-team/KHT_API
+          ./Src/KHT_API/* $DEPLOY_USER@$DEPLOY_HOST:/home/urd2024/KHT_API
         
         # Cleanup
         rm private_key creds.env

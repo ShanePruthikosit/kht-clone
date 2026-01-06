@@ -9,7 +9,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
+
+    - name: Create config file
+      run: |
+        echo "export const config = { hostname: 'kht-map.org' };" > hostnameConfig.js
+
     - name: Validate required files
       run: |
         SOURCE_DIR="./Src/KHT_Homepage/KHT_Homepage_Deploy"
@@ -57,6 +61,9 @@ jobs:
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
           ./Src/KHT_Homepage/KHT_Homepage_Deploy/* $DEPLOY_USER@$DEPLOY_HOST:/var/www/KHT_Homepage_Deploy
-        
+
+        scp -r -i private_key -o StrictHostKeyChecking=no \
+          hostnameConfig.js $DEPLOY_USER@$DEPLOY_HOST:/var/www/KHT_Homepage_Deploy
+
         # Cleanup
         rm private_key creds.env

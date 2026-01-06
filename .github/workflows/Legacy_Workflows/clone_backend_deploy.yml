@@ -9,13 +9,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: 'Create env file'
-      run: |
-        touch .env
-        echo hostname="kht-dev.poohserver.com" >> .env
-        cat .env
-
+      
     - name: Validate required files
       run: |
         SOURCE_DIR="./Src/KHT_API"
@@ -62,9 +56,6 @@ jobs:
         # Deploy using SCP
         scp -r -i private_key -o StrictHostKeyChecking=no \
           ./Src/KHT_API/* $DEPLOY_USER@$DEPLOY_HOST:/home/kht-team/KHT_API
-
-        scp -r -i private_key -o StrictHostKeyChecking=no \
-          .env $DEPLOY_USER@$DEPLOY_HOST:/home/kht-team/KHT_API
         
         # Cleanup
         rm private_key creds.env
