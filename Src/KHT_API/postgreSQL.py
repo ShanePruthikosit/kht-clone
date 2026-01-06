@@ -137,6 +137,7 @@ def get_village(village_id=""):
     except Exception as e:
         print(f"Error executing query: {e}")  # Print the error message
         connection.rollback()  # Rollback the transaction
+        raise
 
 '''
 The function to query all village names.
