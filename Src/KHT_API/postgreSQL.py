@@ -105,35 +105,61 @@ Return data output in geojson format.
 '''
 # Updated to use village_fix table and added COALESCE/FILTER for proper array handling
 def get_village(village_id=""):
-    query = None
+    """
+    Village GeoJSON (FeatureCollection) from village_fix.
+    Uses url2 aggregation subquery (pgAdmin-tested) and returns geom as hex EWKB
+    for query_to_geojson() -> wkb.loads(..., hex=True).
+    """
+    url2_agg = sql.SQL("""
+        SELECT
+          village_id,
+          ARRAY_AGG(url ORDER BY sequence) FILTER (WHERE url IS NOT NULL) AS urls,
+          ARRAY_AGG(image_url ORDER BY sequence) FILTER (WHERE image_url IS NOT NULL) AS image_urls,
+          ARRAY_AGG(article_title ORDER BY sequence) FILTER (WHERE article_title IS NOT NULL) AS article_titles,
+          ARRAY_AGG(posted_date ORDER BY sequence) FILTER (WHERE posted_date IS NOT NULL) AS posted_dates
+        FROM url2
+        GROUP BY village_id
+    """)
+
     if village_id == "":
-        query = sql.SQL('''SELECT village.*, 
-                                    COALESCE(ARRAY_AGG(url2.url ORDER BY url2.sequence) FILTER (WHERE url2.url IS NOT NULL), ARRAY[]::text[]) AS urls, 
-                                    COALESCE(ARRAY_AGG(url2.image_url ORDER BY url2.sequence) FILTER (WHERE url2.image_url IS NOT NULL), ARRAY[]::text[]) AS image_urls, 
-                                    COALESCE(ARRAY_AGG(url2.article_title ORDER BY url2.sequence) FILTER (WHERE url2.article_title IS NOT NULL), ARRAY[]::text[]) AS article_titles, 
-                                    COALESCE(ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) FILTER (WHERE url2.posted_date IS NOT NULL), ARRAY[]::text[]) AS posted_dates
-                                FROM village_fix AS village
-                                LEFT JOIN url2 ON village.id = url2.village_id
-                                GROUP BY village.id
-                                ORDER BY village.village_name''')
+        query = sql.SQL("""
+            SELECT
+              v.*,
+              encode(ST_AsEWKB(v.geom), 'hex') AS geom,
+              COALESCE(u.urls, ARRAY[]::text[]) AS urls,
+              COALESCE(u.image_urls, ARRAY[]::text[]) AS image_urls,
+              COALESCE(u.article_titles, ARRAY[]::text[]) AS article_titles,
+              COALESCE(u.posted_dates, ARRAY[]::text[]) AS posted_dates
+            FROM village_fix v
+            LEFT JOIN ({url2_agg}) u
+              ON v.id = u.village_id
+            ORDER BY v.village_name;
+        """).format(url2_agg=url2_agg)
     else:
-        query = sql.SQL('''SELECT village.*,
-                            COALESCE(ARRAY_AGG(url2.url ORDER BY url2.sequence) FILTER (WHERE url2.url IS NOT NULL), ARRAY[]::text[]) AS urls, 
-                            COALESCE(ARRAY_AGG(url2.image_url ORDER BY url2.sequence) FILTER (WHERE url2.image_url IS NOT NULL), ARRAY[]::text[]) AS image_urls, 
-                            COALESCE(ARRAY_AGG(url2.article_title ORDER BY url2.sequence) FILTER (WHERE url2.article_title IS NOT NULL), ARRAY[]::text[]) AS article_titles, 
-                            COALESCE(ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) FILTER (WHERE url2.posted_date IS NOT NULL), ARRAY[]::text[]) AS posted_dates
-                        FROM village_fix AS village
-                        LEFT JOIN url2 ON village.id = url2.village_id
-                        WHERE village.id = {}::uuid
-                        GROUP BY village.id
-                        ORDER BY village.village_name''').format(sql.Literal(village_id)) 
+        query = sql.SQL("""
+            SELECT
+              v.*,
+              encode(ST_AsEWKB(v.geom), 'hex') AS geom,
+              COALESCE(u.urls, ARRAY[]::text[]) AS urls,
+              COALESCE(u.image_urls, ARRAY[]::text[]) AS image_urls,
+              COALESCE(u.article_titles, ARRAY[]::text[]) AS article_titles,
+              COALESCE(u.posted_dates, ARRAY[]::text[]) AS posted_dates
+            FROM village_fix v
+            LEFT JOIN ({url2_agg}) u
+              ON v.id = u.village_id
+            WHERE v.id = {village_id}::uuid
+            ORDER BY v.village_name;
+        """).format(
+            url2_agg=url2_agg,
+            village_id=sql.Literal(village_id),
+        )
+
     try:
-        # Removed duplicate cursor.execute()
-        geojson_result = query_to_geojson(cursor, query)
-        return geojson_result
+        return query_to_geojson(cursor, query)
     except Exception as e:
-        print(f"Error executing query: {e}")  # Print the error message
-        connection.rollback()  # Rollback the transaction
+        print(f"Error executing query: {e}")
+        connection.rollback()
+        return None
 
 '''
 The function to query all village names.
