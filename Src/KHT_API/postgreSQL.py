@@ -23,10 +23,6 @@ from shapely.geometry import mapping
 from shapely.wkb import loads as wkb_loads
 import json
 from village_url_model import village_url_data
-from datetime import datetime
-import pytz
-
-bangkok_time = datetime.now(pytz.timezone('Asia/Bangkok')) #for future frontend display if needed
 
 import sys
 testing_path = '/home/kht-team/secret_function/'
@@ -48,6 +44,8 @@ connection_params = {
     "user": db_user,
     "password": db_password,
 }
+
+VILLAGE_QUERY_VERSION = "village_fix + url2 subquery + ewkb hex (2026-01-07)"
 
 ''' ================================ Format converter ==================================== '''
 '''
@@ -107,50 +105,98 @@ Arguments:
   village_id  - target village id leave blank to select all village
 Return data output in geojson format.
 '''
+# Updated to use village_fix table and added COALESCE/FILTER for proper array handling
 def get_village(village_id=""):
-    query = None
+    """
+    GeoJSON villages from village_fix.
+    Raises exceptions so API doesn't silently return null.
+    """
+    url2_agg = sql.SQL("""
+        SELECT
+          village_id,
+          ARRAY_AGG(url ORDER BY sequence) FILTER (WHERE url IS NOT NULL) AS urls,
+          ARRAY_AGG(image_url ORDER BY sequence) FILTER (WHERE image_url IS NOT NULL) AS image_urls,
+          ARRAY_AGG(article_title ORDER BY sequence) FILTER (WHERE article_title IS NOT NULL) AS article_titles,
+          ARRAY_AGG(posted_date ORDER BY sequence) FILTER (WHERE posted_date IS NOT NULL) AS posted_dates
+        FROM url2
+        GROUP BY village_id
+    """)
+
     if village_id == "":
-        query = sql.SQL('''SELECT village.*, 
-                                    ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
-                                    ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
-                                    ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
-                                    ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-                                FROM village
-                                LEFT JOIN url2 ON village.id = url2.village_id
-                                GROUP BY village.id
-                                ORDER BY village.village_name''')
+        query = sql.SQL("""
+            SELECT
+              v.*,
+              encode(ST_AsEWKB(v.geom), 'hex') AS geom,
+              COALESCE(u.urls, ARRAY[]::text[]) AS urls,
+              COALESCE(u.image_urls, ARRAY[]::text[]) AS image_urls,
+              COALESCE(u.article_titles, ARRAY[]::text[]) AS article_titles,
+              COALESCE(u.posted_dates, ARRAY[]::text[]) AS posted_dates
+            FROM village_fix v
+            LEFT JOIN ({url2_agg}) u
+              ON v.id = u.village_id
+            ORDER BY v.village_name;
+        """).format(url2_agg=url2_agg)
     else:
-        query = sql.SQL('''SELECT village.*,
-                            ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
-                            ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
-                            ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
-                            ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-                        FROM village
-                        LEFT JOIN url2 ON village.id = url2.village_id
-                        WHERE village.id = {}::uuid
-                        GROUP BY village.id
-                        ORDER BY village.village_name''').format(sql.Literal(village_id)) 
+        query = sql.SQL("""
+            SELECT
+              v.*,
+              encode(ST_AsEWKB(v.geom), 'hex') AS geom,
+              COALESCE(u.urls, ARRAY[]::text[]) AS urls,
+              COALESCE(u.image_urls, ARRAY[]::text[]) AS image_urls,
+              COALESCE(u.article_titles, ARRAY[]::text[]) AS article_titles,
+              COALESCE(u.posted_dates, ARRAY[]::text[]) AS posted_dates
+            FROM village_fix v
+            LEFT JOIN ({url2_agg}) u
+              ON v.id = u.village_id
+            WHERE v.id = {village_id}::uuid
+            ORDER BY v.village_name;
+        """).format(url2_agg=url2_agg, village_id=sql.Literal(village_id))
+
+    # --- Debug: prove deployed code + show real SQL
+    print(f"[get_village] VERSION={VILLAGE_QUERY_VERSION}")
     try:
-        cursor.execute(query)
-        geojson_result = query_to_geojson(cursor, query)
-        return geojson_result
+        print(cursor.mogrify(query).decode("utf-8"))
+    except Exception:
+        # mogrify can fail if query is already a bytes-like object; ignore
+        pass
+
+    try:
+        return query_to_geojson(cursor, query)
     except Exception as e:
-        print(f"Error executing query: {e}")  # Print the error message
-        connection.rollback()  # Rollback the transaction
+        print(f"[get_village] ERROR: {e}")
+        connection.rollback()
         raise
 
 '''
 The function to query all village names.
 Return a list of village names.
 '''
+# Updated to use proper tables
 def get_village_names():
     query = None
-    query = sql.SQL("SELECT village_name FROM village")
+    query = sql.SQL("SELECT village_name FROM village_fix")
     try:
         cursor.execute(query)
         rows = cursor.fetchall()
         village_names = [row[0] for row in rows] 
         return village_names
+    except Exception as e:
+        print(f"Error executing query: {e}")  # Print the error message
+        connection.rollback()  # Rollback the transaction
+
+'''
+The function to query all village names in Thai.
+Return a list of village names.
+'''
+# Updated to use proper tables
+def get_village_names_th():
+    query = None
+    query = sql.SQL("SELECT village_name_th FROM village_fix")
+    try:
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        village_names_th = [row[0] for row in rows] 
+        return village_names_th
     except Exception as e:
         print(f"Error executing query: {e}")  # Print the error message
         connection.rollback()  # Rollback the transaction
@@ -164,6 +210,7 @@ Arguments:
   end_year    - end year of the project
 Return data output in geojson format.
 '''
+# Updated to use proper tables, added COALESCE/FILTER, removed duplicate execute
 def get_village_project_by_year(year="", start_year="", end_year=""):
     query = None
     if year:
@@ -172,11 +219,11 @@ def get_village_project_by_year(year="", start_year="", end_year=""):
     query = sql.SQL("""
         SELECT village.*, 
             projectStatus.status_name,
-            ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
-            ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
-            ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
-            ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-        FROM village
+            COALESCE(ARRAY_AGG(url2.url ORDER BY url2.sequence) FILTER (WHERE url2.url IS NOT NULL), ARRAY[]::text[]) AS urls, 
+            COALESCE(ARRAY_AGG(url2.image_url ORDER BY url2.sequence) FILTER (WHERE url2.image_url IS NOT NULL), ARRAY[]::text[]) AS image_urls, 
+            COALESCE(ARRAY_AGG(url2.article_title ORDER BY url2.sequence) FILTER (WHERE url2.article_title IS NOT NULL), ARRAY[]::text[]) AS article_titles, 
+            COALESCE(ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) FILTER (WHERE url2.posted_date IS NOT NULL), ARRAY[]::text[]) AS posted_dates
+        FROM village_fix AS village
         JOIN projectvillage ON projectvillage.village_id = village.id
         JOIN project ON project.id = projectvillage.project_id
         JOIN projectStatus ON project.status_id = projectStatus.status_id
@@ -189,7 +236,6 @@ def get_village_project_by_year(year="", start_year="", end_year=""):
     try:
         mogrified_query = cursor.mogrify(query)
         print(mogrified_query.decode('utf-8'))
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -204,17 +250,18 @@ Arguments:
   facility_type       - the facility type (eg. hospital or school)
 Return data all villages that are not within the given distance to the target facility.
 '''
+# Updated to use proper tables, added COALESCE/FILTER, removed duplicate execute
 def get_village_by_distance(distance="", facility_type=""):
     # Convert distance from km to meters
     distance_m = float(distance) * 1000
     print(f"Distance (meters): {distance_m}, Facility type: {facility_type}")
     query = sql.SQL("""
         SELECT DISTINCT v.*, 
-            ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
-            ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
-            ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
-            ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-        FROM village v
+            COALESCE(ARRAY_AGG(url2.url ORDER BY url2.sequence) FILTER (WHERE url2.url IS NOT NULL), ARRAY[]::text[]) AS urls, 
+            COALESCE(ARRAY_AGG(url2.image_url ORDER BY url2.sequence) FILTER (WHERE url2.image_url IS NOT NULL), ARRAY[]::text[]) AS image_urls, 
+            COALESCE(ARRAY_AGG(url2.article_title ORDER BY url2.sequence) FILTER (WHERE url2.article_title IS NOT NULL), ARRAY[]::text[]) AS article_titles, 
+            COALESCE(ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) FILTER (WHERE url2.posted_date IS NOT NULL), ARRAY[]::text[]) AS posted_dates
+        FROM village_fix AS v
         JOIN {table} f 
           ON ST_DWithin(v.geom::geography, f.geom::geography, %s)
         LEFT JOIN url2 ON v.id = url2.village_id
@@ -223,7 +270,6 @@ def get_village_by_distance(distance="", facility_type=""):
     try:
         mogrified_query = cursor.mogrify(query, (distance_m,))
         print(mogrified_query.decode('utf-8'))
-        cursor.execute(mogrified_query)
         geojson_result = query_to_geojson(cursor, mogrified_query)
         return geojson_result
     except Exception as e:
@@ -249,23 +295,23 @@ Arguments:
   project_type      - project type
 Return data output in geojson format.
 '''
+# Updated to use village_fix table, added COALESCE/FILTER, removed duplicate execute
 def get_village_by_project_type(project_type=""):
     query = None 
     query = sql.SQL("""SELECT village.*,
-                            ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
-        	            ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
-        	            ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
-                            ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
-                        FROM village
+                            COALESCE(ARRAY_AGG(url2.url ORDER BY url2.sequence) FILTER (WHERE url2.url IS NOT NULL), ARRAY[]::text[]) AS urls, 
+                            COALESCE(ARRAY_AGG(url2.image_url ORDER BY url2.sequence) FILTER (WHERE url2.image_url IS NOT NULL), ARRAY[]::text[]) AS image_urls, 
+                            COALESCE(ARRAY_AGG(url2.article_title ORDER BY url2.sequence) FILTER (WHERE url2.article_title IS NOT NULL), ARRAY[]::text[]) AS article_titles, 
+                            COALESCE(ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) FILTER (WHERE url2.posted_date IS NOT NULL), ARRAY[]::text[]) AS posted_dates
+                        FROM village_fix AS village
                         JOIN projectvillage ON projectvillage.village_id = village.id
                         JOIN project ON project.id = projectvillage.project_id
- 			LEFT JOIN url2 ON village.id = url2.village_id
+                        LEFT JOIN url2 ON village.id = url2.village_id
                         WHERE project.project_type = {}
-              		GROUP BY village.id
-			ORDER BY village.village_name
-	""").format(sql.Literal(project_type))
+                        GROUP BY village.id
+                        ORDER BY village.village_name
+    """).format(sql.Literal(project_type))
     try:
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -341,7 +387,6 @@ def get_hospital():
     query = None
     query = sql.SQL("SELECT * FROM hospital")
     try:
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -355,9 +400,8 @@ Return data output in geojson format.
 '''
 def get_school():
     query = None
-    query = sql.SQL("SELECT * FROM school_old")
+    query = sql.SQL("SELECT * FROM school")
     try:
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -373,7 +417,6 @@ def get_mhs_districts():
     query = None
     query = sql.SQL("SELECT * FROM mhs_districts")
     try:
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -389,7 +432,6 @@ def get_mhs_subdistricts():
     query = None
     query = sql.SQL("SELECT * FROM mhs_subdistricts")
     try:
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -405,7 +447,6 @@ def get_mhs_roads():
     query = None
     query = sql.SQL("SELECT * FROM mhs_roads")
     try:
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -421,7 +462,6 @@ def get_mhs_water_areas():
     query = None
     query = sql.SQL("SELECT * FROM mhs_water_areas")
     try:
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -437,7 +477,6 @@ def get_mhs_water_lines():
     query = None
     query = sql.SQL("SELECT * FROM mhs_water_lines")
     try:
-        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -452,8 +491,8 @@ Arguements
 Returns message status if the data is inserted or not which
 depends on the village name is found in the village table or not.
 '''
+# Updated to use proper tables and also insert village_id
 def insert_village_url(village_url_data : village_url_data):
-    # print(village_url_data)
     password = hash(village_url_data.password)
     query_password = sql.SQL('''
                                 SELECT password
@@ -463,18 +502,20 @@ def insert_village_url(village_url_data : village_url_data):
                                     ''')
     cursor.execute(query_password)
     stored_password = cursor.fetchone()
-    # print(password)
-    # print(stored_password[0])
+    
     if password == stored_password[0]:
         query = None
-        params = (village_url_data.village_name, village_url_data.url, village_url_data.image_url, village_url_data.article_title, village_url_data.posted_date, village_url_data.village_name, village_url_data.village_name)
+        params = (village_url_data.village_name, village_url_data.url, village_url_data.image_url, 
+                  village_url_data.article_title, village_url_data.posted_date, village_url_data.village_name, 
+                  village_url_data.village_name, village_url_data.village_name)
         query = sql.SQL("""
-            INSERT INTO url2 (village_name, url, image_url, article_title, posted_date, created_time, sequence)
+            INSERT INTO url2 (village_name, url, image_url, article_title, posted_date, created_time, sequence, village_id)
             SELECT %s, %s, %s, %s, %s, CAST(TO_CHAR(NOW()::date, 'DD/MM/YYYY') AS VARCHAR(256)),
-            COALESCE((SELECT MAX(sequence) FROM url2 WHERE village_name = %s), 0) + 1
+            COALESCE((SELECT MAX(sequence) FROM url2 WHERE village_name = %s), 0) + 1,
+            (SELECT id FROM village_fix WHERE LOWER(village_name) = LOWER(%s))
             WHERE EXISTS (
                 SELECT 1
-                FROM village
+                FROM village_fix AS village
                 WHERE LOWER(village.village_name) = LOWER(%s)
             )
         """)
@@ -489,13 +530,13 @@ def insert_village_url(village_url_data : village_url_data):
                 print(f"Data not inserted into url table. {rows_inserted} rows inserted.")
                 message = {
                     "status": "Failed",
-                    "message": f"Password is correct but Village '{village_url_data.village_name}' not found in village table. Data not inserted into url table."
+                    "message": f"Password is correct but Village '{village_url_data.village_name}' not found in village_fix table. Data not inserted into url table."
                 }
             else:
                 print(f"Data inserted into url table. {rows_inserted} rows inserted.")
                 message = {
                     "status": "Success",
-                    "message": f"Password is correct! Village '{village_url_data.village_name}' found in village table. Data inserted into url table."
+                    "message": f"Password is correct! Village '{village_url_data.village_name}' found in village_fix table. Data inserted into url table."
                 }
         except Exception as e:
             print(f"Error executing INSERT query: {e}")
@@ -514,8 +555,8 @@ def insert_village_url(village_url_data : village_url_data):
 
 def count_user(ip=""):
     query = None
-    query = sql.SQL("""INSERT INTO ipaddr (ip, time_stamp) VALUES (%s, NOW())""")
-    cursor.execute(query, (ip,))
+    query = sql.SQL("""INSERT INTO ipaddr (ip, time_stamp) 
+                       SELECT {}, CAST(TO_CHAR(NOW()::date, 'DD/MM/YYYY') AS VARCHAR(256))""").format(sql.Literal(ip))
     try:
         mogrified_query = cursor.mogrify(query)
         cursor.execute(query)
