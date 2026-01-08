@@ -58,7 +58,6 @@ async function getVillageData(url, villagePointColor) {
 
         if (!data || !data.features) {
             console.error("Invalid data received:", data);
-            alert("Invalid data received from server");
             fetchInitialVillageData();
             done = true;
             return;
