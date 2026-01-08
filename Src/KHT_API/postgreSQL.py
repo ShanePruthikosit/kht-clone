@@ -56,28 +56,33 @@ Arguments:
 Return data output in a geojson format.
 '''
 def query_to_geojson(cursor, query):
-    cursor.execute(query)
-    columns = [desc[0] for desc in cursor.description]
-    results = cursor.fetchall()
-    features = []
-    for row in results:
-        properties = dict(zip(columns, row))
-        geometry_key = 'geom'
-        geometry_str = properties.get(geometry_key)
-        if geometry_str is not None:
-            try:
-                # Convert the hex WKB to a Shapely geometry
-                geometry = wkb.loads(geometry_str, hex=True)
-                # Convert the Shapely geometry to GeoJSON
-                geometry_geojson = mapping(geometry)
-                feature = geojson.Feature(properties=properties, geometry=geometry_geojson)
-                features.append(feature)
-            except (json.JSONDecodeError, ValueError):
-                print(f"Invalid GeoJSON string: {geometry_str}")
+    try:
+        cursor.execute(query)
+        columns = [desc[0] for desc in cursor.description]
+        results = cursor.fetchall()
+        features = []
+        for row in results:
+            properties = dict(zip(columns, row))
+            geometry_key = 'geom'
+            geometry_str = properties.get(geometry_key)
+            if geometry_str is not None:
+                try:
+                    # Convert the hex WKB to a Shapely geometry
+                    geometry = wkb.loads(geometry_str, hex=True)
+                    # Convert the Shapely geometry to GeoJSON
+                    geometry_geojson = mapping(geometry)
+                    feature = geojson.Feature(properties=properties, geometry=geometry_geojson)
+                    features.append(feature)
+                except (json.JSONDecodeError, ValueError):
+                    print(f"Invalid GeoJSON string: {geometry_str}")
 
-    feature_collection = geojson.FeatureCollection(features)
-    # geojson_result = geojson.dumps(feature_collection, indent=2)
-    return feature_collection
+        feature_collection = geojson.FeatureCollection(features)
+        # geojson_result = geojson.dumps(feature_collection, indent=2)
+        return feature_collection
+    except Exception as e:
+        print(f"Error in query_to_geojson: {e}")
+        # return empty but valid FeatureCollection instead of None
+        return geojson.FeatureCollection([])
 
 '''
 The function converts query output to a json format.

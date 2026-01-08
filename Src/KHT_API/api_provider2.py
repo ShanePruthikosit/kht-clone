@@ -202,13 +202,15 @@ def pull_village_data(village_id="", year="", start_year="", end_year="",
             result = postgreSQL.get_village(village_id)
 
         if result is None:
-            raise HTTPException(status_code=500, detail="postgreSQL returned None (see server logs)")
+            return {"type": "FeatureCollection", "features": []}
         return result
 
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"Error in pull_village_data: {e}")
+        # Return empty FeatureCollection for client
+        return {"type": "FeatureCollection", "features": []}
 
 '''
 Function to get all the village_names
