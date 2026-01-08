@@ -49,6 +49,21 @@ async function getVillageData(url, villagePointColor) {
         } 
         const response = await fetch(url);
         const data = await response.json();
+
+        console.log("Debug info:");
+        console.log("Response status:", response.status);
+        console.log("Response type:", typeof data);
+        console.log("Response data:", data);
+        console.log("Has features?", data?.features);
+
+        if (!data || !data.features) {
+            console.error("Invalid data received:", data);
+            alert("Invalid data received from server");
+            fetchInitialVillageData();
+            done = true;
+            return;
+        }
+
         let data_length = data.features.length;
         //if the data is empty, alert the user. after user clicks ok on alert, set done to true and return
         if (data_length == 0 && firstLoad == false) {
