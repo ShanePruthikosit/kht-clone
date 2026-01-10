@@ -49,6 +49,7 @@ async function getVillageData(url, villagePointColor) {
         } 
         const response = await fetch(url);
         const data = await response.json();
+
         let data_length = data.features.length;
         //if the data is empty, alert the user. after user clicks ok on alert, set done to true and return
         if (data_length == 0 && firstLoad == false) {

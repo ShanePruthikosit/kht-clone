@@ -179,24 +179,38 @@ Arguments
 Return data output in geojson format
 '''
 @app.get("/api/village/")
-def pull_village_data(village_id="", year="", start_year="", end_year="", project_type="",
-                        distance="", road_distance="", facility_type="", time="", key=""):
+def pull_village_data(village_id="", year="", start_year="", end_year="",
+                     project_type="", distance="", road_distance="",
+                     facility_type="", time="", key=""):
+
     if not check_valid(time, key):
-       return {'Error' : 'Key mismatch'}
-    if year != "" or (start_year != "" and end_year != ""):
-        geojson_data = postgreSQL.get_village_project_by_year(year, start_year, end_year)
-    elif facility_type != "":
-        if distance != "":
-            geojson_data = postgreSQL.get_village_by_distance(distance, facility_type)
-        elif road_distance != "":
-            geojson_data = postgreSQL.get_village_by_road_distance(distance, facility_type)
+        raise HTTPException(status_code=401, detail="Key mismatch")
+
+    try:
+        if year != "" or (start_year != "" and end_year != ""):
+            result = postgreSQL.get_village_project_by_year(year, start_year, end_year)
+        elif facility_type != "":
+            if distance != "":
+                result = postgreSQL.get_village_by_distance(distance, facility_type)
+            elif road_distance != "":
+                result = postgreSQL.get_village_by_road_distance(road_distance, facility_type)
+            else:
+                raise HTTPException(status_code=400, detail="Invalid argument")
+        elif project_type != "":
+            result = postgreSQL.get_village_by_project_type(project_type)
         else:
-            geojson_data = {'Invalid argument'}
-    elif project_type != "":
-        geojson_data = postgreSQL.get_village_by_project_type(project_type)
-    else:
-        geojson_data = postgreSQL.get_village(village_id)
-    return geojson_data
+            result = postgreSQL.get_village(village_id)
+
+        if result is None:
+            return {"type": "FeatureCollection", "features": []}
+        return result
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"Error in pull_village_data: {e}")
+        # Return empty FeatureCollection for client
+        return {"type": "FeatureCollection", "features": []}
 
 '''
 Function to get all the village_names
