@@ -40,7 +40,7 @@ export function handleRoutingVillageClick(feature, layer) {
         try
         {
             layer.setStyle({ fillColor: 'yellow', color: 'black' });
-            console.log("Start point set:", nodeId);
+            console.log("Start point set:", startVillage);
             layer.bindPopup(`Selected as starting point: ${feature.properties.village_name}`).openPopup();
         }
         catch (error) {
@@ -50,14 +50,14 @@ export function handleRoutingVillageClick(feature, layer) {
         return;
     } 
     // Set end point
-    else if (endVillage == null && startVillage !== nodeId) {
+    else if (endVillage == null) {
         endVillage = nodeId;
         endLayer = layer;
         try
         {
         layer.setStyle({ fillColor: 'orange', color: 'black' });
         layer.bindPopup(`Selected as destination: ${feature.properties.village_name}`).openPopup();
-        console.log("End point set:", startVillage);
+        console.log("End point set:", endVillage);
         }
         catch (error) {
             // console.error("Error setting end point style:", error);

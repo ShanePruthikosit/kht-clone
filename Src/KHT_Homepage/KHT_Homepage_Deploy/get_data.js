@@ -396,7 +396,6 @@ async function getRoute(start,end) {
             map.removeLayer(window.Route);
             layerControl.removeLayer(window.Route);
         }
-        
         const time = getCurrentTime();
         const hash = await getTestPackage(time);
         const url = `${protocol}://${host}:${port}/api/route/?start=${start}&end=${end}&time=${time}&key=${hash}`;
@@ -404,6 +403,12 @@ async function getRoute(start,end) {
         fetch(url)
             .then(response => response.json())
             .then(data => {
+
+                if (!data.features || data.features.length === 0) {
+                    alert('There are no roads in the area.');
+                    return;
+                }
+
                 window.Route = L.geoJSON(data, {
                     style: function (feature) {
                         return {
