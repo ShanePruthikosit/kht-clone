@@ -215,32 +215,33 @@ Arguments:
   end_year    - end year of the project
 Return data output in geojson format.
 '''
-# Updated to use proper tables, added COALESCE/FILTER, removed duplicate execute
+
 def get_village_project_by_year(year="", start_year="", end_year=""):
     query = None
     if year:
         start_year = year
         end_year = year
     query = sql.SQL("""
-        SELECT village.*, 
+        SELECT village_fix.*, 
             projectStatus.status_name,
-            COALESCE(ARRAY_AGG(url2.url ORDER BY url2.sequence) FILTER (WHERE url2.url IS NOT NULL), ARRAY[]::text[]) AS urls, 
-            COALESCE(ARRAY_AGG(url2.image_url ORDER BY url2.sequence) FILTER (WHERE url2.image_url IS NOT NULL), ARRAY[]::text[]) AS image_urls, 
-            COALESCE(ARRAY_AGG(url2.article_title ORDER BY url2.sequence) FILTER (WHERE url2.article_title IS NOT NULL), ARRAY[]::text[]) AS article_titles, 
-            COALESCE(ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) FILTER (WHERE url2.posted_date IS NOT NULL), ARRAY[]::text[]) AS posted_dates
-        FROM village_fix AS village
-        JOIN projectvillage ON projectvillage.village_id = village.id
+            ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
+            ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
+            ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
+            ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
+        FROM village_fix
+        JOIN projectvillage ON projectvillage.village_id = village_fix.id
         JOIN project ON project.id = projectvillage.project_id
         JOIN projectStatus ON project.status_id = projectStatus.status_id
-        LEFT JOIN url2 ON village.id = url2.village_id
+        LEFT JOIN url2 ON village_fix.id = url2.village_id
         WHERE EXTRACT(YEAR FROM TO_DATE(project.start_date, 'YYYY-MM-DD')) >= {} 
         AND EXTRACT(YEAR FROM TO_DATE(project.end_date, 'YYYY-MM-DD')) <= {}
-        GROUP BY village.id, projectStatus.status_name, project.start_date
+        GROUP BY village_fix.id, projectStatus.status_name, project.start_date
         ORDER BY project.start_date DESC
     """).format(sql.Literal(str(start_year)), sql.Literal(str(end_year)))
     try:
         mogrified_query = cursor.mogrify(query)
         print(mogrified_query.decode('utf-8'))
+        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
@@ -255,31 +256,34 @@ Arguments:
   facility_type       - the facility type (eg. hospital or school)
 Return data all villages that are not within the given distance to the target facility.
 '''
-# Updated to use proper tables, added COALESCE/FILTER, removed duplicate execute
+
 def get_village_by_distance(distance="", facility_type=""):
-    # Convert distance from km to meters
-    distance_m = float(distance) * 1000
-    print(f"Distance (meters): {distance_m}, Facility type: {facility_type}")
+    distance = float(distance) * 1000
+    print(f"Distance: {distance}, Facility type: {facility_type}")
+    query = None 
     query = sql.SQL("""
-        SELECT DISTINCT v.*, 
-            COALESCE(ARRAY_AGG(url2.url ORDER BY url2.sequence) FILTER (WHERE url2.url IS NOT NULL), ARRAY[]::text[]) AS urls, 
-            COALESCE(ARRAY_AGG(url2.image_url ORDER BY url2.sequence) FILTER (WHERE url2.image_url IS NOT NULL), ARRAY[]::text[]) AS image_urls, 
-            COALESCE(ARRAY_AGG(url2.article_title ORDER BY url2.sequence) FILTER (WHERE url2.article_title IS NOT NULL), ARRAY[]::text[]) AS article_titles, 
-            COALESCE(ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) FILTER (WHERE url2.posted_date IS NOT NULL), ARRAY[]::text[]) AS posted_dates
-        FROM village_fix AS v
-        JOIN {table} f 
-          ON ST_DWithin(v.geom::geography, f.geom::geography, %s)
+        SELECT v.*, 
+            ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
+            ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
+            ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
+            ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
+        FROM village_fix v
         LEFT JOIN url2 ON v.id = url2.village_id
+        WHERE NOT EXISTS (
+            SELECT 1 FROM {table} f
+            WHERE ST_DWithin(v.geom::geography, f.geom::geography, %s)
+        )
         GROUP BY v.id
     """).format(table=sql.Identifier(facility_type))
     try:
-        mogrified_query = cursor.mogrify(query, (distance_m,))
+        mogrified_query = cursor.mogrify(query, (distance,))
         print(mogrified_query.decode('utf-8'))
+        cursor.execute(mogrified_query)
         geojson_result = query_to_geojson(cursor, mogrified_query)
         return geojson_result
     except Exception as e:
-        print(f"Error executing query: {e}") #Print the error message
-        connection.rollback() #Rollback the transaction
+        print(f"Error executing query: {e}")  # Print the error message
+        connection.rollback()  # Rollback the transaction
 
 
 '''
@@ -303,20 +307,21 @@ Return data output in geojson format.
 # Updated to use village_fix table, added COALESCE/FILTER, removed duplicate execute
 def get_village_by_project_type(project_type=""):
     query = None 
-    query = sql.SQL("""SELECT village.*,
-                            COALESCE(ARRAY_AGG(url2.url ORDER BY url2.sequence) FILTER (WHERE url2.url IS NOT NULL), ARRAY[]::text[]) AS urls, 
-                            COALESCE(ARRAY_AGG(url2.image_url ORDER BY url2.sequence) FILTER (WHERE url2.image_url IS NOT NULL), ARRAY[]::text[]) AS image_urls, 
-                            COALESCE(ARRAY_AGG(url2.article_title ORDER BY url2.sequence) FILTER (WHERE url2.article_title IS NOT NULL), ARRAY[]::text[]) AS article_titles, 
-                            COALESCE(ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) FILTER (WHERE url2.posted_date IS NOT NULL), ARRAY[]::text[]) AS posted_dates
-                        FROM village_fix AS village
-                        JOIN projectvillage ON projectvillage.village_id = village.id
+    query = sql.SQL("""SELECT village_fix.*,
+                            ARRAY_AGG(url2.url ORDER BY url2.sequence) AS urls, 
+        	            ARRAY_AGG(url2.image_url ORDER BY url2.sequence) AS image_urls, 
+        	            ARRAY_AGG(url2.article_title ORDER BY url2.sequence) AS article_titles, 
+                            ARRAY_AGG(url2.posted_date ORDER BY url2.sequence) AS posted_dates
+                        FROM village_fix
+                        JOIN projectvillage ON projectvillage.village_id = village_fix.id
                         JOIN project ON project.id = projectvillage.project_id
-                        LEFT JOIN url2 ON village.id = url2.village_id
+ 			LEFT JOIN url2 ON village_fix.id = url2.village_id
                         WHERE project.project_type = {}
-                        GROUP BY village.id
-                        ORDER BY village.village_name
-    """).format(sql.Literal(project_type))
+              		GROUP BY village_fix.id
+			ORDER BY village_fix.village_name
+	""").format(sql.Literal(project_type))
     try:
+        cursor.execute(query)
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
     except Exception as e:
