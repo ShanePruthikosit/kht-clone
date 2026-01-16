@@ -410,7 +410,7 @@ Return data output in geojson format.
 '''
 def get_school():
     query = None
-    query = sql.SQL("SELECT * FROM school_fix")
+    query = sql.SQL("SELECT * FROM school")
     try:
         geojson_result = query_to_geojson(cursor, query)
         return geojson_result
