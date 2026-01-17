@@ -405,7 +405,7 @@ async function getRoute(start,end) {
             .then(data => {
 
                 if (!data.features || data.features.length === 0) {
-                    alert('There are no roads in the area.');
+                    alert('There are no roads between these two points.');
                     return;
                 }
 
