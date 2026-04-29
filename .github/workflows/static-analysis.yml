@@ -22,6 +22,6 @@ jobs:
         run: |
           pip install ruff
 
-      - - name: Run Static Analysis
+      - name: Run Static Analysis
         run: |
           ruff check . --exclude "*.ipynb" --output-format=github
