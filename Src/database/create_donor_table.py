@@ -24,7 +24,7 @@ def create_donor_table():
         connection = psycopg2.connect(**params)
         crsc = connection.cursor() 
 
-        CREATE_TABLE = f"""CREATE TABLE IF NOT EXISTS Donor (
+        CREATE_TABLE = """CREATE TABLE IF NOT EXISTS Donor (
                 id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
                 record_id VARCHAR(256),
                 donator_name VARCHAR(256),

@@ -10,15 +10,9 @@ from config import config
 from create_projectVillage_table import create_projectVillage_table
 from create_project_table import create_project_table 
 from create_village_table import create_village_table
-from create_projectStatus_table import create_projectStatus_table
 from create_donor_table import create_donor_table
 from create_projectDonor_table import create_projectDonor_table
-from create_project_type_table import create_project_type_table
 from create_district_table import create_district_table
-from create_school_table import create_school_table
-from create_hospital_table import create_hospital_table
-from create_village_table_test import create_village_table_test
-from create_url_table2 import create_url_table2
 
 def connect():
     connection = None

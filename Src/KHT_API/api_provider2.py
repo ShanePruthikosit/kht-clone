@@ -11,13 +11,11 @@ the data output in geojson or json format.
 '''
 
 # Libraries
-from fastapi import FastAPI, HTTPException, Response, Request
-from fastapi.responses import JSONResponse, PlainTextResponse, FileResponse
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 import postgreSQL
 import json
-import hashlib
 import uvicorn
 import ssl
 import execjs

@@ -34,7 +34,7 @@ def create_project_type_table():
         connection = psycopg2.connect(**params)
         crsc = connection.cursor() 
 
-        CREATE_TABLE = f"""CREATE TABLE IF NOT EXISTS projectType (
+        CREATE_TABLE = """CREATE TABLE IF NOT EXISTS projectType (
                 id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
                 zoho_project_type_id VARCHAR(255),
                 project_type_name_en VARCHAR(255),

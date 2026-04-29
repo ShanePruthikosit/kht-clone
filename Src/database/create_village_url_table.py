@@ -9,9 +9,7 @@ Also updates the table with new data from the CSV file.
 '''
 import os
 import psycopg2
-from clean_csv import select_columns_and_save_csv
 from config import config
-import pandas as pd
 
 def get_file_path(filename):
     current_dir = os.getcwd()

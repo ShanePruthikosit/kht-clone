@@ -11,16 +11,11 @@ conversion function
 '''
 
 # Essential libraries
-from fastapi import FastAPI, HTTPException, Response
-from fastapi.responses import JSONResponse, PlainTextResponse
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 import psycopg2
 import geojson
 from psycopg2 import sql
 from shapely import wkb
 from shapely.geometry import mapping
-from shapely.wkb import loads as wkb_loads
 import json
 from village_url_model import village_url_data
 

@@ -1,5 +1,4 @@
 import rasterio
-import numpy as np
 import os
 
 # Reference: https://rasterio.readthedocs.io/en/latest/

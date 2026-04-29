@@ -24,7 +24,7 @@ def create_project_table():
         print('Connecting to the PostgreSQL database...')
         connection = psycopg2.connect(**params)
         crsc = connection.cursor() 
-        CREATE_TABLE = f"""CREATE TABLE IF NOT EXISTS project (
+        CREATE_TABLE = """CREATE TABLE IF NOT EXISTS project (
                 id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
                 project_name_en VARCHAR(256),
                 zoho_project_type_id VARCHAR(256),

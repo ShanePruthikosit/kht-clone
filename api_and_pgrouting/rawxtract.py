@@ -17,4 +17,4 @@ raw_binary_data = band_data.astype(np.int16).tobytes()
 with open('output.raw', 'wb') as f:
     f.write(raw_binary_data)
 
-print(f"Raw binary data saved to 'output.raw'")
+print("Raw binary data saved to 'output.raw'")

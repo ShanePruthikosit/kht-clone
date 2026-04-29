@@ -41,9 +41,9 @@ exp_name = "ESPCN_x4-T91"
 
 if mode == "train":
     # Dataset address
-    train_gt_images_dir = f"./data/T91/ESPCN/train"
+    train_gt_images_dir = "./data/T91/ESPCN/train"
 
-    test_gt_images_dir = f"./data/Set5/GTmod12"
+    test_gt_images_dir = "./data/Set5/GTmod12"
     test_lr_images_dir = f"./data/Set5/LRbicx{upscale_factor}"
 
     gt_image_size = int(17 * upscale_factor)
@@ -51,10 +51,10 @@ if mode == "train":
     num_workers = 4
 
     # The address to load the pretrained model
-    pretrained_model_weights_path = f""
+    pretrained_model_weights_path = ""
 
     # Incremental training and migration training
-    resume_model_weights_path = f""
+    resume_model_weights_path = ""
 
     # Total num epochs
     epochs = 3000

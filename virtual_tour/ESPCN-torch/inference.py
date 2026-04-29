@@ -19,7 +19,6 @@ import torch
 from flatbuffers.builder import np
 from torch import nn
 
-import config
 import imgproc
 import model
 from utils import load_state_dict

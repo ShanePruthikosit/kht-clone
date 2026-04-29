@@ -2,9 +2,6 @@
 
 # please read the csv file from the link above and write it to another csv file to the root directory of the project
 import pandas as pd
-import requests
-import csv
-import xlrd as xl
 
 url = 'https://data.go.th/dataset/34f2caea-233c-4fdd-a26c-3ef8b0d72a73/resource/90329440-f97e-4636-8939-82b2b449a21b/download/__csv.csv'
 df = pd.read_csv(url, encoding='iso-8859-11')
