@@ -563,7 +563,7 @@ def count_user(ip=""):
     query = sql.SQL("""INSERT INTO ipaddr (ip, time_stamp) 
                        SELECT {}, CAST(TO_CHAR(NOW()::date, 'DD/MM/YYYY') AS VARCHAR(256))""").format(sql.Literal(ip))
     try:
-        mogrified_query = cursor.mogrify(query)
+        mogrified_query = cursor.mogrify(query)  # noqa: F841
         cursor.execute(query)
         connection.commit()
     except Exception as e:

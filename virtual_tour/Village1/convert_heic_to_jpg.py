@@ -21,9 +21,9 @@
 import pillow_heif
 pillow_heif.register_heif_opener()  # Register HEIC support with Pillow
 
-from PIL import Image
-import sys
-import os
+from PIL import Image  # noqa: E402
+import sys  # noqa: E402
+import os  # noqa: E402
 
 def convert_heic_to_jpg(input_file, output_file=None):
     # Open the HEIC image file

@@ -62,7 +62,7 @@ def get_data(access_token, params):
         if response.status_code == 200:
             result = response.json()
             data += result["data"]
-            if result['info']['next_page_token'] != None:
+            if result['info']['next_page_token'] != None:  # noqa: E711
                 params['page_token'] = result['info']['next_page_token']
             else:
                 print("Read all pages!")
@@ -97,7 +97,7 @@ access_token, refresh_token = get_access_token(authen_code)
 count = 0
 
 while True:
-    if access_token != None:
+    if access_token != None: # noqa: E711
         print("getting data...")
         data = get_data(access_token, test_params)
         with open('Zoho_data.json', 'w') as json_file:

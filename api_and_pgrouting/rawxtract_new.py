@@ -30,7 +30,7 @@ with rasterio.open(geotiff_path) as dataset:
 
 # Save the data to a CSV file
 # Reference: https://docs.python.org/3/library/csv.html
-import csv
+import csv  # noqa: E402
 output_csv = os.path.join(script_dir, "extracted_heights.csv")
 with open(output_csv, "w", newline="") as f:
     writer = csv.writer(f)

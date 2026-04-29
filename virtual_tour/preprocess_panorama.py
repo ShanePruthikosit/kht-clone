@@ -33,7 +33,7 @@ def preprocess(input_path,
 
     # Lighting/contrast: CLAHE on L channel
     lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
-    l, a, b = cv2.split(lab)
+    l, a, b = cv2.split(lab)  # noqa: E741
     clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=tile_grid_size)
     cl = clahe.apply(l)
     lab = cv2.merge((cl, a, b))
