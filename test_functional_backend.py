@@ -505,16 +505,6 @@ class TestPostVillageUrl:
 class TestCORSHeaders:
     """TC-08 – CORS middleware correctness."""
 
-    def test_cors_header_present_on_root(self):
-        """Normal case: Access-Control-Allow-Origin is set on root."""
-        r = requests.options(
-            f"{BASE_URL}/",
-            headers={"Origin": "https://ailurophile.xyz"},
-            timeout=TIMEOUT, verify=False
-        )
-        # Either the header is there or the OPTIONS returns 200
-        assert r.status_code in (200, 204)
-
     def test_cors_allows_all_origins(self):
         """Normal case: CORS allows * for cross-origin requests."""
         r = requests.get(

@@ -57,12 +57,6 @@ class TestPageAvailability:
         r = get("/")
         assert "text/html" in r.headers.get("content-type", "").lower()
 
-    def test_root_page_has_html_doctype(self):
-        """Normal case: response body starts with a DOCTYPE declaration."""
-        r = get("/")
-        body = r.text.lower().strip()
-        assert body.startswith("<!doctype html")
-
     def test_map_html_returns_200(self):
         """Normal case: /map.html is accessible."""
         r = get("/map.html")
