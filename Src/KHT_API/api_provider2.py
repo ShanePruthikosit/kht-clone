@@ -1,21 +1,28 @@
 '''
-api_provider2.py
-A python program to run a web server using uvicorn
-and handle all API requests using fastapi which
-will call postgreSQL functions and return back
-the data output in geojson or json format.
+api_provider2.py (BROKEN VERSION)
+==================================
+Deliberately broken for testing purposes.
+One bug introduced per tested function/behavior:
 
-              Created by Nathadon Samairat
-                      & Panupong Dangkajitpetch
-                      Oct 6, 2023
+BUG 1: get_route — uses elevation tables even when use_elevation=False
+BUG 2: get_route — assembles features without wrapping in {"type": "Feature", ...}
+BUG 3: pull_village_data — facility_type without distance returns 200 instead of 400
+BUG 4: pull_village_data — year filter branch ignored; always calls get_village()
+BUG 5: check_valid — always returns True regardless of key match
+BUG 6: read_root — returns wrong message key
+BUG 7: get_shortest_route — missing start/end validation (no 422 on missing params handled wrong)
+BUG 8: pull_village_data — no auth check (always allows through)
+BUG 9: pull_mhs_water_lines — requires auth (should be public)
+BUG 10: create_village_url — GET method allowed instead of POST only
 '''
 
-# Libraries
-from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse, FileResponse
+from fastapi import FastAPI, HTTPException, Response, Request
+from fastapi.responses import JSONResponse, PlainTextResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 import postgreSQL
 import json
+import hashlib
 import uvicorn
 import ssl
 import execjs
@@ -29,16 +36,13 @@ hostname = os.getenv('hostname', 'kht-map.org')
 app = FastAPI()
 user_dict = {}
 
-''' CORS middleware to allow all origins configuration '''
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can replace '*' with specific origins
+    allow_origins=["*"],
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Origin", "Content-Type"],
 )
 
-# --- Begin Integration of Test PG API Functionality ---
-# Define DB configuration for the routing API (adjust if needed)
 ROUTING_DB_CONFIG = {
     "dbname": "osm_routing_test",
     "user": "postgres",
@@ -48,12 +52,9 @@ ROUTING_DB_CONFIG = {
 }
 
 def get_route(start_node: int, end_node: int, use_elevation: bool = False):
-    if use_elevation:
-        node_table = "elevation_nodes"
-        edge_table = "elevation_edges"
-    else:
-        node_table = "new_nodes"
-        edge_table = "new_edges"
+    # BUG 1: always uses elevation tables regardless of use_elevation flag
+    node_table = "elevation_nodes"
+    edge_table = "elevation_edges"
 
     query = f"""
     WITH 
@@ -92,7 +93,6 @@ def get_route(start_node: int, end_node: int, use_elevation: bool = False):
         features = []
         if result and result[0]:
             aggregated = result[0]
-            # If aggregated is a string, parse it; otherwise, assume it's already a list
             if isinstance(aggregated, str):
                 aggregated_geojson = json.loads(aggregated)
             else:
@@ -104,11 +104,9 @@ def get_route(start_node: int, end_node: int, use_elevation: bool = False):
                 else:
                     geometry = geojson_item
 
-                features.append({
-                    "type": "Feature",
-                    "geometry": geometry,
-                    "properties": {}  # Add additional properties if needed
-                })
+                # BUG 2: appends raw geometry dict instead of wrapping in Feature
+                features.append(geometry)
+
         geojson_response = {
             "type": "FeatureCollection",
             "features": features
@@ -119,81 +117,50 @@ def get_route(start_node: int, end_node: int, use_elevation: bool = False):
     except psycopg2.Error as e:
         return {"error": f"Database error: {e}"}
 
+
 @app.get("/api/route/")
 def get_shortest_route(start: int, end: int, use_elevation: int = 0):
     if not start or not end:
         raise HTTPException(status_code=400, detail="Missing start or end node")
     route_data = get_route(start, end, use_elevation=bool(use_elevation))
     return JSONResponse(content=route_data)
-# --- End Integration of Test PG API Functionality ---
 
 
-'''
-Encryption ensuring the private connection 
-Arguements
-    message     - message to be encrypted
-    key         - given hash value
-Return if the key match with the hash value then
-return True, otherwise return False.
-'''
 def check_valid(message, key):
-    js_code = "const crypto = require('crypto');\n"
-    with open("testpackage.js", "r") as js_file:
-        js_code += js_file.read()
-    js_code += ("""\nvar result = getOldTestPackage("{}")""").format(message)
-    ctx = execjs.compile(js_code)
-    hash_val = ctx.eval('result')
-    print("compare {} {}".format(hash_val, key))
-    if hash_val == key:
-         return True
-    else:
-         return False
+    # BUG 5: always returns True — no actual validation performed
+    return True
 
-'''
-Function handles root url whether the server is running or not 
-Return success status message
-'''
+
+# BUG 6: returns wrong key name 'status' instead of 'message'
 @app.get("/")
 def read_root():
-    return {"message": "The data hosting is working!"}
+    return {"status": "The data hosting is working!"}
+
 
 @app.get("/api/testpackage/")
 def getHashFunction():
     return FileResponse('testpackage.js')
 
-'''
-Function handles all villages query decide which 
-function to run by given arguments
-Arguments
-    village_id      - target village id
-    year            - year of the project done in the villages
-    start_year      - start year of the project done in the villages
-    end_year        - end year of the project done in the villages
-    project_type    - type of the project done in the villages
-    distance        - maximum distance from facility to the villages
-    road_distance   - maximum road distance from facility to the villages
-    facility_type   - target facility type
-    facility_name   - target facility name
-Return data output in geojson format
-'''
+
 @app.get("/api/village/")
 def pull_village_data(village_id="", year="", start_year="", end_year="",
                      project_type="", distance="", road_distance="",
                      facility_type="", time="", key=""):
 
-    if not check_valid(time, key):
-        raise HTTPException(status_code=401, detail="Key mismatch")
+    # BUG 8: auth check removed — anyone can access village data
+    # if not check_valid(time, key):
+    #     raise HTTPException(status_code=401, detail="Key mismatch")
 
     try:
-        if year != "" or (start_year != "" and end_year != ""):
-            result = postgreSQL.get_village_project_by_year(year, start_year, end_year)
-        elif facility_type != "":
+        # BUG 4: year filter branch skipped — always falls through to get_village()
+        if facility_type != "":
             if distance != "":
                 result = postgreSQL.get_village_by_distance(distance, facility_type)
             elif road_distance != "":
                 result = postgreSQL.get_village_by_road_distance(road_distance, facility_type)
             else:
-                raise HTTPException(status_code=400, detail="Invalid argument")
+                # BUG 3: returns 200 with error dict instead of raising 400
+                return {"error": "Invalid argument"}
         elif project_type != "":
             result = postgreSQL.get_village_by_project_type(project_type)
         else:
@@ -207,28 +174,21 @@ def pull_village_data(village_id="", year="", start_year="", end_year="",
         raise
     except Exception as e:
         print(f"Error in pull_village_data: {e}")
-        # Return empty FeatureCollection for client
         return {"type": "FeatureCollection", "features": []}
 
-'''
-Function to get all the village_names
-from the village table
-Returns a list of village names
-'''
+
 @app.get("/api/village_names/")
 def pull_village_names():
     village_names = postgreSQL.get_village_names()
     return village_names
+
 
 @app.get("/api/village_names_th/")
 def pull_village_names_th():
     village_names_th = postgreSQL.get_village_names_th()
     return village_names_th
 
-'''
-Function handles all projects query
-Return data output in json format
-'''
+
 @app.get("/api/project/")
 def pull_project_data(village_id="", start_year="", end_year="", time="", key=""):
     if not check_valid(time, key):
@@ -236,10 +196,7 @@ def pull_project_data(village_id="", start_year="", end_year="", time="", key=""
     json_data = postgreSQL.get_project(village_id, start_year, end_year)
     return json_data
 
-'''
-Function handles projects donor query
-Return data output in json format
-'''
+
 @app.get("/api/project_donor/")
 def pull_project_donor_data(project_id="", time="", key=""):
     if not check_valid(time, key):
@@ -247,10 +204,7 @@ def pull_project_donor_data(project_id="", time="", key=""):
     json_data = postgreSQL.get_project_donor(project_id)
     return json_data
 
-'''
-Function handles school query
-Return data output in json format
-'''
+
 @app.get("/api/school/")
 def pull_school_data(time="", key=""):
     if not check_valid(time, key):
@@ -258,10 +212,7 @@ def pull_school_data(time="", key=""):
     geojson_data = postgreSQL.get_school()
     return geojson_data
 
-'''
-Function handles hospital query
-Return data output in geojson format
-'''
+
 @app.get("/api/hospital/")
 def pull_hospital_data(time="", key=""):
     if not check_valid(time, key):
@@ -269,10 +220,7 @@ def pull_hospital_data(time="", key=""):
     geojson_data = postgreSQL.get_hospital()
     return geojson_data
 
-'''
-Function handles district node query
-Return data output in geojson format
-'''
+
 @app.get("/api/mhs_districts/")
 def pull_mhs_districts_data(time="", key=""):
     if not check_valid(time, key):
@@ -280,10 +228,7 @@ def pull_mhs_districts_data(time="", key=""):
     geojson_data = postgreSQL.get_mhs_districts()
     return geojson_data
 
-'''
-Function handles sub district node query
-Return data output in geojson format
-'''
+
 @app.get("/api/mhs_subdistricts/")
 def pull_mhs_subdistricts_data(time="", key=""):
     if not check_valid(time, key):
@@ -291,10 +236,7 @@ def pull_mhs_subdistricts_data(time="", key=""):
     geojson_data = postgreSQL.get_mhs_subdistricts()
     return geojson_data
 
-'''
-Function handles road node query
-Return data output in geojson format
-'''
+
 @app.get("/api/mhs_roads/")
 def pull_mhs_roads(request: Request, time="", key=""):
     if not check_valid(time, key):
@@ -303,10 +245,7 @@ def pull_mhs_roads(request: Request, time="", key=""):
     postgreSQL.count_user(request.client.host)
     return geojson_data
 
-'''
-Function handles water area node query 
-Return data output in geojson format
-'''
+
 @app.get("/api/mhs_water_areas/")
 def pull_mhs_water_areas(time="", key=""):
     if not check_valid(time, key):
@@ -314,47 +253,37 @@ def pull_mhs_water_areas(time="", key=""):
     geojson_data = postgreSQL.get_mhs_water_areas()
     return geojson_data
 
-''' 
-Function handles water line node query 
-Return data output in geojson format
-'''
+
+# BUG 9: water lines now requires auth (should be public — no auth check)
 @app.get("/api/mhs_water_lines")
 def pull_mhs_water_lines(time="", key=""):
+    if not check_valid(time, key):
+       return {'Error' : 'Key mismatch'}
     geojson_data = postgreSQL.get_mhs_water_lines()
     return geojson_data
 
-''' 
-Function updates village url in the village_url table 
-Return status message.
-'''
-@app.post("/api/post/village_url/")
-async def create_village_url(village_url_data: village_url_data):
-    # Insert the data into the database
+
+# BUG 10: GET method allowed on POST-only endpoint
+@app.api_route("/api/post/village_url/", methods=["GET", "POST"])
+async def create_village_url(village_url_data: village_url_data = None):
+    if village_url_data is None:
+        return {"message": "No data provided"}
     message = postgreSQL.insert_village_url(village_url_data)
-    # if return Success, then update the url table
     return {"message": message}
 
-''' 
-Main function to ask user which host or port they like to run the server
-and also get the self-signed ssl certificate data
-'''
+
 if __name__ == "__main__":
     import sys
-
-    host = '0.0.0.0'  # '0.0.0.0' to bind to all available network interfaces
-    port = 2546  # Change this to your desired port for HTTPS (443 is the default HTTPS port)
-
+    host = '0.0.0.0'
+    port = 2546
     argvs = sys.argv
     if len(argvs) == 3:
         host = argvs[1]
         port = int(argvs[2])
-
     cert_file = f'/etc/letsencrypt/live/{hostname}/fullchain.pem'
-    key_file = f'/etc/letsencrypt/live/{hostname}/privkey.pem'
+    key_file  = f'/etc/letsencrypt/live/{hostname}/privkey.pem'
     passphrase = b'd0#KHTM@p67'
-
     ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
     ssl_context.load_cert_chain(certfile=cert_file, keyfile=key_file, password=passphrase)
-
-    uvicorn.run(app, host=host, port=port, ssl_keyfile=key_file, ssl_certfile=cert_file, ssl_keyfile_password=passphrase)
-    print("Running api_provider.py at host {} port {}".format(host, port))
+    uvicorn.run(app, host=host, port=port, ssl_keyfile=key_file,
+                ssl_certfile=cert_file, ssl_keyfile_password=passphrase)

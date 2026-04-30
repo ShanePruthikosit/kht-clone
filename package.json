@@ -1,0 +1,21 @@
+{
+  "name": "kht-clone",
+  "version": "1.0.0",
+  "description": "KHT Map Project - Frontend Unit Tests",
+  "scripts": {
+    "test:frontend": "jest test_unit_frontend.test.js --verbose --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-jest": "^29.0.0",
+    "jest": "^29.0.0",
+    "jest-mock-server": "^0.1.0"
+  }
+}
