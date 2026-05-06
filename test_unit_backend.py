@@ -176,6 +176,19 @@ class TestGetRouteTableSelection:
         assert "new_nodes" not in query
         assert "new_edges" not in query
 
+    def test_same_start_and_end_node_still_queries(self):
+        """Edge: start and end node are the same — query still executes."""
+        mock_conn = Mock()
+        mock_cur  = Mock()
+        mock_conn.cursor.return_value = mock_cur
+        mock_cur.fetchone.return_value = None
+
+        with patch("api_provider2.psycopg2.connect", return_value=mock_conn):
+            result = get_route(1, 1, use_elevation=False)
+
+        assert mock_cur.execute.called
+        assert "type" in result or "error" in result
+
 
 class TestAssembleRouteResponse:
     """get_route() — GeoJSON assembly from DB result."""
@@ -294,6 +307,10 @@ class TestVillageFilterRouting:
         assert calls["get_village"] is True
         assert calls["get_village_project_by_year"] is False
 
+    def test_facility_type_without_distance_returns_400(self, auth_client):
+        """Error: facility_type provided without distance → HTTP 400."""
+        assert auth_client.get("/api/village/?facility_type=school").status_code == 400
+
 
 class TestCheckValid:
     """check_valid() — HMAC-style key comparison."""
@@ -353,6 +370,12 @@ class TestVillageUrlModel:
         with pytest.raises(ValidationError):
             village_url_data(village_name="Village A", url="https://example.com",
                              password="pw")
+
+    def test_empty_string_village_name_is_accepted(self):
+        """Edge: empty string is a valid value for village_name (Pydantic allows it)."""
+        obj = village_url_data(village_name="", url="https://example.com",
+                               image_url="https://example.com/img.jpg", password="pw")
+        assert obj.village_name == ""
 
 
 # ═════════════════════════════════════════════════════════════
@@ -506,6 +529,18 @@ class TestGetVillageByRoadDistance:
         with patch.object(postgreSQL, "cursor", Mock()), \
              patch.object(postgreSQL, "connection", Mock()):
             assert postgreSQL.get_village_by_road_distance(road_distance="10", facility_type="hospital") is None
+
+    def test_zero_distance_returns_none(self):
+        """Edge: zero road distance still returns None (stub behaviour)."""
+        with patch.object(postgreSQL, "cursor", Mock()), \
+             patch.object(postgreSQL, "connection", Mock()):
+            assert postgreSQL.get_village_by_road_distance(road_distance="0", facility_type="school") is None
+
+    def test_empty_facility_type_returns_none(self):
+        """Error: empty facility_type still returns None (stub behaviour)."""
+        with patch.object(postgreSQL, "cursor", Mock()), \
+             patch.object(postgreSQL, "connection", Mock()):
+            assert postgreSQL.get_village_by_road_distance(road_distance="5", facility_type="") is None
 
 
 class TestGetVillageByProjectType:
@@ -842,6 +877,16 @@ class TestRootEndpoint:
     def test_returns_working_message(self, client):
         assert client.get("/").json() == {"message": "The data hosting is working!"}
 
+    def test_post_not_allowed(self, client):
+        """Error: POST method not allowed on root endpoint."""
+        assert client.post("/").status_code == 405
+
+    def test_message_key_not_status(self, client):
+        """Edge: response uses 'message' key, not 'status'."""
+        data = client.get("/").json()
+        assert "message" in data
+        assert "status" not in data
+
 
 class TestVillageEndpoint:
     def test_no_auth_returns_401(self, unauth_client):
@@ -887,8 +932,19 @@ class TestVillageNamesEndpoint:
         with patch.object(postgreSQL, "get_village_names", return_value=SAMPLE_NAMES):
             assert client.get("/api/village_names/").json() == SAMPLE_NAMES
 
+
     def test_no_auth_required(self, unauth_client):
         assert unauth_client.get("/api/village_names/").status_code == 200
+
+    def test_empty_table_returns_empty_list(self, client):
+        """Edge: no villages in DB → returns empty list, not an error."""
+        with patch.object(postgreSQL, "get_village_names", return_value=[]):
+            assert client.get("/api/village_names/").json() == []
+
+    def test_db_error_returns_500(self, client):
+        """Error: DB failure → endpoint returns 500."""
+        with patch.object(postgreSQL, "get_village_names", side_effect=Exception("DB down")):
+            assert client.get("/api/village_names/").status_code == 500
 
 
 class TestVillageNamesTHEndpoint:
@@ -902,6 +958,16 @@ class TestVillageNamesTHEndpoint:
 
     def test_no_auth_required(self, unauth_client):
         assert unauth_client.get("/api/village_names_th/").status_code == 200
+
+    def test_empty_table_returns_empty_list(self, client):
+        """Edge: no villages → returns empty list."""
+        with patch.object(postgreSQL, "get_village_names_th", return_value=[]):
+            assert client.get("/api/village_names_th/").json() == []
+
+    def test_db_error_returns_500(self, client):
+        """Error: DB failure → endpoint returns 500."""
+        with patch.object(postgreSQL, "get_village_names_th", side_effect=Exception("DB down")):
+            assert client.get("/api/village_names_th/").status_code == 500
 
 
 class TestProjectEndpoint:
